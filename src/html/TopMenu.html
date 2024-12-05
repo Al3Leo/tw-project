@@ -1,6 +1,17 @@
 <div id="topbar">
+    <!--logo login e signup-->
     <a href="html/index.html"><img src="img/PlaceholderLogo.png"/></a>
-    <button class="btn" id="sideMenu" onclick="openSideMenu()">&#x2630</button>
+    <button class="btn" id="sideMenu" onclick="toggleSideMenu()">&#x2630</button>
     <a href="html/signup.html"><button class="btn" id="signup">Sign Up</button></a>
     <button class="btn" id="login" onclick="openLogin()">Log In</button>
+
+    <!-- Sidebar -->
+    <div class="sideBar" id="sideBar">
+        <ul>
+            <li id="li-speciale"><button id="goBack" onclick="toggleSideMenu()">&times</button></li>
+            <li>Catalogo</li>
+            <li>Home</li>
+            <li>Chi siamo</li>
+        </ul>
+    </div>
 </div>

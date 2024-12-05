@@ -12,18 +12,7 @@
     <base href="../"/>
     <link rel="icon" href="img/favicon.png" type="image/png/">
     <link rel="stylesheet" href="css/TopMenu.css"/>
-
-    <style>
-        .sm{
-            display:none;
-        }
-    </style>
-    <script>
-        function openSideMenu(){
-            var sm=document.getElementById("sideMenu");
-            sm.classList.toggle("sm");
-        }
-    </script>
+    <script src="js/TopMenu.js"></script>
 </head>
 <body>
 <?php include_once 'TopMenu.html'?>

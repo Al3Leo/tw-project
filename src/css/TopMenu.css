@@ -34,3 +34,69 @@
 #topbar{
     display: block;
 }
+.showMenu{
+    width: 100%;
+    height: 100%;
+    color: rgba(128, 128, 128, 0.65);
+}
+.toggleMenu{
+    display: none;
+}
+/*tasto x side menu*/
+.toggleCross{
+    display: block !important;
+    font-size: xx-large;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: lighter;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+}
+.sideBar{
+    display:none;
+}
+/*menu laterale*/
+.toggleShow {
+    display: block !important;
+    float: right;
+    clear: right;
+    overflow-block: visible;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    width: 40%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#sidebar{
+    float: right;
+}
+/*rimuovi puntini list*/
+ul{
+    list-style: none;
+}
+#li-speciale{
+    color: #1fe100 !important;
+}
+/*opzioni del menu laterale*/
+li{
+    clear: right;
+    display: block;
+    margin: 1rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: lighter;
+    color: #ffffff;
+    border-bottom: 1px solid white;
+    text-align: right;
+}
+li:hover{
+    color: gray;
+    transition: 500ms;
+}
