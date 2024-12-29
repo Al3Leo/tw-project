@@ -16,7 +16,7 @@
 </head>
 <body>
     <?php include_once 'TopMenu.html'?>
-    <div id="hero" class="d-flex justify-content-around align-item-center">
+    <div id="hero" class="d-flex flex-row text-center">
         <div class="side">
             <img src="https://images.unsplash.com/photo-1732948937655-095f68551734?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Special Offer">
             <p>Special Offer</p>
@@ -25,7 +25,7 @@
                     Acquista ora! 
             </button>
         </div>
-        <div id="homeInfo" class="side text-center">
+        <div id="homeInfo" class="side">
             <div class="ct">
                 <h1>Viaggi super spaziali</h1>
                 <h2>Home info</h2>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .suggerimentiDestinazioni, .suggerimentiPartenze { 
+            display: none; 
+            position: absolute; 
+            background: white; 
+            border: 1px solid #ccc; 
+            z-index: 3; /* Assicura che sia visibile sopra altri elementi */ 
+        } 
+        .suggerimentiDestinazioni div, .suggerimentiPartenze div { 
+            padding: 5px; 
+            cursor: pointer; 
+        } 
+        .suggerimentiDestinazioni div:hover, .suggerimentiPartenze div:hover { 
+            background-color: #eee; 
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="main-left">
+            <div class="content-left">
+                <h1>Vivi esperienze indimenticabili:<br>il tuo viaggio su misura!</h1>
+                <form id="form-booking"  method="post" action="./php/visualizza_voli.php" target="_blank" >
+
+                    <div class="tipi-volo">
+                        <label for="andataritorno">
+                            <input type="radio" name="tipovolo" id="andataritorno" value="andataritorno" required>Andata e Ritorno
+                        </label>
+                        <label for="andata">
+                            <input type="radio" name="tipovolo" id="andata" value="andata" required>Solo andata
+                        </label>
+                    </div>
+                    
+                    <div class="partenza-destinazione">
+                        <div class="destinazione-volo">
+                            <label for="destinazione">A:
+                                <input type="text" placeholder="Destinazione" name="destinazione" id="destinazione" onkeyup="suggerisciDestinazioni()" onfocus="suggerisciDestinazioni()">
+                            </label>
+                            <div class="suggerimentiDestinazioni"></div>
+                        </div>
+                        <div class="partenza-volo">
+                            <label for="partenza">Da:
+                                <input type="text" name="partenza" id="partenza" placeholder="Partenza" onkeyup="suggerisciPartenze()" onfocus="suggerisciPartenze()">
+                            </label>
+                            <div class="suggerimentiPartenze"></div>
+                        </div>
+                    </div>
+
+                    <div class="data">
+                        <div class="data-partenza">
+                            <input type="date" id="data-partenza" name="data-partenza">
+                        </div>
+                        <div class="data-ritorno">
+                            <input type="date" id="data-ritorno" name="data-ritorno">
+                        </div>
+                    </div>
+
+                    <button type="submit">Cerca</button>
+                    
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+    const destinazioni= ["Mercurio", "Venere", "Terra", "Marte", "Giove", "Saturno", "Urano", "Nettuno"]; 
+    function suggerisciDestinazioni() { 
+        document.getElementsByClassName("suggerimentiDestinazioni")[0].style.display='block';
+        const input = document.getElementById("destinazione").value; 
+        const divSuggerimenti = document.getElementsByClassName("suggerimentiDestinazioni")[0]; 
+        divSuggerimenti.innerHTML = ''; // Pulisce i suggerimenti precedenti 
+        
+        if(input==''){
+            for (let i = 0; i < destinazioni.length; i++){ 
+                const divAusiliare= document.createElement('div');
+                divAusiliare.textContent = destinazioni[i]; 
+                divAusiliare.addEventListener('click', function() { inserisciSuggerimentoDestinazione(this); });//non ho utilizzato this con la funzione
+                //function perche altrimenti si sarebbe riferito all'evento 
+                divSuggerimenti.appendChild(divAusiliare);
+            }
+        }else{
+            let risultatiRicerca= destinazioni.filter(ricercaDestinazione);
+            for(let i=0; i<risultatiRicerca.length;i++){
+                const divAusiliare= document.createElement('div');
+                divAusiliare.textContent=risultatiRicerca[i];
+                divAusiliare.addEventListener('click', function() { inserisciSuggerimentoDestinazione(this); });
+                divSuggerimenti.appendChild(divAusiliare);
+            }
+        }
+    }
+    //la funzione viene chiamata per mostrare suggerimenti in base alla stringa inserita nell'input form
+    function ricerca(destinazione){
+        stringa=document.getElementById("destinazione").value.toLowerCase();
+       return pianeta.toLowerCase().startsWith(stringa);
+
+    }
+    //se clicco su un suggerimento, il sistema deve inserire il valore selezionato nel input form
+    function inserisciSuggerimento(pianetaSelezionato){
+        document.getElementById('destinazione').value=pianetaSelezionato.textContent;
+        document.getElementsByClassName("suggerimenti")[0].innerHTML = '';//elimino i suggerimenti
+
+    }
+    document.getElementById("destinazione").addEventListener('keyup', suggerisciDestinazioni); 
+    document.getElementById("destinazione").addEventListener('focus', suggerisciDestinazioni);
+
+    const partenze=["Africa","America","Asia", "Europa", "Oceania"];
+    function suggerisciPartenze() { 
+        document.getElementsByClassName("suggerimentiPartenze")[0].style.display='block';
+        const input = document.getElementById("partenza").value; 
+        const divSuggerimenti = document.getElementsByClassName("suggerimentiPartenze")[0]; 
+        divSuggerimenti.innerHTML = ''; // Pulisce i suggerimenti precedenti 
+        
+        if(input==''){
+            for (let i = 0; i < partenze.length; i++){ 
+                const divAusiliare= document.createElement('div');
+                divAusiliare.textContent = partenze[i]; 
+                divAusiliare.addEventListener('click', function() { inserisciSuggerimentoPartenza(this); });//non ho utilizzato this con la funzione
+                //function perche altrimenti si sarebbe riferito all'evento 
+                divSuggerimenti.appendChild(divAusiliare);
+            }
+        }else{
+            let risultatiRicerca= partenze.filter(ricercaPartenza);
+            for(let i=0; i<risultatiRicerca.length;i++){
+                const divAusiliare= document.createElement('div');
+                divAusiliare.textContent=risultatiRicerca[i];
+                divAusiliare.addEventListener('click', function() { inserisciSuggerimentoPartenza(this); });
+                divSuggerimenti.appendChild(divAusiliare);
+            }
+        }
+    }
+    //la funzione viene chiamata per mostrare suggerimenti in base alla stringa inserita nell'input form
+    function ricercaDestinazione(pianeta){
+        stringa=document.getElementById("destinazione").value.toLowerCase();
+       return pianeta.toLowerCase().startsWith(stringa);
+
+    }
+    function ricercaPartenza(partenza){
+        stringa=document.getElementById("partenza").value.toLowerCase();
+       return partenza.toLowerCase().startsWith(stringa);
+
+    }
+    //se clicco su un suggerimento, il sistema deve inserire il valore selezionato nel input form
+    function inserisciSuggerimentoDestinazione(destinazioneSelezionata){
+        document.getElementById('destinazione').value=destinazioneSelezionata.textContent;
+        document.getElementsByClassName("suggerimentiDestinazioni")[0].innerHTML = '';//elimino i suggerimenti
+    }
+    function inserisciSuggerimentoPartenza(partenzaSelezionata){
+        document.getElementById('partenza').value=partenzaSelezionata.textContent;
+        document.getElementsByClassName("suggerimentiPartenze")[0].innerHTML = '';//elimino i suggerimenti
+    }
+   </script>
+</body>
+</html>
