@@ -1,128 +1,119 @@
 <style>
-@import 'Global.css';
-.btn{
-    float: right;
-    margin: 1rem;
-    width: 5rem;
-    height: 2rem;
-}
-#login{
-    border: 3px solid black;
-    border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.5);
-    font-size: small;
-}
-#login:hover{
-    background-color: rgba(0, 0, 0, 0.3) !important;
-    border-color: white !important;
-}
-#signup{
-    border: 3px solid white;
-    border-radius: 25px;
-    background-color: rgba(0, 0, 0, 0.3);
-    font-size: small;
-}
-#signup:hover{
-    background-color: rgba(255, 255, 255, 0.5);
-    border-color: black !important;
-}
-#sideMenu{
-    background-color: #1fe100;
-    border: none;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 5px;
-}
-#topbar{
-    display: block;
-    height: 70px;
-}
-.showMenu{
-    width: 100%;
-    height: 100%;
-    color: rgba(128, 128, 128, 0.65);
-}
-.toggleMenu{
-    display: none;
-}
-/*tasto x side menu*/
-.toggleCross{
-    display: block !important;
-    font-size: xx-large;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-weight: lighter;
-    color: #ffffff;
-    background-color: rgba(0, 0, 0, 0);
-    border: 0;
-    float: right;
-}
-.sideBar{
-    display:none;
-}
-/*menu laterale*/
-.toggleShow {
-    display: block !important;
-    float: right;
-    clear: right;
-    overflow-block: visible;
-    padding-right: 3rem;
-    padding-top: 1rem;
-    background-color: rgba(0, 0, 0, 0.9);
-    height: 100vh;
-    width: 25%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1;
-}
+    .btn{
+        float: right;
+        margin: 1rem 1vw;
+        width: 5rem;
+        height: 2rem;
+    }
+    #login{
+        border: 3px solid #1d0b42;
+        border-radius: 25px;
+        background-color: rgb(170, 56, 255);
+        font-size: small;
+    }
+    #login:hover{
+        background-color: rgb(255, 0, 242) !important;
+        border-color: rgb(170, 56, 255) !important;
+        transition: 500ms;
+    }
+    #signup{
+        border: 3px solid #1d0b42;
+        border-radius: 25px;
+        background-color: rgb(211, 53, 241);
+        font-size: small;
+    }
+    #signup:hover{
+        background-color: rgb(255, 0, 242) !important;
+        border-color: rgb(170, 56, 255) !important;
+        transition: 500ms;
+    }
+    #sideMenu{
+        background-color: #1fe100;
+        border: none;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 5px;
+    }
+    #topbar{
+        display: block;
+    }
+    .showMenu{
+        width: 100%;
+        height: 100%;
+        color: rgba(128, 128, 128, 0.65);
+    }
+    .toggleMenu{
+        display: none;
+    }
+    /*tasto x side menu*/
+    .toggleCross{
+        display: block !important;
+        font-size: xx-large;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: lighter;
+        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0);
+        border: 0;
+        float: right;
+    }
+    .sideBar{
+        display:none;
+    }
+    /*menu laterale*/
+    .toggleShow {
+        display: block !important;
+        float: right;
+        clear: right;
+        overflow-block: visible;
+        padding-right: 3rem;
+        padding-top: 1rem;
+        background-color: rgba(64, 18, 126, 0.9);
+        height: 100vh;
+        width: 25vw;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+    }
+    #sidebar{
+        float: right;
+    }
+    /*rimuovi puntini list*/
+    ul{
+        list-style: none;
+    }
+    /*la x nel menu*/
+    #li-speciale{
+        border-bottom: none;
 
-#sidebar{
-    float: right;
-}
-/*rimuovi puntini list*/
-ul{
-    list-style: none;
-}
-#li-speciale{
-    border-bottom: none;
+    }
+    /*opzioni del menu laterale*/
+    li{
+        clear: right;
+        display: block;
+        margin: 1rem;
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        align-items: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: lighter;
+        color: #ffffff;
+        border-bottom: 1px solid #dedede;
+    }
+    li>a{
+        text-decoration: none;
+        color: #ffffff;
+    }
+    li>a:hover{
+        color: gray;
+        transition: 500ms;
+    }
+    li:hover{
+        color: gray;
+        transition: 500ms;
+    }
 
-}
-/*opzioni del menu laterale*/
-li{
-    clear: right;
-    display: block;
-    margin: 1rem;
-    margin-top: 1rem;
-    font-size: 1.5rem;
-    align-items: center;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-weight: lighter;
-    color: #ffffff;
-    border-bottom: 1px solid #dedede;
-}
-li:hover{
-    color: gray;
-    transition: 500ms;
-}
 </style>
-
-<header id="topbar">
-    <!--logo login e signup-->
-    <a href="html/index.html"><img src="../img/placeholderLogo.png"/></a>
-    <button class="btn" id="sideMenu" onclick="toggleSideMenu()">&#x2630;</button>
-    <a href="html/signup.html"><button class="btn" id="signup">Sign Up</button></a>
-    <button class="btn" id="login" onclick="openLogin()">Log In</button>
-    <!-- Sidebar -->
-    <div class="sideBar" id="sideBar">
-        <ul>
-            <li id="li-speciale"><button id="goBack" onclick="toggleSideMenu()">&times</button></li>
-            <li>Catalogo</li>
-            <li>Home</li>
-            <li>Chi siamo</li>
-        </ul>
-    </div>
-</header>
-
 <script>
     function toggleSideMenu() {
         let menu = document.getElementById("sideMenu");
@@ -157,8 +148,9 @@ li:hover{
         <ul>
             <li id="li-speciale"><button id="goBack" onclick="toggleSideMenu()">&times</button></li>
             <li>Catalogo</li>
-            <li>Home</li>
+            <li><a href="php/PaginaBianca.php">Home</a></li>
             <li>Chi siamo</li>
+            <li><a href="php/Supporto.php">Contattaci</a></li>
         </ul>
     </div>
 </header>
