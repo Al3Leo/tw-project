@@ -2,45 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .suggerimentiDestinazioni, .suggerimentiPartenze { 
-            display: none; 
-            position: absolute; 
-            background: white; 
-            border: 1px solid #ccc; 
-            z-index: 3; /* Assicura che sia visibile sopra altri elementi */ 
-        } 
-        .suggerimentiDestinazioni div, .suggerimentiPartenze div { 
-            padding: 5px; 
-            cursor: pointer; 
-        } 
-        .suggerimentiDestinazioni div:hover, .suggerimentiPartenze div:hover { 
-            background-color: #eee; 
-        }
+        body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    background-image: url('../img/Spazio.jpg'); /*MODIFICAAAA SE CAMBIO e metto in css */
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    width: 100%;
+    height: 100vh;
+}
+
+.sezione-sinistra {
+    display: flex;
+    flex-direction: column;
+    flex: 2; /* Occupa 2/3 dello spazio */
+    padding: 20px;
+}
+
+.sezione-destra {
+    flex: 1; /* Occupa 1/3 dello spazio */
+    padding: 20px;
+    background:none;
+    border-radius: 10px;
+    z-index: 3;
+}
+
+.primoDiv {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primoDivTesto {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+.form-container {
+    flex: 5;
+    display: flex;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form-content {
+    flex: 3;
+    padding-right: 20px;
+}
+
+.overlay-img {
+    flex: 1; 
+    max-width: 100%; 
+    height: auto;
+    object-fit: cover;
+}
+
+
+.form-container input, .form-container select, .form-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.suggerimentiDestinazioni, .suggerimentiPartenze { 
+    display: none; 
+    position: absolute; 
+    background: white; 
+    border: 1px solid #ccc; 
+    z-index: 3; 
+}
+
+.suggerimentiDestinazioni div, .suggerimentiPartenze div { 
+    padding: 5px; 
+    cursor: pointer; 
+}
+
+.suggerimentiDestinazioni div:hover, .suggerimentiPartenze div:hover { 
+    background-color: #eee; 
+}
+
     </style>
 </head>
 <body>
     <main>
-        <section class="main-left">
-            <div class="content-left">
-                <h1>Vivi esperienze indimenticabili:<br>il tuo viaggio su misura!</h1>
-                <form id="form-booking"  method="post" action="./php/visualizza_voli.php" target="_blank" >
+        <section class="sezione-sinistra">
+        <div class="primoDiv">
+            <div class="primoDivTesto">Vivi esperienze indimenticabili:<br>il tuo viaggio su misura!</div>
+        </div>
+            <div class="form-container">
+                <form id="form-booking"  method="post" action="risultati.php" target="_blank" >
 
                     <div class="tipi-volo">
                         <label for="andataritorno">
-                            <input type="radio" name="tipovolo" id="andataritorno" value="andataritorno" required>Andata e Ritorno
+                            <input type="radio" name="tipovolo" id="andataritorno" value="andataritorno" >Andata e Ritorno
                         </label>
                         <label for="andata">
-                            <input type="radio" name="tipovolo" id="andata" value="andata" required>Solo andata
+                            <input type="radio" name="tipovolo" id="andata" value="andata" >Solo andata
                         </label>
                     </div>
                     
                     <div class="partenza-destinazione">
                         <div class="destinazione-volo">
                             <label for="destinazione">A:
-                                <input type="text" placeholder="Destinazione" name="destinazione" id="destinazione" onkeyup="suggerisciDestinazioni()" onfocus="suggerisciDestinazioni()">
+                                <input type="text" placeholder="Destinazione" name="destinazione" id="destinazione" onkeyup="suggerisciDestinazioni()" onfocus="suggerisciDestinazioni()" required>
                             </label>
                             <div class="suggerimentiDestinazioni"></div>
                         </div>
@@ -52,6 +129,12 @@
                         </div>
                     </div>
 
+                    <div class="numero-persone">
+                        <label for="numero-biglietto">
+                            <input type="number" name="numero-biglietto" id="numero-biglietto">
+                        </label>
+                    </div>
+
                     <div class="data">
                         <div class="data-partenza">
                             <input type="date" id="data-partenza" name="data-partenza">
@@ -60,11 +143,14 @@
                             <input type="date" id="data-ritorno" name="data-ritorno">
                         </div>
                     </div>
-
+                    <div class="pulsante">
                     <button type="submit">Cerca</button>
-                    
+                    </div>
                 </form>
             </div>
+        </section>
+        <section class="sezione-destra">
+            <img src="../img/file.png" alt="Astronauta" class="overlay-img"> <!-- CONTROLLA URL-->
         </section>
     </main>
 
