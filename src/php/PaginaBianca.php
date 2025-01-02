@@ -23,6 +23,10 @@
 <body>
 <!--mi sa che il base href vale solo per html e non php-->
 <?php include_once '../html/TopMenu.html'?>
+<form method="get" action="php/ConfermaDinamica.php">
+    <input type="hidden" name="confermaDinamica" value="confermato dinamicamente">
+    <button type="submit">provami</button>
+</form>
 <?php include_once '../html/Footer.html'?>
 </body>
 </html>

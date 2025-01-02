@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Supporto Spaziale</title>
     <style>
         html, body { /*forzo il full screen*/
             height: 100%;
@@ -48,7 +48,7 @@
 </head>
 <body>
 <?php include_once '../html/TopMenu.html' ?>
-<main style="width: 90%; margin-left: 33%;">
+<main style="min-height: 80vh; margin-left: 33%;"> <!--93 perchè 7 li occupa il footer-->
     <div id="text_container">
         <div class="text_support">
             Hai bisogno di aiuto?<br>Siamo qui per rispondere a ogni tua domanda!
@@ -63,14 +63,15 @@
         </div>
     </div>
     <form class="form_support" method="get" action="mailto:mailto:a.leo88@studenti.unisa.it">
-        <input type="text" name="nome%0D%0A" placeholder="Nome" required>
+        <input type="text" name="nome" placeholder="Nome" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="text" name="subject" placeholder="Oggetto">
         <input type="tel" name="telefono" placeholder="Telefono (Facoltativo)">
         <input type="text" name="num_ordine" placeholder="N.Ordine (Facoltativo)">
         <div style="color: white; display: block; margin-bottom: 0.5%; margin-top: 0.5%">Messaggio</div>
         <textarea type="text" name="body" style="height: 25%"></textarea>
-        <input type="submit" value="Invia" style="color: white; display: block; margin-bottom: 0.5%; margin-top: 0.5%">
+        <input type="hidden" name="confermaDinamica" value="Supporto richiesto con successo">
+        <input type="submit" value="Invia" style="color: white; display: block; margin-bottom: 0.5%; margin-top: 0.5%" onclick="window.open("php/Supporto.php)">
     </form>
     <?php include_once '../html/Footer.html'?>
 </main>
