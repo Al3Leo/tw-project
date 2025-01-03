@@ -37,16 +37,36 @@ body {
 #main{
     margin-top: 20px;
     width: 100%;
-    overflow: hidden;
-    border: 1px solid red;
 }
 
-#main > * {
-    width:50%;
-    padding:1rem;
+#main__left{
+    width: 40%;
+    padding: 3rem;
 }
 
-#main__buttons{
+#main__left__img{
+    display: inline-block;  /*Il contenitore si adatta alle dimensioni dell'immagine*/
+    margin: 0 auto;
+}
+
+#main__left__img > img {
+    height: 200px;
+}
+
+#main__left__text > h3 {
+    animation: fadeIn 3s;
+}
+
+#main__right{
+    width: 60%;
+    padding: 3rem;
+}
+
+#main__right > h3{
+    animation: fadeIn 3s;
+}
+
+#main__right__buttons{
     position: relative;
     margin-top: 10px;
 }

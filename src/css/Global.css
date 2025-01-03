@@ -3,7 +3,6 @@
 
 body, html {
   font-family: "Exo 2", Inter, Lato, Orbitron, Arial;
-  overflow-x: hidden;
 }
 
 /* Text Settings*/
@@ -128,3 +127,28 @@ body{
 .flex-wrap { flex-wrap: wrap; }
 .flex-nowrap { flex-wrap: nowrap; }
 
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 10px;
+  background-color: var(--accent);
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+}
+
+button:hover, button:focus {
+  background-color: var(--secondaryColor);
+}
