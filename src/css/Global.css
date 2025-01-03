@@ -1,5 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Orbitron:wght@400..900&display=swap');
+@import "CssReset.css";
+
+body, html {
+  font-family: "Exo 2", Inter, Lato, Orbitron, Arial;
+  overflow-x: hidden;
+}
+
 body{
-  margin: 0;
+  color: var(--text);
+}
+:root{
+  background: #170938;
+  background-image: linear-gradient(75deg, rgb(14,11,19), rgb(82, 0, 124));    background-repeat: no-repeat;
+
+    /* Colori */
+  --bg: #060c21;
+  --primaryColor: #e9ecfb ;
+  --secondaryColor: #471a8e;
+  --accent: #9529d7;
+  --text: #e9ecfb;
 }
 
 /* Utilities - text */
@@ -29,7 +48,7 @@ body{
 .d-inline-block { display: inline-block; }
 .d-flex { 
   display: flex; 
-  -webkit-flex
+  display: -webkit-flex;
 }
 .d-inline-flex { display: inline-flex; }
 .d-none { display: none; }
@@ -50,6 +69,10 @@ body{
 .align-items-center { align-items: center; }
 .align-items-baseline { align-items: baseline; }
 .align-items-stretch { align-items: stretch; }
+.align-items-start { align-items: start; }
+.align-items-end { align-items: end; }
+
+
 
 /* Direzione */
 .flex-row { flex-direction: row; }
@@ -57,20 +80,3 @@ body{
 .flex-wrap { flex-wrap: wrap; }
 .flex-nowrap { flex-wrap: nowrap; }
 
-:root{
-  background: #170938;
-  background-image: linear-gradient(75deg, rgb(14,11,19), rgb(82, 0, 124));    background-repeat: no-repeat;
-  height: 100%;
-
-    /* Colori */
-  --bg: #060c21;
-  --primaryColor: #e9ecfb ;
-  --secondaryColor: #471a8e;
-  --accent: #9529d7;
-  --text: #e9ecfb;
-
-  color: var(--text);
-
-
-  font-family: Inter, Lato, Georgia, 'Times New Roman', Times, serif;
-}

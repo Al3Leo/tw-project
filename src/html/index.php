@@ -4,38 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viaggi super spaziali</title>
-    <link rel="stylesheet" href="../css/MainPage.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/HomePage.css">
     <base href="../"/>
 </head>
 <body>
     <?php include_once 'TopMenu.html'?>
-    <div id="hero" class="d-flex flex-row text-center">
-        <div class="side">
-            <img src="https://images.unsplash.com/photo-1732948937655-095f68551734?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Special Offer">
-            <p>Special Offer</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia repellendus voluptates excepturi. Alias in earum iure labore culpa odit, eveniet ex rerum quod voluptas ipsum porro, odio ut facilis officia.</p>
-            <button type="button">
-                    Acquista ora! 
-            </button>
+    <div id="hero">
+        <div id="hero__text">
+            <h2>Welcome to the Universe</h2>
+            <p>Embark on an extraordinary journey beyond the stars. Explore distant planets, witness breathtaking galaxies, and make the impossible your reality. Book your interstellar adventure today and redefine the limits of human exploration!</p>
         </div>
-        <div id="homeInfo" class="side">
-            <div class="ct">
-                <h1>Viaggi super spaziali</h1>
-                <h2>Home info</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe est tempora consequatur quidem odit maxime optio nulla autem pariatur, temporibus, deleniti sequi ullam excepturi necessitatibus repellendus doloremque minima nostrum aspernatur.</p>
-                <div class="ct">
-                    <button type="button">About us</button>      
-                    <button type="button">Login in</button>              
-                </div>
+    </div>
+    <div id="main" class="d-flex flex-row flex-nowrap justify-content-between align-items-start">
+        <div id="main__left">
+            <h3>Exclusive Launch Offer</h3>
+            <p>Be among the first to embark on a journey beyond Earth. Book now and save up to 30% on your first space adventure!</p>
+        </div>
+        <div id="main__right" class="text-center">
+            <h3>Your Gateway to the Universe</h3>
+            <h4>Unleash your inner explorer with our tailored interstellar adventures.</h4>
+            <p>Whether you're dreaming of walking on the moon, marveling at the rings of Saturn, or witnessing a supernova up close, we make it possible. Our state-of-the-art spacecraft and expert crew ensure a safe and unforgettable journey among the stars</p>
+            <div id="main__buttons">
+                <button type="button">Start your Journey</button>
+                <a href=""><button type="button">About us</button></a>
             </div>
-            
         </div>
     </div>
 </body>
