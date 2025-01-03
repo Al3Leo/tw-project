@@ -32,7 +32,6 @@ body {
 #hero__text > h2 {
     text-transform: uppercase;
     font-size: 4rem;
-    line-height: .5;
 }
 
 #main{
