@@ -11,6 +11,7 @@
 
 <body>
     <?php include_once '../html/TopMenu.html' ?>
+    <?php require_once '../html/PopupLogin.html' ?>
     <div id="hero">
         <div id="hero__text">
             <h2>Welcome to the Universe</h2>
