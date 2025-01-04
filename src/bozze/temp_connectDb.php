@@ -1,8 +1,0 @@
-<?php
-$host = "localhost";
-$port = 9999;
-$db_name = "GRUPPO05";
-$user = "www";
-$password = "tw2024";
-$connection_string = "host=$host dbname=$db_name user=$user password=$password";
-?>

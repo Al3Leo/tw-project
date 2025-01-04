@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
     <meta name="Author" content="Gruppo05"/>
     <base href="../"/>
     <link rel="icon" href="img/favicon.png" type="image/png/">
+    <link rel="stylesheet" href="css/body.css" type="text/css"/>
     <script src="js/TopMenu.js"></script>
 </head>
 <body>

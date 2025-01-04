@@ -62,8 +62,7 @@ body{
 
 :root{
   background: #170938;
-  background-image: linear-gradient(75deg, rgb(14,11,19), rgb(82, 0, 124));    
-  background-repeat: no-repeat;
+  background-image: linear-gradient(75deg, rgb(14,11,19), rgb(82, 0, 124));    background-repeat: no-repeat;
 
     /* Colori */
   --bg: #060c21;
@@ -105,6 +104,10 @@ body{
 }
 .d-inline-flex { display: inline-flex; }
 .d-none { display: none; }
+
+/* Utilities - Margin, Padding */
+.m-0 { margin: 0 !important; }
+.p-0 { padding: 0 !important; }
 
 /* Utilities - Flexbox */
 
