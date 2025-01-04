@@ -23,8 +23,28 @@
             <div id="main__left__text">
                 <h3>Exclusive Launch Offer</h3>
                 <p>Be among the first to embark on a journey beyond Earth. Book now and save up to <b>30%</b> on your first space adventure!</p>
+                <p><small>Ends in:</small></p>
+                <div id="main__left__countdown" class="d-flex">
+                    <div>
+                        <p id="main__left__countdown__days">00</p>
+                        <span>Days</span>
+                    </div>
+                    <div>
+                        <p id="main__left__countdown__hours">00</p>
+                        <span>Hours</span>
+                    </div>
+                    <div>
+                        <p id="main__left__countdown__minutes">00</p>
+                        <span>Minutes</span>
+                    </div>
+                    <div>
+                        <p id="main__left__countdown__seconds">00</p>
+                        <span>Seconds</span>
+                    </div>
+                </div>
             </div>
             <button type="button">Get Deal!</button>
+                
         </div>
         <div id="main__right" class="text-center">
             <h3>Your Gateway to the Universe</h3>
@@ -38,5 +58,6 @@
             </div>
         </div>
     </div>
+    <script src="js/HomePage.js"></script>
 </body>
 </html>

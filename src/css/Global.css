@@ -7,11 +7,13 @@ body, html {
 
 /* Text Settings*/
 h1, h2, h3, h4, h5, h6 {
-font-weight: bolder;
-  margin: 0.5em 0; /* Margine uniforme per tutte le intestazioni */
-  line-height: 1.2; /* Line-height generale per migliorare la leggibilità */
+  font-weight: bolder;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0.5em 0; /* Margine uniforme per tutte le intestazioni */
+  line-height: 1.1; /* Line-height generale per migliorare la leggibilità */
+}
 h1 {
   font-size: 2.15rem;
   letter-spacing: -0.0625rem;
@@ -50,6 +52,9 @@ a:visited {
   color: var(--secondaryColor)
 }
 
+small{
+  font-size: 13px; 
+}
 
 body{
   color: var(--text);
