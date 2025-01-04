@@ -5,7 +5,6 @@
     <base href="../"/>
     <style>
         html, body { /*forzo il full screen*/
-            height: 100%;
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -14,6 +13,9 @@
             background-image: linear-gradient(75deg, rgb(14,11,19), rgb(82, 0, 124));
             background-repeat: no-repeat;
             background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         #conferma{
             display: inline-block;

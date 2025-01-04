@@ -3,8 +3,7 @@
     <meta charset="UTF-8">
     <title>Supporto Spaziale</title>
     <style>
-        html, body { /*forzo il full screen*/
-            height: 100%;
+        html, body {
             margin: 0;
             padding: 0;
         }
@@ -12,6 +11,10 @@
             background-image: linear-gradient(75deg, rgb(14,11,19), rgb(82, 0, 124));
             background-repeat: no-repeat;
             background-size: cover;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
         }
         #text_container{
             display: block;
@@ -24,21 +27,31 @@
             width: auto;
             text-align: center;
             padding-bottom: 3%;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
         }
         input, textarea{
             display: block;
             margin-bottom: 1%;
-            height: 5vh;
-            width: 40vw;
+            height: 2rem;
+            width: 40rem;
             border-radius: 7px;
-            border: 1px solid white;
+        }
+        textarea{
+            height: 7rem !important;
         }
         #mailtoemail{
             color: white;
         }
         #mailtoemail:hover{
             color: #1fe100;
+        }
+        main{
+            min-height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            height: 80%;
         }
     </style>
     <meta name="Author" content="Gruppo05"/>
@@ -48,7 +61,7 @@
 </head>
 <body>
 <?php include_once '../html/TopMenu.html' ?>
-<main style="min-height: 80vh; margin-left: 33%;"> <!--93 perchè 7 li occupa il footer-->
+<main>
     <div id="text_container">
         <div class="text_support">
             Hai bisogno di aiuto?<br>Siamo qui per rispondere a ogni tua domanda!
@@ -68,12 +81,20 @@
         <input type="text" name="subject" placeholder="Oggetto">
         <input type="tel" name="telefono" placeholder="Telefono (Facoltativo)">
         <input type="text" name="num_ordine" placeholder="N.Ordine (Facoltativo)">
-        <div style="color: white; display: block; margin-bottom: 0.5%; margin-top: 0.5%">Messaggio</div>
-        <textarea type="text" name="body" style="height: 25%"></textarea>
+        <div style="color: white; display: block; font-weight: bold; margin-top: 0.7em; margin-bottom: 0.2em;">Messaggio:</div>
+        <textarea type="text" name="body" style="height: 25%; resize: none"></textarea>
         <input type="hidden" name="confermaDinamica" value="Supporto richiesto con successo">
-        <input type="submit" value="Invia" style="color: white; display: block; margin-bottom: 0.5%; margin-top: 0.5%" onclick="window.open("php/Supporto.php)">
+        <input type="submit" value="Invia!" style="color: #ffffff;
+            background-color: #00c4ff;
+            margin-top: 2%;
+            width: auto;
+            height: auto;
+            padding: 1.2%;
+            font-size: x-large;
+            margin-left: 45%;
+            border: 2px solid #ffffff;">
     </form>
-    <?php include_once '../html/Footer.html'?>
 </main>
+<?php include_once '../html/Footer.html'?>
 </body>
 </html>
