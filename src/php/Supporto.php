@@ -10,6 +10,7 @@
 </head>
 <body>
 <?php include_once '../html/TopMenu.html' ?>
+<?php include_once '../html/PopupLogin.html' ?>
 <?php require_once '../html/Supporto.html' ?>
 <?php include_once '../html/Footer.html'?>
 </body>

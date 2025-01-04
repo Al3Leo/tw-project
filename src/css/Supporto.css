@@ -1,4 +1,4 @@
-<style>
+
 html, body {
     margin: 0;
     padding: 0;
@@ -24,7 +24,7 @@ body {
     text-align: center;
     padding-bottom: 3%;
 }
-input, textarea{
+.form_input, textarea{
     display: block;
     margin-bottom: 1%;
     height: 2rem;
@@ -49,4 +49,3 @@ main{
     flex-wrap: nowrap;
     height: 80%;
 }
-</style>
