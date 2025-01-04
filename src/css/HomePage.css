@@ -253,14 +253,15 @@ body {
   bottom: 0;
 }
 
-.testimonial__grid__item .arrow {
-  top: 100%;
+.testimonial__grid__item__arrow {
   width: 0;
   height: 0;
   border-left: 0 solid transparent;
   border-right: 25px solid transparent;
   border-top: 25px solid #fafafa;
-  position: absolute;
+  position: relative;
+  left: 35px;
+  opacity: 0.8;
 }
 .testimonial__grid__item__author {
   color: white;

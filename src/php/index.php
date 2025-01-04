@@ -148,7 +148,7 @@
                 <div class="testimonial__grid__item">
                     <figure>
                         <blockquote>From start to finish, the journey was seamless. No special training required, just a passion for discovery. The view of the Milky Way was awe-inspiring. I felt like a true astronaut!</blockquote>
-                        <div class="arrow"></div>
+                        <div class="testimonial__grid__item__arrow"></div>
                         </blockquote>
                         <div class="testimonial__grid__item__author d-flex align-items-center">
                             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
@@ -162,7 +162,7 @@
                 <div class="testimonial__grid__item">
                     <figure>
                         <blockquote>Exploring the cosmos was beyond my wildest expectations. The spaceship was comfortable, and the views were breathtaking. It's incredible how accessible space travel has become. I recommend it to everyone!</blockquote>
-                        <div class="arrow"></div>
+                        <div class="testimonial__grid__item__arrow"></div>
                         </blockquote>
                         <div class="testimonial__grid__item__author d-flex align-items-center">
                             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
@@ -176,7 +176,7 @@
                 <div class="testimonial__grid__item">
                     <figure>
                         <blockquote>Seeing the vastness of space and the beauty of our planet from orbit changed how I see the world. The crew made the trip enjoyable and safe. This is a must-do for anyone with a spirit of adventure!</blockquote>
-                        <div class="arrow"></div>
+                        <div class="testimonial__grid__item__arrow"></div>
                         </blockquote>
                         <div class="testimonial__grid__item__author d-flex align-items-center">
                             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
@@ -190,7 +190,7 @@
                 <div class="testimonial__grid__item">
                     <figure>
                         <blockquote>We took my grandparents on a space trip, and they were over the moon (literally!). The whole experience was comfortable and exciting for all ages. If they can do it, anyone can. It’s a must-try for everyone!</blockquote>
-                        <div class="arrow"></div>
+                        <div class="testimonial__grid__item__arrow"></div>
                         </blockquote>
                         <div class="testimonial__grid__item__author d-flex align-items-center">
                             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
@@ -204,6 +204,7 @@
             </div>
         </section>
     </div>
+    <script src="js/HomePage.js"></script>
 </body>
 
 </html>

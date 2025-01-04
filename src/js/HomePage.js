@@ -35,7 +35,6 @@ function carousel() {
 
 /*FAQ*/
 const faqItems = document.querySelectorAll('.faq__item');
-
 faqItems.forEach(item => {
   const question = item.querySelector('.faq__item__question');
   const answer = item.querySelector('.faq__item__answer');
