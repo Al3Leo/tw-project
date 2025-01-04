@@ -44,12 +44,12 @@ margin-top: 7%;
         <span id="closePopup" onclick="closeLoginPopup()">x</span>
     </header>
     <main id="popupMain">
-        <form method="post">
+        <form method="post" action="php/login.php"> <!--usare sempre il tag <base href="../"/> in ogni pagina html-->
             <label>Username</label><br>
-            <input type="text" name="username" placeholder="Username" required>
+            <input type="text" name="user_username" placeholder="Username" required>
             <br>
             <label>Password</label><br>
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="user_password" placeholder="Password" required>
             <br>
             <label><a href="RecuperaPassword.php">Password smarrita?</a> </label>
             <br>
