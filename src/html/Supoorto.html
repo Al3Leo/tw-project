@@ -1,0 +1,34 @@
+<main>
+    <div id="text_container">
+        <div class="text_support">
+            Hai bisogno di aiuto?<br>Siamo qui per rispondere a ogni tua domanda!
+        </div>
+
+        <div class="text_support">
+            Che tu stia cercando informazioni sui nostri viaggi spaziali, abbia dubbi sulle prenotazioni o desideri segnalare un problema, il nostro team di supporto è pronto ad assisterti.
+        </div>
+
+        <div class="text_support">
+            Puoi contattarci tramite il modulo qui sotto o scriverci direttamente all’indirizzo email <strong><a href="mailto:a.leo88@studenti.unisa.it" id="mailtoemail">supporto-spaziale@mars.com</a></strong>.
+        </div>
+    </div>
+    <form class="form_support" method="get" action="mailto:mailto:a.leo88@studenti.unisa.it">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="subject" placeholder="Oggetto">
+        <input type="tel" name="telefono" placeholder="Telefono (Facoltativo)">
+        <input type="text" name="num_ordine" placeholder="N.Ordine (Facoltativo)">
+        <div style="color: white; display: block; font-weight: bold; margin-top: 0.7em; margin-bottom: 0.2em;">Messaggio:</div>
+        <textarea type="text" name="body" style="height: 25%; resize: none"></textarea>
+        <input type="hidden" name="confermaDinamica" value="Supporto richiesto con successo">
+        <input type="submit" value="Invia!" style="color: #ffffff;
+            background-color: #00c4ff;
+            margin-top: 2%;
+            width: auto;
+            height: auto;
+            padding: 1.2%;
+            font-size: x-large;
+            margin-left: 45%;
+            border: 2px solid #ffffff;">
+    </form>
+</main>
