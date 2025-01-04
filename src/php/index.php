@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <?php include_once 'TopMenu.html' ?>
+    <?php include_once '../html/TopMenu.html' ?>
     <div id="hero">
         <div id="hero__text">
             <h2>Welcome to the Universe</h2>
@@ -65,80 +65,86 @@
             </div>
         </div>
     </main>
-    <section class="faq">
-        <div class="faq__item">
-            <div class="faq__item__question d-flex justify-content-between align-items-center">
-                <p>Who can travel to space?</p>
-                <span class="arrow">&#x25BC</span>
+    <div id="secondary-s" class="d-flex flex-row justify-content-between">
+        <section class="faq">
+            <h3>FAQ - Frequently Asked Question:</small></h3>
+            <div class="faq__item">
+                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                    <p>Who can travel to space?</p>
+                    <span class="arrow">&#x25BC</span>
+                </div>
+                <div class="faq__item__answer">
+                    <p>Anyone! Our space journeys are designed to be safe and accessible to everyone, regardless of age or physical condition. If you can board a plane, you can travel to space.</p>
+                </div>
             </div>
-            <div class="faq__item__answer">
-                <p>Anyone! Our space journeys are designed to be safe and accessible to everyone, regardless of age or physical condition. If you can board a plane, you can travel to space.</p>
+            <div class="faq__item">
+                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                    <p>How much does a space trip cost?</p>
+                    <span class="arrow">&#x25BC</span>
+                </div>
+                <div class="faq__item__answer">
+                    <p>Thanks to cutting-edge technology, space travel is now affordable for everyone! Prices start at $500 for a suborbital flight and increase depending on the destination and trip duration.</p>
+                </div>
             </div>
-        </div>
-        <div class="faq__item">
-            <div class="faq__item__question d-flex justify-content-between align-items-center">
-                <p>How much does a space trip cost?</p>
-                <span class="arrow">&#x25BC</span>
+            <div class="faq__item">
+                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                    <p>What happens during a space trip?</p>
+                    <span class="arrow">&#x25BC</span>
+                </div>
+                <div class="faq__item__answer">
+                    <p>During the journey, you’ll enjoy unique experiences such as floating in zero gravity, spectacular views of deep space, and even gourmet dining with a view of Earth.</p>
+                </div>
             </div>
-            <div class="faq__item__answer">
-                <p>Thanks to cutting-edge technology, space travel is now affordable for everyone! Prices start at $500 for a suborbital flight and increase depending on the destination and trip duration.</p>
+            <div class="faq__item">
+                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                    <p>Do I need to bring anything?</p>
+                    <span class="arrow">&#x25BC</span>
+                </div>
+                <div class="faq__item__answer">
+                    <p>No, we’ve got you covered! Your ticket includes everything you need, from space suits to onboard amenities. Feel free to bring small personal items or keepsakes for the trip.</p>
+                </div>
             </div>
-        </div>
-        <div class="faq__item">
-            <div class="faq__item__question d-flex justify-content-between align-items-center">
-                <p>What happens during a space trip?</p>
-                <span class="arrow">&#x25BC</span>
+            <div class="faq__item">
+                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                    <p>Are there baggage limits?</p>
+                    <span class="arrow">&#x25BC</span>
+                </div>
+                <div class="faq__item__answer">
+                    <p>Yes, but nothing complicated! Each traveler can bring one compact personal bag, similar to a standard airline carry-on.</p>
+                </div>
             </div>
-            <div class="faq__item__answer">
-                <p>During the journey, you’ll enjoy unique experiences such as floating in zero gravity, spectacular views of deep space, and even gourmet dining with a view of Earth.</p>
+            <div class="faq__item">
+                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                    <p>Are meals included on board?</p>
+                    <span class="arrow">&#x25BC</span>
+                </div>
+                <div class="faq__item__answer">
+                    <p>Absolutely! We offer premium space meals prepared by top chefs, with customizable options to meet all dietary needs.</p>
+                </div>
             </div>
-        </div>
-        <div class="faq__item">
-            <div class="faq__item__question d-flex justify-content-between align-items-center">
-                <p>Do I need to bring anything?</p>
-                <span class="arrow">&#x25BC</span>
+            <div class="faq__item">
+                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                    <p>What’s the accommodation like in space?</p>
+                    <span class="arrow">&#x25BC</span>
+                </div>
+                <div class="faq__item__answer">
+                    <p>Our space resorts provide comfortable cabins with panoramic views, internet connectivity, and even zero-gravity relaxation zones. For longer trips, cabins are equipped with everything you need for a cozy stay.</p>
+                </div>
             </div>
-            <div class="faq__item__answer">
-                <p>No, we’ve got you covered! Your ticket includes everything you need, from space suits to onboard amenities. Feel free to bring small personal items or keepsakes for the trip.</p>
+            <div class="faq__item">
+                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                    <p>Can I travel with my family or a group?</p>
+                    <span class="arrow">&#x25BC</span>
+                </div>
+                <div class="faq__item__answer">
+                    <p>Definitely! We offer special packages for families, groups of friends, or private events. Share this unforgettable experience with your loved ones.</p>
+                </div>
             </div>
-        </div>
-        <div class="faq__item">
-            <div class="faq__item__question d-flex justify-content-between align-items-center">
-                <p>Are there baggage limits?</p>
-                <span class="arrow">&#x25BC</span>
-            </div>
-            <div class="faq__item__answer">
-            <p>Yes, but nothing complicated! Each traveler can bring one compact personal bag, similar to a standard airline carry-on.</p>
-        </div>
-        </div>
-        <div class="faq__item">
-            <div class="faq__item__question d-flex justify-content-between align-items-center">
-                <p>Are meals included on board?</p>
-                <span class="arrow">&#x25BC</span>
-            </div>
-            <div class="faq__item__answer">
-                <p>Absolutely! We offer premium space meals prepared by top chefs, with customizable options to meet all dietary needs.</p>
-            </div>
-        </div>
-        <div class="faq__item">
-            <div class="faq__item__question d-flex justify-content-between align-items-center">
-                <p>What’s the accommodation like in space?</p>
-                <span class="arrow">&#x25BC</span>
-            </div>
-            <div class="faq__item__answer">
-                <p>Our space resorts provide comfortable cabins with panoramic views, internet connectivity, and even zero-gravity relaxation zones. For longer trips, cabins are equipped with everything you need for a cozy stay.</p>
-            </div>
-        </div>
-        <div class="faq__item">
-            <div class="faq__item__question d-flex justify-content-between align-items-center">
-                <p>Can I travel with my family or a group?</p>
-                <span class="arrow">&#x25BC</span>
-            </div>
-            <div class="faq__item__answer">
-                <p>Definitely! We offer special packages for families, groups of friends, or private events. Share this unforgettable experience with your loved ones.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+        <section id="testimonial">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat ipsam quo reiciendis labore voluptatibus. Numquam assumenda sint id, voluptatem sit perspiciatis, quidem voluptas eligendi nobis omnis dicta, debitis cum. Quaerat!</p>
+        </section>
+    </div>
     <script src="js/HomePage.js"></script>
 </body>
 
