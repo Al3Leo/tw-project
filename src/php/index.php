@@ -204,7 +204,6 @@
             </div>
         </section>
     </div>
-    <script src="js/HomePage.js"></script>
 </body>
 
 </html>
