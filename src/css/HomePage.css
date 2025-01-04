@@ -234,14 +234,34 @@ body {
   font-style: italic;
 }
 
-.testimonial__grid__item .arrow {
-  top: 100%;
+.testimonial__grid__item blockquote:before,
+.testimonial__grid__item blockquote:after {
+  font-family: 'FontAwesome';
+  content: "\201C";
+  position: absolute;
+  font-size: 50px;
+  opacity: 0.3;
+  font-style: normal;
+}
+.testimonial__grid__item blockquote:before {
+  top: 25px;
+  left: 20px;
+}
+.testimonial__grid__item blockquote:after {
+  content: "\201D";
+  right: 20px;
+  bottom: 0;
+}
+
+.testimonial__grid__item__arrow {
   width: 0;
   height: 0;
   border-left: 0 solid transparent;
   border-right: 25px solid transparent;
   border-top: 25px solid #fafafa;
-  position: absolute;
+  position: relative;
+  left: 35px;
+  opacity: 0.8;
 }
 .testimonial__grid__item__author {
   color: white;
@@ -257,3 +277,4 @@ body {
   text-transform: none;
   padding-left: 5px;
 }
+
