@@ -24,7 +24,8 @@
                 <img class="responsive" src="img/alien_with_money.png" alt="alien with money">
             </div>
             <div id="main__left__text">
-                <p><b>Exclusive Launch Offer</b><p>
+                <p><b>Exclusive Launch Offer</b>
+                <p>
                 <p>Be among the first to embark on a journey beyond Earth. Book now and save up to <b>30%</b> on your first space adventure!</p>
                 <p><small>Ends in:</small></p>
                 <div id="main__left__countdown" class="d-flex">
@@ -71,7 +72,7 @@
             <div class="faq__item">
                 <div class="faq__item__question d-flex justify-content-between align-items-center">
                     <p>Who can travel to space?</p>
-                    <span class="arrow">&#x25BC</span>
+                    <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
                     <p>Anyone! Our space journeys are designed to be safe and accessible to everyone, regardless of age or physical condition. If you can board a plane, you can travel to space.</p>
@@ -80,7 +81,7 @@
             <div class="faq__item">
                 <div class="faq__item__question d-flex justify-content-between align-items-center">
                     <p>How much does a space trip cost?</p>
-                    <span class="arrow">&#x25BC</span>
+                    <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
                     <p>Thanks to cutting-edge technology, space travel is now affordable for everyone! Prices start at $500 for a suborbital flight and increase depending on the destination and trip duration.</p>
@@ -89,7 +90,7 @@
             <div class="faq__item">
                 <div class="faq__item__question d-flex justify-content-between align-items-center">
                     <p>What happens during a space trip?</p>
-                    <span class="arrow">&#x25BC</span>
+                    <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
                     <p>During the journey, you’ll enjoy unique experiences such as floating in zero gravity, spectacular views of deep space, and even gourmet dining with a view of Earth.</p>
@@ -98,7 +99,7 @@
             <div class="faq__item">
                 <div class="faq__item__question d-flex justify-content-between align-items-center">
                     <p>Do I need to bring anything?</p>
-                    <span class="arrow">&#x25BC</span>
+                    <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
                     <p>No, we’ve got you covered! Your ticket includes everything you need, from space suits to onboard amenities. Feel free to bring small personal items or keepsakes for the trip.</p>
@@ -107,7 +108,7 @@
             <div class="faq__item">
                 <div class="faq__item__question d-flex justify-content-between align-items-center">
                     <p>Are there baggage limits?</p>
-                    <span class="arrow">&#x25BC</span>
+                    <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
                     <p>Yes, but nothing complicated! Each traveler can bring one compact personal bag, similar to a standard airline carry-on.</p>
@@ -116,7 +117,7 @@
             <div class="faq__item">
                 <div class="faq__item__question d-flex justify-content-between align-items-center">
                     <p>Are meals included on board?</p>
-                    <span class="arrow">&#x25BC</span>
+                    <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
                     <p>Absolutely! We offer premium space meals prepared by top chefs, with customizable options to meet all dietary needs.</p>
@@ -125,7 +126,7 @@
             <div class="faq__item">
                 <div class="faq__item__question d-flex justify-content-between align-items-center">
                     <p>What’s the accommodation like in space?</p>
-                    <span class="arrow">&#x25BC</span>
+                    <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
                     <p>Our space resorts provide comfortable cabins with panoramic views, internet connectivity, and even zero-gravity relaxation zones. For longer trips, cabins are equipped with everything you need for a cozy stay.</p>
@@ -134,7 +135,7 @@
             <div class="faq__item">
                 <div class="faq__item__question d-flex justify-content-between align-items-center">
                     <p>Can I travel with my family or a group?</p>
-                    <span class="arrow">&#x25BC</span>
+                    <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
                     <p>Definitely! We offer special packages for families, groups of friends, or private events. Share this unforgettable experience with your loved ones.</p>
@@ -142,7 +143,65 @@
             </div>
         </section>
         <section id="testimonial">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat ipsam quo reiciendis labore voluptatibus. Numquam assumenda sint id, voluptatem sit perspiciatis, quidem voluptas eligendi nobis omnis dicta, debitis cum. Quaerat!</p>
+            <h3>Testimonial - Hear from Our Space Travelers</h3>
+            <div id="testimonial__grid" class="d-grid">
+                <div class="testimonial__grid__item">
+                    <figure>
+                        <blockquote>From start to finish, the journey was seamless. No special training required, just a passion for discovery. The view of the Milky Way was awe-inspiring. I felt like a true astronaut!</blockquote>
+                        <div class="arrow"></div>
+                        </blockquote>
+                        <div class="testimonial__grid__item__author d-flex align-items-center">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
+                            <div class="testimonial__grid__item__author__text">
+                                <p><b>Alex Morgan</b></p>
+                                <p>Teacher</p>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                <div class="testimonial__grid__item">
+                    <figure>
+                        <blockquote>Exploring the cosmos was beyond my wildest expectations. The spaceship was comfortable, and the views were breathtaking. It's incredible how accessible space travel has become. I recommend it to everyone!</blockquote>
+                        <div class="arrow"></div>
+                        </blockquote>
+                        <div class="testimonial__grid__item__author d-flex align-items-center">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
+                            <div class="testimonial__grid__item__author__text">
+                                <p><b>Taylor Jordan</b></p>
+                                <p>Space Voyager</p>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                <div class="testimonial__grid__item">
+                    <figure>
+                        <blockquote>Seeing the vastness of space and the beauty of our planet from orbit changed how I see the world. The crew made the trip enjoyable and safe. This is a must-do for anyone with a spirit of adventure!</blockquote>
+                        <div class="arrow"></div>
+                        </blockquote>
+                        <div class="testimonial__grid__item__author d-flex align-items-center">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
+                            <div class="testimonial__grid__item__author__text">
+                                <p><b>Casey Harper</b></p>
+                                <p>Galactic Enthusiast</p>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                <div class="testimonial__grid__item">
+                    <figure>
+                        <blockquote>We took my grandparents on a space trip, and they were over the moon (literally!). The whole experience was comfortable and exciting for all ages. If they can do it, anyone can. It’s a must-try for everyone!</blockquote>
+                        <div class="arrow"></div>
+                        </blockquote>
+                        <div class="testimonial__grid__item__author d-flex align-items-center">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
+                            <div class="testimonial__grid__item__author__text">
+                                <p><b>Alex Morgan</b></p>
+                                <p>Teacher</p>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+            </div>
         </section>
     </div>
     <script src="js/HomePage.js"></script>

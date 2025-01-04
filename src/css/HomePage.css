@@ -116,11 +116,10 @@ body {
 }
 
 .faq {
-  width: 100%;
+  width: 40%;
   max-width: 500px;
   overflow: hidden;
   padding: 3rem;
-  border: 1px solid red;
 }
 
 .faq__item {
@@ -137,6 +136,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border-radius: 15px;
 }
 
 .faq__item__question:hover {
@@ -158,12 +158,12 @@ body {
   padding: 15px 20px;
 }
 
-.arrow {
+.faq__item__arrow {
   font-size: 18px;
   transition: transform 0.3s ease;
 }
 
-.arrow.open {
+.faq__item__arrow.open {
   transform: rotate(90deg);
 }
 
@@ -187,5 +187,73 @@ body {
 
 #testimonial{
   padding: 3rem;
-  border: 1px solid red;
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#testimonial__grid{
+  /*The fr unit allows you to set the size of a track as a fraction of the free space of the grid container.*/
+  grid-template-rows: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 15px;
+  row-gap: 30px;
+}
+
+.testimonial__grid__item{
+  border-radius: 15px;
+}
+
+.testimonial__grid__item figure {
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  color: black;
+  text-align: left;
+}
+
+.testimonial__grid__item img {
+  max-width: 100%;
+  vertical-align: middle;
+  margin-right: 15px;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+}
+
+.testimonial__grid__item blockquote {
+  display: block;
+  border-radius: 8px;
+  position: relative;
+  background-color: #fafafa;
+  opacity: 0.8;
+  padding: 25px 50px 30px 50px;
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 1.6em;
+  font-style: italic;
+}
+
+.testimonial__grid__item .arrow {
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #fafafa;
+  position: absolute;
+}
+.testimonial__grid__item__author {
+  color: white;
+  margin-top: 2rem;
+}
+.testimonial__grid__item__author__text b {
+  opacity: 0.8;
+  font-weight: 800;
+  color: white;
+}
+.testimonial__grid__item__author__text b span {
+  font-weight: 400;
+  text-transform: none;
+  padding-left: 5px;
 }

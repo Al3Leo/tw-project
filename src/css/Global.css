@@ -72,7 +72,6 @@ body{
   --text: #e9ecfb;
 }
 
-
 /* Utilities - text */
 .text-left { text-align:left; }
 .text-right { text-align: right; }
@@ -98,16 +97,11 @@ body{
 .d-block { display: block; }
 .d-inline { display: inline; }
 .d-inline-block { display: inline-block; }
-.d-flex { 
-  display: flex; 
-  display: -webkit-flex;
-}
+.d-flex { display: flex; }
 .d-inline-flex { display: inline-flex; }
+.d-grid { display: grid; }
+.d-inline-grid {display: inline-grid}
 .d-none { display: none; }
-
-/* Utilities - Margin, Padding */
-.m-0 { margin: 0 !important; }
-.p-0 { padding: 0 !important; }
 
 /* Utilities - Flexbox */
 
@@ -123,7 +117,6 @@ body{
 .align-items-stretch { align-items: stretch; }
 .align-items-start { align-items: start; }
 .align-items-end { align-items: end; }
-
 
 /* Direzione */
 .flex-row { flex-direction: row; }
