@@ -15,6 +15,7 @@ let x = setInterval(function () {
 }, 1000); //riesegui la funzione ogni secondo
 clearInterval();
 
+/*Photo slider*/
 let slideIndex = 0;
 carousel();
 
@@ -31,3 +32,26 @@ function carousel() {
   x[slideIndex - 1].style.display = "block";
   setTimeout(carousel, 2000); // Change image every 2 seconds
 }
+
+/*FAQ*/
+const faqItems = document.querySelectorAll('.faq__item');
+
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq__item__question');
+  const answer = item.querySelector('.faq__item__answer');
+  const arrow = item.querySelector('.faq__item__arrow');
+
+  question.addEventListener('click', () => {
+    const isOpen = answer.classList.contains('open');
+
+    // Close all open answers
+    document.querySelectorAll('.faq__item__answer').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq__item__arrow').forEach(a => a.classList.remove('open'));
+
+    // Toggle current item
+    if (!isOpen) {
+      answer.classList.add('open');
+      arrow.classList.add('open');
+    }
+  });
+});
