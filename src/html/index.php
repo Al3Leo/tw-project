@@ -16,7 +16,7 @@
         </div>
     </div>
     <div id="main" class="d-flex flex-row flex-nowrap justify-content-between align-items-start">
-        <div id="main__left" class="d-flex justify-content-center flex-column text-center">
+        <div id="main__left" class="d-flex align-items-center flex-column text-center">
             <div id="main__left__img">            
                 <img class="responsive" src="img/alien_with_money.png" alt="alien with money">
             </div>
@@ -46,9 +46,13 @@
             <button type="button">Get Deal!</button>
                 
         </div>
-        <div id="main__right" class="text-center">
+        <div id="main__right" class="text-center d-flex flex-column align-items-center">
             <h3>Your Gateway to the Universe</h3>
-            <img class="responsive" src="img/earth-nasa.jpg" alt="slideshow">
+            <div id="main__right__slideshow">
+                <img class="responsive slide" src="img/nasa/jupiter.jpg" alt="slideshow">
+                <img class="responsive slide" src="img/nasa/moon.jpg" alt="slideshow">
+                <img class="responsive slide" src="img/nasa/kepler.jpg" alt="slideshow">
+            </div>
             <div id="main__right__text">
                 <h4>Unleash your inner explorer with our tailored interstellar adventures.</h4>
                 <p>Whether you're dreaming of walking on the moon, marveling at the rings of Saturn, or witnessing a supernova up close, we make it possible. Our state-of-the-art spacecraft and expert crew ensure a safe and unforgettable journey among the stars</p>

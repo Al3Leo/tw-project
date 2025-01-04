@@ -5,7 +5,7 @@ body {
 }
 #hero { 
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%),
-    url(../img/earth-nasa.jpg) no-repeat center center;
+    url(../img/nasa/earth-nasa.jpg) no-repeat center center;
     height: calc(100vh - 70px);   
     background-size: cover;  
     overflow: hidden;
@@ -83,4 +83,8 @@ body {
 #main__right__buttons{
     position: relative;
     margin-top: 10px;
+}
+#main__right__slideshow{
+    width: 90%;
+    height: 90%;
 }
