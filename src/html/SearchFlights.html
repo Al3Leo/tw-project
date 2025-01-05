@@ -11,8 +11,9 @@
         
         * {
             font-family: "Montserrat", serif;
-            color: #b7b9c3;
-            font-weight: 236;
+            color: black;
+            font-weight: 300px;
+            font-size: 15px;
             font-style: normal;
             padding: 0;
             margin: 0;
@@ -37,10 +38,19 @@
             flex-direction: column;
             gap: 0px;
             height: 100%;
-            background-image: url('../img/SearchFlight_img/fotoRicerca.png');
+            background-image: url('../img/SearchFlight_img/fotoRicerca.png ');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            animation: effettoFoto 3s ease-out forwards;
+        }
+        @keyframes effettoFoto {
+            0%{
+                opacity: 0;
+
+            }100%{
+                opacity: 1;
+            }
         }
         .primo_titolo {
             flex: 2;
@@ -68,21 +78,24 @@
         }
         .form-container {
             flex: 2;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 10px;
+            background-color: #f8f8ff;
+            border-radius: 4px;
+            border: 3px solid black;
             padding: 20px;
             margin-left: 60px;
             margin-right: 60px;
             margin-bottom: 50px;
             display: flex;
             justify-content: center;
+            box-shadow: 7.35px 7.35px 0px rgba(212, 187, 221, 0.5);
+
         }
         #form-booking, #form-booking-flexdate {
             display: flex;
             flex-direction: column;
             gap: 20px;
             width: 100%;
-            align-content: center;
+            align-content: center
         }
         .form_riga1 {
             display: flex;
@@ -120,15 +133,16 @@
         }
         button[type="submit"], button[type="button"] {
             padding: 12px 20px;
-            font-size: 18px;
-            color: white;
-            background-color: #73a0c8;
-            border: none;
+            font-size: 1em;
+            background-color: #f7e951;
+            border: 2px solid black;
             border-radius: 5px;
             cursor: pointer;
+            font-weight: 600;
+
         }
         button[type="submit"]:hover, button[type="button"]:hover {
-            background-color: yellow;
+            background-color: #f7e951;
         }
         .suggerimentiDestinazioni, .suggerimentiPartenze {
             display: none;
@@ -160,7 +174,7 @@
                         <label for="andataritorno">RoundTrip
                             <input type="radio" name="tipovolo" id="andataritorno" value="andataritorno">
                         </label>
-                        <label for="andata">OneWay
+                        <label for="andata" style="margin-left: 20px;">OneWay
                             <input type="radio" name="tipovolo" id="andata" value="andata">
                         </label>
                     </div>
@@ -168,13 +182,13 @@
                     </div>
                     <div class="form_riga2">
                         <div class="riga2_ricerca">
-                        <input type="text" name="partenza" id="partenza" placeholder="Partenza" onkeyup="suggerisciPartenze()" onfocus="suggerisciPartenze()" >
+                        <input type="text" name="partenza" id="partenza"  autocomplete="off" placeholder="From..." onkeyup="suggerisciPartenze()" onfocus="suggerisciPartenze()" >
                         <div class="suggerimentiPartenze"></div>  </div>
                         <div class="riga2_ricerca">
-                        <input type="text" placeholder="Destinazione" name="destinazione" id="destinazione" onkeyup="suggerisciDestinazioni()" onfocus="suggerisciDestinazioni()" required>
+                        <input type="text" placeholder="To..." name="destinazione"  autocomplete="off" id="destinazione" onkeyup="suggerisciDestinazioni()" onfocus="suggerisciDestinazioni()" required>
                         <div class="suggerimentiDestinazioni"></div> </div>
                          
-                        <input type="number" name="numero-biglietto" id="numero-biglietto" min="0" placeholder="Numero persone">
+                        <input type="number" name="numero-biglietto" id="numero-biglietto" min="0"  autocomplete="off" placeholder="Numero persone">
                         <input type="date" id="data-partenza" name="data-partenza">
                         <input type="date" id="data-ritorno" name="data-ritorno">
                     </div>
@@ -196,10 +210,10 @@
                             </div>
                             <div class="form_riga2">
                                 <div class="riga2_ricerca">
-                                <input type="text" name="partenza" id="partenza" placeholder="Partenza" onkeyup="suggerisciPartenze()" onfocus="suggerisciPartenze()" >
+                                <input type="text" name="partenza" id="partenza"  autocomplete="off" placeholder="Partenza" onkeyup="suggerisciPartenze()" onfocus="suggerisciPartenze()" >
                                 <div class="suggerimentiPartenze"></div>  </div>
                                 <div class="riga2_ricerca">
-                                <input type="text" placeholder="Destinazione" name="destinazione" id="destinazione" onkeyup="suggerisciDestinazioni()" onfocus="suggerisciDestinazioni()" required>
+                                <input type="text" placeholder="Destinazione" name="destinazione"  autocomplete="off" id="destinazione" onkeyup="suggerisciDestinazioni()" onfocus="suggerisciDestinazioni()" required>
                                 <div class="suggerimentiDestinazioni"></div> </div>
                                  
                                 <input type="number" name="numero-biglietto" id="numero-biglietto" min="0" placeholder="Numero persone">
