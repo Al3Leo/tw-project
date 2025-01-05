@@ -1,0 +1,72 @@
+@import 'Global.css';
+
+.parallax{
+    background-image: url("../img/nasa/falcon9-2.jpg");
+    height: 100%;
+}
+
+/* Disabilita parallasse su mobile*/
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 0.8;
+    }
+  }
+
+#hero__search-ct{
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 200px;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 15px;
+    animation: fadeIn 5s;
+    padding: 10px;
+}
+#hero__search-ct > h1{
+    color: black;
+    opacity: 0.8;
+    animation: fadeIn 5s;
+}
+#hero__search-ct > input{
+    width: 80%;
+    margin: 0 auto;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+.catalogue{
+    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+@media (max-width: 768px) {
+    .catalogue{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+main > h3{
+    margin-top: -20px;
+    font-weight: 400;
+}
+.catalogue__separator{
+    height: 15px;
+    background-color: var(--accent);
+    margin-bottom: 15px;
+}
