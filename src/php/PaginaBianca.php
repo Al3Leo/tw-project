@@ -36,7 +36,6 @@ if (isset($_SESSION['username'])) {
     echo "Sessione non trovata.";
 }
 echo "</span>";
-
 ?>
 <?php include_once '../html/Footer.html'?>
 </body>
