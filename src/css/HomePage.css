@@ -1,8 +1,5 @@
 @import "Global.css";
 
-body {
-  background-color: black;
-}
 #hero {
   background: linear-gradient(
       0deg,
@@ -10,7 +7,7 @@ body {
       rgba(0, 0, 0, 0) 100%
     ),
     url(../img/nasa/earth-nasa.jpg) no-repeat center center;
-  height: calc(100vh - 70px);
+  height: var(--hero-height);
   background-size: cover;
   overflow: hidden;
 }
@@ -66,7 +63,6 @@ body {
   #main__left__countdown span {
     font-size: 0.6rem !important;
   }
-
 }
 
 #main__left {
@@ -243,7 +239,6 @@ body {
   .testimonial__grid__item:nth-child(6) {
     display: none;
   }
-
 }
 
 .testimonial__grid__item{
@@ -312,7 +307,7 @@ body {
 }
 .testimonial__grid__item__author {
   color: white;
-  margin-top: 2rem;
+  margin-top: .75rem;
 }
 .testimonial__grid__item__author__text b {
   opacity: 0.8;

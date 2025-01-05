@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,8 +23,7 @@
                 <img class="responsive" src="img/alien_with_money.png" alt="alien with money">
             </div>
             <div id="main__left__text">
-                <p><b>Exclusive Launch Offer</b>
-                <p>
+                <p><b>Exclusive Launch Offer</b><p>
                 <p>Be among the first to embark on a journey beyond Earth. Book now and save up to <b>30%</b> on your first space adventure!</p>
                 <p><small>Ends in:</small></p>
                 <div id="main__left__countdown" class="d-flex">
@@ -52,10 +50,10 @@
         </div>
         <div id="main__right" class="text-center d-flex flex-column align-items-center">
             <h3>Your Gateway to the Universe</h3>
-            <div id="main__right__slideshow">
-                <img class="responsive slide" src="img/nasa/jupiter.jpg" alt="slideshow">
-                <img class="responsive slide" src="img/nasa/moon.jpg" alt="slideshow">
-                <img class="responsive slide" src="img/nasa/kepler.jpg" alt="slideshow">
+            <div id="main__right__slideshow" class="slideshow">
+                <img class="responsive slide" src="img/nasa/jupiter.jpg" alt="jupiter">
+                <img class="responsive slide" src="img/nasa/moon.jpg" alt="moon">
+                <img class="responsive slide" src="img/nasa/kepler.jpg" alt="kepler">
             </div>
             <div id="main__right__text">
                 <h4>Unleash your inner explorer with our tailored interstellar adventures</h4>
@@ -141,6 +139,7 @@
                     <p>Definitely! We offer special packages for families, groups of friends, or private events. Share this unforgettable experience with your loved ones.</p>
                 </div>
             </div>
+            
         </section>
         <section id="testimonial">
             <h3>Testimonial - Hear from Our Space Travelers</h3>
@@ -205,6 +204,7 @@
         </section>
     </div>
     <script src="js/HomePage.js"></script>
+    <script src="js/slideshow.js"></script>
 </body>
 
 </html>
