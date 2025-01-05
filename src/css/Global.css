@@ -268,11 +268,13 @@ button {
   text-align: center;
   text-decoration: none;
   transition: color 100ms;
+  transition: transform 0.3s ease-out;
 }
 
 button:hover,
 button:focus {
   background-color: var(--secondaryColor);
+  transform:scale(1.1);
 }
 
 .slideshow {

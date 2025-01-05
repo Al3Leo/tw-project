@@ -48,25 +48,61 @@
 main {
     width: 80%;
     margin: 0 auto;
+    margin-top: 50px;
 }
 .catalogue{
-    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr ;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
+    column-gap: 50px;
+    row-gap: 25px;
+    padding: 20px;
 }
 @media (max-width: 768px) {
     .catalogue{
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        column-gap: 50px;
+        row-gap: 10px;
     }
 }
 main > h3{
     margin-top: -20px;
     font-weight: 400;
 }
+
 .catalogue__separator{
     height: 15px;
     background-color: var(--accent);
     margin-bottom: 15px;
 }
+
+.catalogue__item img {
+    max-width: 640px;
+    max-height: 360px;
+    object-fit: cover;
+    vertical-align: middle;
+    transition: transform 0.3s ease-out; /* Transizione graduale */
+}
+/*Disattiva l'animazione su mobile*/
+@media (min-width: 768px) {
+    .catalogue__item:hover img{
+        transform: scale(1.15); 
+    }
+    .catalogue__item:hover a{
+        padding: 0; /* Riduce il padding per far scomparire la cornice */
+    }
+}
+small{
+    font-size: .85rem;
+}
+.catalogue__item b {
+    color: white;
+    font-weight: bold;
+}
+.catalogue__item a {
+    border: 7px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra per un effetto di sollevamento */
+    transition: transform 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+
