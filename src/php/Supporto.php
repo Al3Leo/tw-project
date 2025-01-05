@@ -14,7 +14,7 @@
     <?php include_once '../html/TopMenu.html' ?>
     <?php include_once '../html/PopupLogin.html' ?>
     <?php include_once '../html/Supporto.html' ?>
-    <?php include_once '../html/Footer.html' ?>
+    <?php include_once '../html/footerR.html' ?>
 </body>
 
 </html>
