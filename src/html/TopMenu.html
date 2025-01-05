@@ -1,64 +1,76 @@
 <style>
-    @import '../css/Global.css';
-    .btn{
+    @import "../css/Global.css";
+    
+    .btn {
         float: right;
         margin: 1rem 1vw;
         width: 5rem;
         height: 2rem;
     }
-    #login{
+
+    #login {
         border: 3px solid #1d0b42;
         border-radius: 25px;
         font-size: small;
     }
-    #login:hover{
+
+    #login:hover {
         border-color: rgb(170, 56, 255) !important;
         transition: 500ms;
     }
-    #signup{
+
+    #signup {
         border: 3px solid #1d0b42;
         border-radius: 25px;
         font-size: small;
     }
-    #signup:hover{
+
+    #signup:hover {
         border-color: rgb(170, 56, 255) !important;
         transition: 500ms;
     }
-    #logout{
+
+    #logout {
         border: 3px solid #ff0000;
         border-radius: 25px;
         background-color: rgba(255, 0, 0, 0.9);
         font-size: small;
         display: none;
     }
-    #logout:hover{
+
+    #logout:hover {
         background-color: rgb(255, 0, 0) !important;
         border-color: rgb(255, 255, 255) !important;
         transition: 500ms;
     }
-    #sideMenu{
+
+    #sideMenu {
         background-color: #1fe100;
         border: none;
         width: 2rem;
         height: 2rem;
         border-radius: 5px;
     }
-    #topbar{
+
+    #topbar {
         display: flex;
         flex-direction: row;
         width: 100%;
         justify-content: space-between;
     }
-    .showMenu{
+
+    .showMenu {
         width: 100%;
         height: 100%;
         color: rgba(128, 128, 128, 0.65);
     }
-    .toggleMenu{
+
+    .toggleMenu {
         display: none;
     }
+
     /*tasto x side menu*/
-    .toggleCross{
+    .toggleCross {
         display: block !important;
         font-size: xx-large;
         font-weight: lighter;
@@ -67,9 +79,11 @@
         border: 0;
         float: right;
     }
-    .sideBar{
-        display:none;
+
+    .sideBar {
+        display: none;
     }
+
     /*menu laterale*/
     .toggleShow {
         display: block !important;
@@ -86,60 +100,72 @@
         right: 0;
         z-index: 1;
     }
-    #sidebar{
+
+    #sidebar {
         float: right;
     }
+
     /*rimuovi puntini list*/
-    ul{
+    ul {
         list-style: none;
     }
+
     /*la x nel menu*/
-    #li-speciale{
+    #li-speciale {
         border-bottom: none;
     }
+
     /*opzioni del menu laterale*/
-    li{
+    li {
         clear: right;
         display: block;
         margin: 1rem;
         font-size: 1.5rem;
         align-items: center;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, sans-serif;
         font-weight: lighter;
         color: #ffffff;
         border-bottom: 1px solid #dedede;
     }
-    li>a{
+
+    li>a {
         text-decoration: none;
         color: #ffffff;
     }
-    li>a:hover{
+
+    li>a:hover {
         color: gray;
         transition: 500ms;
     }
-    li:hover{
+
+    li:hover {
         color: gray;
         transition: 500ms;
     }
-    #userinfo{
+
+    #userinfo {
         list-style: none;
         width: 5rem;
         height: 2rem;
         margin: 0;
         padding: 0;
-        display: flex; /* da rimettere con js */
+        display: flex;
+        /* da rimettere con js */
         flex-direction: column;
         margin-top: 1em;
         display: none;
     }
-    .userinfoList{
+
+    .userinfoList {
         color: #ffffff;
         border-bottom: none;
         font-size: 10%;
         font-weight: bold;
         text-align: left;
         margin-bottom: 0.39em;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, sans-serif;
     }
 </style>
 <script>
@@ -150,7 +176,7 @@
         cross.classList.toggle("toggleCross");
         let bar = document.getElementById("sideBar");
         bar.classList.toggle("toggleShow");
-        bar.style.borderBottom="0";
+        bar.style.borderBottom = "0";
         let btn = document.getElementsByClassName("btn")[1];
         if (btn.style.display != "none") {
             btn.style.display = "none";
@@ -166,27 +192,36 @@
 </script>
 <header id="topbar">
     <!--logo login e signup-->
-    <a href="html/index.html"><img src="img/PlaceholderLogo.png"/></a>
-    <div class="tuttoadestra">
-        <a href="php/SignUp.php"><button class="btn" id="signup">SignUp</button></a>
-        <button class="btn" id="login" onclick="openLoginPopup()">LogIn</button>
-        <button class="btn" id="sideMenu" onclick="toggleSideMenu()">&#x2630;</button>
-        <!--parte di utente loggato-->
-        <a href="php/LogOut.php"><button class="btn" id="logout">LogOut</button></a>
-        <div id="userinfo">
-            <!--valori da completare in php-->
-            <span class="userinfoList">Nome</span>
-            <span class="userinfoList">Cognome</span>
+    <a href="html/index.html"><img src="img/PlaceholderLogo.png" /></a>
+    <nav>
+        <div>
+            <a href="php/SignUp.php"><button class="btn" id="signup">SignUp</button></a>
+            <button class="btn" id="login" onclick="openLoginPopup()">LogIn</button>
+            <!-- Hamburger Menu -->
+            <button class="btn" id="sideMenu" onclick="toggleSideMenu()">
+                &#x2630;
+            </button>
+            
+            <!--parte di utente loggato-->
+            <a href="php/LogOut.php"><button class="btn" id="logout">LogOut</button></a>
+            <div id="userinfo">
+                <!--valori da completare in php-->
+                <span class="userinfoList">Nome</span>
+                <span class="userinfoList">Cognome</span>
+            </div>
         </div>
-    </div>
-    <!-- Sidebar -->
-    <div class="sideBar" id="sideBar">
-        <ul>
-            <li id="li-speciale"><button id="goBack" onclick="toggleSideMenu()">&times</button></li>
-            <li>Catalogo</li>
-            <li><a href="php/PaginaBianca.php">Home</a></li>
-            <li>Chi siamo</li>
-            <li><a href="php/Supporto.php">Contattaci</a></li>
-        </ul>
-    </div>
+
+        <!-- Sidebar/Navbar -->
+        <div class="sideBar" id="sideBar">
+            <ul>
+                <li id="li-speciale">
+                    <button id="goBack" onclick="toggleSideMenu()">&times</button>
+                </li>
+                <li>Catalogo</li>
+                <li><a href="php/index.php">Home</a></li>
+                <li><a href="php/aboutUs.php">Chi Siamo</a></li>
+                <li><a href="php/Supporto.php">Contattaci</a></li>
+            </ul>
+        </div>
+    </nav>
 </header>
