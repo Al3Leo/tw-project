@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+session_start();
+include_once 'contaVisite.php';
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,18 +14,30 @@
     <script src="js/TopMenu.js"></script>
 </head>
 <body>
+
 <!--mi sa che il base href vale solo per html e non php-->
 <?php include_once '../html/TopMenu.html'?>
 <?php require_once '../html/PopupLogin.html' ?>
 
 
 <main>
-    <form method="get" action="php/ConfermaDinamica.php">
+    <form method="get" action="ConfermaDinamica.php">
         <input type="hidden" name="confermaDinamica" value="confermato dinamicamente">
-        <button type="submit">provami</button>
+        <button type="submit">provami ora!</button>
     </form>
 </main>
+<br><br>
 
+<?php
+echo "<span style='color: #1fe100'>";
+if (isset($_SESSION['username'])) {
+    echo "Sessione attiva: " . $_SESSION['username']; // Verifica se la sessione è attiva
+} else {
+    echo "Sessione non trovata.";
+}
+echo "</span>";
+
+?>
 <?php include_once '../html/Footer.html'?>
 </body>
 </html>
