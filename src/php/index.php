@@ -66,7 +66,7 @@
             </div>
         </div>
     </main>
-    <div id="secondary-s" class="d-flex flex-row justify-content-between">
+    <div id="secondary-s" class="d-flex flex-row justify-content-between align-item-center">
         <section class="faq">
             <h3>FAQ - Frequently Asked Question:</small></h3>
             <div class="faq__item">
