@@ -12,7 +12,7 @@
 <body>
     <?php include_once '../html/TopMenu.html' ?>
     <?php require_once '../html/PopupLogin.html' ?>
-    <div id="hero">
+    <div class="hero">
         <div id="hero__text">
             <h2>Welcome to the Universe</h2>
             <p>Embark on an extraordinary journey beyond the stars. Explore distant planets, witness breathtaking galaxies, and make the impossible your reality. Book your interstellar adventure today and redefine the limits of human exploration!</p>
