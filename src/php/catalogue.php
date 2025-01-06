@@ -34,7 +34,7 @@
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/moon.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/planets/venus.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
                     <small><b>Venus</b></small>
@@ -52,7 +52,7 @@
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/moon.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/planets/jupiter.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
                     <small><b>Jupiter</b></small>
@@ -62,7 +62,7 @@
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/moon.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/planets/saturn.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
                     <small><b>Saturn</b></small>
@@ -72,7 +72,7 @@
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/moon.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/planets/uranus.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
                     <small><b>Uranus</b></small>
@@ -82,7 +82,7 @@
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/moon.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/planets/neptune.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
                     <small><b>Neptune</b></small>
@@ -92,7 +92,7 @@
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/moon.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/planets/pluto.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
                     <small><b>Pluto</b></small>
