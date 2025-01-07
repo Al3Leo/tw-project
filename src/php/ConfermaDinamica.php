@@ -1,23 +1,22 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Conferma</title>
-    <base href="../"/>
+    <base href="../" />
     <style>
-        html, body { /*forzo il full screen*/
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        }
+        @import '../css/Global.css';
+
         body {
-            background-image: linear-gradient(75deg, rgb(14,11,19), rgb(82, 0, 124));
+            background-image: linear-gradient(75deg, rgb(14, 11, 19), rgb(82, 0, 124));
             background-repeat: no-repeat;
             background-size: cover;
             height: 100vh;
             display: flex;
             flex-direction: column;
         }
-        #conferma{
+
+        #conferma {
             display: inline-block;
             color: white;
             font-weight: bold;
@@ -25,7 +24,8 @@
             border-radius: 5px;
             font-size: 1.2em;
         }
-        #goHome{
+
+        #goHome {
             display: inline-block;
             color: white;
             font-weight: bold;
@@ -33,7 +33,8 @@
             border-radius: 5px;
             font-size: 1.2em;
         }
-        main{
+
+        main {
             /* fonte https://www.w3schools.com/css/css3_flexbox_container.asp */
             display: flex;
             gap: 1em;
@@ -43,17 +44,22 @@
             align-items: center;
             justify-content: center;
         }
-        main *{
+
+        main * {
             padding: 5px;
         }
     </style>
 </head>
+
 <body>
-    <?php include_once '../html/TopMenu.html'?>
+    <?php include_once '../html/TopMenu.html' ?>
     <main>
-            <div id="conferma"><?php echo $_GET["confermaDinamica"]?></div>
-            <a href="php/index.php" style="text-decoration: none;"><div id="goHome">Home</div></a>
+        <div id="conferma"><?php echo $_GET["confermaDinamica"] ?></div>
+        <a href="php/index.php" style="text-decoration: none;">
+            <div id="goHome">Home</div>
+        </a>
     </main>
-    <?php include_once '../html/Footer.html'?>
+    <?php include_once '../html/Footer.html' ?>
 </body>
+
 </html>

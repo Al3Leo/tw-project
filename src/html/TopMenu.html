@@ -1,79 +1,87 @@
 <style>
+    @import "../css/Global.css";
+    
     .btn{
         float: right;
         margin: 1rem 1vw;
         width: 5rem;
         height: 2rem;
     }
-    #login{
+
+    #login {
         border: 3px solid #1d0b42;
         border-radius: 25px;
-        background-color: rgb(170, 56, 255);
         font-size: small;
     }
     #login:hover{
-        background-color: rgb(255, 0, 242) !important;
         border-color: rgb(170, 56, 255) !important;
         transition: 500ms;
     }
-    #signup{
+
+    #signup {
         border: 3px solid #1d0b42;
         border-radius: 25px;
-        background-color: rgb(211, 53, 241);
         font-size: small;
     }
     #signup:hover{
-        background-color: rgb(255, 0, 242) !important;
         border-color: rgb(170, 56, 255) !important;
         transition: 500ms;
     }
-    #logout{
+
+    #logout {
         border: 3px solid #ff0000;
         border-radius: 25px;
         background-color: rgba(255, 0, 0, 0.9);
         font-size: small;
         display: none;
     }
-    #logout:hover{
+
+    #logout:hover {
         background-color: rgb(255, 0, 0) !important;
         border-color: rgb(255, 255, 255) !important;
         transition: 500ms;
     }
-    #sideMenu{
+
+    #sideMenu {
         background-color: #1fe100;
         border: none;
         width: 2rem;
         height: 2rem;
         border-radius: 5px;
     }
-    #topbar{
+
+    #topbar {
         display: flex;
         flex-direction: row;
         width: 100%;
         justify-content: space-between;
     }
-    .showMenu{
+
+    .showMenu {
         width: 100%;
         height: 100%;
         color: rgba(128, 128, 128, 0.65);
     }
-    .toggleMenu{
+
+    .toggleMenu {
         display: none;
     }
+
     /*tasto x side menu*/
-    .toggleCross{
+    .toggleCross {
         display: block !important;
         font-size: xx-large;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         font-weight: lighter;
         color: #ffffff;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: black;
         border: 0;
         float: right;
     }
-    .sideBar{
-        display:none;
+
+    .sideBar {
+        display: none;
     }
+
     /*menu laterale*/
     .toggleShow {
         display: block !important;
@@ -82,7 +90,7 @@
         overflow-block: visible;
         padding-right: 3rem;
         padding-top: 1rem;
-        background-color: rgba(64, 18, 126, 0.9);
+        background-color: var(--secondaryColor);
         height: 100vh;
         width: 25vw;
         position: fixed;
@@ -90,59 +98,63 @@
         right: 0;
         z-index: 1;
     }
-    #sidebar{
+
+    #sidebar {
         float: right;
     }
+
     /*rimuovi puntini list*/
-    ul{
+    ul {
         list-style: none;
     }
+
     /*la x nel menu*/
-    #li-speciale{
+    #li-speciale {
         border-bottom: none;
     }
+
     /*opzioni del menu laterale*/
-    li{
+    li {
         clear: right;
         display: block;
         margin: 1rem;
         font-size: 1.5rem;
         align-items: center;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         font-weight: lighter;
-        color: #ffffff;
         border-bottom: 1px solid #dedede;
     }
-    li>a{
+
+    li>a {
         text-decoration: none;
-        color: #ffffff;
+        color: white !important;
     }
-    li>a:hover{
-        color: gray;
+
+    li>a:hover {
+        color: rgb(187, 187, 187) !important;
         transition: 500ms;
+        font-weight: bold;
     }
-    li:hover{
-        color: gray;
-        transition: 500ms;
-    }
-    #userinfo{
+
+    #userinfo {
         list-style: none;
         width: 5rem;
         height: 2rem;
         margin: 0;
         padding: 0;
+        display: flex;
+        /* da rimettere con js */
         flex-direction: column;
         margin-top: 1em;
         display: none;
     }
-    .userinfoList{
+
+    .userinfoList {
         color: #ffffff;
         border-bottom: none;
         font-size: 10%;
         font-weight: bold;
         text-align: left;
         margin-bottom: 0.39em;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
 </style>
 <script>
@@ -153,29 +165,23 @@
         cross.classList.toggle("toggleCross");
         let bar = document.getElementById("sideBar");
         bar.classList.toggle("toggleShow");
-        bar.style.borderBottom="0";
-        let btn = document.getElementById("login");
+        bar.style.borderBottom = "0";
+        let btn = document.getElementsByClassName("btn")[1];
         if (btn.style.display != "none") {
             btn.style.display = "none";
-            btn = document.getElementById("singup");
+            btn = document.getElementsByClassName("btn")[2];
             btn.style.display = "none";
         } else {
             btn.style.display = "inline";
-            btn = document.getElementById("singup");
+            btn = document.getElementsByClassName("btn")[2];
             btn.style.display = "inline";
         }
         //a scopo didattico sono stati usati due metodi diversi (toggle e style di js)
     }
-    function loggato(){
-        let usrinfo=document.getElementById("userinfo");
-        usrinfo.style.display = "flex";
-        let usrinfoList=getElementById(userinfoList);
-        usrinfoList.style.display = "flex";
-    }
 </script>
 <header id="topbar">
     <!--logo login e signup-->
-    <a href="html/index.html"><img src="img/PlaceholderLogo.png"/></a>
+    <a href="html/index.html"><img src="./img/PlaceholderLogo.png"/></a>
     <div class="tuttoadestra">
         <button class="btn" id="sideMenu" onclick="toggleSideMenu()">&#x2630;</button>
         <a href="php/SignUp.php"><button class="btn" id="signup">SignUp</button></a>
@@ -192,10 +198,10 @@
     <div class="sideBar" id="sideBar">
         <ul>
             <li id="li-speciale"><button id="goBack" onclick="toggleSideMenu()">&times</button></li>
-            <li>Catalogo</li>
-            <li><a href="php/PaginaBianca.php">Home</a></li>
-            <li>Chi siamo</li>
-            <li><a href="php/Supporto.php">Contattaci</a></li>
+            <li><a href="php/index.php">Home</a></li>
+            <li><a href="php/catalogue.php">Catalogo</a></li>
+            <li><a href="php/aboutUs.php">About us</a></li>
+            <li><a href="php/Supporto.php">Contact</a></li>
         </ul>
     </div>
 </header>

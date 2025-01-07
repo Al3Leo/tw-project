@@ -52,7 +52,6 @@
         <div id="main__right" class="text-center d-flex flex-column align-items-center">
             <h3>Your Gateway to the Universe</h3>
             <div id="main__right__slideshow" class="slideshow">
-                <img class="responsive slide" src="img/nasa/jupiter.jpg" alt="jupiter">
                 <img class="responsive slide" src="img/nasa/moon.jpg" alt="moon">
                 <img class="responsive slide" src="img/nasa/kepler.jpg" alt="kepler">
             </div>
@@ -139,8 +138,7 @@
                 <div class="faq__item__answer">
                     <p>Definitely! We offer special packages for families, groups of friends, or private events. Share this unforgettable experience with your loved ones.</p>
                 </div>
-            </div>
-            
+            </div>     
         </section>
         <section id="testimonial">
             <h3>Testimonial - Hear from Our Space Travelers</h3>
@@ -204,6 +202,7 @@
             </div>
         </section>
     </div>
+    <?php include_once '../html/footer.html'?>
     <script src="js/HomePage.js"></script>
     <script src="js/slideshow.js"></script>
 </body>
