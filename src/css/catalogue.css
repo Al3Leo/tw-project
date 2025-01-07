@@ -127,6 +127,10 @@ main > h3 {
   padding: 10px;
   border-radius: 5px;
 }
+.catalogue__item b{
+    display: block;
+    margin: 10px 0 15px 0;
+}
 
 .catalogue__item img {
   max-width: 640px;
