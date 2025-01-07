@@ -19,6 +19,8 @@
         <div class="parallax"></div>
     </div>
     <main>
+
+        <!-- Planets -->
         <h2 class="text-uppercase">Planets</h2>
         <h3>Embark on journeys to the most fascinating planets across the universe, each offering unique landscapes and experiences</h3>
         <div class="catalogue__separator"></div>
@@ -58,7 +60,6 @@
                     <b>Jupiter</b>
                 </div>
                 <button type="button">Add to cart</button>
-
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
@@ -68,7 +69,6 @@
                     <b>Saturn</b>
                 </div>
                 <button type="button">Add to cart</button>
-
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
@@ -78,7 +78,6 @@
                     <b>Uranus</b>
                 </div>
                 <button type="button">Add to cart</button>
-
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
@@ -88,7 +87,6 @@
                     <b>Neptune</b>
                 </div>
                 <button type="button">Add to cart</button>
-
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
@@ -100,22 +98,24 @@
                 <button type="button">Add to cart</button>
             </div>
         </div>
+
+        <!-- Moons -->
         <h2 class="text-uppercase">Natural Satellites (Moons)</h2>
         <h3>Explore the unique wonders of our solar system's moons, from Earth's own companion to the distant icy worlds, each offering a distinct cosmic experience</h3>
         <div class="catalogue__separator"></div>
         <div id="catalogue__moons" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/galaxies/andromeda.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/moons/moon.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
-                    <b>The Moon (Earth)</b>
+                    <b>Moon (Earth)</b>
                 </div>
                 <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/galaxies/andromeda.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/moons/titan.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Titan (Saturn)</b>
@@ -124,7 +124,7 @@
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/galaxies/andromeda.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/moons/europa.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Europa (Jupiter)</b>
@@ -133,7 +133,7 @@
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/galaxies/andromeda.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/moons/enceladus.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Enceladus (Saturn)</b>
@@ -176,7 +176,7 @@
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/galaxies/andromeda.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/galaxies/m101.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Pinwheel (M101)</b>
@@ -185,26 +185,53 @@
             </div>
         </div>
 
-        <!-- Comets -->
-        <h2 class="text-uppercase">Comets</h2>
-        <h3>Venture on thrilling journeys to the most iconic comets in the cosmos. Witness the beauty of these celestial wanderers as they streak across the sky, offering a once-in-a-lifetime spectacle for the boldest explorers</h3>
+        <!-- Nebulae -->
+        <h2 class="text-uppercase">Nebulae</h2>
+        <h3>Immerse yourself in the ethereal beauty of cosmic clouds. These vibrant, star-forming regions of space offer breathtaking views and a chance to witness the birthplace of stars and planets</h3>
         <div class="catalogue__separator"></div>
-        <div id="catalogue__comets" class="d-grid catalogue">
+        <div id="catalogue__nebulae" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/galaxies/andromeda.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/nebulae/tarantula.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
-                    <b>Hale-Bopp</b>
+                    <b>Tarantula Nebula</b>
                 </div>
                 <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/galaxies/andromeda.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/nebulae/horsehead.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
-                    <b>Halley's Comet</b>
+                    <b>Horsehead</b>
+                </div>
+                <button type="button">Add to cart</button>
+            </div>
+            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
+                <a href="">
+                    <img class="responsive" src="img/nasa/nebulae/eagle.jpg" alt="Mercury">
+                </a>
+                <div class="catalogue__item__text">
+                    <b>Eagle</b>
+                </div>
+                <button type="button">Add to cart</button>
+            </div>
+            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
+                <a href="">
+                    <img class="responsive" src="img/nasa/nebulae/carina.jpg" alt="Mercury">
+                </a>
+                <div class="catalogue__item__text">
+                    <b>Carina</b>
+                </div>
+                <button type="button">Add to cart</button>
+            </div>
+            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
+                <a href="">
+                    <img class="responsive" src="img/nasa/nebulae/helix.jpg" alt="Mercury">
+                </a>
+                <div class="catalogue__item__text">
+                    <b>Helix</b>
                 </div>
                 <button type="button">Add to cart</button>
             </div>
