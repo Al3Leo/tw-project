@@ -15,8 +15,27 @@ let x = setInterval(function () {
 }, 1000); //riesegui la funzione ogni secondo
 clearInterval();
 
+/*Photo slider*/
+let slideIndex = 0;
+carousel();
+
+function carousel() {
+  let i;
+  let x = document.getElementsByClassName("slide");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {
+    slideIndex = 1;
+  }
+  x[slideIndex - 1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
 /*FAQ*/
 const faqItems = document.querySelectorAll('.faq__item');
+
 faqItems.forEach(item => {
   const question = item.querySelector('.faq__item__question');
   const answer = item.querySelector('.faq__item__answer');
