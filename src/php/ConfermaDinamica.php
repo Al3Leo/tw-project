@@ -52,7 +52,7 @@
 </head>
 
 <body>
-    <?php include_once '../html/TopMenu.html' ?>
+    <?php include_once '../html/TopMenu.php' ?>
     <main>
         <div id="conferma"><?php echo $_GET["confermaDinamica"] ?></div>
         <a href="php/index.php" style="text-decoration: none;">

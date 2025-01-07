@@ -13,7 +13,7 @@ include_once 'contaVisite.php';
     <link rel="stylesheet" href="css/body.css" type="text/css"/>
     <script src="js/TopMenu.js"></script>
 </head>
-<body <?php if($_SESSION['username']) echo "onload=\"loggato()\";"?> >
+<body <?php if($_SESSION['username']) echo "onload=\"loggato()\";"?> style="background-color:blue;">
 
 <!--mi sa che il base href vale solo per html e non php-->
 <?php require_once 'header.php' ?>
@@ -30,7 +30,7 @@ include_once 'contaVisite.php';
 <?php
 echo "<span style='color: #1fe100'>";
 if (isset($_SESSION['username'])) {
-    echo "Sessione attiva: " . $_SESSION['username']; // Verifica se la sessione è attiva
+    echo "Sessione attiva: " . $_SESSION['username'].$_SESSION['name']; // Verifica se la sessione è attiva
 } else {
     echo "Sessione non trovata.";
 }
