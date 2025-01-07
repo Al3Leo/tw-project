@@ -138,8 +138,7 @@
                 <div class="faq__item__answer">
                     <p>Definitely! We offer special packages for families, groups of friends, or private events. Share this unforgettable experience with your loved ones.</p>
                 </div>
-            </div>
-            
+            </div>     
         </section>
         <section id="testimonial">
             <h3>Testimonial - Hear from Our Space Travelers</h3>
