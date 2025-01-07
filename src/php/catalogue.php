@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +14,12 @@
             <h1 class="text-center">Choose Your Interstellar Experience</h1>
             <div id="hero__search__choose" class="menu">
                 <ul>
-                    <li><a href="#">Where</a></li>
-                    <li><a href="#">Budget</a></li>
-                    <li><a href="#">Period</a></li>
+                    <li><a id="hero__search__choose__whereLink" href="#" onclick="showWhere(event); return false;">Where</a></li>
+                    <li><a id="hero__search__choose__budgetLink" href="#" onclick="showBudget(event); return false;">Budget</a></li>
+                    <li><a id="hero__search__choose__periodLink" href="#">Period</a></li>
                 </ul>
             </div>
-            <div id="hero__search__choosed-ct" class="d-flex flex-column align-items-center">
+            <div id="hero__search__choosed-ct" class="d-flex flex-column align-items-center justify-content-center">
                 <div id="hero__search__choosed__search" class="hero__search__choosed__item">
                     <input type="text" name="search" placeholder="Where would you like to go?">
                 </div>
@@ -117,49 +116,6 @@
             </div>
         </div>
 
-        <!-- Moons -->
-        <h2 class="text-uppercase">Natural Satellites (Moons)</h2>
-        <h3>Explore the unique wonders of our solar system's moons, from Earth's own companion to the distant icy worlds, each offering a distinct cosmic experience</h3>
-        <div class="catalogue__separator"></div>
-        <div id="catalogue__moons" class="d-grid catalogue">
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
-                    <img class="responsive" src="img/nasa/moons/moon.jpg" alt="Mercury">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Moon (Earth)</b>
-                </div>
-                <button type="button">Add to cart</button>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
-                    <img class="responsive" src="img/nasa/moons/titan.jpg" alt="Mercury">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Titan (Saturn)</b>
-                </div>
-                <button type="button">Add to cart</button>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
-                    <img class="responsive" src="img/nasa/moons/europa.jpg" alt="Mercury">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Europa (Jupiter)</b>
-                </div>
-                <button type="button">Add to cart</button>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
-                    <img class="responsive" src="img/nasa/moons/enceladus.jpg" alt="Mercury">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Enceladus (Saturn)</b>
-                </div>
-                <button type="button">Add to cart</button>
-            </div>
-        </div>
-
         <!-- Galaxies -->
         <h2 class="text-uppercase">Galaxies</h2>
         <h3>For the boldest explorers, venturing beyond the Milky Way is the ultimate adventure. Discover distant galaxies, each holding secrets and wonders that only the most courageous dare to uncover</h3>
@@ -198,6 +154,49 @@
                 </a>
                 <div class="catalogue__item__text">
                     <b>Pinwheel (M101)</b>
+                </div>
+                <button type="button">Add to cart</button>
+            </div>
+        </div>
+
+        <!-- Moons -->
+        <h2 class="text-uppercase">Natural Satellites (Moons)</h2>
+        <h3>Explore the unique wonders of our solar system's moons, from Earth's own companion to the distant icy worlds, each offering a distinct cosmic experience</h3>
+        <div class="catalogue__separator"></div>
+        <div id="catalogue__moons" class="d-grid catalogue">
+            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
+                <a href="">
+                    <img class="responsive" src="img/nasa/moons/moon.jpg" alt="Mercury">
+                </a>
+                <div class="catalogue__item__text">
+                    <b>Moon (Earth)</b>
+                </div>
+                <button type="button">Add to cart</button>
+            </div>
+            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
+                <a href="">
+                    <img class="responsive" src="img/nasa/moons/titan.jpg" alt="Mercury">
+                </a>
+                <div class="catalogue__item__text">
+                    <b>Titan (Saturn)</b>
+                </div>
+                <button type="button">Add to cart</button>
+            </div>
+            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
+                <a href="">
+                    <img class="responsive" src="img/nasa/moons/europa.jpg" alt="Mercury">
+                </a>
+                <div class="catalogue__item__text">
+                    <b>Europa (Jupiter)</b>
+                </div>
+                <button type="button">Add to cart</button>
+            </div>
+            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
+                <a href="">
+                    <img class="responsive" src="img/nasa/moons/enceladus.jpg" alt="Mercury">
+                </a>
+                <div class="catalogue__item__text">
+                    <b>Enceladus (Saturn)</b>
                 </div>
                 <button type="button">Add to cart</button>
             </div>
@@ -256,6 +255,7 @@
         </div>
     </main>
     <?php require_once '../html/footer.html' ?>
+    <script src="js/catalogue.js"></script>
 </body>
 
 </html>

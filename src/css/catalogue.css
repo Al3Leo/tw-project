@@ -59,6 +59,8 @@
   border-radius: 15px;
   padding: 10px;
   overflow: hidden;
+  height: 70px;
+
 }
 #hero__search__choosed-ct:hover {
   box-shadow: 0 0 0 0 #fff inset, var(--accent) 0 0 0 2px;
@@ -74,10 +76,10 @@
 }
 
 #hero__search__choosed__search input {
-  height: 50px;
   border: none;
   outline: none;
   border-radius: 5px;
+  width: 100%;
 }
 #hero__search__choosed__search input:focus {
   outline: none;
@@ -92,7 +94,13 @@
 #hero__search__choosed__budget a:hover {
     background-color: var(--tertiaryColor);
 }
+#hero__search__choosed__budget a:active {
+    background-color: var(--tertiaryColor);
+}
 
+#hero__search__choose__whereLink{
+    font-weight: bold;
+}
 main {
   width: 80%;
   margin: 0 auto;
