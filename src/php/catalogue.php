@@ -10,16 +10,34 @@
 </head>
 
 <body>
-    <?php include_once '../html/TopMenu.html' ?>
     <div class="hero">
-        <div id="hero__search-ct" class="position-absolute d-flex flex-column align-items-center">
+        <div id="hero__search-ct" class="position-absolute d-flex align-items-center flex-column">
             <h1 class="text-center">Choose Your Interstellar Experience</h1>
-            <input type="text" name="search" id="hero__search" placeholder="Where would you like to go?">
+            <div id="hero__search__choose" class="menu">
+                <ul>
+                    <li><a href="#">Where</a></li>
+                    <li><a href="#">Budget</a></li>
+                    <li><a href="#">Period</a></li>
+                </ul>
+            </div>
+            <div id="hero__search__choosed-ct" class="d-flex flex-column align-items-center">
+                <div id="hero__search__choosed__search" class="hero__search__choosed__item">
+                    <input type="text" name="search" placeholder="Where would you like to go?">
+                </div>
+                <div id="hero__search__choosed__budget" class=" d-flex flex-row align-items-center justify-content-between hero__search__choosed__item menu">
+                    <span><b>Budget</b></span>
+                    <ul>
+                        <li><a href="#">&#60 2000</a></li>
+                        <li><a href="#">2000 &#124 3000</a></li>
+                        <li><a href="#">3000 &#124 4000</a></li>
+                        <li><a href="#">&#62 4000</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="parallax"></div>
     </div>
     <main>
-
         <!-- Planets -->
         <h2 class="text-uppercase">Planets</h2>
         <h3>Embark on journeys to the most fascinating planets across the universe, each offering unique landscapes and experiences</h3>
