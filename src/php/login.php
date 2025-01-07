@@ -1,4 +1,8 @@
 <?php
+/*
+ * gestisce il login
+ * setta username come var di sessione se logga
+ */
 // Connessione
 $host = 'localhost';
 $port = '9999';
@@ -11,7 +15,7 @@ $db_connection = pg_connect($connection_string) or die('Impossibile connettersi 
 if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
     $user = $_POST['user_username'];
     $password = $_POST['user_password'];
-    $sql = "SELECT password FROM utente WHERE username = $1";
+    $sql = "SELECT password, name, surname FROM utente WHERE username = $1";
     $result = pg_prepare($db_connection, "sqlPassword", $sql);
     if ($result) {
         $ret = pg_execute($db_connection, "sqlPassword", array($user));
@@ -19,9 +23,13 @@ if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
             $row = pg_fetch_assoc($ret);
             $hash = $row['password'];
             if (password_verify($password, $hash)) {
+                $name = $row['name'];
+                $surname = $row['surname'];
                 session_start();
                 $_SESSION['username'] = $user;
-                header("Location: PaginaBianca.php");
+                $_SESSION['name'] = $name;
+                $_SESSION['surname'] = $surname;
+                header("Location: " . $_SERVER['HTTP_REFERER']);
             } else {
                 echo "Password errata<br>";
             }

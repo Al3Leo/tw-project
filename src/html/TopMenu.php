@@ -31,7 +31,6 @@
         border-radius: 25px;
         background-color: rgba(255, 0, 0, 0.9);
         font-size: small;
-        display: none;
     }
 
     #logout:hover {
@@ -133,18 +132,6 @@
         font-weight: bold;
     }
 
-    #userinfo {
-        list-style: none;
-        width: 5rem;
-        height: 2rem;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        /* da rimettere con js */
-        flex-direction: column;
-        margin-top: 1em;
-        display: none;
-    }
 
     .userinfoList {
         color: #ffffff;
@@ -152,7 +139,22 @@
         font-size: 10%;
         font-weight: bold;
         text-align: left;
-        margin-bottom: 0.39em;
+    }
+    .tuttoadestra {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        position: relative;
+    }
+
+    #userinfo {
+        margin: 1em;
+        padding: 0;
+        color: white;
+        text-align: right;
+        list-style: none;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 </style>
 <script>
@@ -181,16 +183,17 @@
     <!--logo login e signup-->
     <a href="html/index.html"><img src="./img/PlaceholderLogo.png"/></a>
     <div class="tuttoadestra">
-        <button class="btn" id="sideMenu" onclick="toggleSideMenu()">&#x2630;</button>
         <a href="php/SignUp.php"><button class="btn" id="signup">SignUp</button></a>
         <button class="btn" id="login" onclick="openLoginPopup()">LogIn</button>
         <!--parte di utente loggato-->
         <a href="php/LogOut.php"><button class="btn" id="logout">LogOut</button></a>
         <div id="userinfo">
             <!--valori da completare in php-->
-            <span class="userinfoList">Nome</span>
-            <span class="userinfoList">Cognome</span>
+            <span class="userinfoList"><?php echo $_SESSION['username'] ?></span>
+            <br>
+            <span class="userinfoList"><?php echo $_SESSION['name']." ".$_SESSION['surname']?></span>
         </div>
+        <button class="btn" id="sideMenu" onclick="toggleSideMenu()">&#x2630;</button>
     </div>
     <!-- Sidebar -->
     <div class="sideBar" id="sideBar">

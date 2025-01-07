@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <?php include_once '../html/TopMenu.html' ?>
+    <?php include_once '../html/TopMenu.php' ?>
     <main class="hero">
         <div class="slideshow">
             <img class="slide responsive" src="img/nasa/falcon9.jpg" alt="falcon9">
