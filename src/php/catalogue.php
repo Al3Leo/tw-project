@@ -25,7 +25,7 @@
         <div id="catalogue__milky" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/moon.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/planets/mercury.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
                     <small><b>Mercury</b></small>
@@ -43,7 +43,7 @@
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="img/nasa/moon.jpg" alt="Mercury">
+                    <img class="responsive" src="img/nasa/planets/mars.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
                     <small><b>Mars</b></small>
