@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php require_once '../html/utils/headMetadata.html';?>
+    <?php require_once '../html/utils/headMetadata.html'?> <!-- Non so perché se lo si sposta il css non viene visualizzato-->
     <title>Travel Catalogue</title>
     <link rel="stylesheet" href="css/catalogue.css">
 </head>

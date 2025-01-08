@@ -205,7 +205,7 @@
     <a href="html/index.html"><img src="./img/PlaceholderLogo.png"/></a>
     <div class="tuttoadestra">
         <button class="btn" id="cartbtn" onclick="openCart()">
-            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-cart-shopping"></i> <!--Logo font-awesome-->
         </button>
         <a href="php/SignUp.php"><button class="btn" id="signup">SignUp</button></a>
         <button class="btn" id="login" onclick="openLoginPopup()">LogIn</button>

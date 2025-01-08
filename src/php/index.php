@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php require_once '../html/utils/headMetadata.html'?>
     <title>Outer Space</title>
-    <link rel="stylesheet" href="../css/HomePage.css">
+    <link rel="stylesheet" href="css/HomePage.css">
     <link rel="icon" href="img/favicon.png" type="image/png/">
 </head>
-
 <body>
-    <?php require_once '../php/header.php' ?>
+    <?php include_once '../php/header.php' ?>
     <?php require_once '../html/PopupLogin.html' ?>
     <div class="hero">
         <div id="hero__text">
@@ -22,7 +22,8 @@
                 <img class="responsive" src="img/alien_with_money.png" alt="alien with money">
             </div>
             <div id="main__left__text">
-                <p><b>Exclusive Launch Offer</b><p>
+                <p><b>Exclusive Launch Offer</b>
+                <p>
                 <p>Be among the first to embark on a journey beyond Earth. Book now and save up to <b>30%</b> on your first space adventure!</p>
                 <p><small>Ends in:</small></p>
                 <div id="main__left__countdown" class="d-flex">
@@ -136,7 +137,7 @@
                 <div class="faq__item__answer">
                     <p>Definitely! We offer special packages for families, groups of friends, or private events. Share this unforgettable experience with your loved ones.</p>
                 </div>
-            </div>     
+            </div>
         </section>
         <section id="testimonial">
             <h3>Testimonial - Hear from Our Space Travelers</h3>
@@ -200,7 +201,7 @@
             </div>
         </section>
     </div>
-    <?php include_once '../html/footer.html'?>
+    <?php include_once '../html/footer.html' ?>
     <script src="js/HomePage.js"></script>
     <script src="js/slideshow.js"></script>
 </body>
