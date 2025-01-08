@@ -73,14 +73,14 @@
 #hero__search__choosed__search input:focus {
   outline: none;
 }
-#hero__search__choosed__budget {
+#hero__search__choosed__budget, #hero__search__choosed__period {
     width: 100%;
     display: none;
 }
-#hero__search__choosed__budget a{
+#hero__search__choosed__budget a, #hero__search__choosed__period a{
     border-radius: 10px;
 }
-#hero__search__choosed__budget a:hover {
+#hero__search__choosed__budget a:hover, #hero__search__choosed__period a:hover {
     background-color: var(--tertiaryColor);
 }
 #hero__search__choose__whereLink{
@@ -98,8 +98,6 @@
   }
   #hero__search__choose li a{
     font-size: .9rem;
-  }
-  #hero__search__choosed__budget{
   }
 }
 

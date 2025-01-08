@@ -1,19 +1,34 @@
 const choosedSearch = document.getElementById("hero__search__choosed__search");
 const choosedBudget = document.getElementById("hero__search__choosed__budget");
+const choosedPeriod = document.getElementById("hero__search__choosed__period");
+const choosed = [choosedSearch, choosedBudget, choosedPeriod];
+
 const whereLink = document.getElementById("hero__search__choose__whereLink");
 const budgetLink = document.getElementById("hero__search__choose__budgetLink");
-function showWhere(event) {
-  event.preventDefault(); // Previene il comportamento predefinito del link
-  choosedSearch.style.display = "block";
-  choosedBudget.style.display = "none";
-  whereLink.style.fontWeight = "bold";
-  budgetLink.style.fontWeight = "400";
-}
-function showBudget(event) {
-  event.preventDefault(); // Previene il comportamento predefinito del link
-  choosedBudget.style.display = "flex";
-  choosedSearch.style.display = "none";
+const periodLink = document.getElementById("hero__search__choose__periodLink");
+const links = [whereLink, budgetLink, periodLink];
 
-  budgetLink.style.fontWeight = "bold";
-  whereLink.style.fontWeight = "400";
+function showSection(index) {
+  choosed.forEach((element, i) => {
+    if (i === index) {
+      element.style.display = "flex";
+    } else {
+      element.style.display = "none";
+    }
+  });
+
+  links.forEach((link, i) => {
+    if (i === index) {
+      link.style.fontWeight = "bold";
+    } else {
+      link.style.fontWeight = "400";
+    }
+  });
 }
+
+links.forEach((link, index) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    showSection(index);
+  });
+});

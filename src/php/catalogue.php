@@ -16,8 +16,8 @@
             <h1 class="text-center">Choose Your Interstellar Experience</h1>
             <div id="hero__search__choose" class="menu">
                 <ul>
-                    <li><a id="hero__search__choose__whereLink" href="#" onclick="showWhere(event); return false;">Where</a></li>
-                    <li><a id="hero__search__choose__budgetLink" href="#" onclick="showBudget(event); return false;">Budget</a></li>
+                    <li><a id="hero__search__choose__whereLink" href="#">Where</a></li>
+                    <li><a id="hero__search__choose__budgetLink" href="#">Budget</a></li>
                     <li><a id="hero__search__choose__periodLink" href="#">Period</a></li>
                 </ul>
             </div>
@@ -32,6 +32,14 @@
                         <li><a href="#">2000 &#124 3000</a></li>
                         <li><a href="#">3000 &#124 4000</a></li>
                         <li><a href="#">&#62 4000</a></li>
+                    </ul>
+                </div>
+                <div id="hero__search__choosed__period" class="d-flex flex-row align-items-center justify-content-between hero__search__choosed__item menu">
+                    <span><b>Period</b></span>
+                    <ul>
+                        <li><a href="#">Seasons</a></li>
+                        <li><a href="#">Months</a></li>
+                        <li><a href="#">Years</a></li>
                     </ul>
                 </div>
             </div>
