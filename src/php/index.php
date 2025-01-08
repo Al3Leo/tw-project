@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <?php include_once '../html/TopMenu.php' ?>
+    <?php include_once '../php/header.php' ?>
     <?php require_once '../html/PopupLogin.html' ?>
     <div class="hero">
         <div id="hero__text">
