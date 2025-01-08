@@ -92,6 +92,9 @@
 #hero__search__choosed__budget a:hover {
     background-color: var(--tertiaryColor);
 }
+#hero__search__choose__whereLink{
+  font-weight: bold;
+}
 
 main {
   width: 80%;
