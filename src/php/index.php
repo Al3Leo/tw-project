@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php require_once '../html/utils/headMetadata.html'?>
     <title>Outer Space</title>
     <link rel="stylesheet" href="../css/HomePage.css">
     <link rel="icon" href="img/favicon.png" type="image/png/">
-    <base href="../" />
 </head>
 
 <body>
-    <?php include_once '../php/header.php' ?>
+    <?php require_once '../php/header.php' ?>
     <?php require_once '../html/PopupLogin.html' ?>
     <div class="hero">
         <div id="hero__text">

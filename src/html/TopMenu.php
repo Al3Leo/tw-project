@@ -204,7 +204,9 @@
     <!--logo login e signup-->
     <a href="html/index.html"><img src="./img/PlaceholderLogo.png"/></a>
     <div class="tuttoadestra">
-        <button class="btn" id="cartbtn" onclick="openCart()">Carrellino della spesa</button>
+        <button class="btn" id="cartbtn" onclick="openCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </button>
         <a href="php/SignUp.php"><button class="btn" id="signup">SignUp</button></a>
         <button class="btn" id="login" onclick="openLoginPopup()">LogIn</button>
         <!--parte di utente loggato-->
@@ -225,6 +227,7 @@
             <li><a href="php/catalogue.php">Catalogo</a></li>
             <li><a href="php/aboutUs.php">About us</a></li>
             <li><a href="php/Supporto.php">Contact</a></li>
+            <li><a href="html/NewSpace.html">Space History</a></li>
         </ul>
     </div>
 </header>
