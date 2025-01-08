@@ -50,7 +50,10 @@
                 <div class="catalogue__item__text">
                     <b>Mercury</b>
                 </div>
-                <button type="button">Add to cart</button>
+                <form method="POST" action="php/addToCart.php">
+                    <input type="hidden" name="id" value="1" />
+                    <input type="submit" value="add"/>
+                </form>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">

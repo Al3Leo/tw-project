@@ -136,7 +136,7 @@
     .userinfoList {
         color: #ffffff;
         border-bottom: none;
-        font-size: 10%;
+        font-size: 80%;
         font-weight: bold;
         text-align: left;
     }
@@ -150,11 +150,25 @@
     #userinfo {
         margin: 1em;
         padding: 0;
-        color: white;
+        color: #ffffff;
         text-align: right;
         list-style: none;
         flex-direction: column;
         gap: 0.5rem;
+    }
+    #carrello{
+        border: 3px solid #ffffff;
+        display: none;
+        z-index: 3;
+        background-color: black;
+        height: 25vh;
+        border-radius: 15px;
+    }
+    #carrello_tbl{
+        margin 3%;
+        margin-top: 5%;
+        padding: 1%;
+        text-align: center;
     }
 </style>
 <script>
@@ -178,11 +192,19 @@
         }
         //a scopo didattico sono stati usati due metodi diversi (toggle e style di js)
     }
+    function openCart(){
+        let cart=document.getElementById("carrello");
+        if (cart.style.display != "none")
+            cart.style.display="none";
+        else
+            cart.style.display="flex";
+    }
 </script>
 <header id="topbar">
     <!--logo login e signup-->
     <a href="html/index.html"><img src="./img/PlaceholderLogo.png"/></a>
     <div class="tuttoadestra">
+        <button class="btn" id="cartbtn" onclick="openCart()">Carrellino della spesa</button>
         <a href="php/SignUp.php"><button class="btn" id="signup">SignUp</button></a>
         <button class="btn" id="login" onclick="openLoginPopup()">LogIn</button>
         <!--parte di utente loggato-->

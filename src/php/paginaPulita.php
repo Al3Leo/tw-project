@@ -11,11 +11,12 @@ include_once 'contaVisite.php'; ?>
     <link rel="stylesheet" href="css/catalogue.css">
 </head>
 
-<body >
+<body>
 <?php echo include_once '../php/header.php'; ?>
 <div class="hero">
     <div class="parallax"></div>
 </div>
+<?php include_once 'prodottopage.php'?>
 <?php require_once '../html/footer.html';
 ?>
 </body>
