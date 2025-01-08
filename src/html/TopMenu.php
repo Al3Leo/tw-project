@@ -1,4 +1,6 @@
-<style>    
+<style>
+    @import "../css/Global.css";
+    
     .btn{
         float: right;
         margin: 1rem 1vw;
