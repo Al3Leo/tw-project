@@ -5,13 +5,6 @@
   height: 100%;
 }
 
-/* Disabilita parallasse su mobile*/
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
-  }
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -27,7 +20,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 35vw;
+  width: 70vw;
   background-color: white;
   opacity: 0.8;
   border-radius: 15px;
@@ -48,17 +41,16 @@
 }
 
 #hero__search__choosed-ct {
-  width: 60% ;
+  width: 70%;
   box-shadow: inset #abacaf 0 0 0 2px;
   border: 0;
-  background: rgba(0, 0, 0, 0);
   appearance: none;
   border-radius: 3px;
   color: black;
   transition: all 0.2s ease;
   border-radius: 15px;
   padding: 10px;
-  overflow: hidden;
+  height: 50px;
 }
 #hero__search__choosed-ct:hover {
   box-shadow: 0 0 0 0 #fff inset, var(--accent) 0 0 0 2px;
@@ -74,7 +66,6 @@
 }
 
 #hero__search__choosed__search input {
-  height: 50px;
   border: none;
   outline: none;
   border-radius: 5px;
@@ -94,6 +85,22 @@
 }
 #hero__search__choose__whereLink{
   font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  #hero__search__choosed__budget a,b {
+    font-size: .80rem;
+  }
+}
+@media (max-width: 768px) {
+  #hero__search-ct > h1 {
+    font-size: 1.4rem;
+  }
+  #hero__search__choose li a{
+    font-size: .9rem;
+  }
+  #hero__search__choosed__budget{
+  }
 }
 
 main {

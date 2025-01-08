@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <?php include_once '../html/TopMenu.html'?>
+<?php include_once '../php/header.php' ?>
+
     <div class="hero">
         <div id="hero__search-ct" class="position-absolute d-flex align-items-center flex-column">
             <h1 class="text-center">Choose Your Interstellar Experience</h1>

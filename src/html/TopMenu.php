@@ -111,7 +111,7 @@
     }
 
     /*opzioni del menu laterale*/
-    li {
+    #sideBar li {
         clear: right;
         display: block;
         margin: 1rem;
@@ -121,12 +121,12 @@
         border-bottom: 1px solid #dedede;
     }
 
-    li>a {
+    #sideBar li>a {
         text-decoration: none;
         color: white !important;
     }
 
-    li>a:hover {
+    #sideBar li>a:hover {
         color: rgb(187, 187, 187) !important;
         transition: 500ms;
         font-weight: bold;
@@ -165,7 +165,7 @@
         border-radius: 15px;
     }
     #carrello_tbl{
-        margin 3%;
+        margin: 3%;
         margin-top: 5%;
         padding: 1%;
         text-align: center;
