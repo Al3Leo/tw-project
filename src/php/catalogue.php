@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
 </head>
 
 <body>
-<?php include_once '../php/header.php' ?>
+    <?php include_once '../php/header.php' ?>
 
     <div class="hero">
         <div id="hero__search-ct" class="position-absolute d-flex align-items-center flex-column">
@@ -34,13 +35,44 @@
                         <li><a href="#">&#62 4000</a></li>
                     </ul>
                 </div>
-                <div id="hero__search__choosed__period" class="d-flex flex-row align-items-center justify-content-between hero__search__choosed__item menu">
+                <div id="hero__search__choosed__period" class="d-flex flex-row align-items-center justify-content-between hero__search__choosed__item">
                     <span><b>Period</b></span>
-                    <ul>
-                        <li><a href="#">Seasons</a></li>
-                        <li><a href="#">Months</a></li>
-                        <li><a href="#">Years</a></li>
-                    </ul>
+                    <div>
+                        <div class="dropdown">
+                            <button class="dropbtn" type="button">Seasons</button>
+                            <div class="dropdown-content">
+                                <a href="#">Winter</a>
+                                <a href="#">Spring</a>
+                                <a href="#">Summer</a>
+                                <a href="#">Autumn</a>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropbtn" type="button">Months</button>
+                            <div class="dropdown-content">
+                                <a href="#">January</a>
+                                <a href="#">February</a>
+                                <a href="#">March</a>
+                                <a href="#">April</a>
+                                <a href="#">May</a>
+                                <a href="#">June</a>
+                                <a href="#">July</a>
+                                <a href="#">August</a>
+                                <a href="#">September</a>
+                                <a href="#">October</a>
+                                <a href="#">November</a>
+                                <a href="#">December</a>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropbtn" type="button">Years</button>
+                            <div class="dropdown-content">
+                                <a href="#">2025</a>
+                                <a href="#">2026</a>
+                                <a href="#">2027</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,7 +93,7 @@
                 </div>
                 <form method="POST" action="php/addToCart.php">
                     <input type="hidden" name="id" value="1" />
-                    <input type="submit" value="add"/>
+                    <input type="submit" value="add" />
                 </form>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">

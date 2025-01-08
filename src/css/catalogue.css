@@ -78,6 +78,7 @@
     display: none;
 }
 #hero__search__choosed__budget a, #hero__search__choosed__period a{
+    color: black !important;
     border-radius: 10px;
 }
 #hero__search__choosed__budget a:hover, #hero__search__choosed__period a:hover {
@@ -87,6 +88,7 @@
   font-weight: bold;
 }
 
+/* Layout Responsive */
 @media (max-width: 1024px) {
   #hero__search__choosed__budget a,b {
     font-size: .80rem;
@@ -112,6 +114,7 @@ main {
   row-gap: 25px;
   padding: 20px;
 }
+
 @media (max-width: 768px) {
   .catalogue {
     grid-template-rows: 1fr 1fr;
