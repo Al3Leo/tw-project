@@ -36,8 +36,8 @@
   animation: fadeIn 5s;
 }
 
-#hero__search__choose li a:hover{
-    background-color: transparent;
+#hero__search__choose li a:hover {
+  background-color: transparent;
 }
 
 #hero__search__choosed-ct {
@@ -66,40 +66,55 @@
 }
 
 #hero__search__choosed__search input {
+  width: 100%;
   border: none;
   outline: none;
   border-radius: 5px;
 }
+
 #hero__search__choosed__search input:focus {
   outline: none;
 }
-#hero__search__choosed__budget, #hero__search__choosed__period {
-    width: 100%;
-    display: none;
+
+#hero__search__choosed__budget,
+#hero__search__choosed__period {
+  width: 100%;
+  display: none;
 }
-#hero__search__choosed__budget a, #hero__search__choosed__period a{
-    color: black !important;
-    border-radius: 10px;
+
+#hero__search__choosed__budget a,
+#hero__search__choosed__period a {
+  border-radius: 10px;
 }
-#hero__search__choosed__budget a:hover, #hero__search__choosed__period a:hover {
-    background-color: var(--tertiaryColor);
+
+#hero__search__choosed__budget a:hover,
+#hero__search__choosed__period a:hover {
+  background-color: var(--tertiaryColor);
+  transition: 1s;
+  font-weight: bold;
 }
-#hero__search__choose__whereLink{
+
+#hero__search__choosed__period button:hover{
+  background-color: var(--tertiaryColor);
+}
+
+#hero__search__choose__whereLink {
   font-weight: bold;
 }
 
 /* Layout Responsive */
 @media (max-width: 1024px) {
-  #hero__search__choosed__budget a,b {
-    font-size: .80rem;
+  #hero__search__choosed__budget a,
+  b {
+    font-size: 0.8rem;
   }
 }
 @media (max-width: 768px) {
   #hero__search-ct > h1 {
     font-size: 1.4rem;
   }
-  #hero__search__choose li a{
-    font-size: .9rem;
+  #hero__search__choose li a {
+    font-size: 0.9rem;
   }
 }
 
@@ -138,9 +153,9 @@ main > h3 {
   padding: 10px;
   border-radius: 5px;
 }
-.catalogue__item b{
-    display: block;
-    margin: 10px 0 15px 0;
+.catalogue__item b {
+  display: block;
+  margin: 10px 0 15px 0;
 }
 
 .catalogue__item img {

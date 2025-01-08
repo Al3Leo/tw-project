@@ -297,7 +297,7 @@ button {
   background-color: var(--accent);
   border-radius: 8px;
   border-style: none;
-  color: black;
+  color: var(--text);
   cursor: pointer;
   position: relative;
   text-align: center;
@@ -374,6 +374,7 @@ button:focus {
 
 /* Dropdown button */
 .dropdown .dropbtn {
+  color: black !important;
   font-size: 16px;
   border: none;
   outline: none;
@@ -381,6 +382,12 @@ button:focus {
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.dropdown:hover .dropbtn{
+  transition: 1s;
+  font-weight: bold;
+  background-color: var(--tertiaryColor);
 }
 
 /* Dropdown content (hidden by default) */
