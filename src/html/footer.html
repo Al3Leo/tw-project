@@ -1,0 +1,93 @@
+<style>
+    footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-weight: 300;
+        font-weight: bold;
+    }
+
+    .div_container {
+        flex: 3;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .div_container2 {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .5em;
+    }
+
+    .contenuto_form {
+        flex: 1;
+    }
+
+    .immagine_logo {
+        object-fit: contain;
+    }
+
+    .immagine_icona {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .contenuto_container ul li a {
+        text-decoration: none;
+    }
+
+    .contenuto_container ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .contenuto_container ul li {
+        margin-bottom: 10px;
+    }
+
+    .contenuto_container.social ul li {
+        display: inline-block;
+        margin-right: 15px;
+    }
+</style>
+<footer>
+    <div class="div_container">
+        <div class="contenuto_container"><img class="immagine_logo" src="img/logo.png"
+                alt="Logo" />
+        </div>
+        <div class="contenuto_container">
+            <ul>
+                <li><a href="./php/index.php">>Home</a></li>
+                <li><a href="./php/aboutUs.php">>About Us</a></li>
+                <li><a href="./php/Supporto.php">>Support</a></li>
+                <li><a href="./html/NewSpace.html">>News</a></li>
+                <li><a href="./php/catalogue.php">>Catalogue</a></li>
+            </ul>
+        </div>
+        <div class="contenuto_container social">
+            <p>Social</p>
+            <ul>
+                <li><a href="https://www.facebook.com/login/?locale=it_IT"><img class="immagine_icona"
+                            src="img/footer_img/fb.png" alt="social" /></a></li>
+                <li><a
+                        href="https://x.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiaXQifQ%3D%3D%22%7D&mx=2"><img
+                            class="immagine_icona" src="img/footer_img/tw.png" alt="social" /></a></li>
+                <li><a href="https://www.instagram.com/accounts/login/"><img class="immagine_icona"
+                            src="img/footer_img/ig.png" alt="social" /></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="div_container2">
+        <p>Progetto di Tecnologie Web A.A.24/25 realizzato da: Alessio Leo, Emanuele Tocci, Claudia Montefusco, Rossella Pale</p>
+    </div>
+</footer>

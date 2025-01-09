@@ -1,0 +1,33 @@
+<main>
+    <div id="text_container">
+        <div class="text_support">
+            Need help?<br>We're here to answer all your questions!
+</div>
+
+<div class="text_support">
+            Whether you are looking for information about our space journeys, have questions about bookings, or want to report an issue, our support team is ready to assist you.
+</div>
+
+<div class="text_support">
+            You can contact us through the form below or write to us directly at <strong><a href="mailto:a.leo88@studenti.unisa.it" id="mailtoemail">support@mars.com</a></strong>.
+</div>
+    </div>
+    <form class="form_support" method="get" action="mailto:mailto:a.leo88@studenti.unisa.it">
+        <input type="text" class="form_input" name="nome" placeholder="Nome" required>
+        <input type="email" class="form_input" name="email" placeholder="Email" required >
+        <input type="text" class="form_input" name="subject" placeholder="Oggetto">
+        <input type="tel" class="form_input" name="telefono" placeholder="Telefono (Facoltativo)">
+        <input type="text" class="form_input" name="num_ordine" placeholder="N.Ordine (Facoltativo)">
+        <div style="color: white; display: block; font-weight: bold; margin-top: 0.7em; margin-bottom: 0.2em;">Messaggio:</div>
+        <textarea type="text" name="body" style="height: 25%; resize: none"></textarea>
+        <a href="php/ConfermaDinamica.php?ciao"><input type="submit" value="Invia!" style="color: #ffffff;
+            background-color: #00c4ff;
+            margin-top: 2%;
+            width: auto;
+            height: auto;
+            padding: 1.2%;
+            font-size: x-large;
+            margin-left: 45%;
+            border: 2px solid #ffffff;"></a>
+    </form>
+</main>

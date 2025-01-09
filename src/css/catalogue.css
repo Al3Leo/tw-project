@@ -1,0 +1,192 @@
+@import "Global.css";
+
+.parallax {
+  background-image: url("../img/nasa/falcon9-2.jpg");
+  height: 100%;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+#hero__search-ct {
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 15px;
+  animation: fadeIn 5s;
+  height: auto;
+  padding: 50px 10px;
+  gap: 10px;
+}
+
+#hero__search-ct > h1 {
+  color: black;
+  opacity: 0.8;
+  animation: fadeIn 5s;
+}
+
+#hero__search__choose li a:hover {
+  background-color: transparent;
+}
+
+#hero__search__choosed-ct {
+  width: 70%;
+  box-shadow: inset #abacaf 0 0 0 2px;
+  border: 0;
+  appearance: none;
+  border-radius: 3px;
+  color: black;
+  transition: all 0.2s ease;
+  border-radius: 15px;
+  padding: 10px;
+  height: 50px;
+}
+#hero__search__choosed-ct:hover {
+  box-shadow: 0 0 0 0 #fff inset, var(--accent) 0 0 0 2px;
+}
+#hero__search__choosed-ct:focus {
+  background: #fff;
+  outline: 0;
+  box-shadow: 0 0 0 0 #fff inset, var(--accent) 0 0 0 3px;
+}
+
+#hero__search__choosed__search {
+  width: 100%;
+}
+
+#hero__search__choosed__search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+#hero__search__choosed__search input:focus {
+  outline: none;
+}
+
+#hero__search__choosed__budget,
+#hero__search__choosed__period {
+  width: 100%;
+  display: none;
+}
+
+#hero__search__choosed__budget a,
+#hero__search__choosed__period a {
+  border-radius: 10px;
+}
+
+#hero__search__choosed__budget a:hover,
+#hero__search__choosed__period a:hover {
+  background-color: var(--tertiaryColor);
+  transition: 1s;
+  font-weight: bold;
+}
+
+#hero__search__choosed__period button:hover{
+  background-color: var(--tertiaryColor);
+}
+
+#hero__search__choose__whereLink {
+  font-weight: bold;
+}
+
+/* Layout Responsive */
+@media (max-width: 1024px) {
+  #hero__search__choosed__budget a,
+  b {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 768px) {
+  #hero__search-ct > h1 {
+    font-size: 1.4rem;
+  }
+  #hero__search__choose li a {
+    font-size: 0.9rem;
+  }
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.catalogue {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 50px;
+  row-gap: 25px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .catalogue {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 10px;
+  }
+}
+main > h3 {
+  margin-top: -20px;
+  font-weight: 400;
+}
+
+.catalogue__separator {
+  height: 15px;
+  background-color: var(--accent);
+  margin-bottom: 15px;
+}
+.catalogue__item {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 5px;
+}
+.catalogue__item b {
+  display: block;
+  margin: 10px 0 15px 0;
+}
+
+.catalogue__item img {
+  max-width: 640px;
+  max-height: 360px;
+  object-fit: cover;
+  vertical-align: middle;
+  transition: transform 0.3s ease-out; /* Transizione graduale */
+  border-radius: 5px;
+}
+
+/*Disattiva l'animazione su mobile*/
+@media (min-width: 768px) {
+  .catalogue__item:hover img {
+    transform: scale(1.1);
+  }
+  .catalogue__item:hover a {
+    padding: 0; /* Riduce il padding per far scomparire la cornice */
+  }
+}
+small {
+  font-size: 0.85rem;
+}
+.catalogue__item b {
+  color: black;
+  font-weight: bold;
+}
+.catalogue__item a {
+  transition: transform 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.catalogue__item__text {
+  margin-top: 20px;
+}
