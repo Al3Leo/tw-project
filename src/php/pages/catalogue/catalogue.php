@@ -2,14 +2,18 @@
 <html lang="en">
 
 <head>
-    <?php require_once '../html/utils/headMetadata.html'?> <!-- Non so perché se lo si sposta il css non viene visualizzato-->
+    <base href="../../../">
+    <?php
+        require_once '../../../html/utils/headMetadata.html';
+    ?>
     <title>Travel Catalogue</title>
     <link rel="stylesheet" href="css/catalogue.css">
 </head>
 
 <body>
-    <?php include_once '../php/header.php' ?>
-
+    <?php 
+        require_once '../../header.php';
+    ?>
     <div class="hero">
         <div id="hero__search-ct" class="position-absolute d-flex align-items-center flex-column">
             <h1 class="text-center">Choose Your Interstellar Experience</h1>
@@ -297,7 +301,7 @@
             </div>
         </div>
     </main>
-    <?php require_once '../html/footer.html' ?>
+    <?php require_once '../../../html/footer.html' ?>
     <script src="js/catalogue.js"></script>
 </body>
 

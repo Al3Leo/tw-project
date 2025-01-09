@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <base href="../" />
     <?php require_once '../html/utils/headMetadata.html'?>
     <title>Outer Space</title>
     <link rel="stylesheet" href="css/HomePage.css">
