@@ -1,0 +1,16 @@
+.hero{
+    height:auto;
+}
+.hero iframe{
+    height: 50vh;
+}
+#main__left{
+    width: 70%;
+}
+#main__right{
+    width: 30%;
+}
+.hero__text{
+    width: 80%;
+    margin: 0 auto;
+}

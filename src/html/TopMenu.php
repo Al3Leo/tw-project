@@ -224,7 +224,7 @@
         <ul>
             <li id="li-speciale"><button id="goBack" onclick="toggleSideMenu()">&times</button></li>
             <li><a href="php/index.php">Home</a></li>
-            <li><a href="php/catalogue.php">Catalogo</a></li>
+            <li><a href="php/pages/catalogue/catalogue.php">Catalogo</a></li>
             <li><a href="php/aboutUs.php">About us</a></li>
             <li><a href="php/Supporto.php">Contact</a></li>
             <li><a href="html/NewSpace.html">Space History</a></li>

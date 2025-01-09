@@ -4,7 +4,7 @@
 <head>
     <base href="../../../">
     <?php
-        require_once '../../../html/utils/headMetadata.html';
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/src/html/utils/headMetadata.html';
     ?>
     <title>Travel Catalogue</title>
     <link rel="stylesheet" href="css/catalogue.css">
