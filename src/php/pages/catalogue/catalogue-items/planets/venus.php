@@ -22,7 +22,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/src/php/header.php';
         <iframe src="https://solarsystem.nasa.gov/gltf_embed/2342/" frameborder="0" allow="fullscreen" loading="lazy"></iframe>
         <div class="hero__text">
             <h1 class="text-center">Venus</h1>
-            <h2 class="text-center">Description</h2>
             <p>
                 <b>Venus</b> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
                 <br>
@@ -31,10 +30,33 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/src/php/header.php';
         </div>
     </div>
     <main id="main" class="d-flex flex-row">
-        <div id="main__left">
-            <h3 class="text-center">Travel Info</h3>
+        <div class="main__left">
+            <h2 class="text-center">Travel Info</h3>
+                <p>Welcome to Venus, Earth's twin planet, renowned for its beauty and mystery! A journey to this fascinating world offers an extraordinary experience filled with surreal landscapes and extreme conditions. With proper preparation and guidance, Venus will unveil its secrets.</p>
+                <div class="main__left__section1 d-flex flex-row">
+                    <div class="main__left__section1__date d-flex flex-column align-items-center">
+                        <span class="price">3000 &#8364</span>
+                        <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
+                            <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
+                            <span class="days"> 10 Days</span>
+                        </div>
+                    </div>
+                    <div class="main__left__section1__whatSee">
+                        <h3 class="text-center">What to See</h3>
+                        <p>Maxwell Montes</p>
+                        <p>Ishtar Terra Plateau</p>
+                        <p>Lavinia Planitia Plains</p>
+                        <p>Baltis Vallis Canyon</p>
+                        </ol>
+                    </div>
+                </div>
+                <div class="main__left__tripKnowledge">
+                    <h4 class="text-center">Everything you need to know about this trip</h4>
+                    <div class="testimonial__grid__item">
+                    </div>
+                </div>
         </div>
-        <div id="main__right" class="celestialBodyInfo">
+        <div class="main__right celestialBodyInfo">
             <h3 class="text-center">Celestial Body Info</h3>
             <!-- La tabella é generata da JS-->
         </div>
@@ -47,6 +69,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/src/php/header.php';
 </html>
 
 <script>
+    /* GESTIONE API */
+
     // Creazione di un oggetto XMLHttpRequest
     let xhr = new XMLHttpRequest();
 
