@@ -202,7 +202,7 @@
 </script>
 <header id="topbar">
     <!--logo login e signup-->
-    <a href="html/index.html"><img src="./img/PlaceholderLogo.png"/></a>
+    <a href="php/index.php"><img src="" alt="logo"/></a>
     <div class="tuttoadestra">
         <button class="btn" id="cartbtn" onclick="openCart()">
             <i class="fa-solid fa-cart-shopping"></i> <!--Logo font-awesome-->

@@ -25,6 +25,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/src/php/header.php';
             <h2 class="text-center">Description</h2>
             <p>
                 <b>Venus</b> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
+                <br>
                 Venus is <b>similar</b> in structure and size to <b>Earth</b>, and is sometimes called <b>Earth's evil twin</b>. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the <b>hottest planet</b> in our solar system with surface temperatures hot enough to melt lead. Below the dense, persistent clouds, the surface has volcanoes and deformed mountains.
             </p>
         </div>

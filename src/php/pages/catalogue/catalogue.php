@@ -99,7 +99,7 @@
                 </form>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="php/pages/catalogue/catalogue-items/planets/venus.php">
                     <img class="responsive" src="img/nasa/planets/venus.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
