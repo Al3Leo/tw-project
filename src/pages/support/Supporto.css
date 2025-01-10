@@ -1,0 +1,39 @@
+@import '../../assets/css/Global.css';
+
+#text_container{
+    display: block;
+    width: 40vw;
+}
+.text_support{
+    color: white;
+    display: block;
+    font-size: 1.2em;
+    width: auto;
+    text-align: center;
+    padding-bottom: 3%;
+}
+.form_input, textarea{
+    display: block;
+    margin-bottom: 1%;
+    height: 2rem;
+    width: 50vw;
+    border-radius: 7px;
+}
+textarea{
+    height: 7rem !important;
+}
+#mailtoemail{
+    color: white;
+}
+#mailtoemail:hover{
+    color: #1fe100;
+}
+main{
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 80%;
+}
