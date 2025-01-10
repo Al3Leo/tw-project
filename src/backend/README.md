@@ -1,0 +1,1 @@
+Questa cartella contiene tutti i file php utilizzati per la gestione del backend e l'interazione con il database.
