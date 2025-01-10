@@ -3,17 +3,11 @@
 
 <head>
     <base href="../../../">
-    <?php
-        require_once $_SERVER['DOCUMENT_ROOT'] . '/src/html/utils/headMetadata.html';
-    ?>
     <title>Travel Catalogue</title>
     <link rel="stylesheet" href="css/catalogue.css">
 </head>
 
 <body>
-    <?php 
-        require_once '../../header.php';
-    ?>
     <div class="hero">
         <div id="hero__search-ct" class="position-absolute d-flex align-items-center flex-column">
             <h1 class="text-center">Choose Your Interstellar Experience</h1>
@@ -301,7 +295,6 @@
             </div>
         </div>
     </main>
-    <?php require_once '../../../html/footer.html' ?>
     <script src="js/catalogue.js"></script>
 </body>
 
