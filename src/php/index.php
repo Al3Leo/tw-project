@@ -5,7 +5,7 @@
     <base href="../" />
     <?php 
         require_once '../html/utils/headMetadata.html'
-        ?>
+    ?>
     <title>Outer Space</title>
     <link rel="stylesheet" href="css/HomePage.css">
     <link rel="icon" href="img/favicon.png" type="image/png/">
