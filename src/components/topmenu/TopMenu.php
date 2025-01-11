@@ -93,7 +93,7 @@
         position: fixed;
         top: 0;
         right: 0;
-        z-index: 1;
+        z-index: 6;
     }
 
     #sidebar {
@@ -105,9 +105,8 @@
         list-style: none;
     }
 
-    /*la x nel menu*/
-    #li-speciale {
-        border-bottom: none;
+   .sideBar ul #li-speciale{
+    border-bottom: none;
     }
 
     /*opzioni del menu laterale*/
