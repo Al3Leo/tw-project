@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <?php require_once "../../components/utils/headMetadata.html"?>
     <title>Travel Catalogue</title>
@@ -89,10 +88,7 @@
                 <div class="catalogue__item__text">
                     <b>Mercury</b>
                 </div>
-                <form method="POST" action="php/addToCart.php">
-                    <input type="hidden" name="id" value="1" />
-                    <input type="submit" value="add" />
-                </form>
+                <a href="backend/addToCart.php?id=1" style="color: #1fe100"> prova add</a>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="pages/catalogue/catalogue-items/planets/venus.php">

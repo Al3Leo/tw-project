@@ -51,8 +51,7 @@ if (!$duplicato) {
     $cart[] = $info; // sintassi add at the end
 }
 
-
 setcookie('cart', json_encode($cart), time() + 3600); // Imposta il cookie con il carrello aggiornato
 // ritorna al carrello
-header("Location: carrello_prova.php");
+header("Location: " . $_SERVER['HTTP_REFERER']);
 ?>

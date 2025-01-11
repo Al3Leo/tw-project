@@ -156,12 +156,17 @@
         gap: 0.5rem;
     }
     #carrello{
-        border: 3px solid #ffffff;
+        border: 3px solid #47008f;
         display: none;
         z-index: 3;
         background-color: black;
         height: 25vh;
         border-radius: 15px;
+        background-image: url('assets/images/space/mars.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: fixed;
     }
     #carrello_tbl{
         margin: 3%;
@@ -179,8 +184,10 @@
         let bar = document.getElementById("sideBar");
         bar.classList.toggle("toggleShow");
         bar.style.borderBottom = "0";
+        let cart=document.getElementById("carrello");
         let btn = document.getElementsByClassName("btn")[1];
         if (btn.style.display != "none") {
+            cart.style.display="none";
             btn.style.display = "none";
             btn = document.getElementsByClassName("btn")[2];
             btn.style.display = "none";
@@ -191,7 +198,7 @@
         }
         //a scopo didattico sono stati usati due metodi diversi (toggle e style di js)
     }
-    function openCart(){
+    function openCart(){ //refactoring name in toggle prima o poi
         let cart=document.getElementById("carrello");
         if (cart.style.display != "none")
             cart.style.display="none";
@@ -209,7 +216,7 @@
         <a href="pages/signup/SignUp.php"><button class="btn" id="signup">SignUp</button></a>
         <button class="btn" id="login" onclick="openLoginPopup()">LogIn</button>
         <!--parte di utente loggato-->
-        <a href="components/LogOut.php"><button class="btn" id="logout">LogOut</button></a>
+        <a href="backend/LogOut.php"><button class="btn" id="logout">LogOut</button></a>
         <div id="userinfo">
             <!--valori da completare in php-->
             <span class="userinfoList"><?php echo $_SESSION['username'] ?></span>

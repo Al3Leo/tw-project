@@ -17,7 +17,7 @@
 <h1>
     viaggio marziano
 </h1>
-<form method="POST" action="addCart2.php">
+<form method="POST" action="cartAdd2.php">
     <input type="hidden" name="id" value="2" />
     <input type="submit" value="add"/>
 </form>

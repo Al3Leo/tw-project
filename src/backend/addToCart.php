@@ -15,7 +15,7 @@ $connection_string = "host=$host port=$port dbname=$db user=$username password=$
 $db_connection = pg_connect($connection_string) or die('Impossibile connettersi al database<br>' . pg_last_error());
 
 // Query per ottenere nome e prezzo del prodotto
-$id = $_POST['id'];
+$id = $_GET['id'];
 $query = "SELECT nomeevento FROM viaggio WHERE idevento='$id'";
 $return = pg_query($db_connection, $query) or die('Errore: ' . pg_last_error($db_connection));
 $prodotto = pg_fetch_row($return)[0];
@@ -50,7 +50,6 @@ foreach ($cart as $index_main_array => $sottoarray) {
 if (!$duplicato) {
     $cart[] = $info; // sintassi add at the end
 }
-
 
 setcookie('cart', json_encode($cart), time() + 3600); // Imposta il cookie con il carrello aggiornato
 // ritorna al carrello

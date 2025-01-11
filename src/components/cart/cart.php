@@ -1,9 +1,13 @@
 <!-- cart -->
 <div id="carrello" class="popup">
+    <div id="remove_popup" style="margin-top: 3%; text-align: right; width: 90%">
+        <span style="background-color: red; color: white;" onclick="openCart()">close</span>
+    </div>
     <table id="carrello_tbl">
+
         <tr>
-            <th>Nome</th>
-            <th>Quantità</th>
+            <th style="text-align: left">Nome</th>
+            <th></th>
             <th>Prezzo</th>
         </tr>
         <?php
@@ -14,16 +18,17 @@
             foreach ($cart as $key => $value) {
                 $tot+=$value['prezzo'];
                 echo "<tr>";
-                echo "<td>". $value['nome'] . "</td>";
-                echo "<td></td>";
-                echo "<td>" . $value['prezzo'] . " €</td>";
-                echo "<td><a href='php/RemoveItemFromCart.php?nome=" . $value['nome'] . "'>&#x1F5D1</a></td>";  // cestino Unicode
+                echo "<td style='text-align: left; width: fit-content'>". $value['nome'] . "</td>";
+                echo "<td style='width: 10%'></td>";
+                echo "<td style='text-align: right; width: fit-content'>" . $value['prezzo'] . " €</td>";
+                echo "<td><a href='backend/RemoveItemFromCart.php?nome=" . $value['nome'] . "'>&#x1F5D1</a></td>";  // cestino Unicode
                 echo "</tr>";
             }
         }else $tot = 0;
         echo "
+            <tr><td style='visibility: hidden'>nascosto per provare l'attributo hidden, potevamo usare css</td></tr>
              <tr>
-                <td>totale:</td>
+                <td style='text-align: left'>totale:</td>
                 <td></td>
                 <td>$tot €</td>
             </tr>
