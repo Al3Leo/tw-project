@@ -1,5 +1,9 @@
 @import '../../assets/css/Global.css';
-
+body{
+    background-image: url("cosmo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
 #text_container{
     display: block;
     width: 40vw;
