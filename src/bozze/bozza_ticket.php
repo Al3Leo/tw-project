@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title></title>
+    <title>your floppy ticket</title>
     <style>
         @import url('https://fonts.cdnfonts.com/css/nasa');
 
@@ -27,6 +27,7 @@
             background-color: #ff7300;
         }
         #linguetta{
+            position: relative;
             background-color: #b6b6b6;
             width: 70%;
             height: 100%;
@@ -34,10 +35,10 @@
         }
         #vuoto{
             position: absolute;
-            margin-left: 3%;
-            margin-top: 2%;
-            height: 15%;
-            width: 5%;
+            margin-left: 15%;
+            margin-top: 3%;
+            height: 87%;
+            width: 25%;
             background-color: #ff7300;
             border-radius: 5px;
         }
