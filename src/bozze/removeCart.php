@@ -22,6 +22,5 @@ foreach ($cart as $indice => $sottoarray) {
 
 
 setcookie('cart', serialize($cart), time() + 3600);
-
 header("Location: carrello_prova.php");
 ?>
