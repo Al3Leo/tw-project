@@ -5,7 +5,7 @@
  */
 // Connessione
 $host = 'localhost';
-$port = '9999';
+$port = '5432';
 $db = 'GRUPPO05';
 $username = 'www';
 $password = 'tw2024';
@@ -15,16 +15,18 @@ $db_connection = pg_connect($connection_string) or die('Impossibile connettersi 
 if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
     $user = $_POST['user_username'];
     $password = $_POST['user_password'];
-    $sql = "SELECT password, name, surname FROM utente WHERE username = $1";
+    $sql = "SELECT passworduser, nome, cognome FROM utente WHERE username = $1";
     $result = pg_prepare($db_connection, "sqlPassword", $sql);
     if ($result) {
         $ret = pg_execute($db_connection, "sqlPassword", array($user));
         if ($ret) {
             $row = pg_fetch_assoc($ret);
-            $hash = $row['password'];
-            if (password_verify($password, $hash)) {
-                $name = $row['name'];
-                $surname = $row['surname'];
+           
+            if($row){
+                 $hash = $row['passworduser'];
+            if ($password==$hash) { /////ALTRO METODO DA UTILIZZARE
+                $name = $row['nome'];
+                $surname = $row['cognome'];
                 session_start();
                 $_SESSION['username'] = $user;
                 $_SESSION['name'] = $name;
@@ -32,7 +34,11 @@ if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
                 header("Location: " . $_SERVER['HTTP_REFERER']);
             } else {
                 echo "Password errata<br>";
+            }}else{
+                echo"Utente non trovato";
             }
+
+
         } else {
             echo "Errore durante l'esecuzione della query: " . pg_last_error($db_connection);
         }
