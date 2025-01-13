@@ -12,6 +12,7 @@
             padding: 30px;
             max-width: 400px;
             width: 100%;
+            position: sticky;
         }
         body {
             font-family: Arial;
@@ -47,7 +48,15 @@
 </head>
 <body>
 <div class="input">
+<<<<<<< HEAD
+<<<<<<< HEAD
     <form method="POST" action="RegistraUtente.php" onsubmit="window.open('../../backend/ConfermaDinamica.php?confermaDinamica=Your account has been created', 'blank')">
+=======
+    <form method="POST" action="RegistraUtente.php">
+>>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
+=======
+    <form method="POST" action="RegistraUtente.php" onsubmit="window.open('../../backend/ConfermaDinamica.php?confermaDinamica=Your account has been created', 'blank')">
+>>>>>>> 4fcf1090370b23b13499b7123b1ef615008c71c0
         <label for="username">Username</label>
         <input type="text" id="username" name="user_username" required>
 
@@ -92,5 +101,83 @@
         <button type="submit">Sign Up</button>
     </form>
 </div>
+
+<script type="text/javascript">
+    const username = document.getElementById('username').value.trim();
+    const name = document.getElementById('name').value.trim();
+    const surname = document.getElementById('surname').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const confirmPassword = document.getElementById('password-confirm').value.trim();
+    const email = document.getElementById('email').value.trim();
+    
+    let errors = [];
+
+    if(username.length < 3 || username.length> 20) {
+        errors.push("error");
+    }
+
+    if(name == '' || surname == '') {
+        errors.push("error");
+    }
+
+    if(password.length < 8) {
+        errors.push("error");
+    }else if(password != confirmPassword) {
+        errors.push("error");
+    }
+
+    if(errors.length > 0) {
+        event.preventDefault();
+        alert(errors);
+    }
+    </script>
+
+    <?php
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        $errors = [];
+    }
+
+    $username = trim($_POST['username']);
+    $name = trim($_POST['name']);
+    $surname = trim($_POST['surname']);
+    $password = trim($_POST['password']);
+    $confirmPassword = trim($_POST['confirmPasword']);
+    $email = trim($_POST['email']);
+    $country = trim($_POST['country']);
+    $gender = trim($_POST['gender']);
+    $birthday = trim($_POST['birthday']);
+
+    if(strlen($username) < 3 || strlen($username) > 20) {
+        $errors[] = "error"; 
+    }
+
+    if(empty($name) || empty($surname)) {
+        $errors[] = "error";
+    }
+
+    if(strlen($password) < 8) {
+        $errors[] = "error";
+    }elseif($password != $confirmPassword) {
+        $errors[] = "error";
+    }
+    
+    if(empty($errors)) {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    }
+    if($gender !== "M" && $gender !== "F") {
+        $errors[] = "error";
+    }
+
+    if (!empty($errors)) {
+        echo "<ul>";
+        foreach ($errors as $error) {
+            echo "<li>$error</li>";
+        }
+        echo "</ul>";
+    } else {
+        echo "Registration successful!";
+    }
+    ?>
+    
 </body>
 </html>

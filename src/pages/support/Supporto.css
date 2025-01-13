@@ -1,9 +1,19 @@
 @import '../../assets/css/Global.css';
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4fcf1090370b23b13499b7123b1ef615008c71c0
 body{
     background-image: url("cosmo.jpg");
     background-position: center;
     background-repeat: no-repeat;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
+=======
+>>>>>>> 4fcf1090370b23b13499b7123b1ef615008c71c0
 #text_container{
     display: block;
     width: 40vw;
