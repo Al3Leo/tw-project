@@ -39,6 +39,6 @@
 document.getElementById('acquistaButton').addEventListener('click', function() {
     const cart = <?php echo json_encode($cart); ?>; // Ottieni i dati del carrello dal PHP
     const encodedCart = encodeURIComponent(JSON.stringify(cart));
-    window.open('../src/components/Stripe/Checkout.php?cart='+encodedCart); // Reindirizza l'utente alla pagina di checkout
+    window.location.href='../src/components/Stripe/Checkout.php?cart='+encodedCart; // Reindirizza l'utente alla pagina di checkout
 });
 </script>
