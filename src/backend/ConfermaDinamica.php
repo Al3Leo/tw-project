@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4fcf1090370b23b13499b7123b1ef615008c71c0
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,6 +76,7 @@ function apriHome(){
     window.location.href='pages/homepage/homepage.php';
 }
 </script>
+<<<<<<< HEAD
 =======
 <html>
     
@@ -141,4 +145,6 @@ function apriHome(){
 </body>
 
 >>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
+=======
+>>>>>>> 4fcf1090370b23b13499b7123b1ef615008c71c0
 </html>

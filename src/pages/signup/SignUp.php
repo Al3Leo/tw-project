@@ -48,10 +48,14 @@
 <body>
 <div class="input">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <form method="POST" action="RegistraUtente.php" onsubmit="window.open('../../backend/ConfermaDinamica.php?confermaDinamica=Your account has been created', 'blank')">
 =======
     <form method="POST" action="RegistraUtente.php">
 >>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
+=======
+    <form method="POST" action="RegistraUtente.php" onsubmit="window.open('../../backend/ConfermaDinamica.php?confermaDinamica=Your account has been created', 'blank')">
+>>>>>>> 4fcf1090370b23b13499b7123b1ef615008c71c0
         <label for="username">Username</label>
         <input type="text" id="username" name="user_username" required>
 

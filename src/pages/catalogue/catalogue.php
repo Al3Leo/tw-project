@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
+=======
+>>>>>>> 4fcf1090370b23b13499b7123b1ef615008c71c0
 <head>
     <?php require_once "../../components/utils/headMetadata.html"?>
     <title>Travel Catalogue</title>
@@ -93,6 +96,7 @@
                     <b>Mercury</b>
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <a href="backend/addToCart.php?id=12335" style="color: #1fe100"> prova add</a>
 =======
                 <form method="POST" action="php/addToCart.php">
@@ -100,6 +104,9 @@
                     <input type="submit" value="add" />
                 </form>
 >>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
+=======
+                <a href="backend/addToCart.php?id=12335" style="color: #1fe100"> prova add</a>
+>>>>>>> 4fcf1090370b23b13499b7123b1ef615008c71c0
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="pages/catalogue/catalogue-items/planets/venus.php">
@@ -109,10 +116,14 @@
                     <b>Venus</b>
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <a href="backend/addToCart.php?id=12336" style="color: #1fe100"> prova add</a>
 =======
                 <button type="button">Add to cart</button>
 >>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
+=======
+                <a href="backend/addToCart.php?id=12336" style="color: #1fe100"> prova add</a>
+>>>>>>> 4fcf1090370b23b13499b7123b1ef615008c71c0
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
