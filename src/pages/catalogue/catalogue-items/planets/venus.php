@@ -87,16 +87,6 @@ require_once "../../../../components/header/header.php"
             </div>
             <div class="main__right__gst">
                 <h4 class="text-center">Geomagnetic Storm Status</h3>
-                <table>
-                    <tr>    
-                        <th>Last:</th>
-                        <td id="main__right__gst-date"></td>
-                    </tr>
-                    <tr>
-                        <th>Kp index</th>
-                        <td id="main__right__gst-index"></td>
-                    </tr>
-                </table>
             </div>
         </div>
     </main>
@@ -117,7 +107,7 @@ require_once "../../../../components/header/header.php"
     let ssoXhr = new XMLHttpRequest();
 
     // Richiama l'Endpoint
-    ssoXhr.open("GET", "https://api.le-systeme-solaire.net/rest/bodies/venus", false); //true = asincrono
+    ssoXhr.open("GET", "https://api.le-systeme-solaire.net/rest/bodies/venus", true); //true = asincrono
 
     // Impostiamo la proprietà responseType per ricevere la risposta come JSON
     ssoXhr.responseType = 'json';
@@ -131,7 +121,6 @@ require_once "../../../../components/header/header.php"
             switch (ssoXhr.status) {
                 case 200:
                     let response = ssoXhr.response;
-                    console.log(response); // Mostra la risposta in formato JSON
                     createTable(response);
                     break;
                 case 404:

@@ -6,52 +6,51 @@
 /* NASA Geomagnetic Storm Status*/
 
 // Creazione di un oggetto XMLHttpRequest
-let ssoXhr = new XMLHttpRequest();
-const apiKey = "towgEeTCRe711fLDCwdNTSJagIzJL3cJztoRf0uZ";
+let gstXhr = new XMLHttpRequest();
 
-alert(startDate.toISOString.substring(0,10));
 // Richiama l'Endpoint
-ssoXhr.open(
+gstXhr.open(
     "GET",
-    "https://api.nasa.gov/DONKI/GST?api_key=${apiKey}&startDate=${startDate}&endDate=${endDate}",
+    "https://api.nasa.gov/DONKI/GST?api_key=towgEeTCRe711fLDCwdNTSJagIzJL3cJztoRf0uZ&=",
     true
 ); //true = asincrono
 
 // Impostiamo la proprietà responseType per ricevere la risposta come JSON
-ssoXhr.responseType = "json";
+gstXhr.responseType = "json";
 
 // Invio richiesta
-ssoXhr.send();
+gstXhr.send();
 
 //readyState e status consentono di verificare lo stato della richiesta
-ssoXhr.onload = function () {
-    if (ssoXhr.readyState == 4) {
-        // Controllo corretto con ssoXhr.readyState
-        switch (ssoXhr.status) {
+gstXhr.onload = function () {
+    if (gstXhr.readyState == 4) {
+        // Controllo corretto con gstXhr.readyState
+        switch (gstXhr.status) {
             case 200:
-                let response = ssoXhr.response;
-                console.log(response); // Mostra la risposta in formato JSON sulla console
+                let response = JSON.parse(gstXhr.response);
                 gstStatus(response);
                 break;
             case 404:
-                alert("API loading error! Request data not found.");
+                alert("GST API loading error! Request data not found.");
                 break;
             case 500:
-                alert("API loading error! Server generic error.");
+                alert("GST API loading error! Server generic error.");
                 break;
             default:
                 alert(
-                    "API loading error! Request error: (" + ssoXhr.statusText + ")"
+                    "GST API loading error! Request error: (" + gstXhr.statusText + ")"
                 );
         }
     }
 };
 
 function gstStatus(jsonData){
-    let table = document.createElement('table');
-    let tbody = table.createTBody();
+    alert('prova');
 
-    let lastStorm = jsonData[0];
+    let lastStormDate = jsonData.allKpIndex[0].observedTime;
+    let lastStormIndex = jsonData.allKpIndex[0].kpIndex;
+
+    alert(lastStormDate);
 
     if(jsonData.lenght() === 0){
         console.log("No Geo storm found!");
@@ -59,4 +58,5 @@ function gstStatus(jsonData){
         par.innerText = "No Geo storm found!"
         document.getElementsById('main__right__gst').appendChild(par);
     }
+
 }
