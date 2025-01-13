@@ -4,7 +4,6 @@
         margin: 1rem 1vw;
         width: 5rem;
         height: 2rem;
-        padding: 0.5em;
     }
 
     #login {
@@ -264,7 +263,7 @@
 </script>
 <header id="topbar">
     <!--logo login e signup-->
-    <a href="pages/homepage.php"><img  src="" alt="logo"/></a>
+    <a href="pages/homepage.php"><img src="" alt="logo"/></a>
     <div class="tuttoadestra">
         <button class="btn" id="cartbtn" onclick="openCart()">
             <i class="fa-solid fa-cart-shopping"></i> <!--Logo font-awesome-->

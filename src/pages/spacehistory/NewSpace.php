@@ -706,7 +706,7 @@ width: 600px;
                                     } ?> 
                     </div> 
                 <?php else: ?> 
-                    <input type="email" placeholder="Email address" required id="email" name="email_news" autocomplete="off"> 
+                    <input type="email" placeholder="Email address" required id="email" name="email_news"> 
                     <button type="submit">Subscribe</button> <?php endif; ?>
                 </form>
             <span>No spams included</span>
