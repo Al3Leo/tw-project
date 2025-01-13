@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-=======
-
->>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
 <head>
     <?php require_once "../../components/utils/headMetadata.html"?>
     <title>Travel Catalogue</title>
@@ -92,14 +88,7 @@
                 <div class="catalogue__item__text">
                     <b>Mercury</b>
                 </div>
-<<<<<<< HEAD
                 <a href="backend/addToCart.php?id=12335" style="color: #1fe100"> prova add</a>
-=======
-                <form method="POST" action="php/addToCart.php">
-                    <input type="hidden" name="id" value="1" />
-                    <input type="submit" value="add" />
-                </form>
->>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="pages/catalogue/catalogue-items/planets/venus.php">
@@ -108,11 +97,7 @@
                 <div class="catalogue__item__text">
                     <b>Venus</b>
                 </div>
-<<<<<<< HEAD
                 <a href="backend/addToCart.php?id=12336" style="color: #1fe100"> prova add</a>
-=======
-                <button type="button">Add to cart</button>
->>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
