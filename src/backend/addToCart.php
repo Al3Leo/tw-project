@@ -4,6 +4,7 @@
  * informaazioni che sono a loro volta array
  * in fine il carrello è salvato in stringa con encoder json nei cookie
  */
+echo "<script>alert('g');</script>";
 session_start();
 // Connessione al database
 $host = 'localhost';
@@ -53,5 +54,5 @@ if (!$duplicato) {
 
 setcookie('cart', json_encode($cart), time() + 3600); // Imposta il cookie con il carrello aggiornato
 // ritorna al carrello
-header("Location: " . $_SERVER['HTTP_REFERER']);
+//header("Location: " . $_SERVER['HTTP_REFERER']);
 ?>

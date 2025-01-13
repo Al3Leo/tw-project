@@ -10,27 +10,27 @@
             <th>Price</th>
         </tr>
         <?php
-        if (isset($_COOKIE['cart'])) {
-            $cart = json_decode($_COOKIE['cart'], true);
-            $tot = 0;
-            foreach ($cart as $key => $value) {
-                $tot += $value['prezzo'];
-                echo "<tr>";
-                echo "<td style='text-align: left; width: fit-content'>" . $value['nome'] . "</td>";
-                echo "<td style='width: 10%'></td>";
-                echo "<td style='text-align: right; width: fit-content'>" . $value['prezzo'] . " $</td>";
-                echo "<td><a href='../src/backend/RemoveItemFromCart.php?nome=" . $value['nome'] . "'>&#x1F5D1</a></td>";  // cestino Unicode
-                echo "</tr>";
-            }
-            if ($tot != 0)
-                echo "<tr>
+            if (isset($_COOKIE['cart'])) {
+                $cart = json_decode($_COOKIE['cart'], true);
+                $tot = 0;
+                foreach ($cart as $key => $value) {
+                    $tot += $value['prezzo'];
+                    echo "<tr>";
+                    echo "<td style='text-align: left; width: fit-content'>" . $value['nome'] . "</td>";
+                    echo "<td style='width: 10%'></td>";
+                    echo "<td style='text-align: right; width: fit-content'>" . $value['prezzo'] . " $</td>";
+                    echo "<td><a href='../src/backend/RemoveItemFromCart.php?nome=" . $value['nome'] . "'>&#x1F5D1</a></td>";  // cestino Unicode
+                    echo "</tr>";
+                }
+                if ($tot != 0)
+                    echo "<tr>
                     <td colspan='3'>Total Price: $tot $</td>
                     <td><button type='button' id='acquistaButton'>Buy</button></td>
                   </tr>";
-            else {
-                echo "<tr><td colspan='4'>Il carrello è vuoto.</td></tr>";
+                else {
+                    echo "<tr><td colspan='4'>Il carrello è vuoto.</td></tr>";
+                }
             }
-        }
         ?>
     </table>
 </div>

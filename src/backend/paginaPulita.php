@@ -12,11 +12,9 @@ include_once 'contaVisite.php'; ?>
 </head>
 
 <body>
-<?php echo include_once '../components/header/header.php'; ?>
-
-<a href="backend/addToCart.php?id=1" style="color: #1fe100"> add</a>
-<?php require_once '../components/footer/footer.html';
-?>
+<?php  require_once '../components/header/header.php'; ?>
+<?php  require_once '../bozze/ajax_cart.php'; ?>
+<?php require_once '../components/footer/footer.html'; ?>
 </body>
 
 </html>
