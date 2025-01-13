@@ -76,8 +76,6 @@ function apriHome(){
     window.location.href='pages/homepage/homepage.php';
 }
 </script>
-<<<<<<< HEAD
-=======
 <html>
     
 <!-- A cosa serve questo file> -->
@@ -143,8 +141,4 @@ function apriHome(){
     </main>
     <?php include_once '../html/Footer.html' ?>
 </body>
-
->>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
-=======
->>>>>>> 4fcf1090370b23b13499b7123b1ef615008c71c0
 </html>
