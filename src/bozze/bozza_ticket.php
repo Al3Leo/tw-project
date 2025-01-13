@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>your floppy ticket</title>
+    <meta charset="UTF-8">
     <style>
         @import url('https://fonts.cdnfonts.com/css/nasa');
 
