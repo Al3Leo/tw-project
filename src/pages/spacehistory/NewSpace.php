@@ -211,10 +211,25 @@
             <div class="newsletter-container-text">
               <h2>Subscribe to our<br>Newsletter</h2>
               <p>Subscribe to our newsletter to receive <br>the lastest ticket offers and stay updated on news about space.<br>Don't miss the change to stay informed!</p>
-              <form id="form-newsletter">
-              <input type="email" placeholder="Email address" required id="email" name="email">
-              <button type="submit">Subscribe</button>
-            </form>
+              <form id="form-newsletter" action="pages/spacehistory/newsletterinsert.php" method="POST">
+              <?php if (isset($_GET['status'])): ?> 
+                <div class="message"> 
+                    <?php if ($_GET['status'] == 'success') { 
+                        echo "<p>Email inserted successfully!</p>"; 
+                        } elseif ($_GET['status'] == 'error') {
+                            echo "<p>Error while inserting the email. Please try again later.</p>"; 
+                            } elseif ($_GET['status'] == 'esiste') { 
+                                echo "<p>Email is already subscribed to the newsletter.</p>"; 
+                                echo "<input type=\"email\" placeholder=\"Email address\" required id=\"email\" name=\"email_news\">"; 
+                                echo "<button type=\"submit\">Subscribe</button>";
+                                } elseif ($_GET['status'] == 'invalid') { 
+                                    echo "<p>Invalid email. Please enter a valid email.</p>"; 
+                                    } ?> 
+                    </div> 
+                <?php else: ?> 
+                    <input type="email" placeholder="Email address" required id="email" name="email_news"> 
+                    <button type="submit">Subscribe</button> <?php endif; ?>
+                </form>
             <span>No spams included</span>
             </div>
         </div>
