@@ -1,0 +1,29 @@
+@import "../assets/css/Global.css";
+
+*{
+    box-sizing: border-box;
+}
+.mainconfirm .confirm_div {
+    gap: 0.5em;
+    background-color: aliceblue;
+    width: 50vh;
+    height: auto;
+    box-shadow: 0 20px 30px rgba(205, 231, 10, 0.185);
+}
+
+.confirm_div .div_down p{
+    color: rgb(40, 39, 39);
+    
+}
+.confirm_div>div:first-child{
+    background-color: #7f0ab9;
+    text-shadow:0 0.15ch 15px oklch(25% 0.2  320),0 -2px 0 oklch(98% 0.05  320);
+}
+body{
+    height: 100vh;
+}
+.confirm_div .div_up img{
+object-fit: contain;
+}
+main {height: 65vh; 
+   }
