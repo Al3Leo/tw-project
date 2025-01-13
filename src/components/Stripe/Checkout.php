@@ -1,6 +1,7 @@
 <?php
 
 require __DIR__ . "/vendor/autoload.php";
+$urlconfirm=__DIR__ ."/../../bozze/conferma.php";
 
 $stripe_secret_key = "sk_test_51QgDccDj8L2aaNpFkDTpkoamjLejxEw7RAebnq1T6nwrEcJ3339RbYnQb0lqEPIvFUt7O3kyLg3AkjxEquc9tpWM004DUeg6sQ";
 \Stripe\Stripe::setApiKey($stripe_secret_key);
@@ -27,7 +28,7 @@ if (isset($_GET['cart'])) {
         // Crea la sessione di checkout
         $checkout_session = \Stripe\Checkout\Session::create([
             "mode" => "payment",
-            "success_url" => "https://tuo-sito.com/success",
+            "success_url" => $urlconfirm,
             "cancel_url" => "https://tuo-sito.com/cancel",
             "line_items" => $line_items
         ]);
