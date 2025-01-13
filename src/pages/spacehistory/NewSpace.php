@@ -227,7 +227,7 @@
                                     } ?> 
                     </div> 
                 <?php else: ?> 
-                    <input type="email" placeholder="Email address" required id="email" name="email_news"> 
+                    <input type="email" placeholder="Email address" required id="email" name="email_news" autocomplete="off"> 
                     <button type="submit">Subscribe</button> <?php endif; ?>
                 </form>
             <span>No spams included</span>
