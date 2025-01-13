@@ -47,7 +47,11 @@
 </head>
 <body>
 <div class="input">
+<<<<<<< HEAD
     <form method="POST" action="RegistraUtente.php" onsubmit="window.open('../../backend/ConfermaDinamica.php?confermaDinamica=Your account has been created', 'blank')">
+=======
+    <form method="POST" action="RegistraUtente.php">
+>>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
         <label for="username">Username</label>
         <input type="text" id="username" name="user_username" required>
 

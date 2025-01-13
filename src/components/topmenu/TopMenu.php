@@ -93,7 +93,11 @@
         position: fixed;
         top: 0;
         right: 0;
+<<<<<<< HEAD
         z-index: 6;
+=======
+        z-index: 1;
+>>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
     }
 
     #sidebar {
@@ -105,8 +109,14 @@
         list-style: none;
     }
 
+<<<<<<< HEAD
    .sideBar ul #li-speciale{
     border-bottom: none;
+=======
+    /*la x nel menu*/
+    #li-speciale {
+        border-bottom: none;
+>>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
     }
 
     /*opzioni del menu laterale*/
@@ -156,17 +166,24 @@
         gap: 0.5rem;
     }
     #carrello{
+<<<<<<< HEAD
         border: 3px solid #47008f;
+=======
+        border: 3px solid #ffffff;
+>>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
         display: none;
         z-index: 3;
         background-color: black;
         height: 25vh;
         border-radius: 15px;
+<<<<<<< HEAD
         background-image: url('assets/images/space/mars.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         position: fixed;
+=======
+>>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
     }
     #carrello_tbl{
         margin: 3%;
@@ -184,10 +201,15 @@
         let bar = document.getElementById("sideBar");
         bar.classList.toggle("toggleShow");
         bar.style.borderBottom = "0";
+<<<<<<< HEAD
         let cart=document.getElementById("carrello");
         let btn = document.getElementsByClassName("btn")[1];
         if (btn.style.display != "none") {
             cart.style.display="none";
+=======
+        let btn = document.getElementsByClassName("btn")[1];
+        if (btn.style.display != "none") {
+>>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
             btn.style.display = "none";
             btn = document.getElementsByClassName("btn")[2];
             btn.style.display = "none";
@@ -198,7 +220,11 @@
         }
         //a scopo didattico sono stati usati due metodi diversi (toggle e style di js)
     }
+<<<<<<< HEAD
     function openCart(){ //refactoring name in toggle prima o poi
+=======
+    function openCart(){
+>>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
         let cart=document.getElementById("carrello");
         if (cart.style.display != "none")
             cart.style.display="none";
@@ -216,7 +242,11 @@
         <a href="pages/signup/SignUp.php"><button class="btn" id="signup">SignUp</button></a>
         <button class="btn" id="login" onclick="openLoginPopup()">LogIn</button>
         <!--parte di utente loggato-->
+<<<<<<< HEAD
         <a href="backend/LogOut.php"><button class="btn" id="logout">LogOut</button></a>
+=======
+        <a href="components/LogOut.php"><button class="btn" id="logout">LogOut</button></a>
+>>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
         <div id="userinfo">
             <!--valori da completare in php-->
             <span class="userinfoList"><?php echo $_SESSION['username'] ?></span>

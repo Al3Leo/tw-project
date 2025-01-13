@@ -1,9 +1,13 @@
 @import '../../assets/css/Global.css';
+<<<<<<< HEAD
 body{
     background-image: url("cosmo.jpg");
     background-position: center;
     background-repeat: no-repeat;
 }
+=======
+
+>>>>>>> eb391e0e1a245688146621b45c06fe21931c7870
 #text_container{
     display: block;
     width: 40vw;
