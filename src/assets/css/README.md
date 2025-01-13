@@ -1,1 +1,0 @@
-Questa cartella contiene codice css globale, che puó essere importato dagli altri stili.
