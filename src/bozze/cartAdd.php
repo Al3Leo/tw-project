@@ -15,7 +15,7 @@ function addToCart($qty_total, $prodotto, $prezzo, $cart) {
 session_start();
 // Connessione al database
 $host = 'localhost';
-$port = '9999';
+$port = '5432';
 $db = 'GRUPPO05';
 $username = 'www';
 $password = 'tw2024';

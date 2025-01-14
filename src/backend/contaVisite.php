@@ -3,7 +3,7 @@ if(!isset($_COOKIE['biscotto'])){
     setcookie("biscotto", "oreo", time()+(3));
     // Connessione
     $host = 'localhost';
-    $port = '9999';
+    $port = '5432';
     $db = 'GRUPPO05';
     $username = 'www';
     $password = 'tw2024';

@@ -3,7 +3,7 @@
 if (isset($_COOKIE['cart'])) {
     $cart = json_decode($_COOKIE['cart'], true);
     $tot = 0;
-
+    
     $output = "
         <tr>
             <th style='text-align: left'>Where</th>
@@ -18,7 +18,7 @@ if (isset($_COOKIE['cart'])) {
                 <td style='text-align: left; width: fit-content'>" . htmlspecialchars($value['nome']) . "</td>
                 <td style='width: 10%'></td>
                 <td style='text-align: right; width: fit-content'>" . htmlspecialchars($value['prezzo']) . " $</td>
-                <td><a href='../src/backend/RemoveItemFromCart.php?nome=" . urlencode($value['nome']) . "'>&#x1F5D1</a></td>
+                <td><button onclick='ajax_remove(1)'>&#x1F5D1</button></td>
             </tr>
         ";
     }

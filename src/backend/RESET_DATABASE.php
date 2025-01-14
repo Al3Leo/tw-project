@@ -3,7 +3,7 @@
 //connessione
 echo "start...<br>";
 $host = 'localhost';
-$port = '9999';
+$port = '5432';
 $db = 'GRUPPO05';
 $username = 'www';
 $password = 'tw2024';
