@@ -129,9 +129,13 @@ require_once "../../../../components/header/header.php"
             </div>
         </div>
     </main>
-    <?php
-    require_once "../../../../components/footer/footer.html"
-    ?>
+    <div class="suggestions">
+        <h4 class="text-center">You might also be interested in</h4>
+        <div class="carousel-ct text-center">
+            
+        </div>
+    </div>
+    <?php require_once "../../../../components/footer/footer.html"?>
     <!--<script src="components/gst/gst.js"></script>-->
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
