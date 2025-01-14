@@ -68,22 +68,74 @@ require_once "../../../../components/header/header.php"
                         Get ready for a one-of-a-kind experience on <b>Venus!</b> The planet features <b>surreal landscapes</b>, extreme weather, and a fascinating <b>history</b>. Equip yourself with special space suits to endure the scorching temperatures, and follow our expert guides for a safe and unforgettable journey. Learn about Venus' role in mythology and the scientific discoveries made about this mysterious planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities.
                         Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!</p>
                     </p>
-                    <h3 class="text-center">What the price includes</h3>
-                    <ul>
-                        <li><p><strong>Round-trip Space Transportation</strong>: Comfortable and safe travel from Earth to Venus and back.</p></li>
-                        <li></p><strong>Accommodation</strong>: Stay in our state-of-the-art <b>space habitat</b> with all the amenities you need for a comfortable stay.</p></li>
-                        <li></p><strong>Guided Tours</strong>: Daily <b>guided tours</b> to explore the most fascinating sites on Venus, led by our expert space guides.</p></li>
-                        <li></p><strong>Meals</strong>: Enjoy a variety of <b>gourmet meals</b> prepared by our onboard chefs, including special Venus-themed dishes.</p></li>
-                        <li></p><strong>Space Suit Rental</strong>: High-quality <b>space suits</b> provided for your safety and comfort during all outdoor activities.</p></li>
-                        <li></p><strong>Pre-trip Training</strong>: Comprehensive <b>training sessions</b> to prepare you for the unique conditions of space travel and Venus exploration (optional).</p></li>
-                        <li></p><strong>24/7 Support</strong>: Our team of space travel specialists is available around the clock to assist you with any needs or questions.</p></li>
-                    </ul>
+                    <div class="main__left__tripKnowledge__item">
+                        <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
+                            <h4 class="text-center">What the price includes?</h4>
+                            <span class="main__left__tripKnowledge__arrow">&#x25BC</span>
+                        </div>
+                        <div class="main__left__tripKnowledge__item__answer">
+                            <ul>
+                                <li>
+                                    <p><strong>Round-trip Space Transportation</strong>: Comfortable and safe travel from Earth to Venus and back.</p>
+                                </li>
+                                <li>
+                                    </p><strong>Accommodation</strong>: Stay in our state-of-the-art <b>space habitat</b> with all the amenities you need for a comfortable stay.</p>
+                                </li>
+                                <li>
+                                    </p><strong>Guided Tours</strong>: Daily <b>guided tours</b> to explore the most fascinating sites on Venus, led by our expert space guides.</p>
+                                </li>
+                                <li>
+                                    </p><strong>Meals</strong>: Enjoy a variety of <b>gourmet meals</b> prepared by our onboard chefs, including special Venus-themed dishes.</p>
+                                </li>
+                                <li>
+                                    </p><strong>Space Suit Rental</strong>: High-quality <b>space suits</b> provided for your safety and comfort during all outdoor activities.</p>
+                                </li>
+                                <li>
+                                    </p><strong>Pre-trip Training</strong>: Comprehensive <b>training sessions</b> to prepare you for the unique conditions of space travel and Venus exploration (optional).</p>
+                                </li>
+                                <li>
+                                    </p><strong>24/7 Support</strong>: Our team of space travel specialists is available around the clock to assist you with any needs or questions.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main__left__tripKnowledge__item">
+                        <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
+                            <h4 class="text-center">What the price includes?</h4>
+                            <span class="main__left__tripKnowledge__arrow">&#x25BC</span>
+                        </div>
+                        <div class="main__left__tripKnowledge__item__answer">
+                            <ul>
+                                <li>
+                                    <p><strong>Round-trip Space Transportation</strong>: Comfortable and safe travel from Earth to Venus and back.</p>
+                                </li>
+                                <li>
+                                    </p><strong>Accommodation</strong>: Stay in our state-of-the-art <b>space habitat</b> with all the amenities you need for a comfortable stay.</p>
+                                </li>
+                                <li>
+                                    </p><strong>Guided Tours</strong>: Daily <b>guided tours</b> to explore the most fascinating sites on Venus, led by our expert space guides.</p>
+                                </li>
+                                <li>
+                                    </p><strong>Meals</strong>: Enjoy a variety of <b>gourmet meals</b> prepared by our onboard chefs, including special Venus-themed dishes.</p>
+                                </li>
+                                <li>
+                                    </p><strong>Space Suit Rental</strong>: High-quality <b>space suits</b> provided for your safety and comfort during all outdoor activities.</p>
+                                </li>
+                                <li>
+                                    </p><strong>Pre-trip Training</strong>: Comprehensive <b>training sessions</b> to prepare you for the unique conditions of space travel and Venus exploration (optional).</p>
+                                </li>
+                                <li>
+                                    </p><strong>24/7 Support</strong>: Our team of space travel specialists is available around the clock to assist you with any needs or questions.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
         </div>
         <div class="main__right">
             <div class="main__right__celestialBodyInfo">
                 <h4 class="text-center">Celestial Body Info</h3>
-                <!-- La tabella é generata da JS-->
+                    <!-- La tabella é generata da JS-->
             </div>
             <div class="main__right__gst">
                 <h4 class="text-center">Geomagnetic Storm Status</h3>
@@ -93,14 +145,13 @@ require_once "../../../../components/header/header.php"
     <?php
     require_once "../../../../components/footer/footer.html"
     ?>
-    <script src="components/gst/gst.js"></script>
+    <!--<script src="components/gst/gst.js"></script>-->
+    <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
 
 </html>
 
 <script>
-    
-    /* GESTIONE API */
     /* Solar System OpenData API*/
 
     // Creazione di un oggetto XMLHttpRequest
@@ -164,5 +215,6 @@ require_once "../../../../components/header/header.php"
         // Seleziona il div con classe "celestialBodyInfo" e aggiungi la tabella lì
         const container = document.querySelector('.main__right__celestialBodyInfo');
         container.appendChild(table);
+
     }
 </script>

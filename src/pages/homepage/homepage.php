@@ -64,7 +64,7 @@
     </main>
     <div id="secondary-s" class="d-flex flex-row justify-content-between align-item-center">
         <section class="faq">
-            <h3>FAQ - Frequently Asked Question:</small></h3>
+            <h3>FAQ - Frequently Asked Question:</h3>
             <div class="faq__item">
                 <div class="faq__item__question d-flex justify-content-between align-items-center">
                     <p>Who can travel to space?</p>
@@ -204,5 +204,4 @@
     <script src="pages/homepage/homepage.js"></script>
     <script src="assets/js/slideshow.js"></script>
 </body>
-
 </html>
