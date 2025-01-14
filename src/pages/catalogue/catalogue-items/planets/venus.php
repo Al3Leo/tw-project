@@ -70,7 +70,7 @@ require_once "../../../../components/header/header.php"
                     </p>
                     <div class="main__left__tripKnowledge__item">
                         <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
-                            <h4 class="text-center">What the price includes?</h4>
+                            <p class="text-center">What's included in the price</p>
                             <span class="main__left__tripKnowledge__arrow">&#x25BC</span>
                         </div>
                         <div class="main__left__tripKnowledge__item__answer">
@@ -101,33 +101,20 @@ require_once "../../../../components/header/header.php"
                     </div>
                     <div class="main__left__tripKnowledge__item">
                         <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
-                            <h4 class="text-center">What the price includes?</h4>
+                            <p class="text-center">What's NOT included in the price</p>
                             <span class="main__left__tripKnowledge__arrow">&#x25BC</span>
                         </div>
                         <div class="main__left__tripKnowledge__item__answer">
-                            <ul>
-                                <li>
-                                    <p><strong>Round-trip Space Transportation</strong>: Comfortable and safe travel from Earth to Venus and back.</p>
-                                </li>
-                                <li>
-                                    </p><strong>Accommodation</strong>: Stay in our state-of-the-art <b>space habitat</b> with all the amenities you need for a comfortable stay.</p>
-                                </li>
-                                <li>
-                                    </p><strong>Guided Tours</strong>: Daily <b>guided tours</b> to explore the most fascinating sites on Venus, led by our expert space guides.</p>
-                                </li>
-                                <li>
-                                    </p><strong>Meals</strong>: Enjoy a variety of <b>gourmet meals</b> prepared by our onboard chefs, including special Venus-themed dishes.</p>
-                                </li>
-                                <li>
-                                    </p><strong>Space Suit Rental</strong>: High-quality <b>space suits</b> provided for your safety and comfort during all outdoor activities.</p>
-                                </li>
-                                <li>
-                                    </p><strong>Pre-trip Training</strong>: Comprehensive <b>training sessions</b> to prepare you for the unique conditions of space travel and Venus exploration (optional).</p>
-                                </li>
-                                <li>
-                                    </p><strong>24/7 Support</strong>: Our team of space travel specialists is available around the clock to assist you with any needs or questions.</p>
-                                </li>
-                            </ul>
+                            <b>Optional excursions</b>, tips, personal expenses, lunches and dinners and what is not expressly mentioned under "The fee includes"
+                        </div>
+                    </div>
+                    <div class="main__left__tripKnowledge__item">
+                        <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
+                            <p class="text-center">Required Documents</p>
+                            <span class="main__left__tripKnowledge__arrow">&#x25BC</span>
+                        </div>
+                        <div class="main__left__tripKnowledge__item__answer">
+                            <p><b>Passport</b> is required, with at least six months remaining validity. Entry visa is not necessary.</p>
                         </div>
                     </div>
                 </div>
@@ -154,14 +141,12 @@ require_once "../../../../components/header/header.php"
 <script>
     /* Solar System OpenData API*/
 
-    // Creazione di un oggetto XMLHttpRequest
-    let ssoXhr = new XMLHttpRequest();
+    let ssoXhr = new XMLHttpRequest(); // Creazione di un oggetto XMLHttpRequest
 
     // Richiama l'Endpoint
     ssoXhr.open("GET", "https://api.le-systeme-solaire.net/rest/bodies/venus", true); //true = asincrono
 
-    // Impostiamo la proprietà responseType per ricevere la risposta come JSON
-    ssoXhr.responseType = 'json';
+    ssoXhr.responseType = 'json'; // Impostiamo la proprietà responseType per ricevere la risposta come JSON
 
     // Invio richiesta
     ssoXhr.send();

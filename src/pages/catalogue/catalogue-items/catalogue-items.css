@@ -73,8 +73,14 @@ main {
 .main__left__tripKnowledge h3 {
   margin-top: 3%;
 }
+
 .main__left__tripKnowledge strong {
   color: var(--tertiaryColor);
+}
+
+.main__left__tripKnowledge__item__question p{
+    font-weight: bold !important;
+    font-size: 1.1rem;
 }
 
 /* Dropdown Travel Info*/ 
