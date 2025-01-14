@@ -184,8 +184,8 @@ require_once "../../../../components/header/header.php"
         // Restituisce un oggetto conteneneti tutte le keys del json ed itera su di esse tramite for each
         Object.keys(jsonData).forEach(key => {
 
-            // Se nel json sono presenti oggetti con value nullo, li salta
-            if (jsonData[key] === null || jsonData[key] === '') {
+            // Se nel json sono presenti oggetti con value nullo, li salta, nasconde il valore relativo alla chiave "id" e alla chiave "isPlanet"
+            if (key === "id" || jsonData[key] === null || jsonData[key] === '' || key === "isPlanet") {
                 return; // Salta questa iterazione
             }
             let row = tbody.insertRow(); // Crea una riga per ogni coppia chiave-valore
@@ -204,6 +204,5 @@ require_once "../../../../components/header/header.php"
         // Seleziona il div con classe "celestialBodyInfo" e aggiungi la tabella lì
         const container = document.querySelector('.main__right__celestialBodyInfo');
         container.appendChild(table);
-
     }
 </script>
