@@ -16,12 +16,12 @@
         transition: 500ms;
     }
 
-    #signup {
+    #signup, #cartbtn{
         border: 3px solid #1d0b42;
         border-radius: 25px;
         font-size: small;
     }
-    #signup:hover{
+    #signup:hover, #cartbtn:hover{
         border-color: rgb(170, 56, 255) !important;
         transition: 500ms;
     }
@@ -208,7 +208,7 @@
 </script>
 <header id="topbar">
     <!--logo login e signup-->
-    <a href="pages/homepage.php">
+    <a href="pages/homepage.php">   <!--svg per il logo-->
         <svg width="158" height="62" viewBox="0 0 158 62" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="158" height="62" fill="#1E1E1E"/>
 <rect width="165" height="102" transform="translate(-7 -14)" fill="black"/>
