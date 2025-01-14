@@ -3,7 +3,7 @@
 
 <head>
     <?php
-        require_once '../../../../components/utils/headMetadata.html';
+    require_once '../../../../components/utils/headMetadata.html';
     ?>
     <title>Venus</title>
     <link rel="stylesheet" href="../catalogue-items.css">
@@ -11,7 +11,7 @@
 </head>
 
 <?php
-    require_once "../../../../components/header/header.php"
+require_once "../../../../components/header/header.php"
 ?>
 
 <body>
@@ -30,73 +30,107 @@
         <div class="main__left">
             <h2 class="text-center">Travel Info</h3>
                 <p>Welcome to Venus, Earth's twin planet, renowned for its beauty and mystery! A journey to this fascinating world offers an extraordinary experience filled with surreal landscapes and extreme conditions. With proper preparation and guidance, Venus will unveil its secrets.</p>
-                <div class="main__left__section1 d-flex flex-row">
-                    <div class="main__left__section1__date d-flex flex-column align-items-center">
+                <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
+                    <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                         <span class="price">3000 &#8364</span>
                         <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
                             <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
                             <span class="days"> 10 Days</span>
                         </div>
+                        <div class="d-flex flex-row justify-content-between align-items-center main__left__section1__date__btn">
+                            <button type="button" class="text-uppercase">Discover all the dates</button>
+                            <a target="_blank" href="pages/support/Supporto.php">
+                                <button type="button" class="text-uppercase">More info</button>
+                            </a>
+                        </div>
                     </div>
-                    <div class="main__left__section1__whatSee">
+                    <div class="main__left__section1__whatSee text-justify">
                         <h3 class="text-center">What to See</h3>
-                        <p>Maxwell Montes</p>
-                        <p>Ishtar Terra Plateau</p>
-                        <p>Lavinia Planitia Plains</p>
-                        <p>Baltis Vallis Canyon</p>
+                        <ol>
+                            <li>
+                                <p><span>Maxwell Montes:</span> Discover Venus' highest point, offering breathtaking views above the planet's dense clouds.</p>
+                            </li>
+                            <li>
+                                <p><span>Ishtar Terra Plateau:</span> Explore the majestic mountains of this vast plateau, a region of mystery and beauty.</p>
+                            </li>
+                            <li>
+                                <p><span>Lavinia Planitia Plains:</span> Venture into the expansive plains, perfect for adventurous exploration.</p>
+                            </li>
+                            <li>
+                                <p><span>Baltis Vallis Canyon:</span> Witness the longest canyon in the solar system, a unique geological wonder on Venus.</p>
+                            </li>
                         </ol>
                     </div>
                 </div>
                 <div class="main__left__tripKnowledge">
-                    <h4 class="text-center">Everything you need to know about this trip</h4>
-                    <div class="testimonial__grid__item">
-                    </div>
+                    <h3 class="text-center">Everything you need to know about this trip</h3>
+                    <p>
+                        Get ready for a one-of-a-kind experience on <b>Venus!</b> The planet features <b>surreal landscapes</b>, extreme weather, and a fascinating <b>history</b>. Equip yourself with special space suits to endure the scorching temperatures, and follow our expert guides for a safe and unforgettable journey. Learn about Venus' role in mythology and the scientific discoveries made about this mysterious planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities.
+                        Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!</p>
+                    </p>
+                    <h3 class="text-center">What the price includes</h3>
+                    <ul>
+                        <li><p><strong>Round-trip Space Transportation</strong>: Comfortable and safe travel from Earth to Venus and back.</p></li>
+                        <li></p><strong>Accommodation</strong>: Stay in our state-of-the-art <b>space habitat</b> with all the amenities you need for a comfortable stay.</p></li>
+                        <li></p><strong>Guided Tours</strong>: Daily <b>guided tours</b> to explore the most fascinating sites on Venus, led by our expert space guides.</p></li>
+                        <li></p><strong>Meals</strong>: Enjoy a variety of <b>gourmet meals</b> prepared by our onboard chefs, including special Venus-themed dishes.</p></li>
+                        <li></p><strong>Space Suit Rental</strong>: High-quality <b>space suits</b> provided for your safety and comfort during all outdoor activities.</p></li>
+                        <li></p><strong>Pre-trip Training</strong>: Comprehensive <b>training sessions</b> to prepare you for the unique conditions of space travel and Venus exploration (optional).</p></li>
+                        <li></p><strong>24/7 Support</strong>: Our team of space travel specialists is available around the clock to assist you with any needs or questions.</p></li>
+                    </ul>
                 </div>
         </div>
-        <div class="main__right celestialBodyInfo">
-            <h3 class="text-center">Celestial Body Info</h3>
-            <!-- La tabella é generata da JS-->
+        <div class="main__right">
+            <div class="main__right__celestialBodyInfo">
+                <h4 class="text-center">Celestial Body Info</h3>
+                <!-- La tabella é generata da JS-->
+            </div>
+            <div class="main__right__gst">
+                <h4 class="text-center">Geomagnetic Storm Status</h3>
+            </div>
         </div>
     </main>
     <?php
     require_once "../../../../components/footer/footer.html"
     ?>
+    <script src="components/gst/gst.js"></script>
 </body>
 
 </html>
 
 <script>
+    
     /* GESTIONE API */
+    /* Solar System OpenData API*/
 
     // Creazione di un oggetto XMLHttpRequest
-    let xhr = new XMLHttpRequest();
+    let ssoXhr = new XMLHttpRequest();
 
     // Richiama l'Endpoint
-    xhr.open("GET", "https://api.le-systeme-solaire.net/rest/bodies/venus", true); //true = asincrono
+    ssoXhr.open("GET", "https://api.le-systeme-solaire.net/rest/bodies/venus", true); //true = asincrono
 
     // Impostiamo la proprietà responseType per ricevere la risposta come JSON
-    xhr.responseType = 'json';
+    ssoXhr.responseType = 'json';
 
     // Invio richiesta
-    xhr.send();
+    ssoXhr.send();
 
     //readyState e status consentono di verificare lo stato della richiesta
-    xhr.onload = function() {
-        if (xhr.readyState == 4) { // Controllo corretto con xhr.readyState
-            switch (xhr.status) {
+    ssoXhr.onload = function() {
+        if (ssoXhr.readyState == 4) { // Controllo corretto con ssoXhr.readyState
+            switch (ssoXhr.status) {
                 case 200:
-                    let response = xhr.response;
-                    console.log(xhr.response); // Mostra la risposta in formato JSON
+                    let response = ssoXhr.response;
                     createTable(response);
                     break;
                 case 404:
-                    alert("La pagina indicata non esiste!");
+                    alert("API loading error! Request data not found.");
                     break;
                 case 500:
-                    alert("Si è verificato un errore sul server!");
+                    alert("API loading error! Server generic error.");
                     break;
                 default:
-                    alert("Non è possibile elaborare la richiesta (" + xhr.statusText + ")");
+                    alert("API loading error! Request error: (" + ssoXhr.statusText + ")");
             }
         }
     };
@@ -105,8 +139,6 @@
     function createTable(jsonData) {
         // Crea una tabella HTML
         let table = document.createElement('table');
-
-        // Aggiungi i dati alla tabella
         let tbody = table.createTBody();
 
         // Restituisce un oggetto conteneneti tutte le keys del json ed itera su di esse tramite for each
@@ -130,7 +162,7 @@
         });
 
         // Seleziona il div con classe "celestialBodyInfo" e aggiungi la tabella lì
-        const container = document.querySelector('.celestialBodyInfo');
+        const container = document.querySelector('.main__right__celestialBodyInfo');
         container.appendChild(table);
     }
 </script>
