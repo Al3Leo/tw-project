@@ -7,7 +7,7 @@
 session_start();
 // Connessione al database
 $host = 'localhost';
-$port = '9999';
+$port = '5432';
 $db = 'GRUPPO05';
 $username = 'www';
 $password = 'tw2024';
@@ -53,5 +53,5 @@ if (!$duplicato) {
 
 setcookie('cart', json_encode($cart), time() + 3600); // Imposta il cookie con il carrello aggiornato
 // ritorna al carrello
-header("Location: " . $_SERVER['HTTP_REFERER']);
+//header("Location: " . $_SERVER['HTTP_REFERER']);
 ?>
