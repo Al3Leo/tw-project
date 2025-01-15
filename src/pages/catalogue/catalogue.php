@@ -88,7 +88,7 @@
                 <div class="catalogue__item__text">
                     <b>Mercury</b>
                 </div>
-                <a href="backend/addToCart.php?id=12335" style="color: #1fe100"> prova add</a>
+                <a href="backend/addToCart.php?id=10006" style="color: #1fe100"> prova add</a>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="pages/catalogue/catalogue-items/planets/venus.php">
@@ -97,7 +97,7 @@
                 <div class="catalogue__item__text">
                     <b>Venus</b>
                 </div>
-                <a href="backend/addToCart.php?id=12336" style="color: #1fe100"> prova add</a>
+                <a href="backend/addToCart.php?id=10007" style="color: #1fe100"> prova add</a>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">

@@ -2,13 +2,7 @@
 //non giocare con questo file
 //connessione
 echo "start...<br>";
-$host = 'localhost';
-$port = '5432';
-$db = 'GRUPPO05';
-$username = 'www';
-$password = 'tw2024';
-$connection_string = "host=$host port=$port dbname=$db user=$username password=$password";
-$db_connection = pg_connect($connection_string) or die('impossibile connettersi al databse<br>' . pg_last_error());
+require_once "ConnettiDb.php";
 echo "connected<br>";
 //reset info_database
 echo "reset info db<br>";

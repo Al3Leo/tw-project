@@ -1,6 +1,5 @@
 <?php
 require_once "gestioneAcquisti.php"; 
-//header("Location: gestioneAcquisti.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

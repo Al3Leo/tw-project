@@ -4,13 +4,7 @@
  * setta username come var di sessione se logga
  */
 // Connessione
-$host = 'localhost';
-$port = '5432';
-$db = 'GRUPPO05';
-$username = 'www';
-$password = 'tw2024';
-$connection_string = "host=$host port=$port dbname=$db user=$username password=$password";
-$db_connection = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
+require_once "ConnettiDb.php";
 // Inizio login
 if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
     $user = $_POST['user_username'];

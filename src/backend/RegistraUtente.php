@@ -1,12 +1,6 @@
 <?php
 //connessione
-$host = 'localhost';
-$port = '5432';
-$db = 'GRUPPO05';
-$username = 'www';
-$password = 'tw2024';
-$connection_string = "host=$host port=$port dbname=$db user=$username password=$password";
-$db_connection =pg_connect($connection_string) or die('impossibile connettersi al databse<br>'.pg_last_error());
+require_once "ConnettiDb.php";
 //get id disponibile
 $query = "SELECT id_utenti FROM info_server";
 $ret = pg_query($db_connection, $query) or die('Errore durante la lettura del id: ' . pg_last_error($db_connection));
