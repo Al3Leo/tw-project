@@ -17,7 +17,7 @@ $db_connection = pg_connect($connection_string) or die('Impossibile connettersi 
 
 
 $id = $_GET['id'];
-$query = "SELECT nomeevento, prezzoevento FROM viaggio WHERE idevento='$id'";
+$query = "SELECT * FROM viaggio WHERE idevento='$id'";
 
 
 
@@ -35,12 +35,13 @@ if (isset($_COOKIE['cart'])) {
 
 $info = array(
     "nome" => $prodotto['nomeevento'] ?? null,
-    "prezzo" => $prodotto['prezzoevento'] ?? null
+    "prezzo" => $prodotto['prezzoevento'] ?? null,
+    "id" => $prodotto['idevento'] ?? null
 );
 
     $duplicato = false;
-    foreach ($cart as $index_main_array => $sottoarray) {
-        if ($sottoarray['nome'] == $prodotto['nomeevento']) {
+    foreach ($cart as $sottoarray) {
+        if ($sottoarray['id'] == $prodotto['idevento']) {
             $duplicato = true;
             break;
         }

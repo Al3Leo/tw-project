@@ -15,7 +15,7 @@ if (isset($_GET['cart'])) {
     $line_items = [];
     foreach ($cart as $item) {
         $line_items[] = [
-            "quantity" => 1, // Puoi aggiornare questo per gestire quantità multiple
+            "quantity" => 1, 
             "price_data" => [
                 "currency" => "usd",//valuta dollaro
                 "unit_amount" => $item['prezzo'] * 100, // Converti in centesimi
@@ -26,11 +26,9 @@ if (isset($_GET['cart'])) {
         ];
     }
 
-// Verifica l'URL di successo
-echo "URL di successo: " . $urlconfirm . "<br>";
 
 try {
-    // Crea la sessione di checkout
+    // sessione di checkout
     $checkout_session = \Stripe\Checkout\Session::create([
         "mode" => "payment",
         "success_url" => $urlconfirm,

@@ -10,5 +10,5 @@ foreach ($cart as $key => $sottoarray) {
 }
 // aggiorna il carrello nei cookie
 setcookie('cart', json_encode($cart), time() + 3600);
-//header("Location: " . $_SERVER['HTTP_REFERER']);
+header("Location: " . $_SERVER['HTTP_REFERER']);
 ?>

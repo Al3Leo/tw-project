@@ -15,7 +15,7 @@ $db_connection = pg_connect($connection_string) or die('Impossibile connettersi 
 if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
     $user = $_POST['user_username'];
     $password = $_POST['user_password'];
-    $sql = "SELECT passworduser, nome, cognome FROM utente WHERE username = $1";
+    $sql = "SELECT passworduser, nome, cognome, indirizzo FROM utente WHERE username = $1";
     $result = pg_prepare($db_connection, "sqlPassword", $sql);
     if ($result) {
         $ret = pg_execute($db_connection, "sqlPassword", array($user));
@@ -27,10 +27,12 @@ if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
             if ($password==$hash) { /////ALTRO METODO DA UTILIZZARE
                 $name = $row['nome'];
                 $surname = $row['cognome'];
+                $email = $row['indirizzo'];
                 session_start();
                 $_SESSION['username'] = $user;
                 $_SESSION['name'] = $name;
                 $_SESSION['surname'] = $surname;
+                $_SESSION['email'] = $email;
                 header("Location: " . $_SERVER['HTTP_REFERER']);
             } else {
                 echo "Password errata<br>";

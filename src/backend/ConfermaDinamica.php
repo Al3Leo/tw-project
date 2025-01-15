@@ -1,3 +1,9 @@
+<?php
+session_start();
+require_once "ConnettiDb.php";
+require_once "gestioneAcquisti.php";
+pg_close($db_connection);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +48,7 @@ main {height: 65vh;
 
 </head>
 <body >
-<?php require_once __DIR__ . '../../components/header/header.php'?>
+<?php include __DIR__ . '../../components/header/header.php'?>
 <main class=" mainconfirm d-flex  flex-column align-items-center justify-content-center"  >
     
     <div class="confirm_div d-flex justify-content-evenly flex-column "  style="border: 2px solid #000;
@@ -56,14 +62,14 @@ main {height: 65vh;
         $name=$_GET['confirmsignupname'];
         echo "<p>Hello <strong>$name</strong>, your registration has been successfully completed.<br>Continue your experience on our site, and don't miss out on our latest offers and special deals.</p>";
      }elseif(isset($_GET['confirmcheckout'])){
-        echo"<p>Thank you for your purchase. Your payment has been successfully processed.<br> <p>Continue enjoying our services and be sure to check out our latest offers and exclusive deals.</p>";
+        echo"<p>Thank you for your purchase. Your payment has been successfully processed.<br> <p>Continue enjoying our services and be sure to check out our latest offers and exclusive deals.</p>";       
      }
  ?>
- <button onclick="apriHome()">Continue</button></a>
+ <button onclick="apriHome()">Continue</button>
         </div>  
     </div>
 </main>
-<?php require_once __DIR__ ."../../components/footer/footer.html"?>
+<?php include __DIR__ ."../../components/footer/footer.html"?>
 </body>
 
 <script>
