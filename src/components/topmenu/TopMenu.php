@@ -212,8 +212,8 @@
         <svg width="158" height="62" viewBox="0 0 158 62" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="158" height="62" fill="#1E1E1E"/>
 <rect width="165" height="102" transform="translate(-7 -14)" fill="black"/>
-<text fill="#F9F4F4" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="45" font-weight="800" letter-spacing="0em"><tspan x="0" y="54.3636">SPACE&#10;</tspan></text>
-<text fill="#F7E951" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="20" font-weight="400" letter-spacing="0.3em"><tspan x="24" y="19.17">OUTER</tspan></text>
+<text fill="#F9F4F4" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="45" font-weight="800" letter-spacing="0em"><tspan x="0" y="54.3636">SPACE&#10;</tspan></text>
+<text fill="#F7E951" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="20" font-weight="400" letter-spacing="0.3em"><tspan x="24" y="19.17">OUTER</tspan></text>
 </svg>
 </a>
     <div class="tuttoadestra">
@@ -237,7 +237,7 @@
         <ul>
             <li id="li-speciale"><button id="goBack" onclick="toggleSideMenu()">&times</button></li>
             <li><a href="pages/homepage/homepage.php">Home</a></li>
-            <li><a href="pages/catalogue/catalogue.php">Catalogo</a></li>
+            <li><a href="pages/catalogue/catalogue.php">Catalogue</a></li>
             <li><a href="pages/aboutus/aboutus.php">About us</a></li>
             <li><a href="pages/support/Supporto.php">Contact</a></li>
             <li><a href="pages/spacehistory/NewSpace.php">Space History</a></li>

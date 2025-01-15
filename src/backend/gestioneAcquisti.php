@@ -1,4 +1,6 @@
 <?php
+session_start();
+require_once "ConnettiDb.php";
 if (isset($_GET['confirmcheckout'])) {
     if (isset($_COOKIE['cart'])) {
         //se ha effettuato il pagamento:
@@ -22,8 +24,9 @@ if (isset($_GET['confirmcheckout'])) {
     }else { 
         echo "Errore: email utente non trovata nella sessione.<br>"; 
     } } else { echo "Errore: carrello non trovato.<br>"; }
-
+    
 }
-   
+pg_close($db_connection);   
+
     
 ?>

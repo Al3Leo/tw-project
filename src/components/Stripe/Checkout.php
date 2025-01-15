@@ -4,7 +4,6 @@ require __DIR__ . "/vendor/autoload.php";
 $host = $_SERVER['HTTP_HOST'];
 $uri = rtrim(dirname($_SERVER['REQUEST_URI']), '/\\');
 $urlconfirm = "http://$host$uri/../../backend/ConfermaDinamica.php?confirmcheckout=true";
-
 $stripe_secret_key = "sk_test_51QgDccDj8L2aaNpFkDTpkoamjLejxEw7RAebnq1T6nwrEcJ3339RbYnQb0lqEPIvFUt7O3kyLg3AkjxEquc9tpWM004DUeg6sQ";
 \Stripe\Stripe::setApiKey($stripe_secret_key);
 

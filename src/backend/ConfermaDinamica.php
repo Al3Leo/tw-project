@@ -1,8 +1,6 @@
 <?php
-session_start();
-require_once "ConnettiDb.php";
-require_once "gestioneAcquisti.php";
-pg_close($db_connection);
+require_once "gestioneAcquisti.php"; 
+//header("Location: gestioneAcquisti.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,5 +74,6 @@ main {height: 65vh;
 function apriHome(){
     window.location.href='pages/homepage/homepage.php';
 }
+
 </script>
 </html>

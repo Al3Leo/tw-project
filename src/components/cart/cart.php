@@ -41,4 +41,18 @@ document.getElementById('acquistaButton').addEventListener('click', function() {
     const encodedCart = encodeURIComponent(JSON.stringify(cart));
     window.location.href = '../src/components/Stripe/Checkout.php?cart='+encodedCart;
 });
+
+
+
+//Se l'url ha confirmcheckout mi deve aggiornare il frontend del carrello
+window.onload = function() { 
+    const urlParams = new URLSearchParams(window.location.search); 
+    if (urlParams.has('confirmcheckout')) { 
+        svuotaCarrelloFrontend();
+    }
+};
+function svuotaCarrelloFrontend() { 
+    document.getElementById('carrello_tbl').innerHTML = `<tr> <th style="text-align: left">Where</th> <th></th> <th>Price</th> </tr> <tr><td colspan="4">Choose your nex destination</td></tr>`;
+}
+
 </script>
