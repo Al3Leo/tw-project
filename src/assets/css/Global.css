@@ -2,6 +2,19 @@
 @import "CssReset.css";
 
 /* ==========================
+   Color and Variables
+   ========================== */
+   :root {
+    background-color: black;
+    --hero-height: calc(100vh - 70px);
+    --primaryColor: #e9ecfb;
+    --secondaryColor: #471a8e;
+    --tertiaryColor: #F7E951;
+    --accent: #9529d7;
+    --text: #e9ecfb;
+  }
+  
+/* ==========================
    Font Settings
    ========================== */
 body {
@@ -34,19 +47,6 @@ a { text-decoration: none !important; }
 a:hover { color: var(--secondaryColor); text-decoration: underline; }
 a:visited { color: var(--tertiaryColor); }
 small { font-size: 0.875em; color: #666; }
-
-/* ==========================
-   Color and Variables
-   ========================== */
-:root {
-  background-color: black;
-  --hero-height: calc(100vh - 70px);
-  --primaryColor: #e9ecfb;
-  --secondaryColor: #471a8e;
-  --tertiaryColor: #F7E951;
-  --accent: #9529d7;
-  --text: #e9ecfb;
-}
 
 /* ==========================
    Layout and Positioning
