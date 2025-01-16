@@ -3,7 +3,7 @@ main{
     height: 80vh;
     background-image: url('../../assets/images/a.png');
     background-position: center;
-    
+    background-size: cover;
     width: 100%;
     
 }
