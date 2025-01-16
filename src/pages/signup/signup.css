@@ -1,18 +1,30 @@
 @import "../../assets/css/Global.css";
 main{
-    height: 60vh;
+    height: 80vh;
+    background-image: url('../../assets/images/a.png');
+    background-position: center;
+    
+    width: 100%;
+    
+}
+.main_signup>div{
+    height: 100%;
+    width: 100%;
     position: relative;
+
 }
 .input{
     position: absolute;
-    top: 50%; 
+    top: calc(50% - 20px); /* Sposta l'elemento verso l'alto di 20 pixel rispetto al centro */
     left: 50%; 
     transform: translate(-50%, -50%);
     width: 50%;
-    background: white;
-    border-radius: 4px;
-    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
-    color: black;
+    color: white;
+    background: rgba(255, 255, 255, 0.27);
+    backdrop-filter: blur(13px) saturate(141%);
+    background-color: rgba(17, 25, 40, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
 
 }
 label {
@@ -21,11 +33,12 @@ label {
     font-weight: 600;
     display: block;
 }
-.main_signup .input form{
+.main_signup .contenitore .input form{
     grid-template-columns: 1fr 1fr;
     column-gap: 2em;
+    row-gap: 1em;
 }
-.main_signup .input form input{ 
+.main_signup .contenitore .input form input, #country{ 
     font-size: 0.9em;
     padding: 0.2em;
     border: solid grey;
@@ -33,13 +46,29 @@ label {
     outline-color: rgb(84 105 212 / 0.5);
     background-color: rgb(255, 255, 255);
 }
-.main_signup .input form{
+.main_signup .contenitore .input form{
     padding:2em;
 }
-.main_signup .input h3{
+.main_signup .contenitore .input h3{
     text-align: center;
 }
 #oggetto{
     grid-column: 1;
-    margin-bottom: 4em;
+ 
 }
+@media (max-width: 933px) {
+    .main_signup .contenitore .input form {
+      grid-template-columns: 1fr;
+      row-gap: 5px;
+      padding-top: 0.5em;
+      font-size: x-small;
+    }
+    main{
+        padding: 2em;
+        overflow: hidden;
+    }
+
+
+
+  }
+

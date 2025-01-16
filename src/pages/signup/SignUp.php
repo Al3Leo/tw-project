@@ -5,11 +5,13 @@
     <title>Sign up</title>
     <link rel="stylesheet" href="signup.css">
     <base href="../../">
+    <style></style>
 </head>
 <body>
 <?php include_once "../../components/header/header.php"?>
 <main class="main_signup">
-<div class="input">
+<div class="contenitore">
+<div class="input d-flex flex-column ">
     <h3 style="text-align: center;">Sign Up</h3>
     <form method="POST" action="RegistraUtente.php" onsubmit="window.open('../../backend/ConfermaDinamica.php?confermaDinamica=Your account has been created', 'blank')" class="d-grid" >
         <div class="oggetto d-flex flex-column" id="oggetto_signup">
@@ -42,7 +44,19 @@
         <label for="birthday">Date of birth</label>
         <input type="date" id="birthday" name="user_birthday" required>
         </div>
+
         <div class="oggetto d-flex flex-column" id="oggetto_signup">
+        <label for="country">Country</label>
+        <select id="country" name="user_country" required>
+            <option value="it">Italy</option>
+            <option value="us">United States</option>
+            <option value="cn">Canada</option>
+            <option value="fr">France</option>
+            <option value="gr">Germany</option>
+            <option value="uk">United Kingdom</option>
+        </select>
+        </div>
+        <div class="oggetto d-flex flex-column" id="oggetto_signup">    
         <label class="d-flex flex-row">Gender:
 <label for="sessoM"><input id="sessoM" type="radio" name="user_gender" value="M" required>
 M</label>
@@ -51,6 +65,7 @@ F</label></label>
         </div>
         <button type="submit">Sign Up</button>
     </form>
+</div>
 </div>
 </main>
 <?php include_once "../../components/footer/footer.html"?>
