@@ -1,4 +1,5 @@
 <?php
+    /* Use this file to connect to database*/
     $host = "localhost";
     $port = '5432';
     $db_name = "GRUPPO05";
