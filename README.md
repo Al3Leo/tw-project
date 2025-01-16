@@ -26,7 +26,7 @@
 
 1. Clona il repository:
    ```bash
-   git clone <repository-ur> 
+   git clone <repository-url> 
    ```
 
 ## **🧑‍🤝‍🧑Membri - Gruppo05**
