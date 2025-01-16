@@ -4,6 +4,7 @@
 }
 .hero iframe {
   height: 50vh;
+  border: none;
 }
 main {
   width: 80%;

@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    require_once '../../../../components/utils/headMetadata.html';
+        require_once '../../../../components/utils/headMetadata.html';
     ?>
     <title>Venus</title>
     <link rel="stylesheet" href="../catalogue-items.css">
@@ -12,13 +12,7 @@
 
 <?php
     require_once "../../../../components/header/header.php";
-    $host = "localhost";
-    $port = "5432";
-    $db_name = "GRUPPO05";
-    $user = "www";
-    $password = "tw2024";
-    $connection_string = "host=$host dbname=$db_name user=$user password=$password";
-    $db_connection = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
+    require_once "../../../../backend/ConnettiDb.php";  //connette il db
 ?>
 
 <body>
@@ -26,8 +20,8 @@
         <iframe src="https://solarsystem.nasa.gov/gltf_embed/2342/" frameborder="0" allow="fullscreen" loading="lazy"></iframe>
         <div class="hero__text">
             <h1 class="text-center">Venus</h1>
-            <p>
-                <b>Venus</b> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
+            <p id="capitalize">
+                <a href="https://science.nasa.gov/venus/" target="_blank">Venus</a> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
                 <br>
                 Venus is <b>similar</b> in structure and size to <b>Earth</b>, and is sometimes called <b>Earth's evil twin</b>. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the <b>hottest planet</b> in our solar system with surface temperatures hot enough to melt lead. Below the dense, persistent clouds, the surface has volcanoes and deformed mountains.
             </p>
@@ -51,7 +45,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="main__left__section1__whatSee text-justify">
+                    <div class="main__left__section1__whatSee">
                         <h3 class="text-center">What to See</h3>
                         <ol>
                             <li>
