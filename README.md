@@ -20,7 +20,7 @@
 - **Frontend**: HTML, CSS, JavaScript 
 - **Backend**: PHP
 - **Database**: PostgreSQL per la gestione dei dati degli utenti, delle destinazioni e delle prenotazioni.
-- **Api**: [Solar System OpenData](https://api.le-systeme-solaire.net/en/), [Stripe](https://docs.stripe.com/api)
+- **Api**: [Solar System OpenData](https://api.le-systeme-solaire.net/en/), [Space Flight News](https://api.spaceflightnewsapi.net/v4/docs/), [Stripe](https://docs.stripe.com/api)
 
 ## **🛠️Istruzioni per l'Installazione**
 
