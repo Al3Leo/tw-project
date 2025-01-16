@@ -3,7 +3,7 @@
 
 <head>
     <?php
-        require_once '../../../../components/utils/headMetadata.html';
+    require_once '../../../../components/utils/headMetadata.html';
     ?>
     <title>Venus</title>
     <link rel="stylesheet" href="../catalogue-items.css">
@@ -11,8 +11,8 @@
 </head>
 
 <?php
-    require_once "../../../../components/header/header.php";
-    require_once "../../../../backend/ConnettiDb.php";  //connette il db
+require_once "../../../../components/header/header.php";
+require_once "../../../../backend/ConnettiDb.php";  //connette il db
 ?>
 
 <body>
@@ -133,10 +133,10 @@
     <div class="suggestions">
         <h4 class="text-center">You might also be interested in</h4>
         <div class="carousel-ct text-center">
-            
+
         </div>
     </div>
-    <?php require_once "../../../../components/footer/footer.html"?>
+    <?php require_once "../../../../components/footer/footer.html" ?>
     <!--<script src="components/gst/gst.js"></script>-->
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
@@ -145,12 +145,10 @@
 
 <script>
     /* Solar System OpenData API*/
-
     let ssoXhr = new XMLHttpRequest(); // Creazione di un oggetto XMLHttpRequest
 
     // Richiama l'Endpoint
     ssoXhr.open("GET", "https://api.le-systeme-solaire.net/rest/bodies/venus", true); //true = asincrono
-
     ssoXhr.responseType = 'json'; // Impostiamo la proprietà responseType per ricevere la risposta come JSON
 
     // Invio richiesta
@@ -176,34 +174,82 @@
         }
     };
 
-
     function createTable(jsonData) {
         // Crea una tabella HTML
         let table = document.createElement('table');
         let tbody = table.createTBody();
 
-        // Restituisce un oggetto conteneneti tutte le keys del json ed itera su di esse tramite for each
+        // Unitá di misura
+        const units = {
+            semimajorAxis: 'km',
+            perihelion: 'km',
+            aphelion: 'km',
+            eccentricity: '',
+            inclination: '°',
+            massValue: 'kg',
+            massExponent: 'kg',
+            volValue: 'km³',
+            volExponent: '',
+            density: 'g/cm³',
+            gravity: 'm/s²',
+            escape: 'm/s',
+            meanRadius: 'km',
+            equaRadius: 'km',
+            polarRadius: 'km',
+            flattening: '',
+            sideralOrbit: 'days',
+            sideralRotation: 'hours',
+            axialTilt: '',
+            avgTemp: 'K',
+            mainAnomaly: '°',
+            argPeriapsis: '°',
+            longAscNode: '°',
+        };
+
+        // Itera su tutte le chiavi del JSON
         Object.keys(jsonData).forEach(key => {
-
-            // Se nel json sono presenti oggetti con value nullo, li salta, nasconde il valore relativo alla chiave "id" e alla chiave "isPlanet"
+            // Salta chiavi non desiderate o valori nulli
             if (key === "id" || jsonData[key] === null || jsonData[key] === '' || key === "isPlanet") {
-                return; // Salta questa iterazione
+                return;
             }
-            let row = tbody.insertRow(); // Crea una riga per ogni coppia chiave-valore
 
-            // Prima cella come <th>
-            let cellKey = document.createElement('th'); // Crea un elemento <th>
-            // Converte la prima lettera della chiave in maiuscolo
-            cellKey.textContent = key.charAt(0).toUpperCase() + key.slice(1);
-            row.appendChild(cellKey); // Aggiungi il <th> alla riga
+            // Se il valore è un oggetto, itera sui suoi attributi (gestione subitems)
+            if (typeof jsonData[key] === 'object') {
+                Object.keys(jsonData[key]).forEach(subKey => {
+                    let row = tbody.insertRow(); // Crea una riga per ogni coppia chiave-valore annidata
 
-            // Seconda cella come <td>
-            let cellValue = row.insertCell(); // Crea un <td> per il valore
-            cellValue.textContent = jsonData[key]; // Prende il valore associato alla chiave corrente
+                    // Prima cella come <th> per la chiave
+                    let cellKey = document.createElement('th');
+                    cellKey.textContent = subKey;
+                    row.appendChild(cellKey);
+
+                    // Seconda cella per il valore annidato
+                    let cellValue = row.insertCell();
+                    cellValue.textContent = jsonData[key][subKey];  //accede prima al valore associato a key (oggetto), successivamente a quello di subKey
+
+                    // Terza cella per l'unità di misura
+                    let cellUnit = row.insertCell();
+                    cellUnit.textContent = units[subKey] || ''; // Inserisce l'unità se esiste, altrimenti stringa vuota
+                });
+            } else {
+                // Altrimenti aggiunge la chiave e il valore direttamente
+                let row = tbody.insertRow();
+                let cellKey = document.createElement('th');
+                cellKey.textContent = key;
+                row.appendChild(cellKey);
+
+                let cellValue = row.insertCell();
+                cellValue.textContent = jsonData[key];
+
+                // Terza cella per l'unità di misura
+                let cellUnit = row.insertCell();
+                cellUnit.textContent = units[key] || ''; // Inserisce l'unità se esiste, altrimenti stringa vuota
+            }
         });
 
-        // Seleziona il div con classe "celestialBodyInfo" e aggiungi la tabella lì
+        // Aggiungi la tabella al contenitore
         const container = document.querySelector('.main__right__celestialBodyInfo');
         container.appendChild(table);
     }
+
 </script>

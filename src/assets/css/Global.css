@@ -13,7 +13,7 @@
     --accent: #9529d7;
     --text: #e9ecfb;
   }
-  
+
 /* ==========================
    Font Settings
    ========================== */
@@ -44,8 +44,8 @@ h6 { font-size: 1.125rem; letter-spacing: -0.00625rem; }
 p { font-size: 1rem; line-height: 1.6; }
 b, strong { font-weight: bold; color: var(--accent); }
 a { text-decoration: none !important; }
-a:hover { color: var(--secondaryColor); text-decoration: underline; }
-a:visited { color: var(--tertiaryColor); }
+a:hover { color: var(--secondaryColor) !important ; text-decoration: underline !important; }
+a:visited { color: var(--tertiaryColor) !important; }
 small { font-size: 0.875em; color: #666; }
 
 /* ==========================
