@@ -12,7 +12,7 @@ let x = setInterval(function () {
   document.getElementById("main__left__countdown__hours").innerHTML = hours;
   document.getElementById("main__left__countdown__minutes").innerHTML = minutes;
   document.getElementById("main__left__countdown__seconds").innerHTML = seconds;
-}, 1000); //riesegui la funzione ogni secondo
+}, 1000); //Repeat every sec
 clearInterval();
 
 /*FAQ*/
