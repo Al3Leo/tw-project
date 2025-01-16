@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +13,7 @@
 </head>
 
 <body>
-<?php require_once "../../components/header/header.php"?>
+<?php include_once "../../components/header/header.php"?>
 <main>
     <section class="video-section">
         <video autoplay muted loop playsinline class="background-video" src="assets/images/space/video_bg.mp4">
@@ -236,7 +239,7 @@
     </section>
 </main>
 
-    <?php require_once "../../components/footer/footer.html"?>
+    <?php include_once "../../components/footer/footer.html"?>
     <script src="pages/spacehistory/NewSpace.js"></script>   
 
 
