@@ -1,6 +1,8 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <?php require_once "../../components/utils/headMetadata.html"?>
     <title>Outer Space</title>

@@ -4,6 +4,7 @@
         margin: 1rem 1vw;
         width: 5rem;
         height: 2rem;
+        padding: 0.5em;
     }
 
     #login {
