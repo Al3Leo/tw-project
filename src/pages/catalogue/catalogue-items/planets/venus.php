@@ -11,6 +11,7 @@
 </head>
 
 <?php
+$nomeEvento = 'Venus'; //Modificare solo questa stringa php nelle altre pagine!
 require_once "../../../../components/header/header.php";
 require_once "../../../../backend/ConnettiDb.php";  //connette il db
 ?>
@@ -33,10 +34,36 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
                 <p>Welcome to Venus, Earth's twin planet, renowned for its beauty and mystery! A journey to this fascinating world offers an extraordinary experience filled with surreal landscapes and extreme conditions. With proper preparation and guidance, Venus will unveil its secrets.</p>
                 <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                     <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
-                        <span class="price"> <?php ?> &#8364</span>
+                        <span class="price"> 
+                        <?php 
+                            if ($db_connection){
+                                $getEvento = "SELECT prezzoevento FROM viaggio WHERE nomeevento='$nomeEvento' LIMIT 1";
+                                $price = pg_query($db_connection, $getEvento) or die('No price found! '.pg_last_error());
+                                if($price){
+                                    $row = pg_fetch_assoc($price);  //array associativo
+                                        echo $row['prezzoevento'];
+                                }
+                            }
+                        ?> 
+                        &#8364</span>
                         <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
                             <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
-                            <span class="days"> 10 Days</span>
+                            <span class="days"> 
+                                <?php 
+                                    if($db_connection){
+                                        $getTravelInterval = "SELECT datapartenza, dataritorno FROM viaggio WHERE nomeevento='$nomeEvento' LIMIT 1";
+                                        $ret = pg_query($db_connection, $getTravelInterval) or die('No column found! '.pg_last_error());
+                                        if($ret){
+                                            $row = pg_fetch_assoc($ret);
+                                            /* Per effettuare la differenza tra le date servono 2 oggetti DateTimeInterface */
+                                            $dataPartenza = date_create($row['datapartenza']);
+                                            $dataRitorno = date_create($row['dataritorno']);
+                                            $interval = date_diff($dataRitorno, $dataPartenza);
+                                            echo $interval->format('%a');   /* formatto sommando tutti i giorni che intercorrono tra le date*/ 
+                                        }
+                                    }
+                                ?>
+                            Days</span>
                         </div>
                         <div class="d-flex flex-row justify-content-between align-items-center main__left__section1__date__btn">
                             <button type="button" class="text-uppercase">Discover all the dates</button>
