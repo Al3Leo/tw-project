@@ -53,7 +53,8 @@ header h1 {
 .image img {
     max-width: 100%;
     height: auto;
-    width: 300px;
+    width: 100%; 
+    max-height: 500px; 
 }
 
 .finalGoal {
@@ -94,17 +95,20 @@ footer {
 footer .div_container {
     flex: 3;
     display: flex;
+    justify-content: space-around;
     align-items: center;
 }
 
 footer .div_container2 {
     flex: 1;
     display: flex;
+    justify-content: center;
     align-items: center;
     font-size: 0.8em;
 }
 
 footer .contenuto_container ul {
+    list-style-type: none;
     padding: 0;
     margin: 0;
 }
@@ -120,16 +124,21 @@ footer .contenuto_container.social ul li i {
 }
 
 footer .contenuto_container.social ul li a:hover i {
-    color: violet;
+    color:violet; 
 }
 
 footer .immagine_logo {
-    max-width: 150px; 
+    display: block;
+    margin: 10px auto;
+    max-width: 100px;
+    height: 100px;
 }
 
-footer .immagine_icona {
-    width: 24px;
-    height: 24px;
-    max-width: 100%;
-    max-height: 100%;
+body {
+    background-image: url("falcon9-4.jpg"); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    color: white; 
 }
