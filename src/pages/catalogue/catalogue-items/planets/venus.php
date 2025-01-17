@@ -11,7 +11,7 @@
 </head>
 
 <?php
-/* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
+    /* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
      *
      * La variabile é impostata con il nome del corpo celeste e consente di automatizzare 
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
@@ -20,7 +20,7 @@
 $nomeEvento = 'Venus';
 require_once "../../../../components/header/header.php";
 require_once "../../../../backend/ConnettiDb.php";  //connette il db
-require_once "../../../../backend/getAllCatalogueItems.php"; //preleva tutti i viaggi dal db
+require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viaggi dal db
 ?>
 
 <body>
@@ -172,9 +172,11 @@ require_once "../../../../backend/getAllCatalogueItems.php"; //preleva tutti i v
                 identici tramite js. L'elemento viene successivamente rimosso con js.
             -->
             <div class="suggestions__carousel__item d-flex align-items-center flex-column" id="suggestions__carousel__item-sampleClone">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="prova">
+                <img src="" alt="Celestial Body">
                 <p><strong class="suggestions__carousel__item-title"></strong></p>
-                <button type="button">More Info</button>
+                <a href="">
+                    <button type="button">More Info</button>
+                </a>
             </div>
         </div>
     </div>
@@ -191,7 +193,6 @@ require_once "../../../../backend/getAllCatalogueItems.php"; //preleva tutti i v
     const celestialBody = "<?php echo $nomeEvento ?>"; 
     const eventsArray = <?php echo $jsonEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
     call_lso_api(); 
-
     fillSuggestions(celestialBody);  //crea i suggerimenti nella parte bassa della pagina
 
     /*
@@ -314,6 +315,7 @@ require_once "../../../../backend/getAllCatalogueItems.php"; //preleva tutti i v
      */
 
     function fillSuggestions(celestialBody) {
+        console.log(eventsArray);
         const suggItem = document.getElementById('suggestions__carousel__item-sampleClone');  //elemento da clonare e poi rimuovere
         const carouselContainer = document.getElementById('suggestions__carousel-ct');  //contenitore del carosello
         Object.keys(eventsArray).forEach(key => {
@@ -321,6 +323,8 @@ require_once "../../../../backend/getAllCatalogueItems.php"; //preleva tutti i v
             let newItem = suggItem.cloneNode(true); //clona l'item
             newItem.removeAttribute('id');
             newItem.querySelector("strong").textContent = key;  //imposta il titolo
+            console.log(eventsArray[key]);
+            newItem.querySelector("img").src = "assets/images/nasa/" + eventsArray[key] + "/" + key + ".jpg"; //lcfirst converte la prima lettera in minuscolo
             carouselContainer.appendChild(newItem);
         });
         suggItem.remove();  //rimuovo il sample

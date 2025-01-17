@@ -140,7 +140,7 @@ main {
   overflow-y:hidden;
   overflow-x: auto;
   flex-wrap: nowrap;
-  padding: 30px 15px;
+  padding: 30px 0px;
   scrollbar-width: thin;
 }
 
