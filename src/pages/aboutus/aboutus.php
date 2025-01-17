@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <?php require_once "../../components/utils/headMetadata.html"?>
     <title>About us</title>
-    <link rel="stylesheet" href="aboutUs.css">
+    <!-- Unifica gli stili CSS, se necessario -->
     <link rel="stylesheet" href="Global.css">
+    <link rel="stylesheet" href="aboutUs.css">
     <base href="../../" />
-    
 </head>
-
 <body>
     <?php require_once '../../components/header/header.php' ?>
-    <main class="hero">
-        <div class="slideshow">
-            <img class="slide responsive" src="assets/images/falcon9-2.jpg" >
-            <img class="slide responsive" src="assets/images/falcon9-3.jpg" >
-            <img class="slide responsive" src="assets/images/falcon9-4.jpg" >
-            <img class="slide responsive" src="assets/images/launch.jpg">
-            <img class="slide responsive"src="assets/images/satelite.jpg" alt="satelite">
-        </div>
-    </main>
     <div class="ourMission">
         <header>
             <h1>About Us</h1>
@@ -36,7 +25,7 @@
                 </p>
             </div>
             <div class="image">
-                <img src="viaggi-spaziali.jpg" alt="Missione Spaziale">
+                <img src="pages/aboutus/viaggi-spaziali.jpg" alt="Missione Spaziale">
             </div>
         </div>
 
@@ -50,12 +39,12 @@
                 </p>
             </div>
             <div class="image">
-                <img src="spazio.jpg" alt="Obiettivo Finale">
+                <img src="pages/aboutus/spazio.jpg" alt="Obiettivo Finale">
             </div>
         </div>
     </div>
+
     <script src="assets/js/slideshow.js"></script>
     <?php require_once "../../components/footer/footer.html"?>
-    <script src="assets/js/slideshow.js"></script>
 </body>
 </html>
