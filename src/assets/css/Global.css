@@ -4,30 +4,43 @@
 /* ==========================
    Color and Variables
    ========================== */
-   :root {
-    background-color: black;
-    --hero-height: calc(100vh - 70px);
-    --primaryColor: #e9ecfb;
-    --secondaryColor: #471a8e;
-    --tertiaryColor: #F7E951;
-    --accent: #9529d7;
-    --text: #e9ecfb;
-  }
+
+:root {
+  background-color: black;
+  --hero-height: calc(100vh - 70px);
+  --primaryColor: #e9ecfb;
+  --secondaryColor: #471a8e;
+  --tertiaryColor: #f7e951;
+  --accent: #9529d7;
+  --text: #e9ecfb;
+}
 
 /* ==========================
    Font Settings
    ========================== */
+
 body {
   font-family: "Exo 2", Inter, Lato, Orbitron, Arial;
   font-size: 16px;
   color: var(--text);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: bold;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0.5em 0;
   line-height: 1.1;
 }
@@ -35,74 +48,190 @@ h1, h2, h3, h4, h5, h6, p {
 /* ==========================
    Typography
    ========================== */
-h1 { font-size: 2.5rem; letter-spacing: -0.0625rem; }
-h2 { font-size: 2rem; letter-spacing: -0.05rem; }
-h3 { font-size: 1.75rem; letter-spacing: -0.0375rem; }
-h4 { font-size: 1.5rem; letter-spacing: -0.025rem; }
-h5 { font-size: 1.25rem; letter-spacing: -0.0125rem; }
-h6 { font-size: 1.125rem; letter-spacing: -0.00625rem; }
-p { font-size: 1rem; line-height: 1.6; }
-b, strong { font-weight: bold; color: var(--accent); }
-a { text-decoration: none !important; }
-a:hover { color: var(--secondaryColor) !important ; text-decoration: underline !important; }
-a:visited { color: var(--tertiaryColor) !important; }
-small { font-size: 0.875em; color: #666; }
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.0625rem;
+}
+h2 {
+  font-size: 2rem;
+  letter-spacing: -0.05rem;
+}
+h3 {
+  font-size: 1.75rem;
+  letter-spacing: -0.0375rem;
+}
+h4 {
+  font-size: 1.5rem;
+  letter-spacing: -0.025rem;
+}
+h5 {
+  font-size: 1.25rem;
+  letter-spacing: -0.0125rem;
+}
+h6 {
+  font-size: 1.125rem;
+  letter-spacing: -0.00625rem;
+}
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+b,
+strong {
+  font-weight: bold;
+  color: var(--accent);
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: var(--tertiaryColor);
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--secondaryColor);
+}
+small {
+  font-size: 0.875em;
+  color: #666;
+}
 
 /* ==========================
    Layout and Positioning
    ========================== */
-iframe { border: none; width: 100%; height: 100%; display: block; }
 
 /* Utilities - text alignment */
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-.text-center { text-align: center; }
-.text-justify { text-align: justify; }
-.text-uppercase { text-transform: uppercase; }
-.text-lowercase { text-transform: lowercase; }
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
 
 /* Utilities - Position */
-.position-relative { position: relative; }
-.position-absolute { position: absolute; }
-.position-fixed { position: fixed; }
-.position-sticky { position: sticky; }
+
+.position-relative {
+  position: relative;
+}
+.position-absolute {
+  position: absolute;
+}
+.position-fixed {
+  position: fixed;
+}
+.position-sticky {
+  position: sticky;
+}
 
 /* Utilities - Display */
-.d-block { display: block; }
-.d-inline { display: inline; }
-.d-inline-block { display: inline-block; }
-.d-flex { display: flex; }
-.d-inline-flex { display: inline-flex; }
-.d-grid { display: grid; }
-.d-inline-grid { display: inline-grid; }
-.d-none { display: none; }
+
+.d-block {
+  display: block;
+}
+.d-inline {
+  display: inline;
+}
+.d-inline-block {
+  display: inline-block;
+}
+.d-flex {
+  display: flex;
+}
+.d-inline-flex {
+  display: inline-flex;
+}
+.d-grid {
+  display: grid;
+}
+.d-inline-grid {
+  display: inline-grid;
+}
+.d-none {
+  display: none;
+}
 
 /* ==========================
    Flexbox Utilities
    ========================== */
-.justify-content-center { justify-content: center; }
-.justify-content-between { justify-content: space-between; }
-.justify-content-around { justify-content: space-around; }
-.justify-content-evenly { justify-content: space-evenly; }
-.align-items-center { align-items: center; }
-.align-items-baseline { align-items: baseline; }
-.align-items-stretch { align-items: stretch; }
-.align-items-start { align-items: start; }
-.align-items-end { align-items: end; }
-.flex-row { flex-direction: row; }
-.flex-column { flex-direction: column; }
-.flex-wrap { flex-wrap: wrap; }
-.flex-nowrap { flex-wrap: nowrap; }
+
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.justify-content-around {
+  justify-content: space-around;
+}
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-baseline {
+  align-items: baseline;
+}
+.align-items-stretch {
+  align-items: stretch;
+}
+.align-items-start {
+  align-items: start;
+}
+.align-items-end {
+  align-items: end;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
 
 /* ==========================
    Media and Images
    ========================== */
-.responsive { max-width: 100%; height: auto; }
-img { width: 100%; height: 100%; object-fit: cover; }
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 /* ==========================
    Buttons
    ========================== */
+
 button {
   display: inline-flex;
   justify-content: center;
@@ -118,7 +247,8 @@ button {
   transition: color 100ms, transform 0.3s ease-out;
   font-weight: 600;
 }
-button:hover, button:focus {
+button:hover,
+button:focus {
   background-color: var(--secondaryColor);
   transform: scale(1.1);
 }
@@ -126,11 +256,17 @@ button:hover, button:focus {
 /* ==========================
    Components - Slideshow
    ========================== */
-.slideshow { width: 100%; height: 100%; overflow: hidden; }
+
+.slideshow {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 
 /* ==========================
    Components - Hero Section
    ========================== */
+
 .hero {
   height: var(--hero-height);
   background-size: cover !important;
@@ -140,6 +276,7 @@ button:hover, button:focus {
 /* ==========================
    Components - Parallax
    ========================== */
+
 .parallax {
   background-attachment: fixed;
   background-position: center;
@@ -150,8 +287,16 @@ button:hover, button:focus {
 /* ==========================
    Menu
    ========================== */
-.menu ul { list-style-type: none; margin: 0; padding: 0; overflow: hidden; }
-.menu li { float: left; }
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.menu li {
+  float: left;
+}
 .menu li a {
   text-decoration: none;
   display: block;
@@ -166,7 +311,10 @@ button:hover, button:focus {
 }
 
 /* Dropdown */
-.dropdown { float: left; overflow: hidden; }
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
 .dropdown .dropbtn {
   color: black !important;
   font-size: 16px;
@@ -187,7 +335,7 @@ button:hover, button:focus {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 10px;
 }
@@ -199,21 +347,35 @@ button:hover, button:focus {
   display: block;
   text-align: left;
 }
-.dropdown-content a:hover { background-color: #ddd; }
-.dropdown:hover .dropdown-content { display: block; }
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 /* ==========================
    Tables
    ========================== */
-th, td { padding: 7px; text-align: left; }
-th { font-weight: bold; }
+th,
+td {
+  padding: 7px;
+  text-align: left;
+}
+th {
+  font-weight: bold;
+}
 
 /* ==========================
    Animations
    ========================== */
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #capitalize::first-letter {

@@ -33,7 +33,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
                 <p>Welcome to Venus, Earth's twin planet, renowned for its beauty and mystery! A journey to this fascinating world offers an extraordinary experience filled with surreal landscapes and extreme conditions. With proper preparation and guidance, Venus will unveil its secrets.</p>
                 <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                     <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
-                        <span class="price">3000 &#8364</span>
+                        <span class="price"> <?php ?> &#8364</span>
                         <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
                             <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
                             <span class="days"> 10 Days</span>
@@ -225,7 +225,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
 
                     // Seconda cella per il valore annidato
                     let cellValue = row.insertCell();
-                    cellValue.textContent = jsonData[key][subKey];  //accede prima al valore associato a key (oggetto), successivamente a quello di subKey
+                    cellValue.textContent = jsonData[key][subKey]; //accede prima al valore associato a key (oggetto), successivamente a quello di subKey
 
                     // Terza cella per l'unità di misura
                     let cellUnit = row.insertCell();
@@ -251,5 +251,4 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
         const container = document.querySelector('.main__right__celestialBodyInfo');
         container.appendChild(table);
     }
-
 </script>

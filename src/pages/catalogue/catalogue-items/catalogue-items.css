@@ -99,9 +99,9 @@ main {
   padding: 20px;
   font-size: 16px;
   font-weight: 500;
-  cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 15px;
+  cursor: pointer !important;
 }
 
 .main__left__tripKnowledge__item__question:hover {

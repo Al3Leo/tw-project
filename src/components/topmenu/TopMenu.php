@@ -102,7 +102,7 @@
     }
 
     /*rimuovi puntini list*/
-    ul {
+    .sideBar ul {
         list-style: none;
     }
 
