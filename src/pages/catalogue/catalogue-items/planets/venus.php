@@ -11,15 +11,16 @@
 </head>
 
 <?php
-    /* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
+/* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
      *
      * La variabile é impostata con il nome del corpo celeste e consente di automatizzare 
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
      * necessario modificare altri parametri per i contenuti generati dinamicamente.
-     */ 
-    $nomeEvento = 'Venus'; 
-    require_once "../../../../components/header/header.php";
-    require_once "../../../../backend/ConnettiDb.php";  //connette il db
+     */
+$nomeEvento = 'Venus';
+require_once "../../../../components/header/header.php";
+require_once "../../../../backend/ConnettiDb.php";  //connette il db
+require_once "../../../../backend/getAllCatalogueItems.php"; //preleva tutti i viaggi dal db
 ?>
 
 <body>
@@ -40,36 +41,36 @@
                 <p>Welcome to Venus, Earth's twin planet, renowned for its beauty and mystery! A journey to this fascinating world offers an extraordinary experience filled with surreal landscapes and extreme conditions. With proper preparation and guidance, Venus will unveil its secrets.</p>
                 <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                     <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
-                        <span class="price"> 
-                        <?php 
-                            if ($db_connection){
+                        <span class="price">
+                            <?php
+                            if ($db_connection) {
                                 $getEvento = "SELECT prezzoevento FROM viaggio WHERE nomeevento='$nomeEvento' LIMIT 1";
-                                $price = pg_query($db_connection, $getEvento) or die('No price found! '.pg_last_error());
-                                if($price){
+                                $price = pg_query($db_connection, $getEvento) or die('No price found! ' . pg_last_error());
+                                if ($price) {
                                     $row = pg_fetch_assoc($price);  //array associativo
-                                        echo $row['prezzoevento'];
+                                    echo $row['prezzoevento'];
                                 }
                             }
-                        ?> 
-                        &#8364</span>
+                            ?>
+                            &#8364</span>
                         <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
                             <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
-                            <span class="days"> 
-                                <?php 
-                                    if($db_connection){
-                                        $getTravelInterval = "SELECT datapartenza, dataritorno FROM viaggio WHERE nomeevento='$nomeEvento' LIMIT 1";
-                                        $ret = pg_query($db_connection, $getTravelInterval) or die('No column found! '.pg_last_error());
-                                        if($ret){
-                                            $row = pg_fetch_assoc($ret);
-                                            /* Per effettuare la differenza tra le date servono 2 oggetti DateTimeInterface */
-                                            $dataPartenza = date_create($row['datapartenza']);
-                                            $dataRitorno = date_create($row['dataritorno']);
-                                            $interval = date_diff($dataRitorno, $dataPartenza);
-                                            echo $interval->format('%a');   /* formatto sommando tutti i giorni che intercorrono tra le date*/ 
-                                        }
+                            <span class="days">
+                                <?php
+                                if ($db_connection) {
+                                    $getTravelInterval = "SELECT datapartenza, dataritorno FROM viaggio WHERE nomeevento='$nomeEvento' LIMIT 1";
+                                    $ret = pg_query($db_connection, $getTravelInterval) or die('No column found! ' . pg_last_error());
+                                    if ($ret) {
+                                        $row = pg_fetch_assoc($ret);
+                                        /* Per effettuare la differenza tra le date servono 2 oggetti DateTimeInterface */
+                                        $dataPartenza = date_create($row['datapartenza']);
+                                        $dataRitorno = date_create($row['dataritorno']);
+                                        $interval = date_diff($dataRitorno, $dataPartenza);
+                                        echo $interval->format('%a');   /* formatto sommando tutti i giorni che intercorrono tra le date*/
                                     }
+                                }
                                 ?>
-                            Days</span>
+                                Days</span>
                         </div>
                         <div class="d-flex flex-row justify-content-between align-items-center main__left__section1__date__btn">
                             <button type="button" class="text-uppercase">Discover all the dates</button>
@@ -165,8 +166,16 @@
     </main>
     <div class="suggestions">
         <h4 class="text-center">You might also be interested in</h4>
-        <div class="carousel-ct text-center">
-
+        <div id="suggestions__carousel-ct" class="slideshow d-flex flex-row justify-content-around">
+            <!-- 
+                sampleClone. L'elemento seguente viene utilizzato solamente come stampo per la generazione di elementi
+                identici tramite js. L'elemento viene successivamente rimosso con js.
+            -->
+            <div class="suggestions__carousel__item d-flex flex-column align-items-center" id="suggestions__carousel__item-sampleClone">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="prova">
+                <p><strong class="suggestions__carousel__item-title"></strong></p>
+                <button type="button">More Info</button>
+            </div>
         </div>
     </div>
     <?php require_once "../../../../components/footer/footer.html" ?>
@@ -177,43 +186,56 @@
 </html>
 
 <script>
-    const celBody = "<?php echo $nomeEvento ?>"; //passo la variabile php a js
-    /* Solar System OpenData API*/
-    let ssoXhr = new XMLHttpRequest(); // Creazione di un oggetto XMLHttpRequest
+    //passo la variabile php contenente il nome del corpo celeste corrente a js
+    const celestialBody = "<?php echo $nomeEvento ?>"; 
+    const eventsArray = <?php echo $jsonEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
+    call_lso_api(); 
 
-    // Richiama l'Endpoint
-    ssoXhr.open("GET", "https://api.le-systeme-solaire.net/rest/bodies/" + celBody, true); //true = asincrono
-    ssoXhr.responseType = 'json'; // Impostiamo la proprietà responseType per ricevere la risposta come JSON
+    fillSuggestions(celestialBody);  //crea i suggerimenti nella parte bassa della pagina
 
-    // Invio richiesta
-    ssoXhr.send();
+    /*
+     * FUNZIONI
+    */
 
-    //readyState e status consentono di verificare lo stato della richiesta
-    ssoXhr.onload = function() {
-        if (ssoXhr.readyState == 4) { // Controllo corretto con ssoXhr.readyState
-            switch (ssoXhr.status) {
-                case 200:
-                    let response = ssoXhr.response;
-                    createTable(response);
-                    break;
-                case 404:
-                    alert("API loading error! Request data not found.");
-                    break;
-                case 500:
-                    alert("API loading error! Server generic error.");
-                    break;
-                default:
-                    alert("API loading error! Request error: (" + ssoXhr.statusText + ")");
+    //chiama l'api "le systeme solaire"
+    function call_lso_api() {        
+        /* Solar System OpenData API*/
+        let ssoXhr = new XMLHttpRequest(); // Creazione di un oggetto XMLHttpRequest
+
+        // Richiama l'Endpoint
+        ssoXhr.open("GET", "https://api.le-systeme-solaire.net/rest/bodies/" + celestialBody, true); //true = asincrono
+        ssoXhr.responseType = 'json'; // Impostiamo la proprietà responseType per ricevere la risposta come JSON
+
+        // Invio richiesta
+        ssoXhr.send();
+
+        //readyState e status consentono di verificare lo stato della richiesta
+        ssoXhr.onload = function() {
+            if (ssoXhr.readyState == 4) { // Controllo corretto con ssoXhr.readyState
+                switch (ssoXhr.status) {
+                    case 200:
+                        let response = ssoXhr.response;
+                        createTable(response);
+                        break;
+                    case 404:
+                        alert("API loading error! Request data not found.");
+                        break;
+                    case 500:
+                        alert("API loading error! Server generic error.");
+                        break;
+                    default:
+                        alert("API loading error! Request error: (" + ssoXhr.statusText + ")");
+                }
             }
-        }
-    };
+        };
+    }
 
     function createTable(jsonData) {
         // Crea una tabella HTML
         let table = document.createElement('table');
         let tbody = table.createTBody();
 
-        // Unitá di misura
+        // Lista delle unitá di misura
         const units = {
             semimajorAxis: 'km',
             perihelion: 'km',
@@ -284,5 +306,18 @@
         // Aggiungi la tabella al contenitore
         const container = document.querySelector('.main__right__celestialBodyInfo');
         container.appendChild(table);
+    }
+
+    function fillSuggestions(celestialBody) {
+        const suggItem = document.getElementById('suggestions__carousel__item-sampleClone');  //elemento da clonare e poi rimuovere
+        const carouselContainer = document.getElementById('suggestions__carousel-ct');  //contenitore del carosello
+        Object.keys(eventsArray).forEach(key => {
+            if(key === celestialBody) return; // non mostro nuovamente la pagina corrente 
+            let newItem = suggItem.cloneNode(true); //clona l'item
+            newItem.removeAttribute('id');
+            newItem.querySelector("p").textContent = key;
+            carouselContainer.appendChild(newItem);
+        });
+        suggItem.remove();  //rimuovo il sample
     }
 </script>

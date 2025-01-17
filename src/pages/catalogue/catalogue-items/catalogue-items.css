@@ -130,3 +130,16 @@ main {
   transform: rotate(90deg);
 }
 
+.suggestions__carousel__item{
+  background-color: #e9ecef;
+  height: 300px;
+  width: 360px;
+  border-radius: 10px;
+}
+.suggestions__carousel__item > img{
+  height: 200px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+
