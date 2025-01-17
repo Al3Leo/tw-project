@@ -166,12 +166,12 @@ require_once "../../../../backend/getAllCatalogueItems.php"; //preleva tutti i v
     </main>
     <div class="suggestions">
         <h4 class="text-center">You might also be interested in</h4>
-        <div id="suggestions__carousel-ct" class="slideshow d-flex flex-row justify-content-around">
+        <div id="suggestions__carousel-ct" class="slideshow d-flex flex-row">
             <!-- 
                 sampleClone. L'elemento seguente viene utilizzato solamente come stampo per la generazione di elementi
                 identici tramite js. L'elemento viene successivamente rimosso con js.
             -->
-            <div class="suggestions__carousel__item d-flex flex-column align-items-center" id="suggestions__carousel__item-sampleClone">
+            <div class="suggestions__carousel__item d-flex align-items-center flex-column" id="suggestions__carousel__item-sampleClone">
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="prova">
                 <p><strong class="suggestions__carousel__item-title"></strong></p>
                 <button type="button">More Info</button>
@@ -179,6 +179,7 @@ require_once "../../../../backend/getAllCatalogueItems.php"; //preleva tutti i v
         </div>
     </div>
     <?php require_once "../../../../components/footer/footer.html" ?>
+    
     <!--<script src="components/gst/gst.js"></script>-->
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
@@ -308,6 +309,10 @@ require_once "../../../../backend/getAllCatalogueItems.php"; //preleva tutti i v
         container.appendChild(table);
     }
 
+    /*
+     *  Funzione per generare i suggerimenti nella parte bassa della pagina
+     */
+
     function fillSuggestions(celestialBody) {
         const suggItem = document.getElementById('suggestions__carousel__item-sampleClone');  //elemento da clonare e poi rimuovere
         const carouselContainer = document.getElementById('suggestions__carousel-ct');  //contenitore del carosello
@@ -315,9 +320,10 @@ require_once "../../../../backend/getAllCatalogueItems.php"; //preleva tutti i v
             if(key === celestialBody) return; // non mostro nuovamente la pagina corrente 
             let newItem = suggItem.cloneNode(true); //clona l'item
             newItem.removeAttribute('id');
-            newItem.querySelector("p").textContent = key;
+            newItem.querySelector("strong").textContent = key;  //imposta il titolo
             carouselContainer.appendChild(newItem);
         });
         suggItem.remove();  //rimuovo il sample
     }
+
 </script>
