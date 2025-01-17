@@ -11,16 +11,22 @@
 </head>
 
 <?php
-$nomeEvento = 'Venus'; //Modificare solo questa stringa php nelle altre pagine!
-require_once "../../../../components/header/header.php";
-require_once "../../../../backend/ConnettiDb.php";  //connette il db
+    /* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
+     *
+     * La variabile é impostata con il nome del corpo celeste e consente di automatizzare 
+     * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
+     * necessario modificare altri parametri per i contenuti generati dinamicamente.
+     */ 
+    $nomeEvento = 'Venus'; 
+    require_once "../../../../components/header/header.php";
+    require_once "../../../../backend/ConnettiDb.php";  //connette il db
 ?>
 
 <body>
     <div class="hero">
         <iframe src="https://solarsystem.nasa.gov/gltf_embed/2342/" frameborder="0" allow="fullscreen" loading="lazy"></iframe>
         <div class="hero__text">
-            <h1 class="text-center">Venus</h1>
+            <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
                 <a href="https://science.nasa.gov/venus/" target="_blank">Venus</a> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
                 <br>
@@ -171,11 +177,12 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
 </html>
 
 <script>
+    const celBody = "<?php echo $nomeEvento ?>"; //passo la variabile php a js
     /* Solar System OpenData API*/
     let ssoXhr = new XMLHttpRequest(); // Creazione di un oggetto XMLHttpRequest
 
     // Richiama l'Endpoint
-    ssoXhr.open("GET", "https://api.le-systeme-solaire.net/rest/bodies/venus", true); //true = asincrono
+    ssoXhr.open("GET", "https://api.le-systeme-solaire.net/rest/bodies/" + celBody, true); //true = asincrono
     ssoXhr.responseType = 'json'; // Impostiamo la proprietà responseType per ricevere la risposta come JSON
 
     // Invio richiesta
