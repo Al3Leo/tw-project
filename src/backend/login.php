@@ -1,4 +1,4 @@
-<?php
+g<?php
 /*
  * gestisce il login
  * setta username come var di sessione se logga

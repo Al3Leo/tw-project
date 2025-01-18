@@ -99,7 +99,7 @@
     </style>
 </head>
 <body>
-<video autoplay muted loop src="../pages/OrderHistory/spaceBackgroung.mp4" id="sfondo" >
+<video autoplay muted loop src="spaceBackgroung.mp4" id="sfondo" >
     Video cannot be displayed.
 </video>
 <main id="ordine">
@@ -108,7 +108,7 @@
         <?php
         if(false)
             echo "";
-        else echo "<span style='color: blue'>IL TUO VIAGGIO SPAZIALE</span></span><br><span style='color: red'>ALESSIO LEO</span>";
+        else echo "<span style='color: blue'>IL TUO VIAGGIO SPAZIALE</span></span><br><span style='color: red'>".$_SESSION['name']."</span>";
         ?>
     </section>
     <section class="orderInfo" id="data">

@@ -70,7 +70,7 @@ if (isset($_SESSION['username'])) {
     </script>
 </head>
 <body>
-<? require_once '../components/header/header.php' ?>
+<? require_once '../../components/header/header.php' ?>
 <main id="main_history">
     <aside>
         menu
@@ -92,6 +92,6 @@ if (isset($_SESSION['username'])) {
         </div>
     </section>
 </main>
-<? require_once '../components/footer/footer.html' ?>
+<? require_once '../../components/footer/footer.html' ?>
 </body>
 </html>
