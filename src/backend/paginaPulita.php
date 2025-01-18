@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php session_start();
-include_once 'contaVisite.php'; ?>
+include_once '../backend/contaVisite.php'; ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,9 @@ include_once 'contaVisite.php'; ?>
 <body>
 <?php  require_once '../components/header/header.php'; ?>
 <?php  require_once '../bozze/ajax_cart.php'; ?>
+<div id="demo">
+    ciao
+</div>
 <?php require_once '../components/footer/footer.html'; ?>
 </body>
 
