@@ -1,4 +1,12 @@
 <html>
+<?php
+//questa pagina si apre con una richiesta get che mi manda l'id evento e la partenza
+session_start();
+
+$fullname=$_SESSION['name']." ".$_SESSION['surname'];
+$partenza=$_GET['partenza']; //stringa in formato "2025-02-28"
+?>
+?>
 <head>
     <title>your floppy ticket</title>
     <meta charset="UTF-8">
@@ -106,26 +114,20 @@
 <div id="elichetta_floppydisk">
     <section class="orderInfo" id="descrizione">
         <?php
-        if(false)
-            echo "";
-        else echo "<span style='color: blue'>IL TUO VIAGGIO SPAZIALE</span></span><br><span style='color: red'>".$_SESSION['name']."</span>";
+        echo "<span style='color: blue'>IL TUO VIAGGIO SPAZIALE</span></span><br><span style='color: red'>".$nome."</span>";
         ?>
     </section>
     <section class="orderInfo" id="data">
         <?php
         $oggi=time();
-        $partenza=strtotime("2025-02-28");
+        $partenza=strtotime($partenza);
         $diff=($oggi-$partenza)/(60*60*24);
-        if(false)
-            echo "";
-        else echo "SI PARTE TRA ".floor($diff)." GIORNI"; //floor arrotonda in basso
+        echo "SI PARTE TRA ".floor($diff)." GIORNI"; //floor arrotonda in basso
         ?>
     </section>
-    <section class="orderInfo" id="nominaativo">
+    <section class="orderInfo">
         <?php
-        if(false)
-            echo "";
-        else echo "il tuo viaggio spaziale";
+        echo "destinazione mare";
         ?>
     </section>
     <section class="orderInfo" id="qr">
