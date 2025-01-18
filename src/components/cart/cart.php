@@ -1,8 +1,28 @@
 <!-- cart -->
-<div id="carrello" class="popup">
+ <style>
+    /*tutto scrollbar*/
+ .popup::-webkit-scrollbar { 
+    width: 0.5rem; 
+    height: 0.5rem; 
+} 
+.popup::-webkit-scrollbar-track { 
+    background-color:transparent;  
+} 
+.popup::-webkit-scrollbar-thumb { 
+        background-color: var(--accent); 
+        border-radius: 100px;
+}
+.popup::-webkit-scrollbar-corner{
+    background-color: transparent;
+}
+ </style>
+<div id="carrello" class="popup d-flex flex-column" id="scroll" style="overflow: auto; padding:0.3rem">
     <div id="remove_popup" style="margin-top: 3%; text-align: right; width: 90%">
         <span style="background-color: red; color: white;" onclick="openCart()">close</span>
     </div>
+
+
+
     <table id="carrello_tbl" style="border-spacing: 20px;">
         <tr>
             <th style="text-align: left">Where</th>

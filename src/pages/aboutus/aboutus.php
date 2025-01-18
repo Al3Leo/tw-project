@@ -12,7 +12,7 @@
     <?php require_once '../../components/header/header.php' ?>
     <div class="ourMission">
         <header>
-            <h1>About Us</h1>
+            <h1 class="fade-in">About Us</h1>
         </header>
 
         <div class="text">
