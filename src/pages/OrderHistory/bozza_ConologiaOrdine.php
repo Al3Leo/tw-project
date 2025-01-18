@@ -14,7 +14,7 @@ if (isset($_SESSION['username'])) {
         body{
             margin: 0;
             padding: 0;
-            background-image: url("st_space.jpg");
+            background-image: url("starship.JPG");
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -27,13 +27,21 @@ if (isset($_SESSION['username'])) {
             height: 95%;
             margin-top: 1.5em;
         }
-        aside{
-            border: 3px solid blue;
+        #menu_ordini{
+            border: 1px solid blue;
             width: 20%;
             height: 80%;
             margin: auto;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
         }
-        section{
+        .opzione{
+            border: 1px solid #aaff00;
+            height: 20%;
+        }
+        #ordini{
             border: 3px solid green;
             width: 75%;
             height: 80%;
@@ -47,6 +55,9 @@ if (isset($_SESSION['username'])) {
             display: block;
             overflow-x: hidden;
             overflow-y: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1em;
+            border-radius: 20px;
         }
         .mini_order{
             margin-top: 1rem;
@@ -54,7 +65,27 @@ if (isset($_SESSION['username'])) {
             height: 33%;
             width: 100%;
             border-radius: 25px;
-            background-color: #F2F3F4;
+            background-image: url("background_order.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .ticket_link{
+            margin-right: 5rem;
+            margin-top: 7%;
+            font-weight: bold;
+            font-size: 3em;
+        }
+        .ticket_link:hover{
+            color: #8546ff;
+            transition: 0.3s;
         }
     </style>
     <base href="../">
@@ -72,22 +103,104 @@ if (isset($_SESSION['username'])) {
 <body>
 <? require_once '../../components/header/header.php' ?>
 <main id="main_history">
-    <aside>
-        menu
+    <aside id="menu_ordini">
+        <div class="opzione">
+            a
+        </div>
+        <div class="opzione">
+            b
+        </div>
+        <div class="opzione">
+            c
+        </div>
+        <div class="opzione">
+            d
+        </div>
+        <div class="opzione">
+            e
+        </div>
     </aside>
-    <section>
-        ordini
+    <section id="ordini">
         <div id="list_ord">
             <div class="mini_order">
-                Order Number: #<span id="today"></span><script>today();</script><br>
-
+                <div class="row">
+                    <section style="margin-left: 1%; display:flex; flex-direction:column; gap: 0.1%;">
+                        Order Number: #<span id="today"></span><script>today();</script><br>
+                        Trip name: <span id="total_price"></span><br>
+                        Launch Location: <span id="launch_loc"></span><br>
+                        Launch Date: <span id="launch_date"></span><br>
+                        Return Date: <span id="return_date"></span><br>
+                        Total Price: <span id="total_price"></span><br>
+                    </section>
+                    <aside class="ticket_link">
+                        il tuo biglietto qui
+                    </aside>
+                </div>
             </div>
-            <div class="mini_order">ciao</div>
-            <div class="mini_order">ciao</div>
-            <div class="mini_order">ciao</div>
-            <div class="mini_order">ciao</div>
-            <div class="mini_order">ciao</div>
-            <div class="mini_order">ciao</div>
+            <div class="mini_order">
+                <section style="margin-left: 1%; display:flex; flex-direction:column; gap: 0.1%;">
+                    Order Number: #<span id="today"></span><script>today();</script><br>
+                    Trip name: <span id="total_price"></span><br>
+                    Launch Location: <span id="launch_loc"></span><br>
+                    Launch Date: <span id="launch_date"></span><br>
+                    Return Date: <span id="return_date"></span><br>
+                    Total Price: <span id="total_price"></span><br>
+                </section>
+            </div><div class="mini_order">
+                <section style="margin-left: 1%; display:flex; flex-direction:column; gap: 0.1%;">
+                    Order Number: #<span id="today"></span><script>today();</script><br>
+                    Trip name: <span id="total_price"></span><br>
+                    Launch Location: <span id="launch_loc"></span><br>
+                    Launch Date: <span id="launch_date"></span><br>
+                    Return Date: <span id="return_date"></span><br>
+                    Total Price: <span id="total_price"></span><br>
+                </section>
+            </div><div class="mini_order">
+                <section style="margin-left: 1%; display:flex; flex-direction:column; gap: 0.1%;">
+                    Order Number: #<span id="today"></span><script>today();</script><br>
+                    Trip name: <span id="total_price"></span><br>
+                    Launch Location: <span id="launch_loc"></span><br>
+                    Launch Date: <span id="launch_date"></span><br>
+                    Return Date: <span id="return_date"></span><br>
+                    Total Price: <span id="total_price"></span><br>
+                </section>
+            </div><div class="mini_order">
+                <section style="margin-left: 1%; display:flex; flex-direction:column; gap: 0.1%;">
+                    Order Number: #<span id="today"></span><script>today();</script><br>
+                    Trip name: <span id="total_price"></span><br>
+                    Launch Location: <span id="launch_loc"></span><br>
+                    Launch Date: <span id="launch_date"></span><br>
+                    Return Date: <span id="return_date"></span><br>
+                    Total Price: <span id="total_price"></span><br>
+                </section>
+            </div><div class="mini_order">
+                <section style="margin-left: 1%; display:flex; flex-direction:column; gap: 0.1%;">
+                    Order Number: #<span id="today"></span><script>today();</script><br>
+                    Trip name: <span id="total_price"></span><br>
+                    Launch Location: <span id="launch_loc"></span><br>
+                    Launch Date: <span id="launch_date"></span><br>
+                    Return Date: <span id="return_date"></span><br>
+                    Total Price: <span id="total_price"></span><br>
+                </section>
+            </div><div class="mini_order">
+                <section style="margin-left: 1%; display:flex; flex-direction:column; gap: 0.1%;">
+                    Order Number: #<span id="today"></span><script>today();</script><br>
+                    Trip name: <span id="total_price"></span><br>
+                    Launch Location: <span id="launch_loc"></span><br>
+                    Launch Date: <span id="launch_date"></span><br>
+                    Return Date: <span id="return_date"></span><br>
+                    Total Price: <span id="total_price"></span><br>
+                </section>
+            </div><div class="mini_order">
+                <section style="margin-left: 1%; display:flex; flex-direction:column; gap: 0.1%;">
+                    Order Number: #<span id="today"></span><script>today();</script><br>
+                    Trip name: <span id="total_price"></span><br>
+                    Launch Location: <span id="launch_loc"></span><br>
+                    Launch Date: <span id="launch_date"></span><br>
+                    Return Date: <span id="return_date"></span><br>
+                    Total Price: <span id="total_price"></span><br>
+                </section>
+            </div>
 
         </div>
     </section>

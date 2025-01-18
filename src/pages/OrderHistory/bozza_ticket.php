@@ -5,6 +5,8 @@ session_start();
 
 $fullname=$_SESSION['name']." ".$_SESSION['surname'];
 $partenza=$_GET['partenza']; //stringa in formato "2025-02-28"
+require_once "../../backend/ConnettiDb.php";
+//finire
 ?>
 ?>
 <head>
