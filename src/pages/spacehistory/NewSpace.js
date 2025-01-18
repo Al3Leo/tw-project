@@ -1,4 +1,4 @@
-
+     
 const upBtn = document.querySelector(".up");
 const downBtn = document.querySelector(".down");
 const leftSlides = document.querySelectorAll(".left > div");
@@ -57,16 +57,16 @@ switch (xhr.status) {
 } 
 } }; 
 
-function createNewsBlocks(articles) { 
-var newsContainer = document.getElementById('newsContainer');
-newsContainer.style.display='grid';
-newsContainer.innerHTML = ''; 
-articles.forEach(function(article) { 
-    var newsBlock = document.createElement('div'); 
-    newsBlock.innerHTML = '<div class"contenuto4"><img class="contenuto4_img" src="' + article.image_url + '" alt="News Image"></div>' 
-    + '<div class="contenuto4"><h3>' + article.title + '</h3>' 
-    + '<p>' + article.summary + '</p></div>'; 
-    newsContainer.appendChild(newsBlock);
-}); 
-} 
+function createNewsBlocks(articles) {
+  var newsContainer = document.getElementById('newsContainer');
+  newsContainer.style.display = 'grid';
+  newsContainer.innerHTML = ''; 
+  articles.forEach(function(article) { 
+    var newsBlock = '<div class="card"><img class="contenuto4_img" src="' + article.image_url + '" alt="News Image">' +
+      '<div class="overlay"><h6>' + article.title + '</h6>' +
+      '<p>' + article.summary + '</p></div></div>';
+    newsContainer.insertAdjacentHTML('beforeend', newsBlock);
+  });
+}
+
 });
