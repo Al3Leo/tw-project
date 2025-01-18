@@ -13,6 +13,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    min-height: 100vh;
 }
 
 .ourMission {
@@ -83,4 +84,57 @@ header h1 {
 .text-box {
     max-width: 500px;
     text-align: left;
+}
+
+h1, h2 {
+    text-shadow: 0 0 10px #9529d7, 0 0 20px #471a8e, 0 0 30px #f7e951;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover, h2:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px #9529d7, 0 0 30px #471a8e, 0 0 40px #f7e951;
+}
+
+h1, h2 {
+    position: relative;
+    color: var(--accent);
+    overflow: hidden;
+}
+
+h1::before, h1::after, h2::before, h2::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--secondaryColor);
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%);
+    animation: glitch 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+    0% { clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); transform: translate(2px, -2px); }
+    50% { clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%); transform: translate(-2px, 2px); }
+    100% { clip-path: polygon(0 40%, 100% 40%, 100% 50%, 0 50%); transform: translate(1px, -1px); }
+}
+
+h1, h2 {
+    overflow: hidden;
+    border-right: 2px solid var(--tertiaryColor); /* Effetto cursore */
+    white-space: nowrap;
+    width: 0;
+    animation: typing 3s steps(20, end), blink 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--tertiaryColor); }
 }
