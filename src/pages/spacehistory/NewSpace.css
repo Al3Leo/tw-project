@@ -317,11 +317,10 @@ object-fit: cover;
         width: 85%;
         display: block;
         position: relative;
-        min-height: 450px;
-        height: auto;
+        height: 100%;
     }
     .newletter-sezione .newsletter-container img{
-        content: url('../../assets/images/space/news.jpg');
+        content: url('../../assets/images/space/news2.jpg');
     }
     .newletter-sezione .newsletter-container .newsletter-container-text{
         position: absolute;
