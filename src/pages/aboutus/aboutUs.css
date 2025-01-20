@@ -4,7 +4,7 @@ body {
     margin: 0;
     font-family: 'Arial', Helvetica, sans-serif;
     color: #ffffff;
-    background-color: #000000;
+    background-color: #111111; 
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -14,11 +14,12 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
+    padding: 0 20px; 
 }
 
 .ourMission {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto;
     padding: 20px;
     flex: 1;
 }
@@ -26,30 +27,41 @@ body {
 header h1 {
     text-align: center;
     font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 50px;
-    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+    color: #f0f0f0;
+    text-transform: uppercase;
 }
 
-.text {
+.text, .finalGoal {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 60px;
-    padding: 20px 0;
-    border-bottom: 1px solid #444;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
-.text h2 {
-    font-size: 2rem;
-    font-weight: bold;
+.text h2, .finalGoal h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
     margin-bottom: 20px;
+    color: #f0f0f0;
+    letter-spacing: 1.5px;
 }
 
-.text p {
-    font-size: 1rem;
+.text p, .finalGoal p {
+    font-size: 1.1rem;
     line-height: 1.8;
-    max-width: 400px;
+    max-width: 450px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.text:hover, .finalGoal:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .image img {
@@ -58,27 +70,27 @@ header h1 {
     margin-left: 20px;
     max-width: 100%;
     height: auto;
-    width: 100%;
-    max-height: 200px;
-    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.4s ease-in-out;
+}
+
+.image img:hover {
+    transform: scale(1.05); 
 }
 
 .finalGoal {
     display: flex;
-    margin-top: 60px;
+    flex-direction: row-reverse;
     padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .finalGoal h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.finalGoal p {
-    font-size: 1rem;
-    line-height: 1.8;
-    max-width: 400px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #f0f0f0;
 }
 
 .text-box {
@@ -93,67 +105,15 @@ header h1 {
     }
     100% {
         opacity: 1;
-        transform: translateY(0); 
+        transform: translateY(0);
     }
 }
 
 .fade-in {
-    opacity: 0; 
+    opacity: 0;
     animation: fadeInSlideUp 1s ease-out forwards;
 }
 
-/* ==========================
-   Footer
-   ========================== */
-
-   footer {
-    background-color: rgba(0, 0, 0, 0.95); /* Sfondo nero opaco */
-    padding: 40px 20px;
-    text-align: center;
-    color: var(--text);
-    border-top: 2px solid var(--tertiaryColor); /* Bordo superiore giallo */
-  }
-  
-  footer nav a {
-    color: var(--tertiaryColor); /* Giallo per i link */
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  footer nav a:hover {
-    color: var(--secondaryColor); /* Viola scuro */
-    transform: scale(1.1); /* Leggero ingrandimento */
-  }
-  
-  footer .social-icons {
-    margin-top: 20px;
-  }
-  
-  footer .social-icons a {
-    display: inline-block;
-    margin: 0 10px;
-    color: var(--tertiaryColor); /* Giallo per le icone social */
-    font-size: 1.5rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  footer .social-icons a:hover {
-    color: var(--accent); /* Viola acceso */
-    transform: rotate(10deg) scale(1.2); /* Rotazione e ingrandimento */
-  }
-  
-  footer p {
-    font-size: 0.9rem;
-    color: var(--text); /* Testo principale */
-    margin-top: 15px;
-  }
-  
-  footer small {
-    display: block;
-    color: var(--accent); /* Viola per il copyright */
-    margin-top: 10px;
-  }
-  
+* {
+    transition: all 0.3s ease-in-out;
+}
