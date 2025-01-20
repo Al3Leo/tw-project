@@ -17,7 +17,7 @@
 
         <div class="text">
             <div class="text-box">
-                <h2>Our Mission</h2>
+                <h2 class="fade-in">Our Mission</h2>
                 <p>
                     Il nostro progetto mira a creare un sito web accattivante e funzionale dedicato ai viaggi spaziali, un tema che rappresenta il futuro
                     dell'esplorazione e della conoscenza umana. Vogliamo offrire agli utenti un'esperienza immersiva, combinando contenuti informativi,
@@ -31,7 +31,7 @@
 
         <div class="finalGoal">
             <div class="text-box">
-                <h2>Final Goal</h2>
+                <h2 class="fade-in">Final Goal</h2>
                 <p>
                     Creare un sito che non solo informi, ma anche entusiasmi le persone, accendendo la passione per i viaggi nello spazio. Che si tratti di
                     scoprire nuove missioni, esplorare destinazioni interplanetarie o semplicemente sognare il futuro dell'umanità tra le stelle, il 
@@ -43,8 +43,7 @@
             </div>
         </div>
     </div>
-
-    <script src="assets/js/slideshow.js"></script>
     <?php require_once "../../components/footer/footer.html"?>
+    <script src="assets/js/slideshow.js"></script>
 </body>
 </html>

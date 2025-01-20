@@ -86,55 +86,74 @@ header h1 {
     text-align: left;
 }
 
-h1, h2 {
-    text-shadow: 0 0 10px #9529d7, 0 0 20px #471a8e, 0 0 30px #f7e951;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); 
+    }
 }
 
-h1:hover, h2:hover {
-    transform: scale(1.1);
-    text-shadow: 0 0 20px #9529d7, 0 0 30px #471a8e, 0 0 40px #f7e951;
+.fade-in {
+    opacity: 0; 
+    animation: fadeInSlideUp 1s ease-out forwards;
 }
 
-h1, h2 {
-    position: relative;
-    color: var(--accent);
-    overflow: hidden;
-}
+/* ==========================
+   Footer
+   ========================== */
 
-h1::before, h1::after, h2::before, h2::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: var(--secondaryColor);
-    z-index: -1;
-    clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%);
-    animation: glitch 3s infinite linear alternate-reverse;
-}
-
-@keyframes glitch {
-    0% { clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); transform: translate(2px, -2px); }
-    50% { clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%); transform: translate(-2px, 2px); }
-    100% { clip-path: polygon(0 40%, 100% 40%, 100% 50%, 0 50%); transform: translate(1px, -1px); }
-}
-
-h1, h2 {
-    overflow: hidden;
-    border-right: 2px solid var(--tertiaryColor); /* Effetto cursore */
-    white-space: nowrap;
-    width: 0;
-    animation: typing 3s steps(20, end), blink 0.5s step-end infinite;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: var(--tertiaryColor); }
-}
+   footer {
+    background-color: rgba(0, 0, 0, 0.95); /* Sfondo nero opaco */
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text);
+    border-top: 2px solid var(--tertiaryColor); /* Bordo superiore giallo */
+  }
+  
+  footer nav a {
+    color: var(--tertiaryColor); /* Giallo per i link */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  footer nav a:hover {
+    color: var(--secondaryColor); /* Viola scuro */
+    transform: scale(1.1); /* Leggero ingrandimento */
+  }
+  
+  footer .social-icons {
+    margin-top: 20px;
+  }
+  
+  footer .social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: var(--tertiaryColor); /* Giallo per le icone social */
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  footer .social-icons a:hover {
+    color: var(--accent); /* Viola acceso */
+    transform: rotate(10deg) scale(1.2); /* Rotazione e ingrandimento */
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+    color: var(--text); /* Testo principale */
+    margin-top: 15px;
+  }
+  
+  footer small {
+    display: block;
+    color: var(--accent); /* Viola per il copyright */
+    margin-top: 10px;
+  }
+  
