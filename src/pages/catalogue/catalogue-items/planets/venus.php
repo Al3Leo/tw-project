@@ -11,7 +11,7 @@
 </head>
 
 <?php
-    /* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
+/* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
      *
      * La variabile é impostata con il nome del corpo celeste e consente di automatizzare 
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
@@ -181,7 +181,7 @@ require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viag
         </div>
     </div>
     <?php require_once "../../../../components/footer/footer.html" ?>
-    
+
     <!--<script src="components/gst/gst.js"></script>-->
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
@@ -190,17 +190,17 @@ require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viag
 
 <script>
     //passo la variabile php contenente il nome del corpo celeste corrente a js
-    const celestialBody = "<?php echo $nomeEvento ?>"; 
+    const celestialBody = "<?php echo $nomeEvento ?>";
     const eventsArray = <?php echo $jsonEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
-    call_lso_api(); 
-    fillSuggestions(celestialBody);  //crea i suggerimenti nella parte bassa della pagina
+    call_lso_api();
+    fillSuggestions(celestialBody); //crea i suggerimenti nella parte bassa della pagina
 
     /*
      * FUNZIONI
-    */
+     */
 
     //chiama l'api "le systeme solaire"
-    function call_lso_api() {        
+    function call_lso_api() {
         /* Solar System OpenData API*/
         let ssoXhr = new XMLHttpRequest(); // Creazione di un oggetto XMLHttpRequest
 
@@ -214,20 +214,13 @@ require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viag
         //readyState e status consentono di verificare lo stato della richiesta
         ssoXhr.onload = function() {
             if (ssoXhr.readyState == 4) { // Controllo corretto con ssoXhr.readyState
-                switch (ssoXhr.status) {
-                    case 200:
-                        let response = ssoXhr.response;
-                        createTable(response);
-                        break;
-                    case 404:
-                        alert("API loading error! Request data not found.");
-                        break;
-                    case 500:
-                        alert("API loading error! Server generic error.");
-                        break;
-                    default:
-                        alert("API loading error! Request error: (" + ssoXhr.statusText + ")");
+                if (ssoXhr.status == 200) {
+                    let response = ssoXhr.response;
+                    createTable(response);
+                } else {
+                    alert("API loading error! Request data not found.");
                 }
+
             }
         };
     }
@@ -316,18 +309,17 @@ require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viag
 
     function fillSuggestions(celestialBody) {
         console.log(eventsArray);
-        const suggItem = document.getElementById('suggestions__carousel__item-sampleClone');  //elemento da clonare e poi rimuovere
-        const carouselContainer = document.getElementById('suggestions__carousel-ct');  //contenitore del carosello
+        const suggItem = document.getElementById('suggestions__carousel__item-sampleClone'); //elemento da clonare e poi rimuovere
+        const carouselContainer = document.getElementById('suggestions__carousel-ct'); //contenitore del carosello
         Object.keys(eventsArray).forEach(key => {
-            if(key === celestialBody) return; // non mostro nuovamente la pagina corrente 
+            if (key === celestialBody) return; // non mostro nuovamente la pagina corrente 
             let newItem = suggItem.cloneNode(true); //clona l'item
             newItem.removeAttribute('id');
-            newItem.querySelector("strong").textContent = key;  //imposta il titolo
+            newItem.querySelector("strong").textContent = key; //imposta il titolo
             console.log(eventsArray[key]);
             newItem.querySelector("img").src = "assets/images/nasa/" + eventsArray[key] + "/" + key + ".jpg"; //lcfirst converte la prima lettera in minuscolo
             carouselContainer.appendChild(newItem);
         });
-        suggItem.remove();  //rimuovo il sample
+        suggItem.remove(); //rimuovo il sample
     }
-
 </script>
