@@ -3,18 +3,15 @@
 <head>
     <?php require_once "../../components/utils/headMetadata.html"?>
     <title>About us</title>
+    
     <!-- Unifica gli stili CSS, se necessario -->
-    <link rel="stylesheet" href="Global.css">
     <link rel="stylesheet" href="aboutUs.css">
     <base href="../../" />
 </head>
 <body>
     <?php require_once '../../components/header/header.php' ?>
     <div class="ourMission">
-        <header>
-            <h1 class="fade-in">About Us</h1>
-        </header>
-
+        <h1 class="fade-in">About Us</h1>
         <div class="text">
             <div class="text-box">
                 <h2 class="fade-in">Our Mission</h2>
@@ -28,7 +25,6 @@
                 <img src="pages/aboutus/viaggi-spaziali.jpg" alt="Missione Spaziale">
             </div>
         </div>
-
         <div class="finalGoal">
             <div class="text-box">
                 <h2 class="fade-in">Final Goal</h2>
@@ -44,6 +40,5 @@
         </div>
     </div>
     <?php require_once "../../components/footer/footer.html"?>
-    <script src="assets/js/slideshow.js"></script>
 </body>
 </html>
