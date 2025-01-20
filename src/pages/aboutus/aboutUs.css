@@ -83,22 +83,40 @@ header h1 {
     text-align: left;
 }
 
-@keyframes fadeInSlideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+h1, h2 {
+    position: relative;
+    color: var(--accent);
+    overflow: hidden;
 }
 
-.fade-in {
-    opacity: 0;
-    animation: fadeInSlideUp 1s ease-out forwards;
+h1::before, h1::after, h2::before, h2::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--secondaryColor);
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%);
+    animation: glitch 3s infinite linear alternate-reverse;
 }
 
-* {
-    transition: all 0.3s ease-in-out;
+@keyframes glitch {
+    0% { clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); transform: translate(2px, -2px); }
+    50% { clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%); transform: translate(-2px, 2px); }
+    100% { clip-path: polygon(0 40%, 100% 40%, 100% 50%, 0 50%); transform: translate(1px, -1px); }
+}
+
+h1, h2 {
+    overflow: hidden;
+    border-right: 2px solid var(--tertiaryColor);
+    white-space: nowrap;
+    width: 0;
+    animation: typing 3s steps(20, end), blink 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
 }

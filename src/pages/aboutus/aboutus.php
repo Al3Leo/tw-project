@@ -3,7 +3,6 @@
 <head>
     <?php require_once "../../components/utils/headMetadata.html"?>
     <title>About us</title>
-    <!-- Unifica gli stili CSS, se necessario -->
     <link rel="stylesheet" href="Global.css">
     <link rel="stylesheet" href="aboutUs.css">
     <base href="../../" />
@@ -25,7 +24,7 @@
                 </p>
             </div>
             <div class="image">
-                <img src="pages/aboutus/viaggi-spaziali.jpg" alt="Missione Spaziale">
+                <img src="assets/images/space/viaggi-spaziali.jpg" alt="Missione Spaziale">
             </div>
         </div>
 
@@ -39,7 +38,7 @@
                 </p>
             </div>
             <div class="image">
-                <img src="pages/aboutus/spazio.jpg" alt="Obiettivo Finale">
+                <img src="assets/images/space/spazio.jpg" alt="Obiettivo Finale">
             </div>
         </div>
     </div>
