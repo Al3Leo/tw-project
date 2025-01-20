@@ -1,10 +1,12 @@
 @import "../../assets/css/Global.css";
+
 body {
     background-image: url("a.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
+    margin: 0; 
 }
 
 .ourMission {
@@ -14,8 +16,9 @@ body {
     flex: 1;
 }
 
-.text {
+.text, .finalGoal {
     display: flex;
+    flex-direction: column; 
     justify-content: space-between;
     align-items: center;
     margin-bottom: 60px;
@@ -23,13 +26,13 @@ body {
     border-bottom: 1px solid #444;
 }
 
-.text h2 {
+.text h2, .finalGoal h2 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.text p {
+.text p, .finalGoal p {
     font-size: 1rem;
     line-height: 1.8;
     max-width: 400px;
@@ -46,24 +49,6 @@ body {
     display: block;
 }
 
-.finalGoal {
-    display: flex;
-    margin-top: 60px;
-    padding: 20px 0;
-}
-
-.finalGoal h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.finalGoal p {
-    font-size: 1rem;
-    line-height: 1.8;
-    max-width: 400px;
-}
-
 .text-box {
     max-width: 500px;
     text-align: left;
@@ -73,6 +58,10 @@ h1, h2 {
     position: relative;
     color: var(--accent);
     overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 3s steps(20, end), blink 0.5s step-end infinite;
+    border-right: 2px solid var(--tertiaryColor);
 }
 
 h1::before, h1::after, h2::before, h2::after {
@@ -92,14 +81,6 @@ h1::before, h1::after, h2::before, h2::after {
     0% { clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); transform: translate(2px, -2px); }
     50% { clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%); transform: translate(-2px, 2px); }
     100% { clip-path: polygon(0 40%, 100% 40%, 100% 50%, 0 50%); transform: translate(1px, -1px); }
-}
-
-h1, h2 {
-    overflow: hidden;
-    border-right: 2px solid var(--tertiaryColor);
-    white-space: nowrap;
-    width: 0;
-    animation: typing 3s steps(20, end), blink 0.5s step-end infinite;
 }
 
 @keyframes typing {

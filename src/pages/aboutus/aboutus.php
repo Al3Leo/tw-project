@@ -5,6 +5,7 @@
     <title>About us</title>
     <link rel="stylesheet" href="aboutUs.css">
     <base href="../../" />
+
 </head>
 <body>
     <?php require_once '../../components/header/header.php' ?>
