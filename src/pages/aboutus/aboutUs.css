@@ -1,10 +1,8 @@
-@import "../../assets/css/Global.css";
-
 body {
     margin: 0;
     font-family: 'Arial', Helvetica, sans-serif;
     color: #ffffff;
-    background-color: #111111; 
+    background-color: #000000;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -13,13 +11,11 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 100vh;
-    padding: 0 20px; 
 }
 
 .ourMission {
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 0 auto;
     padding: 20px;
     flex: 1;
 }
@@ -27,41 +23,30 @@ body {
 header h1 {
     text-align: center;
     font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 40px;
-    letter-spacing: 3px;
-    color: #f0f0f0;
-    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
 }
 
-.text, .finalGoal {
+.text {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 60px;
-    padding: 40px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease-in-out;
+    padding: 20px 0;
+    border-bottom: 1px solid #444;
 }
 
-.text h2, .finalGoal h2 {
-    font-size: 2.2rem;
-    font-weight: 600;
+.text h2 {
+    font-size: 2rem;
+    font-weight: bold;
     margin-bottom: 20px;
-    color: #f0f0f0;
-    letter-spacing: 1.5px;
 }
 
-.text p, .finalGoal p {
-    font-size: 1.1rem;
+.text p {
+    font-size: 1rem;
     line-height: 1.8;
-    max-width: 450px;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.text:hover, .finalGoal:hover {
-    transform: translateY(-10px); 
-    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
 }
 
 .image img {
@@ -70,27 +55,27 @@ header h1 {
     margin-left: 20px;
     max-width: 100%;
     height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
-    transition: transform 0.4s ease-in-out;
-}
-
-.image img:hover {
-    transform: scale(1.05); 
+    width: 100%;
+    max-height: 200px;
+    display: block;
 }
 
 .finalGoal {
     display: flex;
-    flex-direction: row-reverse;
+    margin-top: 60px;
     padding: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .finalGoal h2 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: #f0f0f0;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.finalGoal p {
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 400px;
 }
 
 .text-box {

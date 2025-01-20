@@ -19,9 +19,9 @@
             <div class="text-box">
                 <h2 class="fade-in">Our Mission</h2>
                 <p>
-                    Il nostro progetto mira a creare un sito web accattivante e funzionale dedicato ai viaggi spaziali, un tema che rappresenta il futuro
-                    dell'esplorazione e della conoscenza umana. Vogliamo offrire agli utenti un'esperienza immersiva, combinando contenuti informativi,
-                    design interattivo e tecnologia innovativa.
+                Our project aims to create an engaging and functional website dedicated to space travel, a theme that represents 
+                the future of exploration and human knowledge. We want to offer users an immersive experience by combining 
+                informative content, interactive design, and innovative technology. 
                 </p>
             </div>
             <div class="image">
@@ -33,9 +33,9 @@
             <div class="text-box">
                 <h2 class="fade-in">Final Goal</h2>
                 <p>
-                    Creare un sito che non solo informi, ma anche entusiasmi le persone, accendendo la passione per i viaggi nello spazio. Che si tratti di
-                    scoprire nuove missioni, esplorare destinazioni interplanetarie o semplicemente sognare il futuro dell'umanità tra le stelle, il 
-                    nostro progetto vuole essere un punto di riferimento per chi guarda oltre l'orizzonte terrestre.
+                Our goal is to create a site that not only informs but also excites people, igniting a passion for space travel.
+                 Whether it's discovering new missions, exploring interplanetary destinations, or simply dreaming about humanity's 
+                 future among the stars, our project aims to be a reference point for those looking beyond Earth's horizon.
                 </p>
             </div>
             <div class="image">
