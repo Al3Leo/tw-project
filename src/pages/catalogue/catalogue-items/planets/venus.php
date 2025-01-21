@@ -24,9 +24,7 @@ require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viag
 ?>
 
 <body>
-    <?php     
-        require_once "../../../../components/tripDates/tripdates.html";
-    ?>
+<?php require_once "../../../../components/tripDates/tripdates.php";?>  <!-- Importo il popup per le date -->
     <div class="hero">
         <iframe src="https://solarsystem.nasa.gov/gltf_embed/2342/" frameborder="0" allow="fullscreen" loading="lazy"></iframe>
         <div class="hero__text">
