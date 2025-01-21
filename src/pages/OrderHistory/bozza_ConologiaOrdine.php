@@ -134,7 +134,7 @@ if (isset($_SESSION['username'])) {
                     </section>
                     <aside class="ticket_link">
                         <!--%20 spazio con url encoding, è anche un rfc-->
-                        <a href="OrderHistory/bozza_ticket.php?titolo=destinazione%20MARTE&?luogo=kennedy%20space%20center,%20Florida%20USA&partenza=20-02-2025&num_ordine=777">il tuo biglietto qui</a>
+                        <a href="OrderHistory/bozza_ticket.php?titolo=destinazione%20MARTE&rampa=kennedy%20Space%20Center,%20Florida%20USA&partenza=20-02-2025&num_ordine=777">il tuo biglietto qui</a>
                     </aside>
                 </div>
             </div>

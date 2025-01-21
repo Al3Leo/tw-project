@@ -5,7 +5,7 @@ session_start();
 
 $fullname=$_SESSION['name']." ".$_SESSION['surname'];//nome completo da stampare
 $partenza=$_GET['partenza']; //stringa in formato "2025-02-28"
-$luogo=$_GET['luogo'];//rampa di lancio
+$luogo=$_GET['rampa'];//rampa di lancio
 $titolo=$_GET['titolo'];//nome destinazione
 $num_ordine=$_GET['num_ordine'];
 require_once "../../backend/ConnettiDb.php";
@@ -105,7 +105,7 @@ require_once "../../backend/ConnettiDb.php";
         #elichetta_floppydisk{
             border: 2px solid #000000;
             width: 75%;
-            background-color: #e0e0e0;
+            background-color: #f0f0f0;
             margin: auto;
         }
     </style>
@@ -122,18 +122,16 @@ require_once "../../backend/ConnettiDb.php";
         ?>
     </section>
     <section class="orderInfo" id="data">
-        <?php
+        <span style="font-family: sans-serif; color: white; font-weight: lighter"><?php
         $oggi=time();
         $partenza=strtotime($partenza);
         $diff=($oggi-$partenza)/(60*60*24);
         $diff*=-1;
         echo "Only ".floor($diff)." days to go!"; //floor arrotonda in basso
-        ?>
+        ?></span>
     </section>
     <section class="orderInfo">
-        <?php
-        echo $luogo;
-        ?>
+        <span style="color: black; font-weight: bold; font-family: sans-serif;"><?php echo $luogo; ?></span>
     </section>
     <section class="orderInfo" id="qr">
         <iframe src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=<?php echo $num_ordine;?>" style="width: 150px">iframe error</iframe>
