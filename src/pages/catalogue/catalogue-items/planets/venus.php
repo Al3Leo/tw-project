@@ -24,6 +24,9 @@ require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viag
 ?>
 
 <body>
+    <?php     
+        require_once "../../../../components/tripDates/tripdates.html";
+    ?>
     <div class="hero">
         <iframe src="https://solarsystem.nasa.gov/gltf_embed/2342/" frameborder="0" allow="fullscreen" loading="lazy"></iframe>
         <div class="hero__text">
@@ -73,7 +76,7 @@ require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viag
                                 Days</span>
                         </div>
                         <div class="d-flex flex-row justify-content-between align-items-center main__left__section1__date__btn">
-                            <button type="button" class="text-uppercase">Discover all the dates</button>
+                            <button type="button" class="text-uppercase" onclick="toggleDialog()"> Discover all the dates</button>
                             <a target="_blank" href="pages/support/Supporto.php">
                                 <button type="button" class="text-uppercase">More info</button>
                             </a>
@@ -180,9 +183,10 @@ require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viag
             </div>
         </div>
     </div>
-    <?php require_once "../../../../components/footer/footer.html" ?>
-
-    <!--<script src="components/gst/gst.js"></script>-->
+    <?php 
+    require_once "../../../../components/footer/footer.html";
+    ?>
+        
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
 
@@ -230,7 +234,7 @@ require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viag
         let table = document.createElement('table');
         let tbody = table.createTBody();
 
-        // Lista delle unitá di misura
+        // Lista delle unitá di misura in formato json
         const units = {
             semimajorAxis: 'km',
             perihelion: 'km',

@@ -15,11 +15,8 @@ $password = 'tw2024';
 $connection_string = "host=$host port=$port dbname=$db user=$username password=$password";
 $db_connection = pg_connect($connection_string) or die('Impossibile connettersi al database<br>' . pg_last_error());
 
-
 $id = $_GET['id'];
 $query = "SELECT * FROM viaggio WHERE idevento='$id'";
-
-
 
 $return = pg_query($db_connection, $query) or die('Errore: ' . pg_last_error($db_connection));
 $prodotto = pg_fetch_assoc($return);
@@ -31,7 +28,6 @@ if (isset($_COOKIE['cart'])) {
 } else {
     $cart = [];
 }
-
 
 $info = array(
     "nome" => $prodotto['nomeevento'],
