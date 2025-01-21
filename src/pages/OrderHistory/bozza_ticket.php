@@ -1,12 +1,14 @@
 <html>
 <?php
-//questa pagina si apre con una richiesta get che mi manda l'id evento e la partenza
+//questa pagina si apre con una richiesta get che mi manda i dati del biglietto
 session_start();
 
-$fullname=$_SESSION['name']." ".$_SESSION['surname'];
+$fullname=$_SESSION['name']." ".$_SESSION['surname'];//nome completo da stampare
 $partenza=$_GET['partenza']; //stringa in formato "2025-02-28"
+$luogo=$_GET['luogo'];//rampa di lancio
+$titolo=$_GET['titolo'];//nome destinazione
+$num_ordine=$_GET['num_ordine'];
 require_once "../../backend/ConnettiDb.php";
-//finire
 ?>
 ?>
 <head>
@@ -116,7 +118,7 @@ require_once "../../backend/ConnettiDb.php";
 <div id="elichetta_floppydisk">
     <section class="orderInfo" id="descrizione">
         <?php
-        echo "<span style='color: blue'>IL TUO VIAGGIO SPAZIALE</span></span><br><span style='color: red'>".$nome."</span>";
+        echo "<span style='color: blue; margin: auto;'>".$titolo."</span></span><br><span style='color: red'>".$nome."</span>";
         ?>
     </section>
     <section class="orderInfo" id="data">
@@ -124,16 +126,17 @@ require_once "../../backend/ConnettiDb.php";
         $oggi=time();
         $partenza=strtotime($partenza);
         $diff=($oggi-$partenza)/(60*60*24);
-        echo "SI PARTE TRA ".floor($diff)." GIORNI"; //floor arrotonda in basso
+        $diff*=-1;
+        echo "Only ".floor($diff)." days to go!"; //floor arrotonda in basso
         ?>
     </section>
     <section class="orderInfo">
         <?php
-        echo "destinazione mare";
+        echo $luogo;
         ?>
     </section>
     <section class="orderInfo" id="qr">
-        <iframe src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example" style="width: 150px">iframe error</iframe>
+        <iframe src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=<?php echo $num_ordine;?>" style="width: 150px">iframe error</iframe>
     </section>
 </div>
 

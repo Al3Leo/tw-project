@@ -126,14 +126,15 @@ if (isset($_SESSION['username'])) {
                 <div class="row">
                     <section style="margin-left: 1%; display:flex; flex-direction:column; gap: 0.1%;">
                         Order Number: #<span id="today"></span><script>today();</script><br>
-                        Trip name: <span id="total_price"></span><br>
+                        Trip name: <span id="name">questa è una prova per testare il ticket dinamico</span><br>
                         Launch Location: <span id="launch_loc"></span><br>
                         Launch Date: <span id="launch_date"></span><br>
                         Return Date: <span id="return_date"></span><br>
                         Total Price: <span id="total_price"></span><br>
                     </section>
                     <aside class="ticket_link">
-                        il tuo biglietto qui
+                        <!--%20 spazio con url encoding, è anche un rfc-->
+                        <a href="OrderHistory/bozza_ticket.php?titolo=destinazione%20MARTE&?luogo=kennedy%20space%20center,%20Florida%20USA&partenza=20-02-2025&num_ordine=777">il tuo biglietto qui</a>
                     </aside>
                 </div>
             </div>
