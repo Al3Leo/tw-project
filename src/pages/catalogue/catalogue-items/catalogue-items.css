@@ -21,6 +21,7 @@ main {
 .main__right table {
   margin: 0 auto;
 }
+
 .hero__text {
   width: 80%;
   margin: 0 auto;
@@ -61,6 +62,8 @@ main {
   font-weight: bold;
   color: var(--tertiaryColor);
 }
+
+
 .price {
   font-size: 2rem;
   font-weight: bold;
@@ -82,6 +85,21 @@ main {
 .main__left__tripKnowledge__item__question p {
   font-weight: bold !important;
   font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .main__right{
+    display: none;
+  }
+  .main__left__section1__whatSee, .main__left__section1, .main__left__section1__date{
+    width: 100%;
+  }
+  .main__left{
+    width: 100vw;
+  }
+  .main__left__section1{
+    flex-direction: column;
+  }
 }
 
 /* Dropdown Travel Info*/

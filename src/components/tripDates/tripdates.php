@@ -88,6 +88,19 @@
         transform: scale(1.1);
     }
 
+    @media (max-width: 768px) {
+        #tripDates-ct .dates{
+            width: 80vw;
+        }
+        #tripDates-ct .dates li{
+        font-size: 1.2rem;
+        }
+        .dates-link{
+        padding: 10px;
+        font-weight: 300;
+        font-size: 1rem;
+        } 
+    }
 </style>
 
 <script type="text/javascript">

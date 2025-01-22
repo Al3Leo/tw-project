@@ -42,27 +42,25 @@ function call_lso_api(celestialBody) {
     "https://api.le-systeme-solaire.net/rest/bodies/" + celestialBody,
     true
   ); //true = asincrono
-  ssoXhr.responseType = "json"; // Impostiamo la proprietà responseType per ricevere la risposta come JSON
+  ssoXhr.responseType = "json"; //formatto in json
 
   // Invio richiesta
   ssoXhr.send();
 
-  //readyState e status consentono di verificare lo stato della richiesta
   ssoXhr.onload = function () {
     if (ssoXhr.readyState == 4) {
-      // Controllo corretto con ssoXhr.readyState
       if (ssoXhr.status == 200) {
         let response = ssoXhr.response;
         createTable(response);
       } else {
         alert("API loading error! Request data not found.");
+        deleteTable();
       }
     }
   };
 }
 
 function createTable(jsonData) {
-  // Crea una tabella HTML
   let table = document.createElement("table");
   let tbody = table.createTBody();
 
@@ -93,9 +91,8 @@ function createTable(jsonData) {
     longAscNode: "°",
   };
 
-  // Itera su tutte le chiavi del JSON
   Object.keys(jsonData).forEach((key) => {
-    // Salta chiavi non desiderate o valori nulli
+    // salto le chiavi non desiderate o valori nulli
     if (
       key === "id" ||
       jsonData[key] === null ||
@@ -105,26 +102,26 @@ function createTable(jsonData) {
       return;
     }
 
-    // Se il valore è un oggetto, itera sui suoi attributi (gestione subitems)
+    // Se il valore è un oggetto, itero sui suoi attributi (gestione subitems)
     if (typeof jsonData[key] === "object") {
       Object.keys(jsonData[key]).forEach((subKey) => {
-        let row = tbody.insertRow(); // Crea una riga per ogni coppia chiave-valore annidata
+        let row = tbody.insertRow(); // creo una riga per ogni coppia chiave-valore annidata
 
-        // Prima cella come <th> per la chiave
+        // prima cella come <th> per la chiave
         let cellKey = document.createElement("th");
         cellKey.textContent = subKey;
         row.appendChild(cellKey);
 
-        // Seconda cella per il valore annidato
+        // seconda cella per il valore annidato
         let cellValue = row.insertCell();
         cellValue.textContent = jsonData[key][subKey]; //accede prima al valore associato a key (oggetto), successivamente a quello di subKey
 
-        // Terza cella per l'unità di misura
+        // terza cella per l'unità di misura
         let cellUnit = row.insertCell();
         cellUnit.textContent = units[subKey] || ""; // Inserisce l'unità se esiste, altrimenti stringa vuota
       });
     } else {
-      // Altrimenti aggiunge la chiave e il valore direttamente
+      // Altrimenti aggiungo la chiave e il valore direttamente
       let row = tbody.insertRow();
       let cellKey = document.createElement("th");
       cellKey.textContent = key;
@@ -133,17 +130,26 @@ function createTable(jsonData) {
       let cellValue = row.insertCell();
       cellValue.textContent = jsonData[key];
 
-      // Terza cella per l'unità di misura
       let cellUnit = row.insertCell();
       cellUnit.textContent = units[key] || ""; // Inserisce l'unità se esiste, altrimenti stringa vuota
     }
   });
 
-  // Aggiungi la tabella al contenitore
+  // aggiungo la tabella al contenitore
   const container = document.querySelector(".main__right__celestialBodyInfo");
   container.appendChild(table);
 }
 
+/*
+ * Funzione per eliminare la colonna di destra qualora la chiamata all'api fallisse
+*/
+
+function deleteTable(){
+  const rightClm = document.getElementsByClassName('main__right');
+  const leftClm = document.getElementsByClassName("main__left");
+  rightClm[0].style.display = "none";
+  leftClm[0].style.width = "100%";  // imposta la sezione di sinistra a tutto schermo
+}
 /*
  *  Funzione per generare i suggerimenti nella parte bassa della pagina
  */
