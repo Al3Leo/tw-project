@@ -7,14 +7,16 @@
         <i class="fa-solid fa-x" id="tripDates__closeBtn" style="color: #feffff;"></i>
         <?php 
             if ($db_connection) {
-                $getDates = "SELECT datapartenza,dataritorno FROM viaggio WHERE nomeevento='$nomeEvento'";
-                $price = pg_query($db_connection, $getEvento) or die('No price found! ' . pg_last_error());
-                if ($price) {
-                    $row = pg_fetch_assoc($price);  //array associativo
+                $query = "SELECT datapartenza,dataritorno FROM viaggio WHERE nomeevento='$nomeEvento'";
+                $ret = pg_query($db_connection, $query) or die('Item not found! ' . pg_last_error());
+                if($ret){
+                    while($row = pg_fetch_row($ret)){
+                        echo "$row";
+                    }
                 }
             }
         ?>
-    </div>ci so
+    </div>
 </div>
 
 <style>
@@ -30,6 +32,7 @@
         width: 80vw; 
         height: 80vh;
         background-color: green !important; 
+        border-radius: 15px;
         position: relative; 
         overflow: hidden; 
         top: 50%;  

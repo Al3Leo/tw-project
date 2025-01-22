@@ -20,11 +20,14 @@
 $nomeEvento = 'Venus';
 require_once "../../../../components/header/header.php";
 require_once "../../../../backend/ConnettiDb.php";  //connette il db
-require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viaggi dal db
 ?>
 
 <body>
-<?php require_once "../../../../components/tripDates/tripdates.php";?>  <!-- Importo il popup per le date -->
+<?php 
+require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viaggi univoci dal db
+require_once "../../../../backend/getTripInfo.php"; //preleva tutte le info associate al viaggio verso Venere
+require_once "../../../../components/tripDates/tripdates.php";  //prelevo le date
+?>  <!-- Importo il popup per le date -->
     <div class="hero">
         <iframe src="https://solarsystem.nasa.gov/gltf_embed/2342/" frameborder="0" allow="fullscreen" loading="lazy"></iframe>
         <div class="hero__text">
@@ -193,7 +196,7 @@ require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viag
 <script>
     //passo la variabile php contenente il nome del corpo celeste corrente a js
     const celestialBody = "<?php echo $nomeEvento ?>";
-    const eventsArray = <?php echo $jsonEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
+    const eventsArray = <?php echo $jsonUniqueEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
     call_lso_api();
     fillSuggestions(celestialBody); //crea i suggerimenti nella parte bassa della pagina
 
