@@ -14,7 +14,7 @@
     ?>
     <title><?php echo $nomeEvento ?></title>
     <link rel="stylesheet" href="../catalogue-items.css">
-    <base href="../../../../" />
+    <base href="../../../../" /> <!-- torna in src-->
 </head>
 
 <?php
@@ -23,17 +23,17 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
 ?>
 
 <body>
-<?php 
-require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viaggi univoci dal db
-require_once "../../../../backend/getTripInfo.php"; //preleva tutte le info associate al viaggio verso Venere
-require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
-?>  <!-- Importo il popup per le date -->
+    <?php
+    require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viaggi univoci dal db
+    require_once "../../../../backend/getTripInfo.php"; //preleva tutte le info associate al viaggio verso Venere
+    require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
+    ?> <!-- Importo il popup per le date -->
     <div class="hero">
         <iframe src="https://solarsystem.nasa.gov/gltf_embed/2342/" frameborder="0" allow="fullscreen" loading="lazy"></iframe>
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href= <?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Venus</a> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
+                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Venus</a> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
                 <br>
                 Venus is <b>similar</b> in structure and size to <b>Earth</b>, and is sometimes called <b>Earth's evil twin</b>. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the <b>hottest planet</b> in our solar system with surface temperatures hot enough to melt lead. Below the dense, persistent clouds, the surface has volcanoes and deformed mountains.
             </p>
@@ -47,17 +47,17 @@ require_once "../../../../components/tripDates/tripdates.php";  // includo il po
                     <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                         <span class="price">
                             <?php
-                                if(isset($infoArray)){
-                                    $event = $infoArray[$nomeEvento][0]; //accedo al primo evento associato a venere ($nomeEvento)
-                                    echo $event['prezzoevento'];    //accedo al campo del prezzo del sottoarray
-                                }
+                            if (isset($infoArray)) {
+                                $event = $infoArray[$nomeEvento][0]; //accedo al primo evento associato a venere ($nomeEvento)
+                                echo $event['prezzoevento'];    //accedo al campo del prezzo del sottoarray
+                            }
                             ?>
                             &#8364</span>
                         <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
                             <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
                             <span class="days">
                                 <?php
-                                if(isset($infoArray)){
+                                if (isset($infoArray)) {
                                     $event = $infoArray[$nomeEvento][0]; //accedo al primo evento associato a venere ($nomeEvento)
                                     $departure = date_create($event['datapartenza']);
                                     $return = date_create($event['dataritorno']);
@@ -154,9 +154,6 @@ require_once "../../../../components/tripDates/tripdates.php";  // includo il po
                 <h4 class="text-center">Celestial Body Info</h3>
                     <!-- La tabella é generata da JS-->
             </div>
-            <div class="main__right__gst">
-                <h4 class="text-center">Geomagnetic Storm Status</h3>
-            </div>
         </div>
     </main>
     <div class="suggestions">
@@ -175,149 +172,18 @@ require_once "../../../../components/tripDates/tripdates.php";  // includo il po
             </div>
         </div>
     </div>
-    <?php 
+    <?php
     require_once "../../../../components/footer/footer.html";
     ?>
-        
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
-
 </html>
-
 <script>
-    //passo la variabile php contenente il nome del corpo celeste corrente a js
-    const celestialBody = "<?php echo $nomeEvento ?>";
-    const eventsArray = <?php echo $jsonUniqueEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
-    call_lso_api();
-    fillSuggestions(celestialBody); //crea i suggerimenti nella parte bassa della pagina
-
-    /*
-     * FUNZIONI
-     */
-
-    //chiama l'api "le systeme solaire"
-    function call_lso_api() {
-        /* Solar System OpenData API*/
-        let ssoXhr = new XMLHttpRequest(); // Creazione di un oggetto XMLHttpRequest
-
-        // Richiama l'Endpoint
-        ssoXhr.open("GET", "https://api.le-systeme-solaire.net/rest/bodies/" + celestialBody, true); //true = asincrono
-        ssoXhr.responseType = 'json'; // Impostiamo la proprietà responseType per ricevere la risposta come JSON
-
-        // Invio richiesta
-        ssoXhr.send();
-
-        //readyState e status consentono di verificare lo stato della richiesta
-        ssoXhr.onload = function() {
-            if (ssoXhr.readyState == 4) { // Controllo corretto con ssoXhr.readyState
-                if (ssoXhr.status == 200) {
-                    let response = ssoXhr.response;
-                    createTable(response);
-                } else {
-                    alert("API loading error! Request data not found.");
-                }
-
-            }
-        };
-    }
-
-    function createTable(jsonData) {
-        // Crea una tabella HTML
-        let table = document.createElement('table');
-        let tbody = table.createTBody();
-
-        // Lista delle unitá di misura in formato json
-        const units = {
-            semimajorAxis: 'km',
-            perihelion: 'km',
-            aphelion: 'km',
-            eccentricity: '',
-            inclination: '°',
-            massValue: 'kg',
-            massExponent: 'kg',
-            volValue: 'km³',
-            volExponent: '',
-            density: 'g/cm³',
-            gravity: 'm/s²',
-            escape: 'm/s',
-            meanRadius: 'km',
-            equaRadius: 'km',
-            polarRadius: 'km',
-            flattening: '',
-            sideralOrbit: 'days',
-            sideralRotation: 'hours',
-            axialTilt: '',
-            avgTemp: 'K',
-            mainAnomaly: '°',
-            argPeriapsis: '°',
-            longAscNode: '°',
-        };
-
-        // Itera su tutte le chiavi del JSON
-        Object.keys(jsonData).forEach(key => {
-            // Salta chiavi non desiderate o valori nulli
-            if (key === "id" || jsonData[key] === null || jsonData[key] === '' || key === "isPlanet") {
-                return;
-            }
-
-            // Se il valore è un oggetto, itera sui suoi attributi (gestione subitems)
-            if (typeof jsonData[key] === 'object') {
-                Object.keys(jsonData[key]).forEach(subKey => {
-                    let row = tbody.insertRow(); // Crea una riga per ogni coppia chiave-valore annidata
-
-                    // Prima cella come <th> per la chiave
-                    let cellKey = document.createElement('th');
-                    cellKey.textContent = subKey;
-                    row.appendChild(cellKey);
-
-                    // Seconda cella per il valore annidato
-                    let cellValue = row.insertCell();
-                    cellValue.textContent = jsonData[key][subKey]; //accede prima al valore associato a key (oggetto), successivamente a quello di subKey
-
-                    // Terza cella per l'unità di misura
-                    let cellUnit = row.insertCell();
-                    cellUnit.textContent = units[subKey] || ''; // Inserisce l'unità se esiste, altrimenti stringa vuota
-                });
-            } else {
-                // Altrimenti aggiunge la chiave e il valore direttamente
-                let row = tbody.insertRow();
-                let cellKey = document.createElement('th');
-                cellKey.textContent = key;
-                row.appendChild(cellKey);
-
-                let cellValue = row.insertCell();
-                cellValue.textContent = jsonData[key];
-
-                // Terza cella per l'unità di misura
-                let cellUnit = row.insertCell();
-                cellUnit.textContent = units[key] || ''; // Inserisce l'unità se esiste, altrimenti stringa vuota
-            }
-        });
-
-        // Aggiungi la tabella al contenitore
-        const container = document.querySelector('.main__right__celestialBodyInfo');
-        container.appendChild(table);
-    }
-
-    /*
-     *  Funzione per generare i suggerimenti nella parte bassa della pagina
-     */
-
-     function fillSuggestions(celestialBody) {
-        console.log(eventsArray);
-        const suggItem = document.getElementById('suggestions__carousel__item-sampleClone'); //elemento da clonare e poi rimuovere
-        const carouselContainer = document.getElementById('suggestions__carousel-ct'); //contenitore del carosello
-        Object.keys(eventsArray).forEach(key => {
-            if (key === celestialBody) return; // non mostro nuovamente la pagina corrente 
-            let newItem = suggItem.cloneNode(true); //clona l'item
-            newItem.removeAttribute('id');
-            newItem.querySelector("strong").textContent = key; //imposta il titolo
-            const newItemImg = newItem.querySelector("img");
-            newItemImg.src = "assets/images/nasa/" + eventsArray[key] + "/" + key + ".jpg"; 
-            newItemImg.alt = key + " " + eventsArray[key];
-            newItem.querySelector("a").href = "pages/catalogue/catalogue-items/" + eventsArray[key] + "/" + key + ".php";
-            carouselContainer.appendChild(newItem);
-        });
-        suggItem.remove(); //rimuovo il sample
-    }
+    document.addEventListener("DOMContentLoaded", () => {
+        //passo la variabile php contenente il nome del corpo celeste corrente a js
+        const celestialBody = "<?php echo $nomeEvento ?>";
+        const eventsArray = <?php echo $jsonUniqueEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
+        call_lso_api(celestialBody);
+        fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
+    });
 </script>
