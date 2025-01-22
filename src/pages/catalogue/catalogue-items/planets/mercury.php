@@ -32,16 +32,15 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Venus</a> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
-                <br>
-                Venus is <b>similar</b> in structure and size to <b>Earth</b>, and is sometimes called <b>Earth's evil twin</b>. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the <b>hottest planet</b> in our solar system with surface temperatures hot enough to melt lead. Below the dense, persistent clouds, the surface has volcanoes and deformed mountains.
+                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Mercury</a> is the smallest planet in our solar system and closest to the Sun. Mercury is the <b>second brightest object in the sky</b> after the Sun and Moon. Mercury spins slowly in the opposite direction from most planets.
+                <br>Mercury is <b>similar</b> in structure to the <b>Moon</b>, and is sometimes called <b>the Swift Planet</b>. Its thin atmosphere can't retain heat, making it the <b>second hottest planet</b> in our solar system with surface temperatures varying drastically. Below the cratered surface, the planet has a large iron core and a weak magnetic field.
             </p>
         </div>
     </div>
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
             <h2 class="text-center">Travel Info</h3>
-                <p>Welcome to Venus, Earth's twin planet, renowned for its beauty and mystery! A journey to this fascinating world offers an extraordinary experience filled with surreal landscapes and extreme conditions. With proper preparation and guidance, Venus will unveil its secrets.</p>
+            <p>Welcome to Mercury, the closest planet to the Sun, renowned for its swift orbit and extreme temperatures! A journey to this fascinating world offers an extraordinary experience filled with rugged landscapes and intense conditions. With proper preparation and guidance, Mercury will unveil its secrets.</p>
                 <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                     <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                         <span class="price">
@@ -77,16 +76,16 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
                         <h3 class="text-center">What to See</h3>
                         <ol>
                             <li>
-                                <p><span>Maxwell Montes:</span> Discover Venus' highest point, offering breathtaking views above the planet's dense clouds.</p>
+                                <p><span>Caloris Basin:</span> Discover Mercury's largest impact crater, offering a glimpse into the planet's violent past.</p>
                             </li>
                             <li>
-                                <p><span>Ishtar Terra Plateau:</span> Explore the majestic mountains of this vast plateau, a region of mystery and beauty.</p>
+                                <p><span>Scarp Cliffs:</span> Explore the towering cliffs formed by the planet's shrinking, revealing its geological history.</p>
                             </li>
                             <li>
-                                <p><span>Lavinia Planitia Plains:</span> Venture into the expansive plains, perfect for adventurous exploration.</p>
+                                <p><span>Mercury's Plains:</span> Venture into the smooth plains, perfect for adventurous exploration and understanding the planet's surface.</p>
                             </li>
                             <li>
-                                <p><span>Baltis Vallis Canyon:</span> Witness the longest canyon in the solar system, a unique geological wonder on Venus.</p>
+                                <p><span>Hollows:</span> Witness the mysterious, bright depressions unique to Mercury, a fascinating geological feature of the planet.</p>
                             </li>
                         </ol>
                     </div>
@@ -94,8 +93,8 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
                 <div class="main__left__tripKnowledge">
                     <h3 class="text-center">Everything you need to know about this trip</h3>
                     <p>
-                        Get ready for a one-of-a-kind experience on <b>Venus!</b> The planet features <b>surreal landscapes</b>, extreme weather, and a fascinating <b>history</b>. Equip yourself with special space suits to endure the scorching temperatures, and follow our expert guides for a safe and unforgettable journey. Learn about Venus' role in mythology and the scientific discoveries made about this mysterious planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities.
-                        Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!</p>
+                        Get ready for a one-of-a-kind experience on <b>Mercury!</b> The planet features <b>rugged landscapes</b>, extreme temperatures, and a fascinating <b>history</b>. Equip yourself with special space suits to endure the intense heat and cold, and follow our expert guides for a safe and unforgettable journey. Learn about Mercury's role in mythology and the scientific discoveries made about this mysterious planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities.
+                        Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!
                     </p>
                     <div class="main__left__tripKnowledge__item">
                         <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">

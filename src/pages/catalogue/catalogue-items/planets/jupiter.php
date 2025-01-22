@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php
     /* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
@@ -8,7 +9,7 @@
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
      * necessario modificare altri parametri per i contenuti generati dinamicamente.
      */
-    $nomeEvento = 'Mars';
+    $nomeEvento = 'Jupiter';
     require_once '../../../../components/utils/headMetadata.html';
     ?>
     <title><?php echo $nomeEvento ?></title>
@@ -28,19 +29,20 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
     ?> <!-- Importo il popup per le date -->
     <div class="hero">
-        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2372/" frameborder="0" allow="fullscreen" loading="lazy"></iframe>
+        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2375/" frameborder="0" allow="fullscreen" loading="lazy"></iframe>
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Mars</a> is the fourth planet from the Sun and known as the Red Planet. Mars is the <b>third brightest object in the night sky</b> after the Moon and Venus. Mars spins at a similar speed to Earth.<br>Mars is <b>similar</b> in structure to <b>Earth</b>, and is sometimes called <b>the Red Planet</b>. Its thin atmosphere allows temperatures to fluctuate, making it one of the <b>most varied planets</b> in our solar system with vast deserts and polar ice caps. Below the rocky surface, the planet has a solid iron core and geological activity.
+                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Jupiter</a>Jupiter is the fifth planet from the Sun and the largest in our solar system. Jupiter is the <b>fourth brightest object in the sky</b> after the Sun, Moon, and Venus. Jupiter spins the fastest of all the solar system's planets.<br>
+                Jupiter is <b>much larger</b> in size compared to <b>Earth</b>, and is sometimes called a <b>gas giant</b>. Its thick atmosphere consists mainly of hydrogen and helium, making it the <b>largest planet</b> in our solar system with powerful storms, including the famous Great Red Spot. Below the swirling clouds, the surface has no solid ground, just dense clouds and vast, turbulent weather systems.
             </p>
         </div>
     </div>
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
             <h2 class="text-center">Travel Info</h3>
-            <p>Welcome to Mars, Earth's next-door neighbor, renowned for its red color and intrigue! A journey to this fascinating world offers an extraordinary experience filled with rugged landscapes and extreme conditions. With proper preparation and guidance, Mars will unveil its secrets.</p>
-            <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
+                <p>Welcome to Jupiter, Earth's twin planet, renowned for its beauty and mystery! A journey to this fascinating world offers an extraordinary experience filled with surreal landscapes and extreme conditions. With proper preparation and guidance, Jupiter will unveil its secrets.</p>
+                <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                     <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                         <span class="price">
                             <?php
@@ -75,16 +77,19 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
                         <h3 class="text-center">What to See</h3>
                         <ol>
                             <li>
-                                <p><span>Olympus Mons:</span> Discover the tallest volcano and highest mountain in the solar system, offering breathtaking views above the Martian surface.</p>
+                                <p><span>Great Red Spot:</span> Witness the enormous storm that has been raging for centuries, a magnificent feature of Jupiter's atmosphere.</p>
+                            </li>    
+                            <li> 
+                                <p><span>Galileo Regio:</span> Explore the fascinating region on Ganymede, one of Jupiter's largest moons, known for its complex and ancient terrain.</p>
                             </li>
                             <li>
-                                <p><span>Valles Marineris:</span> Explore the vast canyon system, a region of mystery and beauty stretching across the Martian surface.</p>
+                                <p><span>Europa's Ice Crust:</span> Venture across the icy surface of Europa, another of Jupiter's moons, and ponder the mysteries of the ocean that lies beneath.</p>
                             </li>
                             <li>
-                                <p><span>Hellas Planitia:</span> Venture into the massive impact basin, perfect for adventurous exploration and geological studies.</p>
+                                <p><span>Io's Volcanic Activity:</span> Witness the intense volcanic activity on Io, the most volcanically active body in the solar system, providing a spectacular view of natural fireworks.</p>
                             </li>
                             <li>
-                                <p><span>Polar Ice Caps:</span> Witness the ice-covered poles of Mars, a unique and striking feature of the Red Planet.</p>
+                                <p><span>Callisto's Impact Craters:</span> Discover the heavily cratered surface of Callisto, the oldest and most geologically stable of Jupiter's moons, offering a glimpse into the early solar system.</p>
                             </li>
                         </ol>
                     </div>
@@ -92,7 +97,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
                 <div class="main__left__tripKnowledge">
                     <h3 class="text-center">Everything you need to know about this trip</h3>
                     <p>
-                        Get ready for a one-of-a-kind experience on <b>Mars!</b> The planet features <b>rugged landscapes</b>, extreme weather, and a fascinating <b>history</b>. Equip yourself with special space suits to endure the cold temperatures, and follow our expert guides for a safe and unforgettable journey. Learn about Mars' role in mythology and the scientific discoveries made about this intriguing planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities. Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!
+                        Get ready for a one-of-a-kind experience on <b>Jupiter!</b> The planet features <b>enormous storms</b>, diverse moons, and a fascinating <b>history</b>. Equip yourself with special space suits to endure the intense radiation, and follow our expert guides for a safe and unforgettable journey. Learn about Jupiter's role in mythology and the scientific discoveries made about this giant planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities. Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!
                     </p>
                     <div class="main__left__tripKnowledge__item">
                         <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">

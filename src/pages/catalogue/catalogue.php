@@ -85,7 +85,7 @@ session_start();
         <div class="catalogue__separator"></div>
         <div id="catalogue__planets" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/planets/mercury.php">
                     <img class="responsive" src="assets/images/nasa/planets/mercury.jpg" alt="Mercury">
                 </a>
                 <div class="catalogue__item__text">
@@ -102,7 +102,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/planets/mars.php">
                     <img class="responsive" src="assets/images/nasa/planets/mars.jpg" alt="Mars">
                 </a>
                 <div class="catalogue__item__text">
@@ -110,7 +110,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/planets/jupiter.php">
                     <img class="responsive" src="assets/images/nasa/planets/jupiter.jpg" alt="Jupiter">
                 </a>
                 <div class="catalogue__item__text">
