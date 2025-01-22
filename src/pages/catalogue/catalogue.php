@@ -118,7 +118,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/planets/saturn.php">
                     <img class="responsive" src="assets/images/nasa/planets/saturn.jpg" alt="Saturn">
                 </a>
                 <div class="catalogue__item__text">
@@ -126,7 +126,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/planets/uranus.php">
                     <img class="responsive" src="assets/images/nasa/planets/uranus.jpg" alt="Uranus">
                 </a>
                 <div class="catalogue__item__text">
@@ -134,7 +134,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/planets/neptune.php">
                     <img class="responsive" src="assets/images/nasa/planets/neptune.jpg" alt="Neptune">
                 </a>
                 <div class="catalogue__item__text">
@@ -142,7 +142,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/planets/pluto.php">
                     <img class="responsive" src="assets/images/nasa/planets/pluto.jpg" alt="Pluto">
                 </a>
                 <div class="catalogue__item__text">
