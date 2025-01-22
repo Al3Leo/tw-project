@@ -33,7 +33,7 @@ require_once "../../../../components/tripDates/tripdates.php";  // includo il po
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href="https://science.nasa.gov/venus/" target="_blank">Venus</a> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
+                <a href= <?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Venus</a> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
                 <br>
                 Venus is <b>similar</b> in structure and size to <b>Earth</b>, and is sometimes called <b>Earth's evil twin</b>. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the <b>hottest planet</b> in our solar system with surface temperatures hot enough to melt lead. Below the dense, persistent clouds, the surface has volcanoes and deformed mountains.
             </p>
@@ -144,7 +144,7 @@ require_once "../../../../components/tripDates/tripdates.php";  // includo il po
                             <span class="main__left__tripKnowledge__arrow">&#x25BC</span>
                         </div>
                         <div class="main__left__tripKnowledge__item__answer">
-                            <p><b>Passport</b> is required, with at least six months remaining validity. Entry visa is not necessary.</p>
+                            <p><strong>Passport</strong> is required, with at least six months remaining validity. Entry visa is not necessary.</p>
                         </div>
                     </div>
                 </div>
@@ -303,7 +303,7 @@ require_once "../../../../components/tripDates/tripdates.php";  // includo il po
      *  Funzione per generare i suggerimenti nella parte bassa della pagina
      */
 
-    function fillSuggestions(celestialBody) {
+     function fillSuggestions(celestialBody) {
         console.log(eventsArray);
         const suggItem = document.getElementById('suggestions__carousel__item-sampleClone'); //elemento da clonare e poi rimuovere
         const carouselContainer = document.getElementById('suggestions__carousel-ct'); //contenitore del carosello
@@ -312,8 +312,10 @@ require_once "../../../../components/tripDates/tripdates.php";  // includo il po
             let newItem = suggItem.cloneNode(true); //clona l'item
             newItem.removeAttribute('id');
             newItem.querySelector("strong").textContent = key; //imposta il titolo
-            console.log(eventsArray[key]);
-            newItem.querySelector("img").src = "assets/images/nasa/" + eventsArray[key] + "/" + key + ".jpg"; //lcfirst converte la prima lettera in minuscolo
+            const newItemImg = newItem.querySelector("img");
+            newItemImg.src = "assets/images/nasa/" + eventsArray[key] + "/" + key + ".jpg"; 
+            newItemImg.alt = key + " " + eventsArray[key];
+            newItem.querySelector("a").href = "pages/catalogue/catalogue-items/" + eventsArray[key] + "/" + key + ".php";
             carouselContainer.appendChild(newItem);
         });
         suggItem.remove(); //rimuovo il sample

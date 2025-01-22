@@ -48,6 +48,7 @@
         left: 50%;  
         transform: translate(-50%, -50%);   /* centro l'elemento. Non uso flexbox per semplicitá con il js */
         background-color: black !important;
+        border: 5px solid var(--accent);
     }
     
     #tripDates__closeBtn{

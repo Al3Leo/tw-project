@@ -7,13 +7,7 @@
 session_start();
 
 // Connessione al database
-$host = 'localhost';
-$port = '5432';
-$db = 'GRUPPO05';
-$username = 'www';
-$password = 'tw2024';
-$connection_string = "host=$host port=$port dbname=$db user=$username password=$password";
-$db_connection = pg_connect($connection_string) or die('Impossibile connettersi al database<br>' . pg_last_error());
+require_once __DIR__ . "/ConnettiDb.php";
 
 $id = $_GET['id'];
 $query = "SELECT * FROM viaggio WHERE idevento='$id'";

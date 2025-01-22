@@ -108,7 +108,6 @@ session_start();
                 <div class="catalogue__item__text">
                     <b>Mars</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
@@ -117,7 +116,6 @@ session_start();
                 <div class="catalogue__item__text">
                     <b>Jupiter</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
@@ -126,7 +124,6 @@ session_start();
                 <div class="catalogue__item__text">
                     <b>Saturn</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
@@ -135,7 +132,6 @@ session_start();
                 <div class="catalogue__item__text">
                     <b>Uranus</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
@@ -144,7 +140,6 @@ session_start();
                 <div class="catalogue__item__text">
                     <b>Neptune</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
@@ -153,7 +148,6 @@ session_start();
                 <div class="catalogue__item__text">
                     <b>Pluto</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
         </div>
 
@@ -164,39 +158,35 @@ session_start();
         <div id="catalogue__galaxies" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/galaxies/andromeda.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/galaxies/andromeda.jpg" alt="Andromeda">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Andromeda (M31)</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/galaxies/m33.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/galaxies/triangulum.jpg" alt="Triangulum Galaxy">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Triangulum (M33)</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/galaxies/m51.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/galaxies/whirlpool.jpg" alt="Whirlpool Galaxy">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Whirlpool (M51)</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/galaxies/m101.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/galaxies/pinwheel.jpg" alt="Pinwheel Galaxy">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Pinwheel (M101)</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
         </div>
 
@@ -207,39 +197,35 @@ session_start();
         <div id="catalogue__moons" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/moons/moon.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/moons/moon.jpg" alt="Moon">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Moon (Earth)</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/moons/titan.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/moons/titan.jpg" alt="Titan">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Titan (Saturn)</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/moons/europa.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/moons/europa.jpg" alt="Europa">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Europa (Jupiter)</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/moons/enceladus.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/moons/enceladus.jpg" alt="Enceladus">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Enceladus (Saturn)</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
         </div>
 
@@ -250,48 +236,43 @@ session_start();
         <div id="catalogue__nebulae" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/nebulae/tarantula.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/nebulae/tarantula.jpg" alt="Tarantula Nebula">
                 </a>
                 <div class="catalogue__item__text">
-                    <b>Tarantula Nebula</b>
+                    <b>Tarantula</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/nebulae/horsehead.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/nebulae/horsehead.jpg" alt="Horsehead Nebula">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Horsehead</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/nebulae/eagle.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/nebulae/eagle.jpg" alt="Eagle Nebula">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Eagle</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/nebulae/carina.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/nebulae/carina.jpg" alt="Carina Nebula">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Carina</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="">
-                    <img class="responsive" src="assets/images/nasa/nebulae/helix.jpg" alt="Mercury">
+                    <img class="responsive" src="assets/images/nasa/nebulae/helix.jpg" alt="Helix Nebula">
                 </a>
                 <div class="catalogue__item__text">
                     <b>Helix</b>
                 </div>
-                <button type="button">Add to cart</button>
             </div>
         </div>
     </main>
