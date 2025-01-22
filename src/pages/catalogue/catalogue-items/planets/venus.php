@@ -3,21 +3,21 @@
 
 <head>
     <?php
-    require_once '../../../../components/utils/headMetadata.html';
-    ?>
-    <title>Venus</title>
-    <link rel="stylesheet" href="../catalogue-items.css">
-    <base href="../../../../" />
-</head>
-
-<?php
-/* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
+    /* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
      *
      * La variabile é impostata con il nome del corpo celeste e consente di automatizzare 
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
      * necessario modificare altri parametri per i contenuti generati dinamicamente.
      */
-$nomeEvento = 'Venus';
+    $nomeEvento = 'Venus';
+    require_once '../../../../components/utils/headMetadata.html';
+    ?>
+    <title><?php echo $nomeEvento ?></title>
+    <link rel="stylesheet" href="../catalogue-items.css">
+    <base href="../../../../" />
+</head>
+
+<?php
 require_once "../../../../components/header/header.php";
 require_once "../../../../backend/ConnettiDb.php";  //connette il db
 ?>
@@ -26,7 +26,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
 <?php 
 require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viaggi univoci dal db
 require_once "../../../../backend/getTripInfo.php"; //preleva tutte le info associate al viaggio verso Venere
-require_once "../../../../components/tripDates/tripdates.php";  //prelevo le date
+require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
 ?>  <!-- Importo il popup per le date -->
     <div class="hero">
         <iframe src="https://solarsystem.nasa.gov/gltf_embed/2342/" frameborder="0" allow="fullscreen" loading="lazy"></iframe>
@@ -47,31 +47,22 @@ require_once "../../../../components/tripDates/tripdates.php";  //prelevo le dat
                     <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                         <span class="price">
                             <?php
-                            if ($db_connection) {
-                                $getEvento = "SELECT prezzoevento FROM viaggio WHERE nomeevento='$nomeEvento' LIMIT 1";
-                                $price = pg_query($db_connection, $getEvento) or die('No price found! ' . pg_last_error());
-                                if ($price) {
-                                    $row = pg_fetch_assoc($price);  //array associativo
-                                    echo $row['prezzoevento'];
+                                if(isset($infoArray)){
+                                    $event = $infoArray[$nomeEvento][0]; //accedo al primo evento associato a venere ($nomeEvento)
+                                    echo $event['prezzoevento'];    //accedo al campo del prezzo del sottoarray
                                 }
-                            }
                             ?>
                             &#8364</span>
                         <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
                             <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
                             <span class="days">
                                 <?php
-                                if ($db_connection) {
-                                    $getTravelInterval = "SELECT datapartenza, dataritorno FROM viaggio WHERE nomeevento='$nomeEvento' LIMIT 1";
-                                    $ret = pg_query($db_connection, $getTravelInterval) or die('No column found! ' . pg_last_error());
-                                    if ($ret) {
-                                        $row = pg_fetch_assoc($ret);
-                                        /* Per effettuare la differenza tra le date servono 2 oggetti DateTimeInterface */
-                                        $dataPartenza = date_create($row['datapartenza']);
-                                        $dataRitorno = date_create($row['dataritorno']);
-                                        $interval = date_diff($dataRitorno, $dataPartenza);
-                                        echo $interval->format('%a');   /* formatto sommando tutti i giorni che intercorrono tra le date*/
-                                    }
+                                if(isset($infoArray)){
+                                    $event = $infoArray[$nomeEvento][0]; //accedo al primo evento associato a venere ($nomeEvento)
+                                    $departure = date_create($event['datapartenza']);
+                                    $return = date_create($event['dataritorno']);
+                                    $interval = date_diff($return, $departure);
+                                    echo $interval->format('%a');   /* formatto*/
                                 }
                                 ?>
                                 Days</span>

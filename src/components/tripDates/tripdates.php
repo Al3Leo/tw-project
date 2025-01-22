@@ -6,15 +6,8 @@
     <div class="dates">
         <i class="fa-solid fa-x" id="tripDates__closeBtn" style="color: #feffff;"></i>
         <?php 
-            if ($db_connection) {
-                $query = "SELECT datapartenza,dataritorno FROM viaggio WHERE nomeevento='$nomeEvento'";
-                $ret = pg_query($db_connection, $query) or die('Item not found! ' . pg_last_error());
-                if($ret){
-                    while($row = pg_fetch_row($ret)){
-                        echo "$row";
-                    }
-                }
-            }
+            require_once __DIR__ . '/../../backend/getTripInfo.php';
+            print_r($infoArray);
         ?>
     </div>
 </div>
