@@ -11,8 +11,14 @@ if (isset($_GET['confirmcheckout'])) {
             $email_utente = $_SESSION['email']; //email dell'utente loggato che ha fatto l'acquisto
             $username=$_SESSION['username'];//username che deve essere univoco nel db
             foreach ($cart as $oggetto) { //per ciascun elemento del carrello faccio un insert
-                $id_volo = $oggetto['id']; 
-                $query = "INSERT INTO acquisti (acquirente, acquirenteuser, idvolo) VALUES ('$email_utente', '$username', '$id_volo')"; 
+                //creo un numero ordine sulla base della data di acquisto
+                $today=new DateTime();
+                $day=$today->format('d');
+                $month=$today->format('m');
+                $year=$today->format('Y');
+                $random_number=rand(1, 777);
+                $numordine=$day.$month.$year.$_SESSION['username'].$random_number;
+                $query = "INSERT INTO acquisti (acquirente, acquirenteuser, idacquisto) VALUES ('$email_utente', '$username', '$numordine')";
                 $result = pg_query($db_connection, $query); 
                 if (!$result) { 
                     echo "Errore durante l'inserimento dell'acquistom nel db: " . pg_last_error($db_connection) . "<br>"; 

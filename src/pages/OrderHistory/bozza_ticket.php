@@ -122,7 +122,7 @@ require_once "../../backend/ConnettiDb.php";
         ?>
     </section>
     <section class="orderInfo" id="data">
-        <span style="font-family: sans-serif; color: white; font-weight: lighter"><?php
+        <span style="font-family: sans-serif; color: white; font-weight: lightern"><?php
         $oggi=time();
         $partenza=strtotime($partenza);
         $diff=($oggi-$partenza)/(60*60*24);
