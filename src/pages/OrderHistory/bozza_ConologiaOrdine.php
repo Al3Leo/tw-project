@@ -25,7 +25,7 @@ if (isset($_SESSION['username'])) {
             margin: auto;
             display: flex;
             flex-direction: row;
-            color: red;
+            color: #ffffff;
             height: 95%;
             margin-top: 1.5em;
         }
@@ -65,6 +65,7 @@ if (isset($_SESSION['username'])) {
             background-position: center;
             display: flex;
             flex-direction: column;
+            border: 2px solid white;
         }
         .row{
             display: flex;
@@ -209,7 +210,8 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
         <?php
-            echo "<div style='background-color: white;'>ciao";
+        //prova da finire
+            echo "<div style='background-color: green;'>ciao";
             require_once "GetInfo.php";
             echo "</div>";
         ?>
