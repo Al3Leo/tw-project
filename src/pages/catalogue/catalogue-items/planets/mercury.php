@@ -28,7 +28,9 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
     ?> <!-- Importo il popup per le date -->
     <div class="hero">
-        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2369/" frameborder="0" allow="fullscreen" loading="lazy"></iframe>
+        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2369/" frameborder="0" allow="fullscreen" loading="lazy">
+            <img src= assets/images/nasa/planets/mercury.jgp alt = <?php echo $nomeEvento ?>> <!-- Fallback -->
+        </iframe>
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
