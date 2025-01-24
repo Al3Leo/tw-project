@@ -10,19 +10,16 @@
      */
     $nomeEvento = 'Mercury';
     require_once '../../../../components/utils/headMetadata.html';
+    require_once "../../../../backend/ConnettiDb.php";  //connette il db
     ?>
     <title><?php echo $nomeEvento ?></title>
     <link rel="stylesheet" href="../catalogue-items.css">
     <base href="../../../../" /> <!-- torna in src-->
 </head>
 
-<?php
-require_once "../../../../components/header/header.php";
-require_once "../../../../backend/ConnettiDb.php";  //connette il db
-?>
-
 <body>
     <?php
+    require_once "../../../../components/header/header.php";
     require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viaggi univoci dal db
     require_once "../../../../backend/getTripInfo.php"; //preleva tutte le info associate al viaggio verso Venere
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
