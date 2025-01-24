@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php
-    /* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
-     *
+    /* 
      * La variabile é impostata con il nome del corpo celeste e consente di automatizzare 
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
      * necessario modificare altri parametri per i contenuti generati dinamicamente.
@@ -30,16 +30,14 @@
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Venus</a> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
-                <br>
-                Venus is <b>similar</b> in structure and size to <b>Earth</b>, and is sometimes called <b>Earth's evil twin</b>. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the <b>hottest planet</b> in our solar system with surface temperatures hot enough to melt lead. Below the dense, persistent clouds, the surface has volcanoes and deformed mountains.
+            <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Pinwheel Galaxy</a> is a stunning spiral galaxy located in the constellation Ursa Major. With a diameter of over <b>170,000 light-years</b>, it is one of the largest and brightest galaxies in the night sky, containing hundreds of billions of stars. Known for its well-defined spiral arms, the Pinwheel Galaxy offers extraordinary opportunities for scientific exploration and cosmic wonder.<br>The Pinwheel Galaxy is a prime example of galactic beauty and structure. Its luminous core, numerous star-forming regions, and intricate spiral arms make it a favorite target for astronomers and stargazers alike. Join us on a journey to explore this cosmic masterpiece.
             </p>
         </div>
     </div>
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
             <h2 class="text-center">Travel Info</h2>
-                <p>Welcome to Venus, Earth's twin planet, renowned for its beauty and mystery! A journey to this fascinating world offers an extraordinary experience filled with surreal landscapes and extreme conditions. With proper preparation and guidance, Venus will unveil its secrets.</p>
+            <p>Welcome to the Pinwheel Galaxy, a magnificent spiral galaxy that promises an unforgettable adventure among the stars! Experience the awe-inspiring structure of its spiral arms, vibrant nebulae, and star-forming regions. With our expert guides, you'll uncover the galaxy's secrets and marvel at its cosmic splendor.</p>
                 <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                     <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                         <span class="price">
@@ -74,19 +72,19 @@
                     <div class="main__left__section1__whatSee">
                         <h3 class="text-center">What to See</h3>
                         <ol>
-                            <li>
-                                <p><span>Maxwell Montes:</span> Discover Venus' highest point, offering breathtaking views above the planet's dense clouds.</p>
-                            </li>
-                            <li>
-                                <p><span>Ishtar Terra Plateau:</span> Explore the majestic mountains of this vast plateau, a region of mystery and beauty.</p>
-                            </li>
-                            <li>
-                                <p><span>Lavinia Planitia Plains:</span> Venture into the expansive plains, perfect for adventurous exploration.</p>
-                            </li>
-                            <li>
-                                <p><span>Baltis Vallis Canyon:</span> Witness the longest canyon in the solar system, a unique geological wonder on Venus.</p>
-                            </li>
-                        </ol>
+                        <li>
+                            <p><span>Spiral Arms:</span> Explore the galaxy's breathtaking arms, teeming with young stars and cosmic dust.</p>
+                        </li>
+                        <li>
+                            <p><span>Star-forming Regions:</span> Witness the vibrant stellar nurseries where stars are born.</p>
+                        </li>
+                        <li>
+                            <p><span>Galactic Core:</span> Marvel at the luminous and dynamic core of the Pinwheel Galaxy.</p>
+                        </li>
+                        <li>
+                            <p><span>Intergalactic Nebulae:</span> Discover beautiful nebulae scattered throughout the galaxy.</p>
+                        </li>
+                    </ol>
                     </div>
                 </div>
                 <div class="main__left__tripKnowledge">
