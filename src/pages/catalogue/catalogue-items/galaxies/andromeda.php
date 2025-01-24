@@ -15,6 +15,12 @@
     <title><?php echo $nomeEvento ?></title>
     <link rel="stylesheet" href="../catalogue-items.css">
     <base href="../../../../" /> <!-- torna in src-->
+    <style>
+        .parallax {
+            background-image: url("https://unsplash.com/photos/a-tray-with-two-cups-of-coffee-on-top-of-a-bed-pEj4EfkMIUw") !im;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <?php
@@ -27,9 +33,13 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
     require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viaggi univoci dal db
     require_once "../../../../backend/getTripInfo.php"; //preleva tutte le info associate al viaggio verso Venere
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
-    ?> <!-- Importo il popup per le date -->
+    ?>
+
     <div class="hero">
-        <img class="responsive" src=<?php echo "assets/images/nasa/galaxies/" .lcfirst($nomeEvento)?> alt= <?php echo $nomeEvento . " Galaxy" ?> >
+        <div class="parallax">dio</div>
+        <!--
+            <img class="responsive" src=<?php echo "assets/images/nasa/galaxies/" . lcfirst($nomeEvento) ?> alt= <?php echo $nomeEvento . " Galaxy" ?> >
+        -->
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
@@ -176,14 +186,15 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
     require_once "../../../../components/footer/footer.html";
     ?>
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            //passo la variabile php contenente il nome del corpo celeste corrente a js
+            const celestialBody = "<?php echo $nomeEvento ?>";
+            const eventsArray = <?php echo $jsonUniqueEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
+            call_lso_api(celestialBody);
+            fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
+        });
+    </script>
 </body>
+
 </html>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        //passo la variabile php contenente il nome del corpo celeste corrente a js
-        const celestialBody = "<?php echo $nomeEvento ?>";
-        const eventsArray = <?php echo $jsonUniqueEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
-        call_lso_api(celestialBody);
-        fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
-    });
-</script>

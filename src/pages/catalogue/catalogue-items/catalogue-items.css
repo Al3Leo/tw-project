@@ -7,8 +7,8 @@
   border: none;
 }
 
-.hero img{
-  max-width: 100px !important;
+.hero > img {
+  height: 650px;
 }
 
 main {
