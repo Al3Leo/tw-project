@@ -157,7 +157,7 @@ session_start();
         <div class="catalogue__separator"></div>
         <div id="catalogue__galaxies" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/galaxies/andromeda.php">
                     <img class="responsive" src="assets/images/nasa/galaxies/andromeda.jpg" alt="Andromeda">
                 </a>
                 <div class="catalogue__item__text">
@@ -165,7 +165,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/galaxies/triangulum.php">
                     <img class="responsive" src="assets/images/nasa/galaxies/triangulum.jpg" alt="Triangulum Galaxy">
                 </a>
                 <div class="catalogue__item__text">
@@ -173,7 +173,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/galaxies/whirlpool.php">
                     <img class="responsive" src="assets/images/nasa/galaxies/whirlpool.jpg" alt="Whirlpool Galaxy">
                 </a>
                 <div class="catalogue__item__text">
@@ -181,7 +181,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/galaxies/pinwheel.php">
                     <img class="responsive" src="assets/images/nasa/galaxies/pinwheel.jpg" alt="Pinwheel Galaxy">
                 </a>
                 <div class="catalogue__item__text">
@@ -196,7 +196,7 @@ session_start();
         <div class="catalogue__separator"></div>
         <div id="catalogue__moons" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/galaxies/moon.php">
                     <img class="responsive" src="assets/images/nasa/moons/moon.jpg" alt="Moon">
                 </a>
                 <div class="catalogue__item__text">
@@ -204,7 +204,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/galaxies/saturn.php">
                     <img class="responsive" src="assets/images/nasa/moons/titan.jpg" alt="Titan">
                 </a>
                 <div class="catalogue__item__text">
@@ -212,7 +212,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/galaxies/europa.php">
                     <img class="responsive" src="assets/images/nasa/moons/europa.jpg" alt="Europa">
                 </a>
                 <div class="catalogue__item__text">
@@ -220,7 +220,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/galaxies/enceladus.php">
                     <img class="responsive" src="assets/images/nasa/moons/enceladus.jpg" alt="Enceladus">
                 </a>
                 <div class="catalogue__item__text">
@@ -235,7 +235,7 @@ session_start();
         <div class="catalogue__separator"></div>
         <div id="catalogue__nebulae" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/nebulae/tarantula.php">
                     <img class="responsive" src="assets/images/nasa/nebulae/tarantula.jpg" alt="Tarantula Nebula">
                 </a>
                 <div class="catalogue__item__text">
@@ -243,7 +243,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/nebulae/horsehead.php">
                     <img class="responsive" src="assets/images/nasa/nebulae/horsehead.jpg" alt="Horsehead Nebula">
                 </a>
                 <div class="catalogue__item__text">
@@ -251,7 +251,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/nebulae/heagle.php">
                     <img class="responsive" src="assets/images/nasa/nebulae/eagle.jpg" alt="Eagle Nebula">
                 </a>
                 <div class="catalogue__item__text">
@@ -259,7 +259,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/nebulae/carina.php">
                     <img class="responsive" src="assets/images/nasa/nebulae/carina.jpg" alt="Carina Nebula">
                 </a>
                 <div class="catalogue__item__text">
@@ -267,7 +267,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="">
+                <a href="pages/catalogue/catalogue-items/nebulae/helix.php">
                     <img class="responsive" src="assets/images/nasa/nebulae/helix.jpg" alt="Helix Nebula">
                 </a>
                 <div class="catalogue__item__text">

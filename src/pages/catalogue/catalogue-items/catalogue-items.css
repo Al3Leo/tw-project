@@ -135,8 +135,9 @@ main {
 }
 
 .main__left__tripKnowledge__item__answer.open {
-  max-height: 200px;
   padding: 15px 20px;
+  height: auto;
+  max-height: 1000px;
 }
 
 .main__left__tripKnowledge__arrow {
