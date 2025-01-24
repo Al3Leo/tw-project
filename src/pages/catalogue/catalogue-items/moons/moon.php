@@ -11,41 +11,36 @@
      */
     $nomeEvento = 'Moon';
     require_once '../../../../components/utils/headMetadata.html';
+    require_once "../../../../backend/ConnettiDb.php";  //connette il db
     ?>
     <title><?php echo $nomeEvento ?></title>
     <link rel="stylesheet" href="../catalogue-items.css">
     <base href="../../../../" /> <!-- torna in src-->
 </head>
 
-<?php
-require_once "../../../../components/header/header.php";
-require_once "../../../../backend/ConnettiDb.php";  //connette il db
-?>
-
 <body>
     <?php
+    require_once "../../../../components/header/header.php";
     require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viaggi univoci dal db
     require_once "../../../../backend/getTripInfo.php"; //preleva tutte le info associate al viaggio verso Venere
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
     ?> <!-- Importo il popup per le date -->
     <div class="hero">
-        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2366/" frameborder="0" allow="fullscreen" loading="lazy">
+        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2388/" frameborder="0" allow="fullscreen" loading="lazy">
             <img class="responsive" src=<?php echo "assets/images/nasa/moons/" .lcfirst($nomeEvento)?> alt= <?php echo $nomeEvento?> > <!-- fallback -->
         </iframe>
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Venus</a> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
-                <br>
-                Venus is <b>similar</b> in structure and size to <b>Earth</b>, and is sometimes called <b>Earth's evil twin</b>. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the <b>hottest planet</b> in our solar system with surface temperatures hot enough to melt lead. Below the dense, persistent clouds, the surface has volcanoes and deformed mountains.
+                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Moon</a> is Earth's natural satellite and its closest neighbor in space. The Moon is the <b>fourth brightest object in the sky</b> after the Sun, Moon (partially illuminated), and Venus. The Moon orbits Earth and always shows the same face to our planet.<br>The Moon is <b>similar</b> to Earth in terms of rocky composition, but it lacks a significant atmosphere, causing extreme temperature variations. The surface of the Moon is covered with craters, mountains, and lunar seas. During the Apollo missions, astronauts walked on its surface and returned lunar rock samples.
             </p>
         </div>
     </div>
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
             <h2 class="text-center">Travel Info</h2>
-                <p>Welcome to Venus, Earth's twin planet, renowned for its beauty and mystery! A journey to this fascinating world offers an extraordinary experience filled with surreal landscapes and extreme conditions. With proper preparation and guidance, Venus will unveil its secrets.</p>
-                <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
+            <p>Welcome to the Moon, Earth's closest celestial companion, celebrated for its captivating allure and enigmatic presence! A journey to this extraordinary world provides an unparalleled experience, brimming with stunning craters, vast plains, and profound silence. With the right preparation and guidance, the Moon will reveal its hidden wonders.</p>
+            <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                     <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                         <span class="price">
                             <?php
@@ -77,21 +72,21 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
                         </div>
                     </div>
                     <div class="main__left__section1__whatSee">
-                        <h3 class="text-center">What to See</h3>
-                        <ol>
-                            <li>
-                                <p><span>Maxwell Montes:</span> Discover Venus' highest point, offering breathtaking views above the planet's dense clouds.</p>
-                            </li>
-                            <li>
-                                <p><span>Ishtar Terra Plateau:</span> Explore the majestic mountains of this vast plateau, a region of mystery and beauty.</p>
-                            </li>
-                            <li>
-                                <p><span>Lavinia Planitia Plains:</span> Venture into the expansive plains, perfect for adventurous exploration.</p>
-                            </li>
-                            <li>
-                                <p><span>Baltis Vallis Canyon:</span> Witness the longest canyon in the solar system, a unique geological wonder on Venus.</p>
-                            </li>
-                        </ol>
+                    <h3 class="text-center">What to See</h3>
+                    <ol>
+                        <li>
+                            <p><span>Tycho Crater:</span> Discover one of the Moon's most prominent impact craters, offering breathtaking views of its central peak and ray system.</p>
+                        </li>
+                        <li>
+                            <p><span>Sea of Tranquility:</span> Explore the historic landing site of Apollo 11, where humans first set foot on the lunar surface.</p>
+                        </li>
+                        <li>
+                            <p><span>Copernicus Crater:</span> Venture into the expansive crater, perfect for scientific exploration and observation.</p>
+                        </li>
+                        <li>
+                            <p><span>Rilles of the Moon:</span> Witness these winding valleys and channels, unique geological features formed by ancient volcanic activity.</p>
+                        </li>
+                    </ol>
                     </div>
                 </div>
                 <div class="main__left__tripKnowledge">
