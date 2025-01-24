@@ -40,7 +40,6 @@
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
             <h2 class="text-center">Travel Info</h2>
-            <h2 class="text-center">Travel Info</h2>
             <p>Welcome to Neptune, the windiest planet in the solar system, famous for its stunning blue hue and unique atmospheric phenomena! A journey to this distant giant offers an extraordinary adventure filled with scientific intrigue and breathtaking views. With the right preparation, Neptune will captivate you.</p>
                 <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                     <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
@@ -75,7 +74,6 @@
                     </div>
                     <div class="main__left__section1__whatSee">
                         <h3 class="text-center">What to See</h3>
-                        <h3 class="text-center">What to See</h3>
                         <ol>
                             <li>
                                 <p><span>The Great Dark Spot:</span> Witness this massive storm system, comparable to Jupiter's Great Red Spot.</p>
@@ -95,7 +93,7 @@
                 <div class="main__left__tripKnowledge">
                     <h3 class="text-center">Everything you need to know about this trip</h3>
                     <p>
-                        Get ready for a one-of-a-kind experience on <b>Venus!</b> The planet features <b>surreal landscapes</b>, extreme weather, and a fascinating <b>history</b>. Equip yourself with special space suits to endure the scorching temperatures, and follow our expert guides for a safe and unforgettable journey. Learn about Venus' role in mythology and the scientific discoveries made about this mysterious planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities.
+                        Get ready for a one-of-a-kind experience on <b>Neptune!</b> The planet features <b>surreal landscapes</b>, extreme weather, and a fascinating <b>history</b>. Equip yourself with special space suits to endure the scorching temperatures, and follow our expert guides for a safe and unforgettable journey. Learn about Venus' role in mythology and the scientific discoveries made about this mysterious planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities.
                         Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!</p>
                     </p>
                     <div class="main__left__tripKnowledge__item">
