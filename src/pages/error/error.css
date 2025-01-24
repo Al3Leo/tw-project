@@ -1,0 +1,9 @@
+body {
+    background-image: url("404.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h2, p{
+    color: white;
+    font-family: sans-serif;
+}
