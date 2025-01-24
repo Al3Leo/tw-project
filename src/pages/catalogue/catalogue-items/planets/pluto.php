@@ -11,7 +11,7 @@
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
      * necessario modificare altri parametri per i contenuti generati dinamicamente.
      */
-    $nomeEvento = 'Neptune';
+    $nomeEvento = 'Pluto';
     require_once '../../../../components/utils/headMetadata.html';
     require_once "../../../../backend/ConnettiDb.php";  //connette il db
     ?>

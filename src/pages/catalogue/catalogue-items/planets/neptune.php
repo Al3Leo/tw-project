@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <?php
     /* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
