@@ -3,8 +3,7 @@
 
 <head>
     <?php
-    /* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
-     *
+    /* 
      * La variabile é impostata con il nome del corpo celeste e consente di automatizzare 
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
      * necessario modificare altri parametri per i contenuti generati dinamicamente.
