@@ -31,20 +31,17 @@
         </iframe>
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
-            <!-- DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
             <p id="capitalize">
-                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Venus</a> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
-                <br>
-                Venus is <b>similar</b> in structure and size to <b>Earth</b>, and is sometimes called <b>Earth's evil twin</b>. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the <b>hottest planet</b> in our solar system with surface temperatures hot enough to melt lead. Below the dense, persistent clouds, the surface has volcanoes and deformed mountains.
+                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Neptune</a> is the farthest planet from the Sun in our solar system. Known for its intense blue color, Neptune is the <b>third-largest planet</b> by mass. It experiences the fastest winds in the solar system, reaching up to <b>1,200 miles per hour</b>.
+                <br>Neptune is a <b>gas giant</b> with a dynamic atmosphere and a collection of 14 known moons. Its most famous moon, Triton, is thought to be a captured Kuiper Belt object. Neptune's rings are faint but consist of dust and ice particles.
             </p>
-            <!-- BASTTTTTTTTT -->
         </div>
     </div>
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
             <h2 class="text-center">Travel Info</h2>
-            <!-- SOLO PPPPPPP -->
-                <p>Welcome to Venus, Earth's twin planet, renowned for its beauty and mystery! A journey to this fascinating world offers an extraordinary experience filled with surreal landscapes and extreme conditions. With proper preparation and guidance, Venus will unveil its secrets.</p>
+            <h2 class="text-center">Travel Info</h2>
+            <p>Welcome to Neptune, the windiest planet in the solar system, famous for its stunning blue hue and unique atmospheric phenomena! A journey to this distant giant offers an extraordinary adventure filled with scientific intrigue and breathtaking views. With the right preparation, Neptune will captivate you.</p>
                 <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                     <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                         <span class="price">
@@ -78,22 +75,21 @@
                     </div>
                     <div class="main__left__section1__whatSee">
                         <h3 class="text-center">What to See</h3>
-                        <!-- DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+                        <h3 class="text-center">What to See</h3>
                         <ol>
                             <li>
-                                <p><span>Maxwell Montes:</span> Discover Venus' highest point, offering breathtaking views above the planet's dense clouds.</p>
+                                <p><span>The Great Dark Spot:</span> Witness this massive storm system, comparable to Jupiter's Great Red Spot.</p>
                             </li>
                             <li>
-                                <p><span>Ishtar Terra Plateau:</span> Explore the majestic mountains of this vast plateau, a region of mystery and beauty.</p>
+                                <p><span>Triton:</span> Explore Neptune's largest moon, known for its retrograde orbit and geysers of liquid nitrogen.</p>
                             </li>
                             <li>
-                                <p><span>Lavinia Planitia Plains:</span> Venture into the expansive plains, perfect for adventurous exploration.</p>
+                                <p><span>Faint Rings:</span> Admire the delicate and intricate ring system that surrounds this mysterious planet.</p>
                             </li>
                             <li>
-                                <p><span>Baltis Vallis Canyon:</span> Witness the longest canyon in the solar system, a unique geological wonder on Venus.</p>
+                                <p><span>Cloud Tops:</span> Observe the dynamic and fast-moving clouds in Neptune's upper atmosphere.</p>
                             </li>
                         </ol>
-                        <!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
                     </div>
                 </div>
                 <div class="main__left__tripKnowledge">
@@ -191,3 +187,4 @@
         fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
     });
 </script>
+
