@@ -236,7 +236,7 @@
     <!-- Sidebar -->
     <div class="sideBar" id="sideBar">
         <ul>
-            <li id="li-speciale"><button id="goBack" onclick="toggleSideMenu()">&times</button></li>
+            <li id="li-speciale"><button id="goBack" onclick="toggleSideMenu()">&times;</button></li>
             <li><a href="pages/homepage/homepage.php">Home</a></li>
             <li><a href="pages/catalogue/catalogue.php">Catalogue</a></li>
             <li><a href="pages/aboutus/aboutus.php">About us</a></li>

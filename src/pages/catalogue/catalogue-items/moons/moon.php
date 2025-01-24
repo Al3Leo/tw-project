@@ -43,7 +43,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
     </div>
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
-            <h2 class="text-center">Travel Info</h3>
+            <h2 class="text-center">Travel Info</h2>
                 <p>Welcome to Venus, Earth's twin planet, renowned for its beauty and mystery! A journey to this fascinating world offers an extraordinary experience filled with surreal landscapes and extreme conditions. With proper preparation and guidance, Venus will unveil its secrets.</p>
                 <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                     <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
@@ -54,7 +54,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
                                 echo $event['prezzoevento'];    //accedo al campo del prezzo del sottoarray
                             }
                             ?>
-                            &#8364</span>
+                            &#8364;</span>
                         <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
                             <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
                             <span class="days">
@@ -103,7 +103,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
                     <div class="main__left__tripKnowledge__item">
                         <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
                             <p class="text-center">What's included in the price</p>
-                            <span class="main__left__tripKnowledge__arrow">&#x25BC</span>
+                            <span class="main__left__tripKnowledge__arrow">&#x25BC;</span>
                         </div>
                         <div class="main__left__tripKnowledge__item__answer">
                             <ul>
@@ -111,22 +111,22 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
                                     <p><strong>Round-trip Space Transportation</strong>: Comfortable and safe travel from Earth to Venus and back.</p>
                                 </li>
                                 <li>
-                                    </p><strong>Accommodation</strong>: Stay in our state-of-the-art <b>space habitat</b> with all the amenities you need for a comfortable stay.</p>
+                                    <p><strong>Accommodation</strong>: Stay in our state-of-the-art <b>space habitat</b> with all the amenities you need for a comfortable stay.</p>
                                 </li>
                                 <li>
-                                    </p><strong>Guided Tours</strong>: Daily <b>guided tours</b> to explore the most fascinating sites on Venus, led by our expert space guides.</p>
+                                    <p><strong>Guided Tours</strong>: Daily <b>guided tours</b> to explore the most fascinating sites on Venus, led by our expert space guides.</p>
                                 </li>
                                 <li>
-                                    </p><strong>Meals</strong>: Enjoy a variety of <b>gourmet meals</b> prepared by our onboard chefs, including special Venus-themed dishes.</p>
+                                    <p><strong>Meals</strong>: Enjoy a variety of <b>gourmet meals</b> prepared by our onboard chefs, including special Venus-themed dishes.</p>
                                 </li>
                                 <li>
-                                    </p><strong>Space Suit Rental</strong>: High-quality <b>space suits</b> provided for your safety and comfort during all outdoor activities.</p>
+                                    <p><strong>Space Suit Rental</strong>: High-quality <b>space suits</b> provided for your safety and comfort during all outdoor activities.</p>
                                 </li>
                                 <li>
-                                    </p><strong>Pre-trip Training</strong>: Comprehensive <b>training sessions</b> to prepare you for the unique conditions of space travel and Venus exploration (optional).</p>
+                                    <p><strong>Pre-trip Training</strong>: Comprehensive <b>training sessions</b> to prepare you for the unique conditions of space travel and Venus exploration (optional).</p>
                                 </li>
                                 <li>
-                                    </p><strong>24/7 Support</strong>: Our team of space travel specialists is available around the clock to assist you with any needs or questions.</p>
+                                    <p><strong>24/7 Support</strong>: Our team of space travel specialists is available around the clock to assist you with any needs or questions.</p>
                                 </li>
                             </ul>
                         </div>
@@ -134,7 +134,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
                     <div class="main__left__tripKnowledge__item">
                         <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
                             <p class="text-center">What's NOT included in the price</p>
-                            <span class="main__left__tripKnowledge__arrow">&#x25BC</span>
+                            <span class="main__left__tripKnowledge__arrow">&#x25BC;</span>
                         </div>
                         <div class="main__left__tripKnowledge__item__answer">
                             <b>Optional excursions</b>, tips, personal expenses, lunches and dinners and what is not expressly mentioned under "The fee includes"
@@ -143,7 +143,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
                     <div class="main__left__tripKnowledge__item">
                         <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
                             <p class="text-center">Required Documents</p>
-                            <span class="main__left__tripKnowledge__arrow">&#x25BC</span>
+                            <span class="main__left__tripKnowledge__arrow">&#x25BC;</span>
                         </div>
                         <div class="main__left__tripKnowledge__item__answer">
                             <p><strong>Passport</strong> is required, with at least six months remaining validity. Entry visa is not necessary.</p>

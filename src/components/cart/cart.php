@@ -16,7 +16,7 @@
     background-color: transparent;
 }
  </style>
-<div id="carrello" class="popup d-flex flex-column" id="scroll" style="overflow: auto; padding:0.3rem">
+<div id="carrello scroll" class="popup d-flex flex-column" style="overflow: auto; padding:0.3rem">
     <div id="remove_popup" style="margin-top: 3%; text-align: right; width: 90%">
         <span style="background-color: red; color: white;" onclick="openCart()">close</span>
     </div>
