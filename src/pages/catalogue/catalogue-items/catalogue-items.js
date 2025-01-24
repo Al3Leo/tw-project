@@ -63,6 +63,7 @@ function call_lso_api(celestialBody) {
 function createTable(jsonData) {
   let table = document.createElement("table");
   let tbody = table.createTBody();
+  let moonsCounter = 0;   // variabile per contare i satelliti associati ad un determinato pianeta
 
   // Lista delle unitá di misura in formato json
   const units = {
@@ -95,16 +96,20 @@ function createTable(jsonData) {
     // salto le chiavi non desiderate o valori nulli
     if (
       key === "id" ||
+      key === "isPlanet" ||
+      key === "name" ||
+      key === "englishName" ||
       jsonData[key] === null ||
-      jsonData[key] === "" ||
-      key === "isPlanet"
-    ) {
-      return;
-    }
+      jsonData[key] === ""
+    ) return;
 
     // Se il valore è un oggetto, itero sui suoi attributi (gestione subitems)
     if (typeof jsonData[key] === "object") {
       Object.keys(jsonData[key]).forEach((subKey) => {
+        if (key === "moons"){
+          moonsCounter++; // conto solamente il numero dei satelliti, senza mostrarli
+          return;
+        }
         let row = tbody.insertRow(); // creo una riga per ogni coppia chiave-valore annidata
 
         // prima cella come <th> per la chiave
@@ -134,6 +139,20 @@ function createTable(jsonData) {
       cellUnit.textContent = units[key] || ""; // Inserisce l'unità se esiste, altrimenti stringa vuota
     }
   });
+
+  // Se il pianeta ha almeno 1 setellite, mostro il numero
+  if (moonsCounter != 0){
+    let row = tbody.insertRow(); 
+    let cellKey = document.createElement("th");
+    cellKey.textContent = "moons";
+    row.appendChild(cellKey);
+    let cellValue = row.insertCell();
+    cellValue.textContent = moonsCounter;
+    let cellUnit = row.insertCell();
+    cellUnit.textContent = "";
+
+
+  }
 
   // aggiungo la tabella al contenitore
   const container = document.querySelector(".main__right__celestialBodyInfo");
