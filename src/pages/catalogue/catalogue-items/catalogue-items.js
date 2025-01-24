@@ -53,7 +53,6 @@ function call_lso_api(celestialBody) {
         let response = ssoXhr.response;
         createTable(response);
       } else {
-        alert("API loading error! Request data not found.");
         deleteTable();
       }
     }
@@ -100,7 +99,8 @@ function createTable(jsonData) {
       key === "name" ||
       key === "englishName" ||
       jsonData[key] === null ||
-      jsonData[key] === ""
+      jsonData[key] === "" ||
+      jsonData[key] === 0
     ) return;
 
     // Se il valore è un oggetto, itero sui suoi attributi (gestione subitems)
@@ -110,6 +110,11 @@ function createTable(jsonData) {
           moonsCounter++; // conto solamente il numero dei satelliti, senza mostrarli
           return;
         }
+        
+        if(subKey === "rel"){
+          return;
+        }
+
         let row = tbody.insertRow(); // creo una riga per ogni coppia chiave-valore annidata
 
         // prima cella come <th> per la chiave

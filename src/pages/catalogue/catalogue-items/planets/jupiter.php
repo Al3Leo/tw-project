@@ -30,7 +30,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
     ?> <!-- Importo il popup per le date -->
     <div class="hero">
         <iframe src="https://solarsystem.nasa.gov/gltf_embed/2375/" frameborder="0" allow="fullscreen" loading="lazy">
-            <img src= assets/images/nasa/planets/jupiter.jgp alt = <?php echo $nomeEvento ?>> <!-- Fallback -->
+            <img class="responsive" src=<?php echo "assets/images/nasa/planets/" .lcfirst($nomeEvento)?> alt= <?php echo $nomeEvento ?> > <!-- fallback -->
         </iframe>
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>

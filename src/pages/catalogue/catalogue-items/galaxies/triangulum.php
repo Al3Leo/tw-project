@@ -9,7 +9,7 @@
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
      * necessario modificare altri parametri per i contenuti generati dinamicamente.
      */
-    $nomeEvento = 'Andromeda';
+    $nomeEvento = 'Triangulum';
     require_once '../../../../components/utils/headMetadata.html';
     ?>
     <title><?php echo $nomeEvento ?></title>
@@ -29,7 +29,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
     ?> <!-- Importo il popup per le date -->
     <div class="hero">
-        <img src="assets/images/nasa/galaxies/andromeda.jpg" alt="Andromeda Galaxy">
+        <img class="responsive" src=<?php echo "assets/images/nasa/galaxies/" .lcfirst($nomeEvento)?> alt= <?php echo $nomeEvento . " Galaxy" ?> >
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">

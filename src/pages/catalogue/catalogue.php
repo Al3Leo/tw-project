@@ -196,7 +196,7 @@ session_start();
         <div class="catalogue__separator"></div>
         <div id="catalogue__moons" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="pages/catalogue/catalogue-items/galaxies/moon.php">
+                <a href="pages/catalogue/catalogue-items/moons/moon.php">
                     <img class="responsive" src="assets/images/nasa/moons/moon.jpg" alt="Moon">
                 </a>
                 <div class="catalogue__item__text">
@@ -204,7 +204,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="pages/catalogue/catalogue-items/galaxies/saturn.php">
+                <a href="pages/catalogue/catalogue-items/moons/titan.php">
                     <img class="responsive" src="assets/images/nasa/moons/titan.jpg" alt="Titan">
                 </a>
                 <div class="catalogue__item__text">
@@ -212,7 +212,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="pages/catalogue/catalogue-items/galaxies/europa.php">
+                <a href="pages/catalogue/catalogue-items/moons/europa.php">
                     <img class="responsive" src="assets/images/nasa/moons/europa.jpg" alt="Europa">
                 </a>
                 <div class="catalogue__item__text">
@@ -220,7 +220,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
-                <a href="pages/catalogue/catalogue-items/galaxies/enceladus.php">
+                <a href="pages/catalogue/catalogue-items/moons/enceladus.php">
                     <img class="responsive" src="assets/images/nasa/moons/enceladus.jpg" alt="Enceladus">
                 </a>
                 <div class="catalogue__item__text">

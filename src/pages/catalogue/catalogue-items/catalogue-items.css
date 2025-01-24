@@ -6,6 +6,11 @@
   height: 50vh;
   border: none;
 }
+
+.hero img{
+  max-width: 100px !important;
+}
+
 main {
   width: 80%;
   margin: 0 auto;
