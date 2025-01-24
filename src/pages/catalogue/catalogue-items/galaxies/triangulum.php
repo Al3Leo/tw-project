@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <?php
-    /* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
-     *
-     * La variabile é impostata con il nome del corpo celeste e consente di automatizzare 
+    /* 
+     * La variabile è impostata con il nome del corpo celeste e consente di automatizzare 
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
      * necessario modificare altri parametri per i contenuti generati dinamicamente.
      */
@@ -22,80 +20,74 @@
     <?php
     require_once "../../../../components/header/header.php";
     require_once "../../../../backend/getAllUniqueTrips.php"; //preleva tutti i viaggi univoci dal db
-    require_once "../../../../backend/getTripInfo.php"; //preleva tutte le info associate al viaggio verso Venere
+    require_once "../../../../backend/getTripInfo.php"; //preleva tutte le info associate al viaggio verso Triangulum
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
     ?> <!-- Importo il popup per le date -->
     <div class="hero">
-        <img class="responsive" src=<?php echo "assets/images/nasa/galaxies/" .lcfirst($nomeEvento)?> alt= <?php echo $nomeEvento . " Galaxy" ?> >
+        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2388/" frameborder="0" allow="fullscreen" loading="lazy">
+            <img class="responsive" src=<?php echo "assets/images/nasa/galaxies/" . lcfirst($nomeEvento) ?> alt=<?php echo $nomeEvento ?>> <!-- fallback -->
+        </iframe>
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Venus</a> is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the <b>third brightest object in the sky</b> after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.
-                <br>
-                Venus is <b>similar</b> in structure and size to <b>Earth</b>, and is sometimes called <b>Earth's evil twin</b>. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the <b>hottest planet</b> in our solar system with surface temperatures hot enough to melt lead. Below the dense, persistent clouds, the surface has volcanoes and deformed mountains.
+            <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Triangulum Galaxy</a> is a stunning spiral galaxy located in the constellation Triangulum. As the third-largest galaxy in our local group, it spans nearly <b>60,000 light-years</b> and contains an abundance of star-forming regions. Known for its beautiful structure and proximity, the Triangulum Galaxy is a key object of study for understanding galactic evolution and star formation.<br>The Triangulum Galaxy offers a mesmerizing glimpse into the universe's complexity and beauty. With its bright nebulae, dynamic star clusters, and intricate details, it has captivated astronomers and space enthusiasts for generations. Join us on an unforgettable journey to this celestial neighbor.
             </p>
         </div>
     </div>
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
             <h2 class="text-center">Travel Info</h2>
-                <p>Welcome to Venus, Earth's twin planet, renowned for its beauty and mystery! A journey to this fascinating world offers an extraordinary experience filled with surreal landscapes and extreme conditions. With proper preparation and guidance, Venus will unveil its secrets.</p>
-                <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
-                    <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
-                        <span class="price">
+            <p>Welcome to the Triangulum Galaxy, a captivating spiral galaxy that offers a unique adventure through the cosmos! Discover its star-forming regions, radiant nebulae, and intricate structure. With our experienced guides, you'll uncover the secrets of this galactic wonder and its place in the universe.</p>
+            <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
+                <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
+                    <span class="price">
+                        <?php
+                        if (isset($infoArray)) {
+                            $event = $infoArray[$nomeEvento][0]; //accedo al primo evento associato a Triangulum
+                            echo $event['prezzoevento'];    //accedo al campo del prezzo del sottoarray
+                        }
+                        ?>
+                        &#8364;</span>
+                    <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
+                        <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
+                        <span class="days">
                             <?php
                             if (isset($infoArray)) {
-                                $event = $infoArray[$nomeEvento][0]; //accedo al primo evento associato a venere ($nomeEvento)
-                                echo $event['prezzoevento'];    //accedo al campo del prezzo del sottoarray
+                                $event = $infoArray[$nomeEvento][0];
+                                $departure = date_create($event['datapartenza']);
+                                $return = date_create($event['dataritorno']);
+                                $interval = date_diff($return, $departure);
+                                echo $interval->format('%a');   /* formatto*/
                             }
                             ?>
-                            &#8364;</span>
-                        <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
-                            <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
-                            <span class="days">
-                                <?php
-                                if (isset($infoArray)) {
-                                    $event = $infoArray[$nomeEvento][0]; //accedo al primo evento associato a venere ($nomeEvento)
-                                    $departure = date_create($event['datapartenza']);
-                                    $return = date_create($event['dataritorno']);
-                                    $interval = date_diff($return, $departure);
-                                    echo $interval->format('%a');   /* formatto*/
-                                }
-                                ?>
-                                Days</span>
-                        </div>
-                        <div class="d-flex flex-row justify-content-between align-items-center main__left__section1__date__btn">
-                            <button type="button" class="text-uppercase" onclick="toggleDialog()"> Discover all the dates</button>
-                            <a target="_blank" href="pages/support/Supporto.php">
-                                <button type="button" class="text-uppercase">More info</button>
-                            </a>
-                        </div>
+                            Days</span>
                     </div>
-                    <div class="main__left__section1__whatSee">
-                        <h3 class="text-center">What to See</h3>
-                        <ol>
-                            <li>
-                                <p><span>Maxwell Montes:</span> Discover Venus' highest point, offering breathtaking views above the planet's dense clouds.</p>
-                            </li>
-                            <li>
-                                <p><span>Ishtar Terra Plateau:</span> Explore the majestic mountains of this vast plateau, a region of mystery and beauty.</p>
-                            </li>
-                            <li>
-                                <p><span>Lavinia Planitia Plains:</span> Venture into the expansive plains, perfect for adventurous exploration.</p>
-                            </li>
-                            <li>
-                                <p><span>Baltis Vallis Canyon:</span> Witness the longest canyon in the solar system, a unique geological wonder on Venus.</p>
-                            </li>
-                        </ol>
+                    <div class="d-flex flex-row justify-content-between align-items-center main__left__section1__date__btn">
+                        <button type="button" class="text-uppercase" onclick="toggleDialog()"> Discover all the dates</button>
+                        <a target="_blank" href="pages/support/Supporto.php">
+                            <button type="button" class="text-uppercase">More info</button>
+                        </a>
                     </div>
                 </div>
-                <div class="main__left__tripKnowledge">
-                    <h3 class="text-center">Everything you need to know about this trip</h3>
-                    <p>
-                        Get ready for a one-of-a-kind experience on <b>Venus!</b> The planet features <b>surreal landscapes</b>, extreme weather, and a fascinating <b>history</b>. Equip yourself with special space suits to endure the scorching temperatures, and follow our expert guides for a safe and unforgettable journey. Learn about Venus' role in mythology and the scientific discoveries made about this mysterious planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities.
-                        Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!</p>
-                    </p>
-                    <div class="main__left__tripKnowledge__item">
+                <div class="main__left__section1__whatSee">
+                    <h3 class="text-center">What to See</h3>
+                    <ol>
+                        <li>
+                            <p><span>Spiral Arms:</span> Admire the galaxy's elegant arms, home to countless stars and cosmic phenomena.</p>
+                        </li>
+                        <li>
+                            <p><span>Star-forming Regions:</span> Discover vibrant stellar nurseries within its luminous nebulae.</p>
+                        </li>
+                        <li>
+                            <p><span>Galactic Core:</span> Witness the dynamic and radiant center of the Triangulum Galaxy.</p>
+                        </li>
+                        <li>
+                            <p><span>Deep-Sky Wonders:</span> Explore breathtaking sights like NGC 604, one of the largest star-forming regions known.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="main__left__tripKnowledge__item">
                         <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
                             <p class="text-center">What's included in the price</p>
                             <span class="main__left__tripKnowledge__arrow">&#x25BC;</span>
@@ -184,3 +176,9 @@
         fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
     });
 </script>
+
+
+
+
+
+
