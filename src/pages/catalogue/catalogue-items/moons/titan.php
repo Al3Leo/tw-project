@@ -153,7 +153,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
         </div>
         <div class="main__right">
             <div class="main__right__celestialBodyInfo">
-                <h4 class="text-center">Celestial Body Info</h3>
+                <h3 class="text-center">Celestial Body Info</h3>
                     <!-- La tabella é generata da JS-->
             </div>
         </div>
