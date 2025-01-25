@@ -6,7 +6,6 @@
         <title>Sign up</title>
         <link rel="stylesheet" href="signup.css">
         <base href="../../">
-        <style></style>
 </head>
 
 <body>
