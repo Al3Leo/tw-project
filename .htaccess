@@ -1,3 +1,1 @@
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ src/pages/error/error.php [L]
+ErrorDocument 404 /tw-project/src/pages/error/error.php

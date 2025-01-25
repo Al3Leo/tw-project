@@ -14,8 +14,11 @@
                         $departureDate = date_create($event['datapartenza'])->format('d F Y');  //-> serve ad accedere ad un campo dell'oggetto o chiamarne un metodo
                         $returnDate = date_create($event['dataritorno'])->format('d F Y');
                         $eventId = $event['idevento'];
+                        $location = $event['launchlocation'];
+                        /* Da rifare con tabella */
                         echo "<li> <div class=\"dates-item d-flex flex-row justify-content-between align-items-center\">" 
                         . $departureDate . "  -  " . $returnDate 
+                        . " <small>" . $location . "</small>"
                         . "<a class=\"dates-link\" href=\"backend/addToCart.php?" . $eventId ."\"> Add to Cart</a>"
                         . "</div> </li> <hr>";
                     }
@@ -37,18 +40,19 @@
     }
     
     #tripDates-ct .dates {
-        width: 60vw; 
         height: auto;
         border-radius: 15px;
         padding: 50px;
         position: relative; 
         overflow-x: hidden; 
-        overflow-y: visible;    /* abilito lo scroll verticale*/
+        overflow-y: scroll;    /* abilito lo scroll verticale*/
         top: 50%;  
         left: 50%;  
         transform: translate(-50%, -50%);   /* centro l'elemento. Non uso flexbox per semplicitá con il js */
         background-color: black !important;
         border: 5px solid var(--accent);
+        width: 80vw; 
+        height: 70vh;
     }
     
     #tripDates__closeBtn{
@@ -66,7 +70,7 @@
         }
     }
     #tripDates-ct .dates li{
-        font-size: 2rem;
+        font-size: 1.2rem;
         padding: 30px;
     }
     .dates-link{
@@ -81,7 +85,7 @@
         transition: color 100ms, transform 0.3s ease-out;
         font-weight: 600;
         color: white !important;
-        font-size: 1.3rem;
+        font-size: 1rem;
     } 
     .dates-link:hover{
         background-color: var(--secondaryColor);
@@ -93,7 +97,7 @@
             width: 80vw;
         }
         #tripDates-ct .dates li{
-        font-size: 1.2rem;
+        font-size: 1rem;
         }
         .dates-link{
         padding: 10px;
