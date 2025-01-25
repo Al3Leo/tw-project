@@ -18,7 +18,11 @@ if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
            
             if($row){
                  $hash = $row['passworduser'];
-            if ($password==$hash) { /////ALTRO METODO DA UTILIZZARE
+            if (password_verify($password, $hash)) {
+                //Controlliamo la password inserita dall'utente rispetto 
+                //all'hash presente nel database (con password_verify()) e se 
+                //il controllo è positivo, vengono settate
+                //opportune variabili di sessione
                 $name = $row['nome'];
                 $surname = $row['cognome'];
                 $email = $row['indirizzo'];

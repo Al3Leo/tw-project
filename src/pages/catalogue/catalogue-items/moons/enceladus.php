@@ -26,7 +26,7 @@
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
     ?> <!-- Importo il popup per le date -->
     <div class="hero">
-        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2388/" frameborder="0" allow="fullscreen" loading="lazy">
+        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2391/" frameborder="0" allow="fullscreen" loading="lazy">
             <img class="responsive" src=<?php echo "assets/images/nasa/moons/" . lcfirst($nomeEvento) ?> alt=<?php echo $nomeEvento ?>> <!-- fallback -->
         </iframe>
         <div class="hero__text">

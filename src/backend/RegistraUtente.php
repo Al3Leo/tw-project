@@ -9,7 +9,7 @@ $user_id=pg_fetch_row($ret)[0];
 /*echo "<pre>";
 print_r($_POST);
 echo "</pre>";*/
-if(!empty($_POST)) {
+if(isset($_POST)) {
     $user_name = $_POST['user_name'];
     $user_surname = $_POST['user_surname'];
     $user_gender = $_POST['user_gender'];
@@ -18,14 +18,7 @@ if(!empty($_POST)) {
     $user_email = $_POST['user_email'];
     $user_birthday = $_POST['user_birthday'];
     $user_password = password_hash($_POST['user_password'], PASSWORD_DEFAULT);
-    echo "<h3>Verifica dei dati ricevuti:</h3>";
-    echo "Nome: " . htmlspecialchars($user_name) . "<br>";
-    echo "Cognome: " . htmlspecialchars($user_surname) . "<br>";
-    echo "Sesso: " . htmlspecialchars($user_gender) . "<br>";
-    echo "Username: " . htmlspecialchars($user_username) . "<br>";
-    echo "Paese: " . htmlspecialchars($user_country) . "<br>";
-    echo "Password (hash): " . htmlspecialchars($user_password) . "<br>";
-    $sql = "INSERT INTO utente (id, name, surname, username, password, gender, country, email, dateofbirth) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)";
+    $sql = "INSERT INTO utente (id, nome, cognome, username, password, gender, country, email, dateofbirth) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)";
     $result = pg_prepare("inserisciUtente", $sql);
     if ($result) {
         $result2 = pg_execute("inserisciUtente", array($user_id, $user_name, $user_surname, $user_username, $user_password, $user_gender, $user_country, $user_email, $user_birthday));

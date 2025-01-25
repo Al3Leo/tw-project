@@ -1,0 +1,183 @@
+.btn {
+    float: right;
+    margin: 1rem 1vw;
+    width: 5rem;
+    height: 2rem;
+    padding: 0.5em;
+}
+
+#login {
+    border: 3px solid #1d0b42;
+    border-radius: 25px;
+    font-size: small;
+}
+
+#login:hover {
+    border-color: rgb(170, 56, 255) !important;
+    transition: 500ms;
+}
+
+#signup,
+#cartbtn {
+    border: 3px solid #1d0b42;
+    border-radius: 25px;
+    font-size: small;
+}
+
+#signup:hover,
+#cartbtn:hover {
+    border-color: rgb(170, 56, 255) !important;
+    transition: 500ms;
+}
+
+#logout {
+    border: 3px solid #ff0000;
+    border-radius: 25px;
+    background-color: rgba(255, 0, 0, 0.9);
+    font-size: small;
+}
+
+#logout:hover {
+    background-color: rgb(255, 0, 0) !important;
+    border-color: rgb(255, 255, 255) !important;
+    transition: 500ms;
+}
+
+#sideMenu {
+    background-color: #1fe100;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 5px;
+}
+
+#topbar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.showMenu {
+    width: 100%;
+    height: 100%;
+    color: rgba(128, 128, 128, 0.65);
+}
+
+.toggleMenu {
+    display: none;
+}
+
+/*tasto x side menu*/
+.toggleCross {
+    display: block !important;
+    font-size: xx-large;
+    font-weight: lighter;
+    color: #ffffff;
+    background-color: black;
+    border: 0;
+    float: right;
+}
+
+.sideBar {
+    display: none;
+}
+
+/*menu laterale*/
+.toggleShow {
+    display: block !important;
+    float: right;
+    clear: right;
+    overflow-block: visible;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    background-color: var(--secondaryColor);
+    height: 100vh;
+    width: 25vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 6;
+}
+
+#sidebar {
+    float: right;
+}
+
+/*rimuovi puntini list*/
+.sideBar ul {
+    list-style: none;
+}
+
+.sideBar ul #li-speciale {
+    border-bottom: none;
+}
+
+/*opzioni del menu laterale*/
+#sideBar li {
+    clear: right;
+    display: block;
+    margin: 1rem;
+    font-size: 1.5rem;
+    align-items: center;
+    font-weight: lighter;
+    border-bottom: 1px solid #dedede;
+}
+
+#sideBar li>a {
+    text-decoration: none;
+    color: white !important;
+}
+
+#sideBar li>a:hover {
+    color: rgb(187, 187, 187) !important;
+    transition: 500ms;
+    font-weight: bold;
+}
+
+
+.userinfoList {
+    color: #ffffff;
+    border-bottom: none;
+    font-size: 80%;
+    font-weight: bold;
+    text-align: left;
+}
+
+.tuttoadestra {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    position: relative;
+}
+
+#userinfo {
+    margin: 1em;
+    padding: 0;
+    color: #ffffff;
+    text-align: right;
+    list-style: none;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#carrello {
+    border: 3px solid #47008f;
+    display: none;
+    z-index: 3;
+    background-color: black;
+    height: 25vh;
+    border-radius: 15px;
+    background-image: url('assets/images/space/mars.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+}
+
+#carrello_tbl {
+    margin: 3%;
+    margin-top: 5%;
+    padding: 1%;
+    text-align: center;
+}

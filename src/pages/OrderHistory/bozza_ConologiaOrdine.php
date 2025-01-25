@@ -6,8 +6,6 @@ if (isset($_SESSION['username'])) {
 } else {
     $username = '-1';
 }
-
-
 ?>
 <head>
     <title></title>
@@ -160,61 +158,36 @@ if (isset($_SESSION['username'])) {
     </aside>
     <section id="ordini">
         <div id="list_ord">
-            <div class="mini_order">
-                <div class="row">
-                    <section class="dettagli_ordine" style="">
-                        <strong>Order Number: #</strong><span id="today"></span><script>today();</script><br>
-                        <strong>Trip name:</strong> <span id="name">questa è una prova per testare il ticket dinamico</span><br>
-                        <strong>Launch Location:</strong> <span id="launch_loc"></span><br>
-                        <strong>Launch Date:</strong> <span id="launch_date"></span><br>
-                        <strong>Return Date:</strong> <span id="return_date"></span><br>
-                        <div style="margin-top: 12%;"><strong>Total Price:</strong> <span id="total_price"></span></div><br>
-                    </section>
-                    <aside class="ticket_link">
+            <?php
+            //vai nel db e per ogni acquisto che ha come acquirenteuser X, lo stampi
+            require_once '../../backend/ConnettiDb.php';
+            $sql="SELECT * FROM acquisti";
+            $res=pg_query($db_connection,$sql);
+            $r=pg_fetch_all($res);
+            for ($i=0; $i<sizeof($r); $i++) {
+                echo "<div class=\"mini_order\">
+                        <div class=\"row\">
+                            <section class=\"dettagli_ordine\">";
+                echo "<strong>Order Number: #</strong><span id=\"today\"></span><script>today();</script><br>
+                        <strong>Trip name:</strong> <span id=\"name\">questa è una prova per testare il ticket dinamico</span><br>
+                        <strong>Launch Location:</strong> <span id=\"launch_loc\"></span><br>
+                        <strong>Launch Date:</strong> <span id=\"launch_date\"></span><br>
+                        <strong>Return Date:</strong> <span id=\"return_date\"></span><br>
+                        <div style=\"margin-top: 12%;\"><strong>Total Price:</strong> <span id=\"total_price\"></span></div><br>
+                    </section>";
+                echo "<aside class=\"ticket_link\">
                         <!--%20 spazio con url encoding, è anche un rfc-->
-                        <a href="OrderHistory/bozza_ticket.php?titolo=destinazione%20MARTE&rampa=kennedy%20Space%20Center,%20Florida%20USA&partenza=20-02-2025&num_ordine=777">Click Here</a>
+                        <a href=\"OrderHistory/bozza_ticket.php?titolo=destinazione%20MARTE&rampa=kennedy%20Space%20Center,%20Florida%20USA&partenza=20-02-2025&num_ordine=777\">Click Here</a>
                     </aside>
                 </div>
-            </div>
-            <div class="mini_order">
-                <div class="row">
-                    <section class="dettagli_ordine" style="">
-                        <strong>Order Number: #</strong><span id="today"></span><script>today();</script><br>
-                        <strong>Trip name:</strong> <span id="name">questa è una prova per testare il ticket dinamico</span><br>
-                        <strong>Launch Location:</strong> <span id="launch_loc"></span><br>
-                        <strong>Launch Date:</strong> <span id="launch_date"></span><br>
-                        <strong>Return Date:</strong> <span id="return_date"></span><br>
-                        <div style="margin-top: 12%;"><strong>Total Price:</strong> <span id="total_price"></span></div><br>
-                    </section>
-                    <aside class="ticket_link">
-                        <!--%20 spazio con url encoding, è anche un rfc-->
-                        <a href="OrderHistory/bozza_ticket.php?titolo=destinazione%20MARTE&rampa=kennedy%20Space%20Center,%20Florida%20USA&partenza=20-02-2025&num_ordine=777">Click Here</a>
-                    </aside>
-                </div>
-            </div>
-            <div class="mini_order">
-                <div class="row">
-                    <section class="dettagli_ordine" style="">
-                        <strong>Order Number: #</strong><span id="today"></span><script>today();</script><br>
-                        <strong>Trip name:</strong> <span id="name">questa è una prova per testare il ticket dinamico</span><br>
-                        <strong>Launch Location:</strong> <span id="launch_loc"></span><br>
-                        <strong>Launch Date:</strong> <span id="launch_date"></span><br>
-                        <strong>Return Date:</strong> <span id="return_date"></span><br>
-                        <div style="margin-top: 12%;"><strong>Total Price:</strong> <span id="total_price"></span></div><br>
-                    </section>
-                    <aside class="ticket_link">
-                        <!--%20 spazio con url encoding, è anche un rfc-->
-                        <a href="OrderHistory/bozza_ticket.php?titolo=destinazione%20MARTE&rampa=kennedy%20Space%20Center,%20Florida%20USA&partenza=20-02-2025&num_ordine=777">Click Here</a>
-                    </aside>
-                </div>
-            </div>
-        </div>
-        <?php
-        //prova da finire
-            echo "<div style='background-color: green;'>ciao";
-            require_once "GetInfo.php";
+            </div>";
+
+
+            }
+            //require_once "GetInfo.php";
             echo "</div>";
-        ?>
+            ?>
+        </div>
     </section>
 </main>
 <? require_once '../../components/footer/footer.html' ?>
