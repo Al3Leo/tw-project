@@ -1,4 +1,5 @@
 @import '../../assets/css/Global.css';
+@import "../../components/footer/footer.css";
 body{
     background-image: url("cosmo.jpg");
     background-position: center;

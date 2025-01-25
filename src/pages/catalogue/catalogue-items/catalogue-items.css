@@ -1,4 +1,5 @@
 @import "../../../assets/css/Global.css";
+@import "../../../components/footer/footer.css";
 .hero {
   height: auto;
 }

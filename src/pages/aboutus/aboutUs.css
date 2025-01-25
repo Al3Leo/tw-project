@@ -1,5 +1,5 @@
 @import "../../assets/css/Global.css";
-
+@import "../../components/footer/footer.css";
 body {
     background-image: url("a.png");
     background-size: cover;
