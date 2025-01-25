@@ -1,22 +1,5 @@
 <!-- cart -->
- <style>
-    /*tutto scrollbar*/
- .popup::-webkit-scrollbar { 
-    width: 0.5rem; 
-    height: 0.5rem; 
-} 
-.popup::-webkit-scrollbar-track { 
-    background-color:transparent;  
-} 
-.popup::-webkit-scrollbar-thumb { 
-        background-color: var(--accent); 
-        border-radius: 100px;
-}
-.popup::-webkit-scrollbar-corner{
-    background-color: transparent;
-}
- </style>
-<div id="carrello" class="popup d-flex flex-column" style="overflow: auto; padding:0.3rem">
+<div id="carrello" class="popup d-flex flex-column scroll" style="overflow: auto; padding:0.3rem">
     <div id="remove_popup" style="margin-top: 3%; text-align: right; width: 90%">
         <span style="background-color: red; color: white;" onclick="openCart()">close</span>
     </div>
@@ -57,13 +40,11 @@
 
 <script>
 document.getElementById('acquistaButton').addEventListener('click', function() {
-    const cart = <?php echo json_encode($cart); ?>; // passo all'url il carrello codificato in json
+    const cart =<?php echo json_encode($cart); ?>; // passo all'url il carrello codificato in json
     const encodedCart = encodeURIComponent(JSON.stringify(cart));
     window.location.href = '../src/components/Stripe/Checkout.php?cart='+encodedCart;
+
 });
-
-
-
 //Se l'url ha confirmcheckout mi deve aggiornare il frontend del carrello
 window.onload = function() { 
     const urlParams = new URLSearchParams(window.location.search); 

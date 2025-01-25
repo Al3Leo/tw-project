@@ -1,6 +1,8 @@
 @import "../../assets/css/Global.css";
 @import "../../components/footer/footer.css";
-main{
+@import "../../components/login/login.css";
+@import "../../components/topmenu/topmenu.css";
+.main_signup{
     height: 80vh;
     background-image: url('../../assets/images/a.png');
     background-position: center;

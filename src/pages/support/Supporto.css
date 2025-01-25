@@ -1,5 +1,7 @@
 @import '../../assets/css/Global.css';
 @import "../../components/footer/footer.css";
+@import "../../components/topmenu/topmenu.css";
+@import "../../components/login/login.css";
 body{
     background-image: url("cosmo.jpg");
     background-position: center;
