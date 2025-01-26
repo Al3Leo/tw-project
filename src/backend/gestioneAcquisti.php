@@ -1,4 +1,13 @@
 <?php
+/**
+ * Questo script PHP gestisce la conferma dell'acquisto di un utente. Una volta che il pagamento è stato effettuato, 
+ * esegue i seguenti passaggi:
+ * 1.Gestione della Sessione
+ * 2.Connessione al Database
+ * 3.Salvataggio dell'Acquisto nel Database generando un numero ordine unico basato sulla data e sull'username dell'utente.
+ * 4.Svuotaggio del Carrello
+ * 5.Chiusura Database
+ */
 session_start();
 require_once "ConnettiDb.php";
 if (isset($_GET['confirmcheckout'])) {

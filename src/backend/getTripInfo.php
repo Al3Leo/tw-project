@@ -23,7 +23,8 @@ if (isset($nomeEvento)) {
                 "prezzoevento" => $row['prezzoevento'],
                 "etichetta" => $row['etichetta'],
                 "datapartenza" => $row['datapartenza'],
-                "dataritorno" => $row['dataritorno']
+                "dataritorno" => $row['dataritorno'],
+                "launchlocation" => $row['launchlocation']
             ];
         }
 

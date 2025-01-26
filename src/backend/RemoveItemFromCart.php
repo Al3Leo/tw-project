@@ -24,6 +24,9 @@ if (isset($_POST['id']) && isset($_COOKIE['cart'])) {
     $cart = array_values($cart);
     setcookie('cart', json_encode($cart), time() + 3600, "/");
 
+    // Restituisci lo stato del carrello
+    echo json_encode(['cartEmpty' => empty($cart)]);
+
     //header("Location: " . $_SERVER['HTTP_REFERER']); // Puoi scommentare questa linea se vuoi ridirezionare l'utente
 }
 ?>

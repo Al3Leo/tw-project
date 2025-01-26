@@ -1,7 +1,13 @@
 g<?php
 /*
- * gestisce il login
+ * Questo script PHP gestisce il processo di login per gli utenti. Esegue i seguenti passaggi:
  * setta username come var di sessione se logga
+ * 1.Connessione al Database
+ * 2.Verifica delle credenziali
+ * 3.Verifica password
+ * 4.In caso di successo impostazioni delle variabili di Sessione
+ * 5.Reindirizzamento alla pagina precedente
+ * 6.Chiusura del database
  */
 // Connessione
 require_once "ConnettiDb.php";
@@ -18,7 +24,11 @@ if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
            
             if($row){
                  $hash = $row['passworduser'];
-            if ($password==$hash) { /////ALTRO METODO DA UTILIZZARE
+            if (password_verify($password, $hash)) {
+                //Controlliamo la password inserita dall'utente rispetto 
+                //all'hash presente nel database (con password_verify()) e se 
+                //il controllo è positivo, vengono settate
+                //opportune variabili di sessione
                 $name = $row['nome'];
                 $surname = $row['cognome'];
                 $email = $row['indirizzo'];

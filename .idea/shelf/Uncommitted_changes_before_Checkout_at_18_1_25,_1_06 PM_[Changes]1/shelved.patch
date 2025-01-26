@@ -1,0 +1,148 @@
+Index: src/backend/login.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n/*\n * gestisce il login\n * setta username come var di sessione se logga\n */\n// Connessione\n$host = 'localhost';\n$port = '5432';\n$db = 'GRUPPO05';\n$username = 'www';\n$password = 'tw2024';\n$connection_string = \"host=$host port=$port dbname=$db user=$username password=$password\";\n$db_connection = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());\n// Inizio login\nif (isset($_POST['user_username']) && isset($_POST['user_password'])) {\n    $user = $_POST['user_username'];\n    $password = $_POST['user_password'];\n    $sql = \"SELECT passworduser, nome, cognome FROM utente WHERE username = $1\";\n    $result = pg_prepare($db_connection, \"sqlPassword\", $sql);\n    if ($result) {\n        $ret = pg_execute($db_connection, \"sqlPassword\", array($user));\n        if ($ret) {\n            $row = pg_fetch_assoc($ret);\n           \n            if($row){\n                 $hash = $row['passworduser'];\n            if ($password==$hash) { /////ALTRO METODO DA UTILIZZARE\n                $name = $row['nome'];\n                $surname = $row['cognome'];\n                session_start();\n                $_SESSION['username'] = $user;\n                $_SESSION['name'] = $name;\n                $_SESSION['surname'] = $surname;\n                header(\"Location: \" . $_SERVER['HTTP_REFERER']);\n            } else {\n                echo \"Password errata<br>\";\n            }}else{\n                echo\"Utente non trovato\";\n            }\n\n\n        } else {\n            echo \"Errore durante l'esecuzione della query: \" . pg_last_error($db_connection);\n        }\n    } else {\n        echo \"Errore durante la preparazione della query: \" . pg_last_error($db_connection);\n    }\n} else {\n    echo \"Username o password mancanti<br>\";\n}\n// Chiudi la connessione\npg_close($db_connection);\n?>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/backend/login.php b/src/backend/login.php
+--- a/src/backend/login.php	(revision abfbc63bb4a84e1e83daee9cebb2c934c8bf5b64)
++++ b/src/backend/login.php	(date 1737200565497)
+@@ -15,18 +15,16 @@
+ if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
+     $user = $_POST['user_username'];
+     $password = $_POST['user_password'];
+-    $sql = "SELECT passworduser, nome, cognome FROM utente WHERE username = $1";
++    $sql = "SELECT password, name, surname FROM utente WHERE username = $1";
+     $result = pg_prepare($db_connection, "sqlPassword", $sql);
+     if ($result) {
+         $ret = pg_execute($db_connection, "sqlPassword", array($user));
+         if ($ret) {
+             $row = pg_fetch_assoc($ret);
+-           
+-            if($row){
+-                 $hash = $row['passworduser'];
+-            if ($password==$hash) { /////ALTRO METODO DA UTILIZZARE
+-                $name = $row['nome'];
+-                $surname = $row['cognome'];
++            $hash = $row['password'];
++            if (password_verify($password, $hash)) {
++                $name = $row['name'];
++                $surname = $row['surname'];
+                 session_start();
+                 $_SESSION['username'] = $user;
+                 $_SESSION['name'] = $name;
+@@ -34,11 +32,7 @@
+                 header("Location: " . $_SERVER['HTTP_REFERER']);
+             } else {
+                 echo "Password errata<br>";
+-            }}else{
+-                echo"Utente non trovato";
+             }
+-
+-
+         } else {
+             echo "Errore durante l'esecuzione della query: " . pg_last_error($db_connection);
+         }
+Index: src/backend/RESET_DATABASE.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n//non giocare con questo file\n//connessione\necho \"start...<br>\";\n$host = 'localhost';\n$port = '9999';\n$db = 'GRUPPO05';\n$username = 'www';\n$password = 'tw2024';\n$connection_string = \"host=$host port=$port dbname=$db user=$username password=$password\";\n$db_connection = pg_connect($connection_string) or die('impossibile connettersi al databse<br>' . pg_last_error());\necho \"connected<br>\";\n//reset info_database\necho \"reset info db<br>\";\n$sql = \"UPDATE info_server SET numero_utenti=0\";\npg_query($db_connection, $sql) or die('er1');\n$sql = \"UPDATE info_server SET numero_visite=0\";\npg_query($db_connection, $sql) or die('er2');\n$sql = \"UPDATE info_server SET id_utenti=1\";\npg_query($db_connection, $sql) or die('er3');\necho \"db info nuked<br>\";\necho \"reset users<br>\";\n$sql = \"DELETE FROM utente\";\n$result = pg_query($db_connection, $sql) or die('er4');\necho \"users nuked<br>\";\n//end and close\npg_close($db_connection);\n?>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/backend/RESET_DATABASE.php b/src/backend/RESET_DATABASE.php
+--- a/src/backend/RESET_DATABASE.php	(revision abfbc63bb4a84e1e83daee9cebb2c934c8bf5b64)
++++ b/src/backend/RESET_DATABASE.php	(date 1737200565487)
+@@ -3,7 +3,7 @@
+ //connessione
+ echo "start...<br>";
+ $host = 'localhost';
+-$port = '9999';
++$port = '5432';
+ $db = 'GRUPPO05';
+ $username = 'www';
+ $password = 'tw2024';
+Index: src/backend/RegistraUtente.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n//connessione\n$host = 'localhost';\n$port = '9999';\n$db = 'GRUPPO05';\n$username = 'www';\n$password = 'tw2024';\n$connection_string = \"host=$host port=$port dbname=$db user=$username password=$password\";\n$db_connection =pg_connect($connection_string) or die('impossibile connettersi al databse<br>'.pg_last_error());\n//get id disponibile\n$query = \"SELECT id_utenti FROM info_server\";\n$ret = pg_query($db_connection, $query) or die('Errore durante la lettura del id: ' . pg_last_error($db_connection));\n$user_id=pg_fetch_row($ret)[0];\n//query add\n/*echo \"<pre>\";\nprint_r($_POST);\necho \"</pre>\";*/\nif(!empty($_POST)) {\n    $user_name = $_POST['user_name'];\n    $user_surname = $_POST['user_surname'];\n    $user_gender = $_POST['user_gender'];\n    $user_username = $_POST['user_username'];\n    $user_country = $_POST['user_country'];\n    $user_email = $_POST['user_email'];\n    $user_birthday = $_POST['user_birthday'];\n    $user_password = password_hash($_POST['user_password'], PASSWORD_DEFAULT);\n    echo \"<h3>Verifica dei dati ricevuti:</h3>\";\n    echo \"Nome: \" . htmlspecialchars($user_name) . \"<br>\";\n    echo \"Cognome: \" . htmlspecialchars($user_surname) . \"<br>\";\n    echo \"Sesso: \" . htmlspecialchars($user_gender) . \"<br>\";\n    echo \"Username: \" . htmlspecialchars($user_username) . \"<br>\";\n    echo \"Paese: \" . htmlspecialchars($user_country) . \"<br>\";\n    echo \"Password (hash): \" . htmlspecialchars($user_password) . \"<br>\";\n    $sql = \"INSERT INTO utente (id, name, surname, username, password, gender, country, email, dateofbirth) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)\";\n    $result = pg_prepare(\"inserisciUtente\", $sql);\n    if ($result) {\n        $result2 = pg_execute(\"inserisciUtente\", array($user_id, $user_name, $user_surname, $user_username, $user_password, $user_gender, $user_country, $user_email, $user_birthday));\n        if(!$result2)\n            echo \"er2: \".pg_last_error($db_connection);\n    }else\n        echo \"er1: \".pg_last_error($db_connection);\n}\n//update numero utenti registrati\n$sql = \"UPDATE info_server SET numero_utenti = numero_utenti+1\";\npg_query($db_connection, $sql) or die('Errore update numero utenti: '.pg_last_error());\n//update id\n$query = \"UPDATE info_server SET id_utenti = id_utenti+1\";\npg_query($db_connection, $query) or die('Errore durante update id: ' . pg_last_error($db_connection));\n//close\npg_close($db_connection);\n?>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/backend/RegistraUtente.php b/src/backend/RegistraUtente.php
+--- a/src/backend/RegistraUtente.php	(revision abfbc63bb4a84e1e83daee9cebb2c934c8bf5b64)
++++ b/src/backend/RegistraUtente.php	(date 1737200565489)
+@@ -1,7 +1,7 @@
+ <?php
+ //connessione
+ $host = 'localhost';
+-$port = '9999';
++$port = '5432';
+ $db = 'GRUPPO05';
+ $username = 'www';
+ $password = 'tw2024';
+Index: src/backend/paginaPulita.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\n<?php session_start();\ninclude_once 'contaVisite.php'; ?>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Travel Catalogue</title>\n    <base href=\"../\">\n    <link rel=\"stylesheet\" href=\"css/catalogue.css\">\n</head>\n\n<body>\n<?php echo include_once '../php/header.php'; ?>\n<div class=\"hero\">\n    <div class=\"parallax\"></div>\n</div>\n<?php include_once 'prodottopage.php'?>\n<?php require_once '../html/footer.html';\n?>\n</body>\n\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/backend/paginaPulita.php b/src/backend/paginaPulita.php
+--- a/src/backend/paginaPulita.php	(revision abfbc63bb4a84e1e83daee9cebb2c934c8bf5b64)
++++ b/src/backend/paginaPulita.php	(date 1737200565490)
+@@ -11,12 +11,13 @@
+ </head>
+ 
+ <body>
+-<?php echo include_once '../php/header.php'; ?>
++<?php require_once "../components/header/header.php"?>
+ <div class="hero">
+     <div class="parallax"></div>
+ </div>
+-<?php include_once 'prodottopage.php'?>
+-<?php require_once '../html/footer.html';
++<?php require_once "../bozze/prodottopage.php"?>
++ciao
++<?php require_once "../components/footer/footer.php"?>
+ ?>
+ </body>
+ 
+Index: src/backend/contaVisite.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\nif(!isset($_COOKIE['biscotto'])){\n    setcookie(\"biscotto\", \"oreo\", time()+(3));\n    // Connessione\n    $host = 'localhost';\n    $port = '9999';\n    $db = 'GRUPPO05';\n    $username = 'www';\n    $password = 'tw2024';\n    $connection_string = \"host=$host port=$port dbname=$db user=$username password=$password\";\n    $db_connection = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());\n    //query\n    $sql = \"UPDATE info_server SET numero_visite = numero_visite+1\";\n    pg_query($db_connection, $sql) or die('Errore update numero visite: '.pg_last_error());\n}\n?>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/backend/contaVisite.php b/src/backend/contaVisite.php
+--- a/src/backend/contaVisite.php	(revision abfbc63bb4a84e1e83daee9cebb2c934c8bf5b64)
++++ b/src/backend/contaVisite.php	(date 1737200565494)
+@@ -3,7 +3,7 @@
+     setcookie("biscotto", "oreo", time()+(3));
+     // Connessione
+     $host = 'localhost';
+-    $port = '9999';
++    $port = '5432';
+     $db = 'GRUPPO05';
+     $username = 'www';
+     $password = 'tw2024';
+Index: src/backend/ConnettiDb.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n    $host = \"localhost\";\n    $port = 9999;\n    $db_name = \"GRUPPO05\";\n    $user = \"www\";\n    $password = \"tw2024\";\n    $connection_string = \"host=$host dbname=$db_name user=$user password=$password\";\npg_connect($connection_string);\n?>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/backend/ConnettiDb.php b/src/backend/ConnettiDb.php
+--- a/src/backend/ConnettiDb.php	(revision abfbc63bb4a84e1e83daee9cebb2c934c8bf5b64)
++++ b/src/backend/ConnettiDb.php	(date 1737200565496)
+@@ -1,6 +1,6 @@
+ <?php
+     $host = "localhost";
+-    $port = 9999;
++    $port = 5432;
+     $db_name = "GRUPPO05";
+     $user = "www";
+     $password = "tw2024";

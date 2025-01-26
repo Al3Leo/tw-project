@@ -1,6 +1,7 @@
 <?php
 /*
- * unsetta le var di sessione e la sessione
+ * Questo script gestisce la disconnessione di un utente.
+ * Unsetta le var di sessione e distrugge la sessione
  */
 session_start();
 session_unset();
