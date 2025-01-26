@@ -1,4 +1,12 @@
+
 <?php
+/**
+ * @file
+ * @brief Pagina principale del progetto "Spatial History"
+ *
+ * Questo file PHP gestisce la struttura della pagina principale del progetto "Spatial History".
+ * Include varie sezioni informative riguardanti lo spazio, i pianeti e i pionieri dell'esplorazione spaziale e uun form per le iscrizioni delle newsletter.
+ */
 session_start();
 ?>
 <!DOCTYPE html>

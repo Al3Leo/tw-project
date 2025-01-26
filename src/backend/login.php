@@ -1,7 +1,13 @@
 g<?php
 /*
- * gestisce il login
+ * Questo script PHP gestisce il processo di login per gli utenti. Esegue i seguenti passaggi:
  * setta username come var di sessione se logga
+ * 1.Connessione al Database
+ * 2.Verifica delle credenziali
+ * 3.Verifica password
+ * 4.In caso di successo impostazioni delle variabili di Sessione
+ * 5.Reindirizzamento alla pagina precedente
+ * 6.Chiusura del database
  */
 // Connessione
 require_once "ConnettiDb.php";

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Error</title>
+    <?php require_once "../../components/utils/headMetadata.html"?>
+    <base href="../../" />  <!-- Torna in /src -->
     <style>
-        @import "../../src/assets/css/Global.css";
+        @import "assets/css/Global.css";
         body {
-            background-image: url("../../src/assets/images/404.jpg");            
+            background-image: url("assets/images/404.jpg");            
             background-repeat: no-repeat;
             background-size: cover;
             height: 100vh;
@@ -30,7 +31,7 @@
             Don't worry, we'll fix it! Meanwhile here is a waiting song.
         </p>
         <audio controls autoplay>
-            <source src="../../src/assets/audio/waiting.mp3" type="audio/mpeg">
+            <source src="assets/audio/waiting.mp3" type="audio/mpeg">
             audio not supported
         </audio>
     </div>

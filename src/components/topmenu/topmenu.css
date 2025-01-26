@@ -168,8 +168,8 @@
     background-color: black;
     height: 25vh;
     border-radius: 15px;
-    background-image: url('assets/images/space/mars.jpg');
-    background-size: cover;
+    background-image: url('../../assets/images/mars.jpg');
+    background-image: contain;
     background-position: center;
     background-repeat: no-repeat;
     position: fixed;
@@ -178,6 +178,9 @@
 #carrello_tbl {
     margin: 3%;
     margin-top: 5%;
+    background: rgba(255, 255, 255, 0.27);
+    backdrop-filter: blur(13px) saturate(141%);
+    background-size: cover;
     padding: 1%;
     text-align: center;
 }

@@ -1,11 +1,8 @@
 <!-- cart -->
-<div id="carrello" class="popup d-flex flex-column scroll" style="overflow: auto; padding:0.3rem">
-    <div id="remove_popup" style="margin-top: 3%; text-align: right; width: 90%">
-        <span style="background-color: red; color: white;" onclick="openCart()">close</span>
+<div id="carrello" class="popup d-flex flex-column scroll" style="overflow: auto; padding:0.3rem; display:none;">
+    <div id="remove_popup" style="margin-top: 2%; text-align: right; width: 90%">
+        <button style="background-color: red; color: white; cursor:pointer; padding: 4px;" onclick="openCart()"><i class="material-icons"  style="font-size:10px;color:white">close</i></button>
     </div>
-
-
-
     <table id="carrello_tbl" style="border-spacing: 20px;">
         <tr>
             <th style="text-align: left">Where</th>
@@ -37,14 +34,17 @@
         ?>
     </table>
 </div>
-
 <script>
 document.getElementById('acquistaButton').addEventListener('click', function() {
-    const cart =<?php echo json_encode($cart); ?>; // passo all'url il carrello codificato in json
+    <?php if(isset($_SESSION['username'])) { ?>
+    const cart = <?php echo json_encode($cart); ?>; // passo all'URL il carrello codificato in JSON
     const encodedCart = encodeURIComponent(JSON.stringify(cart));
-    window.location.href = '../src/components/Stripe/Checkout.php?cart='+encodedCart;
-
+    window.location.href = '../src/components/Stripe/Checkout.php?cart=' + encodedCart;
+    <?php } else { ?>
+        openLoginPopup();
+    <?php } ?>
 });
+
 //Se l'url ha confirmcheckout mi deve aggiornare il frontend del carrello
 window.onload = function() { 
     const urlParams = new URLSearchParams(window.location.search); 

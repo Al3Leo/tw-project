@@ -12,11 +12,12 @@
  */
 require __DIR__ . "/vendor/autoload.php";
 /**
- * Ottenere l'host e l'URI corrente per costruire l'URL di conferma.
+ * Ottenere l'host e l'URI corrente per costruire l'URL di conferma e di errore.
  */
 $host = $_SERVER['HTTP_HOST'];
 $uri = rtrim(dirname($_SERVER['REQUEST_URI']), '/\\');
 $urlconfirm = "http://$host$uri/../../backend/ConfermaDinamica.php?confirmcheckout=true";
+$urlerror = "http://$host$uri/../../pages/error/errorPagamento.php";
 /**
  * Impostare la chiave segreta di Stripe.
  */
@@ -55,7 +56,7 @@ try {
     $checkout_session = \Stripe\Checkout\Session::create([
         "mode" => "payment",
         "success_url" => $urlconfirm,
-        "cancel_url" => "https://tuo-sito.com/cancel",
+        "cancel_url" => $urlerror,
         "line_items" => $line_items
     ]);
     http_response_code(303);
