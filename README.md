@@ -17,7 +17,8 @@
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Font Awesome](https://img.shields.io/badge/Font_Awesome-%23FFFFFF.svg?style=for-the-badge&logo=fontawesome&logoColor=528DD7)
 
-- **Frontend**: HTML, CSS, JavaScript 
+- **Frontend**: HTML, CSS, JavaScript
+
 - **Backend**: PHP
 - **Database**: PostgreSQL per la gestione dei dati degli utenti, delle destinazioni e delle prenotazioni.
 - **Api**: [Solar System OpenData](https://api.le-systeme-solaire.net/en/), [Space Flight News](https://api.spaceflightnewsapi.net/v4/docs/), [Stripe](https://docs.stripe.com/api)
@@ -25,11 +26,13 @@
 ## **🛠️Istruzioni per l'Installazione**
 
 1. Clona il repository:
+
    ```bash
    git clone <repository-url> 
    ```
 
 ## **🧑‍🤝‍🧑Membri - Gruppo05**
+
 - [Alessio Leo](https://github.com/Al3Leo)
 - [Emanuele Tocci](https://github.com/emanueletocci)
 - [Claudia Montefusco](https://github.com/ClaudiaMontefusco3)
