@@ -1,13 +1,9 @@
-<!-- cart 
-
-/**
- * @file carrello.php
- * @brief Questo script gestisce la funzionalità del carrello, consentendo agli utenti di visualizzare, aggiornare e acquistare gli articoli nel loro carrello.
- * I dati del carrello sono memorizzati nei cookie e gestiti utilizzando PHP e JavaScript.
- */
- 
--->
 <div id="carrello" class="popup d-flex flex-column scroll" style="display: none;">
+    <!-- cart 
+     @file cart.php
+     @brief Questo script gestisce la funzionalità del carrello, consentendo agli utenti di visualizzare, aggiornare e acquistare gli articoli nel loro carrello.
+     I dati del carrello sono memorizzati nei cookie e gestiti utilizzando PHP e JavaScript.
+     -->
     <div id="remove_popup">
         <!-- Pulsante di chiusura per il popup del carrello. Utilizza metodo openCart presente nel file topmenu.php -->
         <button onclick="openCart()"><i class="material-icons" style="font-size:10px;color:white">close</i></button>
@@ -42,20 +38,23 @@
             }
             ?>
         </tbody>
-        <tfoot id="tfoot" 
-            <?php 
-            if(empty($cart)){ 
-                echo "style='display:none;'"; 
-                }else{
-                    echo "style='display:'';'";   
-                }   ?> >
+        <tfoot id="tfoot"
+            <?php
+            if (empty($cart)) {
+                echo "style='display:none;'";
+            } else {
+                echo "style='display:'';'";
+            }   ?>>
             <td id='total-cart' colspan='3'>
-            <?php 
-            if(isset($cart)){ 
-                echo "Total price: ". $tot . '$'; 
+                <?php
+                if (isset($cart)) {
+                    echo "Total price: " . $tot . '$';
                 } ?>
             </td>
-            <td><button type='button' onclick='buyCart()' id='acquistaButton'>Buy</button></td>
+            <td><button type='button' onclick='buyCart()' id='acquistaButton' <?php if (!isset($_SESSION['username'])) {
+                                                                                    echo "style='display:none;'"; //se l'utente non è loggato vede solo la lista degli elementi
+                                                                                }  ?>>Buy
+                                                                                </button></td>
         </tfoot>
     </table>
 </div>

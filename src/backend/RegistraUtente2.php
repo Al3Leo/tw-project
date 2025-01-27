@@ -57,13 +57,7 @@ if(strlen($nome) > 50 || strlen($username) > 25 || strlen($cognome) > 50 || strl
  * @return true se l'username esiste, false altrimenti.
  */
 function username_exist($username){
-    $host = "localhost";
-    $port = '5432';
-    $db_name = "GRUPPO05";
-    $user = "www";
-    $password = "tw2024";
-    $connection_string = "host=$host dbname=$db_name user=$user password=$password";
-    $db_connection = pg_connect($connection_string) or die('Impossibile connettersi al database<br>' . pg_last_error());
+    global $db_connection; //accedo alla variabile globale 
     $sql = "SELECT username FROM utente WHERE username=$1";
     $prep = pg_prepare($db_connection, "sqlUsername", $sql);
     $ret = pg_execute($db_connection, "sqlUsername", array($username));
@@ -87,14 +81,7 @@ function username_exist($username){
  * @return true se l'inserimento ha successo, false altrimenti.
  */
 function insert_utente($nome, $cognome, $sesso, $username, $pass, $indirizzo, $nascita){
-    $host = "localhost";
-    $port = '5432';
-    $db_name = "GRUPPO05";
-    $user = "www";
-    $password = "tw2024";
-    $connection_string = "host=$host dbname=$db_name user=$user password=$password";
-    $db_connection = pg_connect($connection_string) or die('Impossibile connettersi al database<br>' . pg_last_error()); 
-
+    global $db_connection;
     $hash = password_hash($pass, PASSWORD_DEFAULT);
     $sql = "INSERT INTO utente(nome, cognome, sesso, username, passworduser, indirizzo, datanascita) VALUES($1, $2, $3, $4, $5, $6, $7)";
     $prep = pg_prepare($db_connection, "insertUser", $sql);
