@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42923ac4-8d33-49e8-9f5b-292fa1bc8b7d" name="Changes" comment="fix link">
-      <change beforePath="$PROJECT_DIR$/db/db" beforeDir="false" />
+    <list default="true" id="42923ac4-8d33-49e8-9f5b-292fa1bc8b7d" name="Changes" comment="db aggiornato per la cronologia ordine">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/PopupLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/PopupLogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/login.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,24 +47,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ale/stuf/Tecnologie web/public_html/Progetto_tw/tw-project/src/pages/OrderHistory&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "#13 on dev",
+    "last_opened_file_path": "/Users/ale/stuf/Tecnologie web/public_html/Progetto_tw/tw-project/src/pages/OrderHistory",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/pages/OrderHistory" />
@@ -90,7 +92,8 @@
       <updated>1737201959582</updated>
       <workItem from="1737201960945" duration="130000" />
       <workItem from="1737202108430" duration="24278000" />
-      <workItem from="1737973699305" duration="3905000" />
+      <workItem from="1737973699305" duration="3939000" />
+      <workItem from="1737989108760" duration="307000" />
     </task>
     <task id="LOCAL-00001" summary="login su geolocalizzazione (ora per loggare dovete accendere il gps su pc se no ti esce l'alert di errore)">
       <option name="closed" value="true" />
@@ -188,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737977374897</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="db aggiornato per la cronologia ordine">
+      <option name="closed" value="true" />
+      <created>1737977638952</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1737977638952</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +218,7 @@
     <MESSAGE value="script per prendere tutti gli ordini di un determinato utente e che stampa nella cronologia ordini (da finire)" />
     <MESSAGE value="cronologia ordini e ticket in versione definitiva" />
     <MESSAGE value="fix link" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix link" />
+    <MESSAGE value="db aggiornato per la cronologia ordine" />
+    <option name="LAST_COMMIT_MESSAGE" value="db aggiornato per la cronologia ordine" />
   </component>
 </project>
