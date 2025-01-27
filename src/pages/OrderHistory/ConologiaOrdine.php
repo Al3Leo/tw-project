@@ -163,28 +163,27 @@ if (isset($_SESSION['username'])) {
             require_once '../../backend/ConnettiDb.php';
             $sql="SELECT * FROM acquisti";
             $res=pg_query($db_connection,$sql);
-            $r=pg_fetch_all($res);
+            $r=pg_fetch_assoc($res);
             for ($i=0; $i<sizeof($r); $i++) {
+                require 'getInfo.php';
                 echo "<div class=\"mini_order\">
                         <div class=\"row\">
                             <section class=\"dettagli_ordine\">";
-                echo "<strong>Order Number: #</strong><span id=\"today\"></span><script>today();</script><br>
-                        <strong>Trip name:</strong> <span id=\"name\">questa è una prova per testare il ticket dinamico</span><br>
-                        <strong>Launch Location:</strong> <span id=\"launch_loc\"></span><br>
-                        <strong>Launch Date:</strong> <span id=\"launch_date\"></span><br>
-                        <strong>Return Date:</strong> <span id=\"return_date\"></span><br>
-                        <div style=\"margin-top: 12%;\"><strong>Total Price:</strong> <span id=\"total_price\"></span></div><br>
+                echo "<strong>Order Number: #</strong><span id=\"today\">".$r['idacquisto']."</span><br>
+                        <strong>Trip name:</strong> <span id=\"name\">".$name."</span><br>
+                        <strong>Launch Location:</strong> <span id=\"launch_loc\">".$location."</span><br>
+                        <strong>Launch Date:</strong> <span id=\"launch_date\">".$partenza."</span><br>
+                        <strong>Return Date:</strong> <span id=\"return_date\">".$ritorno."</span><br>
+                        <div style=\"margin-top: 12%;\"><strong>Total Price:</strong> <span id=\"total_price\">$".$price."</span></div><br>
                     </section>";
                 echo "<aside class=\"ticket_link\">
                         <!--%20 spazio con url encoding, è anche un rfc-->
-                        <a href=\"OrderHistory/bozza_ticket.php?titolo=destinazione%20MARTE&rampa=kennedy%20Space%20Center,%20Florida%20USA&partenza=20-02-2025&num_ordine=777\">Click Here</a>
+                        <a href=\"OrderHistory/ticket.php?titolo=".$name."&rampa=".$location."&partenza=".$partenza."&num_ordine=".$r['idacquisto']."\">Click Here</a>
                     </aside>
                 </div>
             </div>";
-
-
+                $r=pg_fetch_assoc($res);
             }
-            //require_once "GetInfo.php";
             echo "</div>";
             ?>
         </div>

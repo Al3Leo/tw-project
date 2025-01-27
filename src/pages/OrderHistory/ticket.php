@@ -4,6 +4,9 @@
 session_start();
 
 $fullname=$_SESSION['name']." ".$_SESSION['surname'];//nome completo da stampare
+if($_SESSION['username']==""){
+    $fullname="non sei loggato";
+}
 $partenza=$_GET['partenza']; //stringa in formato "2025-02-28"
 $luogo=$_GET['rampa'];//rampa di lancio
 $titolo=$_GET['titolo'];//nome destinazione
@@ -118,16 +121,16 @@ require_once "../../backend/ConnettiDb.php";
 <div id="elichetta_floppydisk">
     <section class="orderInfo" id="descrizione">
         <?php
-        echo "<span style='color: blue; margin: auto;'>".$titolo."</span></span><br><span style='color: red'>".$nome."</span>";
+        echo "<span style='color: blue; margin: auto;'>".$titolo."</span></span><br><span style='color: red'></span>";
         ?>
     </section>
     <section class="orderInfo" id="data">
-        <span style="font-family: sans-serif; color: white; font-weight: lightern"><?php
+        <span style="font-family: sans-serif; color: #ff6200; font-weight: lighter;"><?php
         $oggi=time();
         $partenza=strtotime($partenza);
         $diff=($oggi-$partenza)/(60*60*24);
         $diff*=-1;
-        echo "Only ".floor($diff)." days to go!"; //floor arrotonda in basso
+        echo "Only ".floor($diff)." days to go!"; //floor arrotonda per difetto
         ?></span>
     </section>
     <section class="orderInfo">

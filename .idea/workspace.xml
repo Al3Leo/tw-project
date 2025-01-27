@@ -4,8 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42923ac4-8d33-49e8-9f5b-292fa1bc8b7d" name="Changes" comment="db aggiornato">
-      <change beforePath="$PROJECT_DIR$/src/pages/OrderHistory/bozza_ConologiaOrdine.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/OrderHistory/bozza_ConologiaOrdine.php" afterDir="false" />
+    <list default="true" id="42923ac4-8d33-49e8-9f5b-292fa1bc8b7d" name="Changes" comment="script per prendere tutti gli ordini di un determinato utente e che stampa nella cronologia ordini (da finire)">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/Progetto senza titolo (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/giove.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/m101.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/m33.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/m51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/marte.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/mercurio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/nettuno.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/saturno.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/saturno2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/terra.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/urano.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/valentinajpg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/venere (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25,_1_06 PM_[Changes]1/venere.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_1_25__1_06PM__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/OrderHistory/GetInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/OrderHistory/GetInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/OrderHistory/bozza_ConologiaOrdine.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/OrderHistory/ConologiaOrdine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/OrderHistory/bozza_ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/OrderHistory/ticket.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,24 +66,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "/Users/ale/stuf/Tecnologie web/public_html/Progetto_tw/tw-project/src/pages/OrderHistory",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ale/stuf/Tecnologie web/public_html/Progetto_tw/tw-project/src/pages/OrderHistory&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/pages/OrderHistory" />
@@ -89,7 +110,8 @@
       <option name="presentableId" value="Default" />
       <updated>1737201959582</updated>
       <workItem from="1737201960945" duration="130000" />
-      <workItem from="1737202108430" duration="24219000" />
+      <workItem from="1737202108430" duration="24278000" />
+      <workItem from="1737973699305" duration="2792000" />
     </task>
     <task id="LOCAL-00001" summary="login su geolocalizzazione (ora per loggare dovete accendere il gps su pc se no ti esce l'alert di errore)">
       <option name="closed" value="true" />
@@ -163,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737635492090</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="script per prendere tutti gli ordini di un determinato utente e che stampa nella cronologia ordini (da finire)">
+      <option name="closed" value="true" />
+      <created>1737829532690</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1737829532690</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +209,7 @@
     <MESSAGE value="creazione script per prendere i dati da un ordine, aggiunto numero ordine (basato su data, utente, e un numero random), aggiunta luogo di partenza sui voli." />
     <MESSAGE value="." />
     <MESSAGE value="db aggiornato" />
-    <option name="LAST_COMMIT_MESSAGE" value="db aggiornato" />
+    <MESSAGE value="script per prendere tutti gli ordini di un determinato utente e che stampa nella cronologia ordini (da finire)" />
+    <option name="LAST_COMMIT_MESSAGE" value="script per prendere tutti gli ordini di un determinato utente e che stampa nella cronologia ordini (da finire)" />
   </component>
 </project>
