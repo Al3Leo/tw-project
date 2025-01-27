@@ -124,7 +124,7 @@ if (isset($_SESSION['username'])) {
         }
 
     </style>
-    <base href="../">
+    <base href="../"> <!--punta a ~/pages/-->
     <script>
         function today(){
             var today = new Date();
@@ -141,19 +141,19 @@ if (isset($_SESSION['username'])) {
 <main id="main_history">
     <aside id="menu_ordini">
         <div class="opzione">
-            <a href="#">Home</a>
+            <a href="homepage/homepage.php">Home</a>
         </div>
         <div class="opzione">
-            <a href="#">Catalogue</a>
+            <a href="catalogue/catalogue.php">Catalogue</a>
         </div>
         <div class="opzione">
-            <a href="#">Support</a>
+            <a href="support/Supporto.php">Support</a>
         </div>
         <div class="opzione">
-            <a href="#">Space News</a>
+            <a href="spacehistory/NewSpace.php">Space News</a>
         </div>
         <div class="opzione" style="border: none">
-            <a href="#">About us</a>
+            <a href="aboutus/aboutus.php">About us</a>
         </div>
     </aside>
     <section id="ordini">
