@@ -34,8 +34,9 @@ if (isset($_GET['confirmcheckout'])) {
                 } 
             }
             // Rimuovo tutti gli articoli dal carrello 
-            $cart_vuoto = []; 
-            setcookie('cart', json_encode($cart_vuoto), time() + 3600, "/");
+            //$cart_vuoto = []; 
+            //setcookie('cart', json_encode($cart_vuoto), time() + 3600, "/");
+            setcookie('cart', "", time() + 3600, "/");
     }else { 
         echo "Errore: email utente non trovata nella sessione.<br>"; 
     } } else { echo "Errore: carrello non trovato.<br>"; }

@@ -9,7 +9,7 @@ session_start();
 // Connessione al database
 require_once __DIR__ . "/ConnettiDb.php";
 
-$id = $_GET['id'];
+$id = $_POST['id'];
 $query = "SELECT * FROM viaggio WHERE idevento='$id'";
 
 $return = pg_query($db_connection, $query) or die('Errore: ' . pg_last_error($db_connection));

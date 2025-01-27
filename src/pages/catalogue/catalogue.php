@@ -3,15 +3,16 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <?php require_once "../../components/utils/headMetadata.html"?>
+    <?php require_once "../../components/utils/headMetadata.html" ?>
     <title>Travel Catalogue</title>
     <link rel="stylesheet" href="catalogue.css">
     <base href="../../">
 </head>
 
 <body>
-    <?php require_once "../../components/header/header.php"?>
+    <?php require_once "../../components/header/header.php" ?>
     <div class="hero">
         <div id="hero__search-ct" class="position-absolute d-flex align-items-center flex-column">
             <h1 class="text-center">Choose Your Interstellar Experience</h1>
@@ -91,7 +92,10 @@ session_start();
                 <div class="catalogue__item__text">
                     <b>Mercury</b>
                 </div>
-                <a href="backend/addToCart.php?id=10006" style="color: #1fe100"> prova add</a>
+                <script>
+
+                </script>
+                <button onclick="ajax_add_cart(10006, 'Mercury', 10000)" style="color: #1fe100">Prova Add</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center">
                 <a href="pages/catalogue/catalogue-items/planets/venus.php">
@@ -276,8 +280,9 @@ session_start();
             </div>
         </div>
     </main>
-    <?php require_once "../../components/footer/footer.html"?>
+    <?php require_once "../../components/footer/footer.html" ?>
     <script src="pages/catalogue/catalogue.js"></script>
+    <script src="pages/catalogue/add_ajax.js"></script>
 </body>
 
 </html>

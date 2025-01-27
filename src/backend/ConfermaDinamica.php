@@ -1,5 +1,7 @@
 <?php
 /**
+ * @file ConfermaDinamica.php
+ * @brief Funzioni per conferma di registrazione di un utente o avvenuto pagamento.
  * Questo script PHP serve a mostrare una pagina di conferma all'utente, dopo che ha completato la registrazione o un checkout.
  * Controlla se ci sono parametri specifici nell'URL (confirmsignupname o confirmcheckout). 
  * Se presenti, visualizza un messaggio di conferma personalizzato in base al tipo di operazione completata (registrazione o checkout).
