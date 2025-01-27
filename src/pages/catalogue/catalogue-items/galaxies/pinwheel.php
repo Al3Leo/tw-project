@@ -95,8 +95,7 @@
             <div class="main__left__tripKnowledge">
                 <h3 class="text-center">Everything you need to know about this trip</h3>
                 <p>
-                    Get ready for a one-of-a-kind experience on <b>Venus!</b> The planet features <b>surreal landscapes</b>, extreme weather, and a fascinating <b>history</b>. Equip yourself with special space suits to endure the scorching temperatures, and follow our expert guides for a safe and unforgettable journey. Learn about Venus' role in mythology and the scientific discoveries made about this mysterious planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities.
-                    Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!</p>
+                    Get ready for a one-of-a-kind experience on <b>Pinwheel!</b> The planet features <b>breathtaking spiral formations</b>, unique weather patterns, and a rich <b>history</b>. Equip yourself with advanced space suits to navigate the mesmerizing landscapes, and follow our expert guides for a safe and unforgettable journey. Learn about Pinwheel's role in mythology and the scientific discoveries made about this enigmatic planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities. Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!
                 </p>
                 <div class="main__left__tripKnowledge__item">
                     <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
