@@ -26,9 +26,7 @@
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
     ?> <!-- Importo il popup per le date -->
     <div class="hero">
-        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2388/" frameborder="0" allow="fullscreen" loading="lazy">
-            <img class="responsive" src=<?php echo "assets/images/nasa/moons/" . lcfirst($nomeEvento) ?> alt=<?php echo $nomeEvento ?>> <!-- fallback -->
-        </iframe>
+    <div class="parallax"></div>
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
@@ -74,8 +72,6 @@
                 <div class="main__left__section1__whatSee">
                     <h3 class="text-center">What to See</h3>
                     <ol>
-                        <h3 class="text-center">What to See</h3>
-                        <ol>
                         <li>
                             <p><span>Galactic Core:</span> Witness the brilliant core of Andromeda, teeming with stars and surrounded by a dynamic halo.</p>
                         </li>
@@ -175,9 +171,7 @@
     ?>
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
-
-</html>
-<script>
+<script type="text/javascript" defer > //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
     document.addEventListener("DOMContentLoaded", () => {
         //passo la variabile php contenente il nome del corpo celeste corrente a js
         const celestialBody = "<?php echo $nomeEvento ?>";
@@ -186,3 +180,7 @@
         fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
     });
 </script>
+</html>
+
+
+setParallaxImg(celestialBody);

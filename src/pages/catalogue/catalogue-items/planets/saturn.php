@@ -179,8 +179,7 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
     ?>
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
-</html>
-<script>
+<script type="text/javascript" defer > //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
     document.addEventListener("DOMContentLoaded", () => {
         //passo la variabile php contenente il nome del corpo celeste corrente a js
         const celestialBody = "<?php echo $nomeEvento ?>";
@@ -189,3 +188,4 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
         fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
     });
 </script>
+</html>
