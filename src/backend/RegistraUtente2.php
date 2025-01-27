@@ -108,33 +108,33 @@ Utilizza POST per inviare i dati a backend/RegistraUtente.php.
                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" class="d-grid">
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="username">Username</label>
-                        <input type="text" id="username" name="user_username" required>
+                        <input type="text" id="username" name="user_username" value="<?php echo $user?>" required>
                     </div>
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="user_name">
+                        <input type="text" id="name" name="user_name" value="<?php echo $nome?>">
                     </div>
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="surname">Surname</label>
-                        <input type="text" id="surname" name="user_surname">
+                        <input type="text" id="surname" name="user_surname" value="<?php echo $cognome?>">
                     </div>
 
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="user_email" required>
+                        <input type="email" id="email" name="user_email"value="<?php echo $email?>" required>
                     </div>
 
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="user_password" required>
+                        <input type="password" id="password" name="user_password" value="<?php echo $pass?>"  required>
                     </div>
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="password-confirm">Confirm Password</label>
-                        <input type="password" id="password-confirm" name="password_confirm" required>
+                        <input type="password" id="password-confirm" name="password_confirm" value="<?php echo $repassword?>" required>
                     </div>
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="birthday">Date of birth</label>
-                        <input type="date" id="birthday" name="user_birthday" >
+                        <input type="date" id="birthday" name="user_birthday" value="<?php echo $nascita?>" >
                     </div>
 
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
