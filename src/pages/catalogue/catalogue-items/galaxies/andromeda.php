@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +15,13 @@
     <title><?php echo $nomeEvento ?></title>
     <link rel="stylesheet" href="../catalogue-items.css">
     <base href="../../../../" /> <!-- torna in src-->
+
+    <style> 
+        .parallax{
+            background-image: url(<?php echo "assets/images/nasa/galaxies/" . lcfirst($nomeEvento) ?>);
+            background-position: bottom 100px right 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,11 +32,11 @@
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
     ?> <!-- Importo il popup per le date -->
     <div class="hero">
-    <div class="parallax"></div>
+        <div class="parallax"></div>
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-            <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Andromeda</a> is the closest large galaxy to the Milky Way and one of the most fascinating destinations in the universe. It spans over <b>220,000 light-years</b> and contains about one trillion stars, offering incredible views and scientific opportunities. As the largest galaxy in the Local Group, Andromeda provides a glimpse into the structure and evolution of galaxies.<br>Andromeda is <b>extraordinary</b> for its sheer scale and its potential collision with the Milky Way in the distant future. Its spiral arms and bright core are easily visible with advanced space telescopes, and its numerous star systems, clusters, and nebulae make it a prime location for exploration and discovery. Join us on this journey to one of the universe's most breathtaking destinations.
+                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/">Andromeda</a> is the closest large galaxy to the Milky Way and one of the most fascinating destinations in the universe. It spans over <b>220,000 light-years</b> and contains about one trillion stars, offering incredible views and scientific opportunities. As the largest galaxy in the Local Group, Andromeda provides a glimpse into the structure and evolution of galaxies.<br>Andromeda is <b>extraordinary</b> for its sheer scale and its potential collision with the Milky Way in the distant future. Its spiral arms and bright core are easily visible with advanced space telescopes, and its numerous star systems, clusters, and nebulae make it a prime location for exploration and discovery. Join us on this journey to one of the universe's most breathtaking destinations.
             </p>
         </div>
     </div>
@@ -171,7 +177,8 @@
     ?>
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
-<script type="text/javascript" defer > //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
+<script type="text/javascript" defer>
+    //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
     document.addEventListener("DOMContentLoaded", () => {
         //passo la variabile php contenente il nome del corpo celeste corrente a js
         const celestialBody = "<?php echo $nomeEvento ?>";
@@ -180,7 +187,5 @@
         fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
     });
 </script>
+
 </html>
-
-
-setParallaxImg(celestialBody);

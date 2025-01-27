@@ -15,6 +15,12 @@
     <title><?php echo $nomeEvento ?></title>
     <link rel="stylesheet" href="../catalogue-items.css">
     <base href="../../../../" /> <!-- torna in src-->
+    <style>
+        .parallax {
+            background-image: url(<?php echo "assets/images/nasa/galaxies/" . lcfirst($nomeEvento) ?>);
+            background-position: bottom 100px right 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,11 +31,11 @@
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
     ?> <!-- Importo il popup per le date -->
     <div class="hero">
-        <img class="responsive" src=<?php echo "assets/images/nasa/galaxies/" . lcfirst($nomeEvento) ?> alt=<?php echo $nomeEvento . " Galaxy" ?>>
+        <div class="parallax"></div>
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Pinwheel Galaxy</a> is a stunning spiral galaxy located in the constellation Ursa Major. With a diameter of over <b>170,000 light-years</b>, it is one of the largest and brightest galaxies in the night sky, containing hundreds of billions of stars. Known for its well-defined spiral arms, the Pinwheel Galaxy offers extraordinary opportunities for scientific exploration and cosmic wonder.<br>The Pinwheel Galaxy is a prime example of galactic beauty and structure. Its luminous core, numerous star-forming regions, and intricate spiral arms make it a favorite target for astronomers and stargazers alike. Join us on a journey to explore this cosmic masterpiece.
+                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-101/" target="_blank">Pinwheel Galaxy</a> is a stunning spiral galaxy located in the constellation Ursa Major. With a diameter of over <b>170,000 light-years</b>, it is one of the largest and brightest galaxies in the night sky, containing hundreds of billions of stars. Known for its well-defined spiral arms, the Pinwheel Galaxy offers extraordinary opportunities for scientific exploration and cosmic wonder.<br>The Pinwheel Galaxy is a prime example of galactic beauty and structure. Its luminous core, numerous star-forming regions, and intricate spiral arms make it a favorite target for astronomers and stargazers alike. Join us on a journey to explore this cosmic masterpiece.
             </p>
         </div>
     </div>

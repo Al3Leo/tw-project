@@ -194,6 +194,5 @@ main {
 }
 
 .parallax{
-  height: 700px;
-  border: 1px solid red;
+  height: 50vh;
 }

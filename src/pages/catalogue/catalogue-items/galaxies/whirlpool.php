@@ -15,6 +15,12 @@
     <title><?php echo $nomeEvento ?></title>
     <link rel="stylesheet" href="../catalogue-items.css">
     <base href="../../../../" /> <!-- torna in src-->
+    <style>
+        .parallax {
+            background-image: url(<?php echo "assets/images/nasa/galaxies/" . lcfirst($nomeEvento) ?>);
+            background-position: bottom 100px right 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,13 +31,11 @@
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
     ?> <!-- Importo il popup per le date -->
     <div class="hero">
-        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2378/" frameborder="0" allow="fullscreen" loading="lazy">
-            <img class="responsive" src=<?php echo "assets/images/nasa/galaxies/" . lcfirst($nomeEvento) ?> alt=<?php echo $nomeEvento ?>> <!-- fallback -->
-        </iframe>
+        <div class="parallax"></div>
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Whirlpool Galaxy</a> is a magnificent spiral galaxy located in the constellation Canes Venatici. Famous for its striking structure and interaction with its companion galaxy, it spans approximately <b>76,000 light-years</b>. Known for its vibrant star-forming regions and breathtaking appearance, the Whirlpool Galaxy serves as a prime example of a grand-design spiral galaxy.<br>The Whirlpool Galaxy invites exploration with its intricate arms, dynamic core, and fascinating details. Join us to unravel the mysteries of this celestial masterpiece and witness its beauty firsthand.
+                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-51/" target="_blank">Whirlpool Galaxy</a> is a magnificent spiral galaxy located in the constellation Canes Venatici. Famous for its striking structure and interaction with its companion galaxy, it spans approximately <b>76,000 light-years</b>. Known for its vibrant star-forming regions and breathtaking appearance, the Whirlpool Galaxy serves as a prime example of a grand-design spiral galaxy.<br>The Whirlpool Galaxy invites exploration with its intricate arms, dynamic core, and fascinating details. Join us to unravel the mysteries of this celestial masterpiece and witness its beauty firsthand.
             </p>
         </div>
     </div>

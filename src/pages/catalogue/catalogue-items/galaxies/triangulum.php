@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php
     /* 
@@ -14,6 +15,12 @@
     <title><?php echo $nomeEvento ?></title>
     <link rel="stylesheet" href="../catalogue-items.css">
     <base href="../../../../" /> <!-- torna in src-->
+    <style>
+        .parallax {
+            background-image: url(<?php echo "assets/images/nasa/galaxies/" . lcfirst($nomeEvento) ?>);
+            background-position: bottom 100px right 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,13 +31,11 @@
     require_once "../../../../components/tripDates/tripdates.php";  // includo il popup per le date
     ?> <!-- Importo il popup per le date -->
     <div class="hero">
-        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2388/" frameborder="0" allow="fullscreen" loading="lazy">
-            <img class="responsive" src=<?php echo "assets/images/nasa/galaxies/" . lcfirst($nomeEvento) ?> alt=<?php echo $nomeEvento ?>> <!-- fallback -->
-        </iframe>
+        <div class="parallax"></div>
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-            <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Triangulum Galaxy</a> is a stunning spiral galaxy located in the constellation Triangulum. As the third-largest galaxy in our local group, it spans nearly <b>60,000 light-years</b> and contains an abundance of star-forming regions. Known for its beautiful structure and proximity, the Triangulum Galaxy is a key object of study for understanding galactic evolution and star formation.<br>The Triangulum Galaxy offers a mesmerizing glimpse into the universe's complexity and beauty. With its bright nebulae, dynamic star clusters, and intricate details, it has captivated astronomers and space enthusiasts for generations. Join us on an unforgettable journey to this celestial neighbor.
+                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-33/" target="_blank">Triangulum Galaxy</a> is a stunning spiral galaxy located in the constellation Triangulum. As the third-largest galaxy in our local group, it spans nearly <b>60,000 light-years</b> and contains an abundance of star-forming regions. Known for its beautiful structure and proximity, the Triangulum Galaxy is a key object of study for understanding galactic evolution and star formation.<br>The Triangulum Galaxy offers a mesmerizing glimpse into the universe's complexity and beauty. With its bright nebulae, dynamic star clusters, and intricate details, it has captivated astronomers and space enthusiasts for generations. Join us on an unforgettable journey to this celestial neighbor.
             </p>
         </div>
     </div>
@@ -88,60 +93,60 @@
                 </div>
             </div>
             <div class="main__left__tripKnowledge__item">
-                        <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
-                            <p class="text-center">What's included in the price</p>
-                            <span class="main__left__tripKnowledge__arrow">&#x25BC;</span>
-                        </div>
-                        <div class="main__left__tripKnowledge__item__answer">
-                            <ul>
-                                <li>
-                                    <p><strong>Round-trip Space Transportation</strong>: Comfortable and safe travel from Earth to Venus and back.</p>
-                                </li>
-                                <li>
-                                    <p><strong>Accommodation</strong>: Stay in our state-of-the-art <b>space habitat</b> with all the amenities you need for a comfortable stay.</p>
-                                </li>
-                                <li>
-                                    <p><strong>Guided Tours</strong>: Daily <b>guided tours</b> to explore the most fascinating sites on Venus, led by our expert space guides.</p>
-                                </li>
-                                <li>
-                                    <p><strong>Meals</strong>: Enjoy a variety of <b>gourmet meals</b> prepared by our onboard chefs, including special Venus-themed dishes.</p>
-                                </li>
-                                <li>
-                                    <p><strong>Space Suit Rental</strong>: High-quality <b>space suits</b> provided for your safety and comfort during all outdoor activities.</p>
-                                </li>
-                                <li>
-                                    <p><strong>Pre-trip Training</strong>: Comprehensive <b>training sessions</b> to prepare you for the unique conditions of space travel and Venus exploration (optional).</p>
-                                </li>
-                                <li>
-                                    <p><strong>24/7 Support</strong>: Our team of space travel specialists is available around the clock to assist you with any needs or questions.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="main__left__tripKnowledge__item">
-                        <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
-                            <p class="text-center">What's NOT included in the price</p>
-                            <span class="main__left__tripKnowledge__arrow">&#x25BC;</span>
-                        </div>
-                        <div class="main__left__tripKnowledge__item__answer">
-                            <b>Optional excursions</b>, tips, personal expenses, lunches and dinners and what is not expressly mentioned under "The fee includes"
-                        </div>
-                    </div>
-                    <div class="main__left__tripKnowledge__item">
-                        <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
-                            <p class="text-center">Required Documents</p>
-                            <span class="main__left__tripKnowledge__arrow">&#x25BC;</span>
-                        </div>
-                        <div class="main__left__tripKnowledge__item__answer">
-                            <p><strong>Passport</strong> is required, with at least six months remaining validity. Entry visa is not necessary.</p>
-                        </div>
-                    </div>
+                <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
+                    <p class="text-center">What's included in the price</p>
+                    <span class="main__left__tripKnowledge__arrow">&#x25BC;</span>
                 </div>
+                <div class="main__left__tripKnowledge__item__answer">
+                    <ul>
+                        <li>
+                            <p><strong>Round-trip Space Transportation</strong>: Comfortable and safe travel from Earth to Venus and back.</p>
+                        </li>
+                        <li>
+                            <p><strong>Accommodation</strong>: Stay in our state-of-the-art <b>space habitat</b> with all the amenities you need for a comfortable stay.</p>
+                        </li>
+                        <li>
+                            <p><strong>Guided Tours</strong>: Daily <b>guided tours</b> to explore the most fascinating sites on Venus, led by our expert space guides.</p>
+                        </li>
+                        <li>
+                            <p><strong>Meals</strong>: Enjoy a variety of <b>gourmet meals</b> prepared by our onboard chefs, including special Venus-themed dishes.</p>
+                        </li>
+                        <li>
+                            <p><strong>Space Suit Rental</strong>: High-quality <b>space suits</b> provided for your safety and comfort during all outdoor activities.</p>
+                        </li>
+                        <li>
+                            <p><strong>Pre-trip Training</strong>: Comprehensive <b>training sessions</b> to prepare you for the unique conditions of space travel and Venus exploration (optional).</p>
+                        </li>
+                        <li>
+                            <p><strong>24/7 Support</strong>: Our team of space travel specialists is available around the clock to assist you with any needs or questions.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main__left__tripKnowledge__item">
+                <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
+                    <p class="text-center">What's NOT included in the price</p>
+                    <span class="main__left__tripKnowledge__arrow">&#x25BC;</span>
+                </div>
+                <div class="main__left__tripKnowledge__item__answer">
+                    <b>Optional excursions</b>, tips, personal expenses, lunches and dinners and what is not expressly mentioned under "The fee includes"
+                </div>
+            </div>
+            <div class="main__left__tripKnowledge__item">
+                <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
+                    <p class="text-center">Required Documents</p>
+                    <span class="main__left__tripKnowledge__arrow">&#x25BC;</span>
+                </div>
+                <div class="main__left__tripKnowledge__item__answer">
+                    <p><strong>Passport</strong> is required, with at least six months remaining validity. Entry visa is not necessary.</p>
+                </div>
+            </div>
+        </div>
         </div>
         <div class="main__right">
             <div class="main__right__celestialBodyInfo">
                 <h3 class="text-center">Celestial Body Info</h3>
-                    <!-- La tabella é generata da JS-->
+                <!-- La tabella é generata da JS-->
             </div>
         </div>
     </main>
@@ -166,7 +171,8 @@
     ?>
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
-<script type="text/javascript" defer > //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
+<script type="text/javascript" defer>
+    //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
     document.addEventListener("DOMContentLoaded", () => {
         //passo la variabile php contenente il nome del corpo celeste corrente a js
         const celestialBody = "<?php echo $nomeEvento ?>";
@@ -175,10 +181,5 @@
         fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
     });
 </script>
+
 </html>
-
-
-
-
-
-
