@@ -3,55 +3,72 @@
  * Verifica se i campi del form sono stati inviati tramite POST e assegna i valori corrispondenti alle variabili. 
  * In caso contrario, assegna stringhe vuote.
  */
+require_once "ConnettiDb.php"; 
 $nome = isset($_POST['user_name']) ? $_POST['user_name'] : "";
 $cognome = isset($_POST['user_surname']) ? $_POST['user_surname'] : "";
 $email = isset($_POST['user_email']) ? $_POST['user_email'] : "";
-$user = isset($_POST['user_username']) ? $_POST['user_username'] : "";
+$username = isset($_POST['user_username']) ? $_POST['user_username'] : "";
 $pass = isset($_POST['user_password']) ? $_POST['user_password'] : "";
 $repassword = isset($_POST['password_confirm']) ? $_POST['password_confirm'] : "";
-$nascita = isset($_POST['user_birthday']) ? $_POST['user_birthday'] : "";
+$nascita = isset($_POST['user_birthday']) ? $_POST['user_birthday'] : NULL;
 $indirizzo = isset($_POST['user_country']) ? $_POST['user_country'] : "";
 $sesso = isset($_POST['user_gender']) ? $_POST['user_gender'] : "";
 
 /**
+ * Esegue controlli sulla lunghezza dei campi.
  * Esegue controlli sulla password. 
  * 1. Se la password non corrisponde alla conferma della password, visualizza un messaggio di errore. 
  * 2. Se le password corrispondono, verifica se lo username esiste già. 
  * 3. Se lo username non esiste, inserisce il nuovo utente nel database.
  */
+if(strlen($nome) > 50 || strlen($username) > 25 || strlen($cognome) > 50 || strlen($email) > 50) {
+    $errore = "One or more fields are too long.";
+    echo "<script>alert('$errore');</script>";
+   
+}else{
   if (!empty($pass)) {
         if ($pass != $repassword) {
             $errore = "Password mismatch. Try again.";
             echo "<script>alert('$errore');</script>";
             $pass = "";
         } else {
-            if (username_exist($user)) {
-                $errore = "Username $user already exists. Try again.";
+            if (username_exist($username)) {
+                $errore = "Username $username already exists. Try again.";
                 echo "<script>alert('$errore');</script>";
             } else {
-                if (insert_utente($nome, $cognome, $sesso, $user, $pass, $indirizzo, $nascita)) {
-                    $errore = "User registered successfully!";
-                    echo "<script>alert('$errore');</script>";
+                if (insert_utente($nome, $cognome, $sesso, $username, $pass, $indirizzo, $nascita)) {
+                    /*$messaggio = "User registered successfully!";
+                    echo "<script>alert('$messaggio');</script>";
+                    */
+                    header("Location: ConfermaDinamica.php?confirmsignup=$username");
+                    exit();
                 } else {
                     $errore = "Registration error. Try again.";
                     echo "<script>alert('$errore');</script>";
                 }
             }
         }
-    }
+    }}
+
 /**
  * Funzione che verifica se un username esiste già nel database. 
  * Verifica se un username esiste già nel database.
- * @param user L'username da verificare.
+ * @param username L'username da verificare.
  * @return true se l'username esiste, false altrimenti.
  */
-function username_exist($user){
-    require_once "ConnettiDb.php"; 
+function username_exist($username){
+    $host = "localhost";
+    $port = '5432';
+    $db_name = "GRUPPO05";
+    $user = "www";
+    $password = "tw2024";
+    $connection_string = "host=$host dbname=$db_name user=$user password=$password";
+    $db_connection = pg_connect($connection_string) or die('Impossibile connettersi al database<br>' . pg_last_error());
     $sql = "SELECT username FROM utente WHERE username=$1";
-    $prep = pg_prepare($$db_connection, "sqlUsername", $sql);
-    $ret = pg_execute($$db_connection, "sqlUsername", array($user));
+    $prep = pg_prepare($db_connection, "sqlUsername", $sql);
+    $ret = pg_execute($db_connection, "sqlUsername", array($username));
     if (!$ret) {
-        echo "ERRORE QUERY: " . pg_last_error($db);
+        echo "ERRORE QUERY: " . pg_last_error($db_connection);
         return false;
     } else {
         return pg_fetch_assoc($ret) ? true : false;
@@ -63,20 +80,27 @@ function username_exist($user){
  * @param nome Il nome dell'utente.
  * @param cognome Il cognome dell'utente.
  * @param sesso Il sesso dell'utente.
- * @param user Lo username dell'utente.
+ * @param username Lo username dell'utente.
  * @param pass La password dell'utente.
  * @param indirizzo L'indirizzo dell'utente.
  * @param nascita La data di nascita dell'utente.
  * @return true se l'inserimento ha successo, false altrimenti.
  */
-function insert_utente($nome, $cognome, $sesso, $user, $pass, $indirizzo, $nascita){
-    require_once "ConnettiDb.php"; 
+function insert_utente($nome, $cognome, $sesso, $username, $pass, $indirizzo, $nascita){
+    $host = "localhost";
+    $port = '5432';
+    $db_name = "GRUPPO05";
+    $user = "www";
+    $password = "tw2024";
+    $connection_string = "host=$host dbname=$db_name user=$user password=$password";
+    $db_connection = pg_connect($connection_string) or die('Impossibile connettersi al database<br>' . pg_last_error()); 
+
     $hash = password_hash($pass, PASSWORD_DEFAULT);
     $sql = "INSERT INTO utente(nome, cognome, sesso, username, passworduser, indirizzo, datanascita) VALUES($1, $2, $3, $4, $5, $6, $7)";
-    $prep = pg_prepare($$db_connection, "insertUser", $sql);
-    $ret = pg_execute($$db_connection, "insertUser", array($nome, $cognome, $sesso, $user, $hash, $indirizzo, $nascita));
+    $prep = pg_prepare($db_connection, "insertUser", $sql);
+    $ret = pg_execute($db_connection, "insertUser", array($nome, $cognome, $sesso, $username, $hash, $indirizzo, !empty($nascita) ? $nascita : NULL));
     if (!$ret) {
-        echo "ERRORE QUERY: " . pg_last_error($db);
+        echo "ERRORE QUERY: " . pg_last_error($db_connection);
         return false;
     } else {
         return true;
@@ -108,7 +132,7 @@ Utilizza POST per inviare i dati a backend/RegistraUtente.php.
                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" class="d-grid">
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="username">Username</label>
-                        <input type="text" id="username" name="user_username" value="<?php echo $user?>" required>
+                        <input type="text" id="username" name="user_username" value="<?php echo $username?>" required>
                     </div>
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="name">Name</label>
