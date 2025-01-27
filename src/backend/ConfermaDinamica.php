@@ -70,9 +70,9 @@ require_once "gestioneAcquisti.php";
                 <img alt="svgImg" src="assets/images/check.jpg" />
             </div>
             <div class="div_down d-flex  flex-column align-items-center" style="margin: 1em">
-                <?php if (isset($_GET['confirmsignupname'])) { //se il parametro  'confirmsignup' e presente nell'url
-                    $name = $_GET['confirmsignupname'];
-                    echo "<p>Hello <strong>$name</strong>, your registration has been successfully completed.<br>Continue your experience on our site, and don't miss out on our latest offers and special deals.</p>";
+                <?php if (isset($_GET['confirmsignup'])) { //se il parametro  'confirmsignup' e presente nell'url
+                    $name = $_GET['confirmsignup'];
+                    echo "<p>Hello <strong>$name</strong>, your registration has been successfully completed.<br>Continue your experience on our site, and don't miss out on our latest offers and special deals. <br>Don't forget to login in.</p>";
                 } elseif (isset($_GET['confirmcheckout'])) {
                     echo "<p>Thank you for your purchase.<strong>Your payment has been successfully processed</strong>.<br> <p>Continue enjoying our services and be sure to check out our latest offers and exclusive deals.</p>";
                 }

@@ -13,12 +13,12 @@ g<?php
 require_once "ConnettiDb.php";
 // Inizio login
 if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
-    $user = $_POST['user_username'];
+    $username = $_POST['user_username'];
     $password = $_POST['user_password'];
     $sql = "SELECT passworduser, nome, cognome, indirizzo FROM utente WHERE username = $1";
     $result = pg_prepare($db_connection, "sqlPassword", $sql);
     if ($result) {
-        $ret = pg_execute($db_connection, "sqlPassword", array($user));
+        $ret = pg_execute($db_connection, "sqlPassword", array($username));
         if ($ret) {
             $row = pg_fetch_assoc($ret);
            
@@ -33,7 +33,7 @@ if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
                 $surname = $row['cognome'];
                 $email = $row['indirizzo'];
                 session_start();
-                $_SESSION['username'] = $user;
+                $_SESSION['username'] = $username;
                 $_SESSION['name'] = $name;
                 $_SESSION['surname'] = $surname;
                 $_SESSION['email'] = $email;
