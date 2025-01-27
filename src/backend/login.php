@@ -1,4 +1,4 @@
-g<?php
+<?php
 /*
  * Questo script PHP gestisce il processo di login per gli utenti. Esegue i seguenti passaggi:
  * setta username come var di sessione se logga
@@ -39,9 +39,11 @@ if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
                 $_SESSION['email'] = $email;
                 header("Location: " . $_SERVER['HTTP_REFERER']);
             } else {
-                echo "Password errata<br>";
+                $errore = "Password uncorrect";
+                echo "<script>alert('$errore');</script>";
             }}else{
-                echo"Utente non trovato";
+                $errore = "User Not Found";
+                echo "<script>alert('$errore');</script>";
             }
 
 

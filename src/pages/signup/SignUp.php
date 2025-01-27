@@ -163,11 +163,11 @@ Utilizza POST per inviare i dati a backend/RegistraUtente.php.
                         </select>
                     </div>
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
-                        <label class="d-flex flex-row">Gender:
+                        <div class="d-flex flex-row" id="gender"><span>Gender:</span>
                             <label for="sessoM"><input id="sessoM" type="radio" name="user_gender" value="M" >
                                 M</label>
                             <label for="sessoF"><input id="sessoF" type="radio" name="user_gender" value="F">
-                                F</label></label>
+                                F</label></div>
                     </div>
                     <button type="submit">Sign Up</button>
                 </form>
