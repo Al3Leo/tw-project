@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42923ac4-8d33-49e8-9f5b-292fa1bc8b7d" name="Changes" comment="cronologia ordini e ticket in versione definitiva">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/OrderHistory/ConologiaOrdine.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/OrderHistory/ConologiaOrdine.php" afterDir="false" />
+    <list default="true" id="42923ac4-8d33-49e8-9f5b-292fa1bc8b7d" name="Changes" comment="fix link">
+      <change beforePath="$PROJECT_DIR$/db/db" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +90,7 @@
       <updated>1737201959582</updated>
       <workItem from="1737201960945" duration="130000" />
       <workItem from="1737202108430" duration="24278000" />
-      <workItem from="1737973699305" duration="3601000" />
+      <workItem from="1737973699305" duration="3905000" />
     </task>
     <task id="LOCAL-00001" summary="login su geolocalizzazione (ora per loggare dovete accendere il gps su pc se no ti esce l'alert di errore)">
       <option name="closed" value="true" />
@@ -181,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737976602426</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix link">
+      <option name="closed" value="true" />
+      <created>1737977374897</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1737977374897</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +206,7 @@
     <MESSAGE value="db aggiornato" />
     <MESSAGE value="script per prendere tutti gli ordini di un determinato utente e che stampa nella cronologia ordini (da finire)" />
     <MESSAGE value="cronologia ordini e ticket in versione definitiva" />
-    <option name="LAST_COMMIT_MESSAGE" value="cronologia ordini e ticket in versione definitiva" />
+    <MESSAGE value="fix link" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix link" />
   </component>
 </project>
