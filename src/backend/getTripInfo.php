@@ -24,7 +24,8 @@ if (isset($nomeEvento)) {
                 "etichetta" => $row['etichetta'],
                 "datapartenza" => $row['datapartenza'],
                 "dataritorno" => $row['dataritorno'],
-                "launchlocation" => $row['launchlocation']
+                "launchlocation" => $row['launchlocation'],
+                "destination"=> $nomeEvento
             ];
         }
 
