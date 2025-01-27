@@ -1,0 +1,91 @@
+@import "../../assets/css/Global.css";
+@import "../../components/footer/footer.css";
+@import "../../components/login/login.css";
+@import "../../components/topmenu/topmenu.css";
+body {
+    background-image: url("a.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0; 
+}
+
+.ourMission {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+}
+
+.text, .finalGoal {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    padding: 20px 0;
+    border-bottom: 1px solid #444;
+}
+
+.text h2, .finalGoal h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.text p, .finalGoal p {
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 400px;
+}
+
+.image img {
+    flex: 1;
+    text-align: center;
+    margin-left: 20px;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    max-height: 200px;
+    display: block;
+}
+
+.text-box {
+    max-width: 500px;
+    text-align: left;
+}
+
+h1, h2 {
+    position: relative;
+    color: var(--accent);
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 3s steps(20, end), blink 0.5s step-end infinite;
+    border-right: 2px solid var(--tertiaryColor);
+}
+
+h1::before, h1::after, h2::before, h2::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--secondaryColor);
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%);
+    animation: glitch 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+    0% { clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); transform: translate(2px, -2px); }
+    50% { clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%); transform: translate(-2px, 2px); }
+    100% { clip-path: polygon(0 40%, 100% 40%, 100% 50%, 0 50%); transform: translate(1px, -1px); }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}

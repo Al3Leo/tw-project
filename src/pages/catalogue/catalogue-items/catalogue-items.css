@@ -1,0 +1,193 @@
+@import "../../../assets/css/Global.css";
+@import "../../../components/footer/footer.css";
+@import "../../../components/login/login.css";
+@import "../../../components/topmenu/topmenu.css";
+.hero {
+  height: auto;
+}
+.hero iframe {
+  height: 50vh;
+  border: none;
+}
+
+.hero > img {
+  height: 650px;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+.main__left {
+  width: 70%;
+  padding: 10px 30px;
+}
+.main__right {
+  width: 30%;
+  padding: 10px 30px;
+}
+.main__right table {
+  margin: 0 auto;
+}
+
+.hero__text {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.main__left__section1 {
+  gap: 3%;
+  padding: 20px;
+}
+.main__left__section1__date {
+  background-image: linear-gradient(75deg, rgb(14, 11, 19), rgb(82, 0, 124));
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  color: white;
+  width: 50%;
+  padding: 10px;
+  height: 200px;
+}
+.main__left__section1__date button:hover {
+  background-color: var(--tertiaryColor);
+  color: black;
+  transition: 1s;
+}
+
+.main__left__section1__date__btn {
+  gap: 20px;
+}
+
+.main__left__section1__date__days {
+  gap: 10px;
+  margin-top: 5px;
+}
+.main__left__section1__whatSee {
+  width: 50%;
+}
+
+.main__left__section1__whatSee span {
+  font-weight: bold;
+  color: var(--tertiaryColor);
+}
+
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+.days {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.main__left__tripKnowledge h3 {
+  margin-top: 3%;
+}
+
+.main__left__tripKnowledge strong {
+  color: var(--tertiaryColor);
+}
+
+.main__left__tripKnowledge__item__question p {
+  font-weight: bold !important;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .main__right{
+    display: none;
+  }
+  .main__left__section1__whatSee, .main__left__section1, .main__left__section1__date{
+    width: 100%;
+  }
+  .main__left{
+    width: 100vw;
+  }
+  .main__left__section1{
+    flex-direction: column;
+  }
+}
+
+/* Dropdown Travel Info*/
+
+.main__left__tripKnowledge__item {
+  border-bottom: 1px solid #e9ecef;
+  width: 100%;
+}
+
+.main__left__tripKnowledge__item:last-child {
+  border-bottom: none;
+}
+
+.main__left__tripKnowledge__item__question {
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  border-radius: 15px;
+  cursor: pointer !important;
+}
+
+.main__left__tripKnowledge__item__question:hover {
+  background-color: var(--accent);
+}
+
+.main__left__tripKnowledge__item__answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  line-height: 1.6;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.main__left__tripKnowledge__item__answer.open {
+  padding: 15px 20px;
+  height: auto;
+  max-height: 1000px;
+}
+
+.main__left__tripKnowledge__arrow {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.main__left__tripKnowledge__arrow.open {
+  transform: rotate(90deg);
+}
+
+/* Horizontal Scroll Section
+ * https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6
+ */
+
+#suggestions__carousel-ct {
+  gap: 20px;
+  cursor: grab;
+  overflow-y:hidden;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  padding: 30px 0px;
+  scrollbar-width: thin;
+}
+
+.suggestions__carousel__item {
+  background-color: #e9ecef;
+  height: 300px;
+  width: 360px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
+}
+.suggestions__carousel__item > img {
+  height: 200px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Nasconde i suggerimenti su mobile */
+@media (max-width: 768px) {
+  .suggestions{
+    display: none;
+  }
+}

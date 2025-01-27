@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Orbitron:wght@400..900&display=swap");
+@import "CssReset.css";
+
+
+/* ==========================
+   Color and Variables
+   ========================== */
+
+:root {
+  background-color: black;
+  --hero-height: calc(100vh - 70px);
+  --primaryColor: #e9ecfb;
+  --secondaryColor: #471a8e;
+  --tertiaryColor: #f7e951;
+  --accent: #9529d7;
+  --text: #e9ecfb;
+}
+
+/* ==========================
+   Font Settings
+   ========================== */
+
+body {
+  font-family: "Exo 2", Inter, Lato, Orbitron, Arial;
+  font-size: 16px;
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0.5em 0;
+  line-height: 1.1;
+}
+
+/* ==========================
+   Typography
+   ========================== */
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.0625rem;
+}
+h2 {
+  font-size: 2rem;
+  letter-spacing: -0.05rem;
+}
+h3 {
+  font-size: 1.75rem;
+  letter-spacing: -0.0375rem;
+}
+h4 {
+  font-size: 1.5rem;
+  letter-spacing: -0.025rem;
+}
+h5 {
+  font-size: 1.25rem;
+  letter-spacing: -0.0125rem;
+}
+h6 {
+  font-size: 1.125rem;
+  letter-spacing: -0.00625rem;
+}
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+b,
+strong {
+  font-weight: bold;
+  color: var(--accent);
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: var(--tertiaryColor);
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--secondaryColor);
+}
+small {
+  font-size: 0.875em;
+  color: #666;
+}
+
+/* ==========================
+   Layout and Positioning
+   ========================== */
+
+/* Utilities - text alignment */
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+/* Utilities - Position */
+
+.position-relative {
+  position: relative;
+}
+.position-absolute {
+  position: absolute;
+}
+.position-fixed {
+  position: fixed;
+}
+.position-sticky {
+  position: sticky;
+}
+
+/* Utilities - Display */
+
+.d-block {
+  display: block;
+}
+.d-inline {
+  display: inline;
+}
+.d-inline-block {
+  display: inline-block;
+}
+.d-flex {
+  display: flex;
+}
+.d-inline-flex {
+  display: inline-flex;
+}
+.d-grid {
+  display: grid;
+}
+.d-inline-grid {
+  display: inline-grid;
+}
+.d-none {
+  display: none;
+}
+
+/* ==========================
+   Flexbox Utilities
+   ========================== */
+
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.justify-content-around {
+  justify-content: space-around;
+}
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-baseline {
+  align-items: baseline;
+}
+.align-items-stretch {
+  align-items: stretch;
+}
+.align-items-start {
+  align-items: start;
+}
+.align-items-end {
+  align-items: end;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+/* ==========================
+   Media and Images
+   ========================== */
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ==========================
+   Buttons
+   ========================== */
+
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--accent);
+  border-radius: 8px;
+  border-style: none;
+  color: var(--text);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms, transform 0.3s ease-out;
+  font-weight: 600;
+}
+button:hover,
+button:focus {
+  background-color: var(--secondaryColor);
+  transform: scale(1.1);
+}
+
+/* ==========================
+   Components - Slideshowx
+   ========================== */
+
+.slideshow {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ==========================
+   Components - Hero Section
+   ========================== */
+
+.hero {
+  height: var(--hero-height);
+  background-size: cover !important;
+  overflow: hidden;
+}
+
+/* ==========================
+   Components - Parallax
+   ========================== */
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ==========================
+   Menu
+   ========================== */
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.menu li {
+  float: left;
+}
+.menu li a {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  color: black !important;
+  padding: 16px;
+}
+.menu li a:hover {
+  transition: 1s;
+  font-weight: bold;
+  background-color: var(--accent);
+}
+
+/* Dropdown */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  color: black !important;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.dropdown:hover .dropbtn {
+  transition: 1s;
+  font-weight: bold;
+  background-color: var(--tertiaryColor);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+.dropdown-content a {
+  float: none;
+  color: black !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ==========================
+   Tables
+   ========================== */
+th,
+td {
+  padding: 7px;
+  text-align: left;
+}
+th {
+  font-weight: bold;
+}
+
+/* ==========================
+   Animations
+   ========================== */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#capitalize::first-letter {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+/* ==========================
+   Scroll 
+   ========================== */
+.scroll::-webkit-scrollbar { 
+    width: 0.3rem; 
+    height: 0.3rem; 
+} 
+.scroll::-webkit-scrollbar-track { 
+    background-color:transparent;  
+} 
+.scroll::-webkit-scrollbar-thumb { 
+        background-color: var(--accent); 
+        border-radius: 100px;
+}
+.scroll::-webkit-scrollbar-corner{
+    background-color: transparent;
+}

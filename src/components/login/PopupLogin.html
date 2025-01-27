@@ -1,0 +1,58 @@
+
+<div class="popup" id="loginpopup">
+    <header class="popuphead">Login
+        <span id="closePopup" onclick="closeLoginPopup()">x</span>
+    </header>
+    <main id="popupMain">
+        <form method="post" action="backend/login.php"> <!--usare sempre il tag <base href="../"/> in ogni pagina html-->
+            <label>Username</label><br>
+            <input type="text" class="loginfieldloginbtn" name="user_username" placeholder="Username" required>
+            <br>
+            <label>Password</label><br>
+            <input type="password" class="loginfield" name="user_password" placeholder="Password" required>
+            <br>
+            <small>Don't have an account?<a href="pages/signup/SignUp.php">Sign up</a> </small>
+            <br>
+            <input type="submit" value="Login" id="logbtn" style="margin-left: 37%; margin-top: 10%; margin-bottom: 7%; border: 1px solid black; border-radius: 5px; background-color: #adadad; color: white">
+        </form>
+    </main>
+</div>
+
+<script>
+    function openLoginPopup(){
+        let cart=document.getElementById("carrello");
+        cart.style.display="none";
+        document.getElementById("loginpopup").style.display = "flex";
+        getPos();
+    }
+    function closeLoginPopup(){
+        document.getElementById("loginpopup").style.display = "none";
+    }
+    function getPos(){
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(checkPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+    function checkPosition(position) {
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        var flag;
+        //limito l'accesso al europa circa (tagliamo un po ucraina e filandia per approssimare a un rettangolo)
+        if (lat >= 35 && lat <= 70 && lng >= -10 && lng <= 30) {
+            flag = true;
+        }else
+        //limito l'accesso agli usa
+        if (lat >= 24 && lat <= 49 && lng >= -125 && lng <= -66) {
+            flag = true;
+        } else {
+            flag = false;
+        }
+        if(!flag){
+            document.getElementById("logbtn").disabled = true;
+            document.getElementById("logbtn").style.color = "red";
+            alert('Country restricted error');
+        }
+    }
+</script>
