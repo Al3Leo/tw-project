@@ -12,6 +12,15 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    position:relative;
+    width: 100%;
+    height: 80px;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .ourMission {
@@ -22,6 +31,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 40px; /* Spaziatura tra le sezioni */
+    margin-top: 100px;
+    z-index: 1;
 }
 
 .text, .finalGoal {
@@ -49,6 +60,7 @@ body {
 
 .image img {
     flex: 1;
+    object-fit: cover;
     text-align: center;
     margin-left: 20px;
     max-width: 400px;
@@ -101,9 +113,8 @@ h1::before, h1::after, h2::before, h2::after {
 
 
 /* Gestione dello z-index per evitare sovrapposizioni */
-header, .popup-menu, .side-menu {
-    position: relative;
-    z-index: 10;
+ .popup-menu, .side-menu {
+    z-index: 5;
 }
 
 .ourMission {
