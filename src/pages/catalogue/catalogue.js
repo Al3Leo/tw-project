@@ -1,10 +1,17 @@
+/*
+ * Gestione del banner di ricerca e dello switch tra le varie sezioni
+ */
 const choosedSearch = document.getElementById("hero__search__choosed__search");
 const choosedBudget = document.getElementById("hero__search__choosed__budget");
-const choosed = [choosedSearch, choosedBudget];
+const choosed = [choosedSearch, choosedBudget]; 
 
 const whereLink = document.getElementById("hero__search__choose__whereLink");
 const budgetLink = document.getElementById("hero__search__choose__budgetLink");
+const showAllLink = document.getElementById("hero__search__choose__showAll");
+
 const links = [whereLink, budgetLink];
+
+let catalogueItems = document.querySelectorAll("div.catalogue__item");
 
 /* Funzione per la gestione del banner di ricerca */
 function showSection(index) {
@@ -27,7 +34,7 @@ function showSection(index) {
 
 links.forEach((link, index) => {
   link.addEventListener("click", (event) => {
-    event.preventDefault();
+    event.preventDefault(); 
     showSection(index);
   });
 });
@@ -84,9 +91,11 @@ searchByName.addEventListener("keydown", (event) => {
   }
 });
 
+/* 
+ *  Funzione per l'aggiornamento della vista del catalogo
+ */ 
+
 function updateSearch(arraySearch) {
-  if (arraySearch != null) {
-    var catalogueItems = document.querySelectorAll("div.catalogue__item");
     catalogueItems.forEach(function (item) {
       //per tutti i div con classe catalogue__item verifico se il loro id è uguale a uno dei elementi presenti nel arraySearch.
       //Se presente setto l'attributo display come flex altrimenti none.
@@ -102,5 +111,12 @@ function updateSearch(arraySearch) {
         item.style.display = "none";
       }
     });
-  }
+}
+/*
+ * Funzione per ripristianare la vista del catalogo e mostrare nuovamente tutti gli items. 
+ */
+function restoreCatalogueView(){
+    catalogueItems.forEach( item => {
+      item.style.display = "flex";
+  });
 }

@@ -20,6 +20,7 @@ session_start();
                 <ul>
                     <li><a id="hero__search__choose__whereLink" href="#">Where</a></li>
                     <li><a id="hero__search__choose__budgetLink" href="#">Budget</a></li>
+                    <li><a id="hero__search__choose__showAll" href="#" onclick="restoreCatalogueView(); return false;">Show All</a></li>
                 </ul>
             </div>
             <div id="hero__search__choosed-ct" class="d-flex flex-column align-items-center justify-content-center">
