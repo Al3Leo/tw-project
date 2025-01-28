@@ -34,14 +34,19 @@
     <!--logo login e signup-->
     <a href="pages/homepage.php"> <!--svg per il logo-->
         <svg width="158" height="62" viewBox="0 0 158 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="158" height="62"  />
-            <rect width="165" height="102" transform="translate(-7 -13)"  />
+            <rect width="158" height="62" />
+            <rect width="165" height="102" transform="translate(-7 -13)" />
+            <defs>
+                <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feDropShadow dx="3" dy="2" stdDeviation="0" flood-color="rgba(212, 187, 221, 0.5)" />
+                </filter>
+            </defs>
             <text fill="#F9F4F4" xml:space="preserve" style="white-space: pre; font-family: 'Montserrat', serif; 
-            font-weight: 650; font-style: normal;" family="Montserrat" font-size="42" letter-spacing="0em">
+            font-weight: 650; font-style: normal;" family="Montserrat" font-size="42" filter="url(#shadow)" letter-spacing="0em">
                 <tspan x="7" y="54.3636">SPACE&#10;</tspan>
             </text>
             <text fill="#F7E951" xml:space="preserve" style="white-space: pre; font-family: 'Montserrat', serif; 
-            font-weight: 602; font-style: normal;"  font-size="20" font-weight="350" letter-spacing="0.3em">
+            font-weight: 602; font-style: normal;" font-size="20" font-weight="350" letter-spacing="0.3em">
                 <tspan x="27" y="19.17">OUTER</tspan>
             </text>
         </svg>
@@ -56,9 +61,10 @@
         <a href="backend/LogOut.php"><button class="btn" id="logout">LogOut</button></a>
         <div id="userinfo">
             <!--valori da completare in php-->
-            <span class="userinfoList"><?php echo $_SESSION['username'] ?></span>
-            <br>
-            <span class="userinfoList"><?php echo $_SESSION['name'] . " " . $_SESSION['surname'] ?></span>
+            <span class="userinfoList"><?php if(isset($_SESSION['username'])) { echo $_SESSION['username']; }?></span>
+            <span class="userinfoList"><?php 
+            if(isset($_SESSION['name'])) echo $_SESSION['name']; 
+            if(isset($_SESSION['username'])) echo $_SESSION['username']; ?></span>
         </div>
         <button class="btn" id="sideMenu" onclick="toggleSideMenu()">&#x2630;</button>
     </div>

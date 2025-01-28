@@ -27,13 +27,14 @@
                             $eventId = $event['idevento'];
                             $location = $event['launchlocation'];
                             $price = $event['prezzoevento'];
+                            
 
                             echo " 
                             <tr> 
                                 <td>" . $departureDate . "</td>
                                 <td>" . $returnDate . "</td>
                                 <td>" . $location . "</td>
-                                <td> <button onclick='ajax_add_cart(" . $eventId . ", \"" . $nomeEvento . "\", " . $price . ")'>Add to cart</button>" .
+                                <td> <button onclick='ajax_add_cart(" . $eventId . ", \"" . $nomeEvento . "\", " . $price . ",  \"". $departureDate  ."\" )'>Add to cart</button>" .
                                 "</tr>";
                         }
                     }
