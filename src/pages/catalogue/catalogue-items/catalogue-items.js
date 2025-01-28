@@ -48,14 +48,12 @@ function call_lso_api(celestialBody) {
   ssoXhr.send();
 
   ssoXhr.onload = function () {
-    if (ssoXhr.readyState == 4) {
-      if (ssoXhr.status == 200) {
+    if (ssoXhr.readyState == 4 && ssoXhr.status == 200) {
         let response = ssoXhr.response;
         createTable(response);
       } else {
         deleteTable();
       }
-    }
   };
 }
 

@@ -20,12 +20,11 @@ session_start();
                 <ul>
                     <li><a id="hero__search__choose__whereLink" href="#">Where</a></li>
                     <li><a id="hero__search__choose__budgetLink" href="#">Budget</a></li>
-                    <li><a id="hero__search__choose__periodLink" href="#">Period</a></li>
                 </ul>
             </div>
             <div id="hero__search__choosed-ct" class="d-flex flex-column align-items-center justify-content-center">
                 <div id="hero__search__choosed__search" class="hero__search__choosed__item">
-                    <input type="text" name="search" placeholder="Where would you like to go?">
+                    <input type="text" name="search" id="searchByName" placeholder="Where would you like to go?">
                 </div>
                 <div id="hero__search__choosed__budget" class=" d-flex flex-row align-items-center justify-content-between hero__search__choosed__item menu">
                     <span><b>Budget</b></span>
@@ -35,45 +34,6 @@ session_start();
                         <li><a onclick="searchBudget('3000 | 4000')">3000 &#124 4000</a></li>
                         <li><a onclick="searchBudget('> 4000') ">&#62 4000</a></li>
                     </ul>
-                </div>
-                <div id="hero__search__choosed__period" class="d-flex flex-row align-items-center justify-content-between hero__search__choosed__item">
-                    <span><b>Period</b></span>
-                    <div>
-                        <div class="dropdown">
-                            <button class="dropbtn" type="button">Seasons</button>
-                            <div class="dropdown-content">
-                                <a href="#">Winter</a>
-                                <a href="#">Spring</a>
-                                <a href="#">Summer</a>
-                                <a href="#">Autumn</a>
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <button class="dropbtn" type="button">Months</button>
-                            <div class="dropdown-content">
-                                <a href="#">January</a>
-                                <a href="#">February</a>
-                                <a href="#">March</a>
-                                <a href="#">April</a>
-                                <a href="#">May</a>
-                                <a href="#">June</a>
-                                <a href="#">July</a>
-                                <a href="#">August</a>
-                                <a href="#">September</a>
-                                <a href="#">October</a>
-                                <a href="#">November</a>
-                                <a href="#">December</a>
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <button class="dropbtn" type="button">Years</button>
-                            <div class="dropdown-content">
-                                <a href="#">2025</a>
-                                <a href="#">2026</a>
-                                <a href="#">2027</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -92,10 +52,6 @@ session_start();
                 <div class="catalogue__item__text">
                     <b>Mercury</b>
                 </div>
-                <script>
-
-                </script>
-                <button onclick="ajax_add_cart(10006, 'Mercury', 10000)" style="color: #1fe100">Prova Add</button>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Venus">
                 <a href="pages/catalogue/catalogue-items/planets/venus.php">
@@ -281,9 +237,8 @@ session_start();
         </div>
     </main>
     <?php require_once "../../components/footer/footer.php" ?>
-    <script src="pages/catalogue/catalogue.js"></script>
+    <script src="pages/catalogue/catalogue.js" defer></script>
     <script src="pages/catalogue/add_ajax.js"></script>
-    <script src="pages/catalogue/search_ajax.js"></script>
 </body>
 
 </html>
