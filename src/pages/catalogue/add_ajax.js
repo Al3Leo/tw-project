@@ -21,6 +21,20 @@ function ajax_add_cart(id, destinazione, costo, partenza) {
             console.log('Elemento aggiunto al carrello con successo');///PER VEDERE ERRORI RICORDA DI TOGLIERLIIIIII
             // Aggiorna il conteggio totale del carrello o mostra una notifica
             updateCartAdd(id, destinazione, costo, partenza);
+            
+            verifica=document.getElementById(id + '-span');//faccio questo per i click consegutivo 
+                if(!verifica){
+                var btn = document.getElementById(id + '-btn');
+                var td = document.getElementById(id + '-td');
+                btn.style.display = 'none';
+                // Creare uno span con il testo "Added"
+                var span = document.createElement('span');
+                span.id = id + '-span';
+                span.style.fontWeight = '700';
+                span.style.color = '#f7e951';
+                span.textContent = 'ADDED';
+                td.appendChild(span);
+                }
         }
     };
     xhr.send('id=' + id);
@@ -38,13 +52,8 @@ function updateCartAdd(id, destinazione, costo, partenza) {
     thead = document.getElementById('carrello_tbl').getElementsByTagName('thead')[0];
     if (tbody) {
         const rowChoose = document.getElementById('row-choose');
-        if (rowChoose) {
-            console.log('La riga con ID "row-choose" è presente nel tbody.');
-        } else {
-            console.log('La riga con ID "row-choose" non è presente nel tbody.');
-            
-        }
-        const riga = createRow(id, destinazione, costo,  partenza );
+        var verifica = document.getElementById('volo-' + id);
+        const riga = createRow(id, destinazione, costo, partenza);
         if (rowChoose) {
             //Se l'elemento 'rowChoose' è presente significa che il carrello non ha elementi, per 
             //cui si elimina la riga che invita a scegliere nuove destinazioni aggiungendo il nuovo elemnto
@@ -54,19 +63,19 @@ function updateCartAdd(id, destinazione, costo, partenza) {
             riga.style.display = '';
             updateCartTotal(); //Funzione definita nel file cart.php
         } else {
+            //se verifica è true cioe l'elemnto gia è contenuto nel carrello allora non fa nulla;
+            if(!verifica){
             tbody.appendChild(riga) // Inserisci la nuova riga all'inizio del tbody
             tbody = document.getElementById('carrello_tbl').getElementsByTagName('tfoot')['0'].style.display = '';
             riga.style.display = '';
             updateCartTotal();
+            }
         }
     }
 }
 /**
-* @brief Crea una nuova riga per il carrello.
-*
-* Questa funzione crea un elemento `<tr>` con i dettagli dell'elemento da aggiungere al carrello,
-* inclusi il nome, il prezzo e un pulsante per rimuoverlo. La riga viene inizialmente nascosta
-* e verrà aggiunta al DOM.
+* Crea una nuova riga per il carrello con le stesse caratteristiche di quelle 
+* presenti nel carrello
 */
 
 function createRow(id, nome, prezzo, partenza) {

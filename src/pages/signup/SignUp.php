@@ -4,6 +4,7 @@
  * @brief Contiene il form sticky pe la registrazione dell'utente. A seconda degli errori che sono commessi vengono visualizzati
  * messaggi tramite alert
  */
+session_start();
 require_once "../../backend/ConnettiDb.php";
 /**
  * Verifica se i campi del form sono stati inviati tramite POST e assegna i valori corrispondenti alle variabili. 
@@ -45,7 +46,7 @@ if(strlen($nome) > 50 || strlen($username) > 25 || strlen($cognome) > 50 || strl
                     /*$messaggio = "User registered successfully!";
                     echo "<script>alert('$messaggio');</script>";
                     */
-                    header("Location: ConfermaDinamica.php?confirmsignup=$username");
+                    header("Location: backend/ConfermaDinamica.php?confirmsignup=$username");
                     exit();
                 } else {
                     $errore = "Registration error. Try again.";
@@ -134,7 +135,7 @@ Utilizza POST per inviare i dati a backend/RegistraUtente.php.
                     </div>
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="password-confirm">Confirm Password</label>
-                        <input type="password" id="password-confirm" name="password_confirm" value="<?php echo $repassword?>" required>
+                        <input type="password" id="password-confirm" name="password_confirm">" required>
                     </div>
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="birthday">Date of birth</label>

@@ -58,7 +58,7 @@
             <td><button type='button' onclick='buyCart()' id='acquistaButton' <?php if (!isset($_SESSION['username'])) {
                                                                                     echo "style='display:none;'"; //se l'utente non è loggato vede solo la lista degli elementi
                                                                                 }  ?>>Buy
-                                                                                </button></td>
+                </button></td>
         </tfoot>
     </table>
 </div>
@@ -124,7 +124,13 @@
                     const itemElement = document.getElementById('volo-' + id);
                     itemElement.remove();
                     updateCartTotal();
+
                 }
+                //in tripdates.php tolgo il pulsante acquista per inserire lo span 
+                var btn = document.getElementById(id + '-btn');
+                var span = document.getElementById(id + '-span');
+                span.remove();
+                btn.style.display = '';
             }
         };
         xhr.send('id=' + id);

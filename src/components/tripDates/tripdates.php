@@ -7,7 +7,7 @@
         <i class="fa-solid fa-x" id="tripDates__closeBtn" style="color: #feffff;"></i>
         <table>
             <thead>
-                <tr> 
+                <tr>
                     <th colspan="3"><?php echo "All " . $nomeEvento . " avaible dates" ?></th>
                 </tr>
             </thead>
@@ -27,15 +27,33 @@
                             $eventId = $event['idevento'];
                             $location = $event['launchlocation'];
                             $price = $event['prezzoevento'];
-                            
+
+
 
                             echo " 
                             <tr> 
                                 <td>" . $departureDate . "</td>
                                 <td>" . $returnDate . "</td>
                                 <td>" . $location . "</td>
-                                <td> <button onclick='ajax_add_cart(" . $eventId . ", \"" . $nomeEvento . "\", " . $price . ",  \"". $departureDate  ."\" )'>Add to cart</button>" .
-                                "</tr>";
+                                <td style='text-align:center;' id='" . $eventId . "-td'>";
+
+                            $added = false;
+                            if (isset($_COOKIE['cart'])) {//agli elementi presenti nel carrello aggiungo il tag span con testo ADDED altrimenti il 
+                                //button per add
+                                $cart = json_decode($_COOKIE['cart'], true);
+                                foreach ($cart as $sottoarray['id']) {
+                                    if (in_array($eventId, $sottoarray['id'])) {
+                                        echo "<span id='" . $eventId . "-span' style='font-weight: 800; color: #f7e951'>ADDED</span>";
+                                        $added = true;
+                                        break;  //esco dal ciclo se trovo l'evento
+                                    }
+                                }
+                            }
+                            if (!$added) {
+                                echo "<button id='" . $eventId . "-btn' onclick='ajax_add_cart(" . $eventId . ", \"" . $nomeEvento . "\", " . $price . ",  \"" . $departureDate . "\")'>Add to cart</button>";
+                            }
+
+                            echo "</td></tr>";
                         }
                     }
                 }
