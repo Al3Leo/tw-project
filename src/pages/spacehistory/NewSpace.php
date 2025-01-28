@@ -253,7 +253,7 @@ session_start();
         </div>
     </section>
 </main>
-    <?php include_once "../../components/footer/footer.html"?>
+    <?php include_once "../../components/footer/footer.php"?>
     <script src="pages/spacehistory/NewSpace.js"></script>   
 </body>
 </html> 

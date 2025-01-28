@@ -38,6 +38,6 @@
             </div>
         </div>
     </div>
-    <?php require_once "../../components/footer/footer.html"?>
+    <?php require_once "../../components/footer/footer.php"?>
 </body>
 </html>

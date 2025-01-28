@@ -202,7 +202,7 @@ session_start();
             </div>
         </section>
     </div>
-    <?php require_once "../../components/footer/footer.html"?>
+    <?php require_once "../../components/footer/footer.php"?>
     <script src="pages/homepage/homepage.js"></script>
     <script src="assets/js/slideshow.js"></script>
 </body>

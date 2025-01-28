@@ -189,6 +189,6 @@ if (isset($_SESSION['username'])) {
         </div>
     </section>
 </main>
-<? require_once '../../components/footer/footer.html' ?>
+<? require_once '../../components/footer/footer.php' ?>
 </body>
 </html>

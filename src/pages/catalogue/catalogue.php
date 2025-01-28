@@ -280,7 +280,7 @@ session_start();
             </div>
         </div>
     </main>
-    <?php require_once "../../components/footer/footer.html" ?>
+    <?php require_once "../../components/footer/footer.php" ?>
     <script src="pages/catalogue/catalogue.js"></script>
     <script src="pages/catalogue/add_ajax.js"></script>
     <script src="pages/catalogue/search_ajax.js"></script>

@@ -32,7 +32,7 @@
 </script>
 <header id="topbar">
     <!--logo login e signup-->
-    <a href="pages/homepage.php"> <!--svg per il logo-->
+    <a href="pages/homepage/homepage.php"> <!--svg per il logo-->
         <svg width="158" height="62" viewBox="0 0 158 62" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="158" height="62" />
             <rect width="165" height="102" transform="translate(-7 -13)" />
@@ -62,7 +62,7 @@
         <div id="userinfo">
             <!--valori da completare in php-->
             <span class="userinfoList"><?php if(isset($_SESSION['username'])) { echo $_SESSION['username']; }?></span>
-            <span class="userinfoList"><?php 
+             <span class="userinfoList"><?php 
             if(isset($_SESSION['name'])) echo $_SESSION['name']; 
             if(isset($_SESSION['username'])) echo $_SESSION['username']; ?></span>
         </div>

@@ -58,8 +58,6 @@ if(strlen($nome) > 50 || strlen($username) > 25 || strlen($cognome) > 50 || strl
 /**
  * Funzione che verifica se un username esiste già nel database. 
  * Verifica se un username esiste già nel database.
- * @param username L'username da verificare.
- * @return true se l'username esiste, false altrimenti.
  */
 function username_exist($username){
     global $db_connection; //accedo alla variabile globale 
@@ -76,14 +74,6 @@ function username_exist($username){
 
 /**
  * Funzione che inserisce un nuovo utente nel database. Hash della password per sicurezza. 
- * @param nome Il nome dell'utente.
- * @param cognome Il cognome dell'utente.
- * @param sesso Il sesso dell'utente.
- * @param username Lo username dell'utente.
- * @param pass La password dell'utente.
- * @param indirizzo L'indirizzo dell'utente.
- * @param nascita La data di nascita dell'utente.
- * @return true se l'inserimento ha successo, false altrimenti.
  */
 function insert_utente($nome, $cognome, $sesso, $username, $pass, $indirizzo, $nascita){
     global $db_connection;
@@ -174,7 +164,7 @@ Utilizza POST per inviare i dati a backend/RegistraUtente.php.
             </div>
         </div>
     </main>
-    <?php include_once "../../components/footer/footer.html" ?>
+    <?php include_once "../../components/footer/footer.php" ?>
 </body>
 
 </html>

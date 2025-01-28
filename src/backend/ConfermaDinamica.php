@@ -81,7 +81,7 @@ require_once "gestioneAcquisti.php";
             </div>
         </div>
     </main>
-    <?php include __DIR__ . "../../components/footer/footer.html" ?>
+    <?php include __DIR__ . "../../components/footer/footer.php" ?>
 </body>
 
 <script>

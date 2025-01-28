@@ -173,7 +173,7 @@
         </div>
     </div>
     <?php
-    require_once "../../../../components/footer/footer.html";
+    require_once "../../../../components/footer/footer.php";
     ?>
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
