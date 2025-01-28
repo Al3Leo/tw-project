@@ -60,7 +60,7 @@ session_start();
                 <p>Whether you're dreaming of walking on the moon, marveling at the rings of Saturn, or witnessing a supernova up close, we make it possible. Our state-of-the-art spacecraft and expert crew ensure a safe and unforgettable journey among the stars</p>
             </div>
             <div id="main__right__buttons">
-                <a href=""><button type="button">About us</button></a>
+                <a href="pages/aboutus/aboutus.php"><button type="button">About us</button></a>
             </div>
         </div>
     </main>
