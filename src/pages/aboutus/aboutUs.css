@@ -111,8 +111,6 @@ h1::before, h1::after, h2::before, h2::after {
     to { width: 100%; }
 }
 
-
-/* Gestione dello z-index per evitare sovrapposizioni */
  .popup-menu, .side-menu {
     z-index: 5;
 }
