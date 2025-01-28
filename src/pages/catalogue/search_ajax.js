@@ -16,7 +16,7 @@ function updateSearch(arraySearch) {
     var catalogueItems = document.querySelectorAll('div.catalogue__item');
     catalogueItems.forEach(function (item) {
         //per tutti i div con classe catalogue__item verifico se il loro id è uguale a uno dei elementi presenti nel arraySearch.
-        //Se presente setto l'attributo display come block altrimenti none.
+        //Se presente setto l'attributo display come flex altrimenti none.
         var found = false; 
         arraySearch.forEach(function (evento) {
             if (item.id === evento) {
@@ -24,7 +24,7 @@ function updateSearch(arraySearch) {
             }
         });
         if (found) {
-            item.style.display = 'block';
+            item.style.display = 'flex';
         } else {
             item.style.display = 'none';
         }
