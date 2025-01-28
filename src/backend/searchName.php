@@ -2,7 +2,7 @@
 require_once "ConnettiDb.php";
 
 if (isset($_GET['destination'])) {
-    $destination = $_GET['destination'];
+    $destination = ucfirst($_GET['destination']);
     $query = "SELECT nomeevento FROM viaggio WHERE nomeevento = '$destination'"; 
 
     $result= pg_query($db_connection, $query)or die('Item not found! ' . pg_last_error());
