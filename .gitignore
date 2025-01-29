@@ -9,10 +9,4 @@ src/.DS_Store
 .vscode/
 .vscode/*
 
-# Stripe API (Composer dependencies)
-src/components/Stripe/vendor/
-src/components/Stripe/composer.json
-src/components/Stripe/composer.lock
-
 .env
-/dotenv

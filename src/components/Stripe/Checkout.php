@@ -6,6 +6,8 @@
  * In caso di errore, viene visualizzato un messaggio di errore.
  */
 
+ error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 
 /**
  * Includere il file autoload.php generato da Composer.
@@ -18,11 +20,20 @@ $host = $_SERVER['HTTP_HOST'];
 $uri = rtrim(dirname($_SERVER['REQUEST_URI']), '/\\');
 $urlconfirm = "http://$host$uri/../../backend/ConfermaDinamica.php?confirmcheckout=true";
 $urlerror = "http://$host$uri/../../pages/error/errorPagamento.php";
+
+/* Carico l'ambiente dotenv per prelevare la chiave segreta 
+ * https://github.com/vlucas/phpdotenv
+ */
+require_once "../../../dotenv/vendor/autoload.php";
+
+$dotenv = Dotenv\Dotenv::createImmutable('../../../dotenv/');
+$dotenv->load();
+
 /**
  * Impostare la chiave segreta di Stripe.
  */
-$stripe_secret_key = "sk_test_PRIVATE_KEY_DASHBOARD";//chiave da sostituire con la chiave segreta fornita da stripe
-\Stripe\Stripe::setApiKey('');
+$stripe_secret_key = $_ENV['STRIPE_SECRET_KEY']; //chiave da sostituire con la chiave segreta fornita da stripe
+\Stripe\Stripe::setApiKey($stripe_secret_key);
 /**
  *Gestione dati del carrello:
  *Se i dati del carrello sono presenti nell'URL ($_GET), vengono decodificati e convertiti in un array associativo. 
