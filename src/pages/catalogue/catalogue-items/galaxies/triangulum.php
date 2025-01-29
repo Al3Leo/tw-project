@@ -36,8 +36,8 @@
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-  <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-33/" target="_blank">Triangulum Galaxy</a> is a mesmerizing spiral galaxy located in the constellation Triangulum. With a diameter of over <b>60,000 light-years</b>, it is one of the largest galaxies in the Local Group, containing tens of billions of stars. Known for its vibrant star-forming regions, the Triangulum Galaxy offers extraordinary opportunities for scientific exploration and cosmic wonder.<br>The Triangulum Galaxy is a prime example of galactic beauty and structure. Its luminous core, numerous stellar nurseries, and intricate spiral arms make it a favorite target for astronomers and stargazers alike. Join us on a journey to explore this cosmic masterpiece.
-</p>
+                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-33/" target="_blank">Triangulum Galaxy</a> is a mesmerizing spiral galaxy located in the constellation Triangulum. With a diameter of over <b>60,000 light-years</b>, it is one of the largest galaxies in the Local Group, containing tens of billions of stars. Known for its vibrant star-forming regions, the Triangulum Galaxy offers extraordinary opportunities for scientific exploration and cosmic wonder.<br>The Triangulum Galaxy is a prime example of galactic beauty and structure. Its luminous core, numerous stellar nurseries, and intricate spiral arms make it a favorite target for astronomers and stargazers alike. Join us on a journey to explore this cosmic masterpiece.
+            </p>
 
         </div>
     </div>
@@ -98,8 +98,8 @@
             <div class="main__left__tripKnowledge">
                 <h3 class="text-center">Everything you need to know about this trip</h3>
                 <p>
-  Get ready for a one-of-a-kind experience on <b>Triangulum!</b> The planet features <b>stunning triangular formations</b>, unique weather patterns, and a rich <b>history</b>. Equip yourself with advanced space suits to navigate the mesmerizing landscapes, and follow our expert guides for a safe and unforgettable journey. Learn about Triangulum's role in mythology and the scientific discoveries made about this enigmatic planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities. Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!
-</p>
+                    Get ready for a one-of-a-kind experience on <b>Triangulum!</b> The planet features <b>stunning triangular formations</b>, unique weather patterns, and a rich <b>history</b>. Equip yourself with advanced space suits to navigate the mesmerizing landscapes, and follow our expert guides for a safe and unforgettable journey. Learn about Triangulum's role in mythology and the scientific discoveries made about this enigmatic planet. The trip lasts 10 days, with daily excursions and moments of relaxation at our state-of-the-art facilities. Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!
+                </p>
 
                 <div class="main__left__tripKnowledge__item">
                     <div class="main__left__tripKnowledge__item__question d-flex justify-content-between align-items-center">
@@ -179,16 +179,14 @@
     require_once "../../../../components/footer/footer.php";
     ?>
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
-</body>
-<script type="text/javascript" defer>
-    //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
-    document.addEventListener("DOMContentLoaded", () => {
+    <script type="text/javascript" defer>
+        //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
         //passo la variabile php contenente il nome del corpo celeste corrente a js
         const celestialBody = "<?php echo $nomeEvento ?>";
         const eventsArray = <?php echo $jsonUniqueEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
         call_lso_api(celestialBody);
         fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
-    });
-</script>
+    </script>
+</body>
 
 </html>

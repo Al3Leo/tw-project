@@ -177,8 +177,7 @@
     require_once "../../../../components/footer/footer.php";
     ?>
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
-</body>
-<script type="text/javascript" defer>
+    <script type="text/javascript" defer>
     //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
     document.addEventListener("DOMContentLoaded", () => {
         //passo la variabile php contenente il nome del corpo celeste corrente a js
@@ -188,5 +187,6 @@
         fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
     });
 </script>
+</body>
 
 </html>

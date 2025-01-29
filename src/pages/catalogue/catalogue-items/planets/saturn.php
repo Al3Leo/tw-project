@@ -182,16 +182,14 @@ require_once "../../../../backend/ConnettiDb.php";  //connette il db
     require_once "../../../../components/footer/footer.php";
     ?>
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
-</body>
-<script type="text/javascript" defer>
-    //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
-    document.addEventListener("DOMContentLoaded", () => {
+    <script type="text/javascript" defer>
+        //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
         //passo la variabile php contenente il nome del corpo celeste corrente a js
         const celestialBody = "<?php echo $nomeEvento ?>";
         const eventsArray = <?php echo $jsonUniqueEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
         call_lso_api(celestialBody);
         fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
-    });
-</script>
+    </script>
+</body>
 
 </html>

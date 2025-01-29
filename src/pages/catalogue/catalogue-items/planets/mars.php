@@ -180,5 +180,5 @@
         call_lso_api(celestialBody);
         fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
     </script>
-</body
-    </html>
+</body>
+</html>
