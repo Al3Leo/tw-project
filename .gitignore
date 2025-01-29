@@ -9,4 +9,6 @@ src/.DS_Store
 .vscode/
 .vscode/*
 
+# Dipendenze e file sensibili
 .env
+/vendor/

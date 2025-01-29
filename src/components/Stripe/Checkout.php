@@ -12,7 +12,7 @@ ini_set('display_errors', 'On');
 /**
  * Includere il file autoload.php generato da Composer.
  */
-require __DIR__ . "/vendor/autoload.php";
+require_once "../../../dependencies/vendor/autoload.php";
 /**
  * Ottenere l'host e l'URI corrente per costruire l'URL di conferma e di errore.
  */
@@ -21,12 +21,7 @@ $uri = rtrim(dirname($_SERVER['REQUEST_URI']), '/\\');
 $urlconfirm = "http://$host$uri/../../backend/ConfermaDinamica.php?confirmcheckout=true";
 $urlerror = "http://$host$uri/../../pages/error/errorPagamento.php";
 
-/* Carico l'ambiente dotenv per prelevare la chiave segreta 
- * https://github.com/vlucas/phpdotenv
- */
-require_once "../../../dotenv/vendor/autoload.php";
-
-$dotenv = Dotenv\Dotenv::createImmutable('../../../dotenv/');
+$dotenv = Dotenv\Dotenv::createImmutable('../../../');
 $dotenv->load();
 
 /**
