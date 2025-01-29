@@ -135,7 +135,7 @@ Utilizza POST per inviare i dati a backend/RegistraUtente.php.
                     </div>
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="password-confirm">Confirm Password</label>
-                        <input type="password" id="password-confirm" name="password_confirm">" required>
+                        <input type="password" id="password-confirm" name="password_confirm" required>
                     </div>
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="birthday">Date of birth</label>

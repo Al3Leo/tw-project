@@ -3,7 +3,7 @@
  */
 const choosedSearch = document.getElementById("hero__search__choosed__search");
 const choosedBudget = document.getElementById("hero__search__choosed__budget");
-const choosed = [choosedSearch, choosedBudget]; 
+const choosed = [choosedSearch, choosedBudget];
 
 const whereLink = document.getElementById("hero__search__choose__whereLink");
 const budgetLink = document.getElementById("hero__search__choose__budgetLink");
@@ -34,7 +34,7 @@ function showSection(index) {
 
 links.forEach((link, index) => {
   link.addEventListener("click", (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     showSection(index);
   });
 });
@@ -84,6 +84,7 @@ searchByName.addEventListener("keydown", (event) => {
     searchNameXHR.onreadystatechange = () => {
       if (searchNameXHR.readyState == 4 && searchNameXHR.status == 200) {
         let nameResults = searchNameXHR.response;
+        console.log(nameResults);
         updateSearch(nameResults);
       }
     };
@@ -93,30 +94,69 @@ searchByName.addEventListener("keydown", (event) => {
 
 /* 
  *  Funzione per l'aggiornamento della vista del catalogo
- */ 
-
+ */
 function updateSearch(arraySearch) {
+  //if (arraySearch && arraySearch.length > 0) DA DECIDEREEEEEEEEEEEEEEE
+  if (arraySearch!=null) {
+    //arraySearch è un array costituito da sottoarray che contengono nomeevento(contenuto una sola volta) cercato e la sua etichetta 
+    var catalogueItems = document.querySelectorAll("div.catalogue__item");
+    var planets = 0;
+    var moons = 0;
+    var nebulae = 0;
+    var galaxie = 0;
+    //per ciascun div con classe catalogue__item verifico se ha id uguale al nome evento.
+    //In particolare se ha quell'id è stato trovato l'elemento a cui impostare display a flex altrimenti a none
     catalogueItems.forEach(function (item) {
-      //per tutti i div con classe catalogue__item verifico se il loro id è uguale a uno dei elementi presenti nel arraySearch.
-      //Se presente setto l'attributo display come flex altrimenti none.
       var found = false;
       arraySearch.forEach(function (evento) {
-        if (item.id === evento) {
+        if (item.id == evento.nomeevento) {
           found = true;
         }
       });
-      if (found) {
-        item.style.display = "flex";
+      item.style.display = found ? "flex" : "none";
+    });
+    arraySearch.forEach(function (evento) {
+      if (evento.etichetta == 'planets') {
+        planets++;
+      } else if (evento.etichetta == 'moons') {
+        moons++;
+      } else if (evento.etichetta == 'nebulae') {
+        nebulae++;
       } else {
-        item.style.display = "none";
+        galaxie++;
       }
     });
+    //gestione dei div che contengono testo e le etichette come titolo
+    //se nell'arraySearch non ci sono determinate etichette, per i relativi div contenente il testo va messa la proprieta display a none
+    var div_planets = document.getElementById('planets_text');
+    if (div_planets) {
+      div_planets.style.display = (planets == 0) ? 'none' : 'block';
+    }
+    var div_moons = document.getElementById('moons_text');
+    if (div_moons) {
+      div_moons.style.display = (moons == 0) ? 'none' : 'block';
+    }
+    var div_galaxie = document.getElementById('galaxie_text');
+    if (div_galaxie) {
+      div_galaxie.style.display = (galaxie == 0) ? 'none' : 'block';
+    }
+    var div_nebulae = document.getElementById('nebulae_text');
+    if (div_nebulae) {
+      div_nebulae.style.display = (nebulae == 0) ? 'none' : 'block';
+    }
+  } /*else { DA DECIDEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+    var h3 = document.createElement('h3');
+    h3.textContent = "Oh no, it looks like you didn't enter the right celestial body";
+    console.error('Elemento genitore ');
+    var main = document.getElementById('main_catalogue');
+    parentElement.insertBefore(h3, parentElement.firstChild);
+  }*/
 }
 /*
  * Funzione per ripristianare la vista del catalogo e mostrare nuovamente tutti gli items. 
  */
-function restoreCatalogueView(){
-    catalogueItems.forEach( item => {
-      item.style.display = "flex";
+function restoreCatalogueView() {
+  catalogueItems.forEach(item => {
+    item.style.display = "flex";
   });
 }

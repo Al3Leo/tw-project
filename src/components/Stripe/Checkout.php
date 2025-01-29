@@ -45,7 +45,7 @@ if (isset($_GET['cart'])) {
         ];
     }
 
-/**
+/*
  * Creazione della Sessione di Checkout: 
  * Utilizzando l'API di Stripe, viene creata una sessione di checkout con i dettagli del carrello. 
  * 1.In caso di successo, l'utente viene reindirizzato all'URL della sessione di checkout di Stripe. 
@@ -57,7 +57,9 @@ try {
         "mode" => "payment",
         "success_url" => $urlconfirm,
         "cancel_url" => $urlerror,
-        "line_items" => $line_items
+        "line_items" => $line_items,
+        "allow_promotion_codes" => true //per inserire il codice sconto
+    
     ]);
     http_response_code(303);
     header("Location: " . $checkout_session->url);

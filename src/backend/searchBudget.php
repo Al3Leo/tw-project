@@ -4,7 +4,7 @@ require_once "ConnettiDb.php";
 
 if (isset($_GET['range'])) {
     $range = $_GET['range'];
-    $sql = "SELECT nomeevento FROM viaggio WHERE "; //query selezione
+    $sql = "SELECT nomeevento, etichetta FROM viaggio WHERE "; //query selezione
 
     if ($range == '< 2000') {
         $sql .= "prezzoevento <= 2000";
@@ -16,19 +16,26 @@ if (isset($_GET['range'])) {
         $sql .= "prezzoevento > 4000";
     }
     $result= pg_query($db_connection, $sql);//esecuzione della query
-    $eventsBudget = []; //Array che deve contenere i solo i corpi celeste che rispecchiano il budget
+    $eventsBudget = [];//array che deve contenere i solo i corpi celeste che rispecchiano il budget e la loro etichetta
+    $eventiInseriti = []; //array per tener traccia di quelli inseriti, cosi da evitare i duplicati
     //verifico l'esito dell'operazione di selezione
     if($result){
-        while ($row = pg_fetch_assoc($result)) {  // itero su tutte le righe ottenute dalla query
-            if (!in_array($row['nomeevento'], $eventsBudget)) { //inserisco nell array una sola volta il nome del corpo celeste che soddisfa il budget
-                $eventsBudget[] = $row['nomeevento'];
+        while ($row = pg_fetch_assoc($result)) {
+            // itero su tutte le righe ottenute dalla query
+            if (!isset($eventiInseriti[$row['nomeevento']])) { //inserisco nell sottoarray una sola volta il nome del corpo celeste e la relativa etichetta che soddisfa il budget
+                //se la condizione è falsa cioè non è gia stata inserita in eventiInseriti allora inserisco etichetta e corpo celleste in eventsBudget
+                $eventsBudget []= [
+                    'nomeevento' => $row['nomeevento'],
+                    'etichetta' => $row['etichetta']
+                ]; 
+                //segno come inserito anche nel eventInseriti cosi da non ripeterli dopo
+                $eventiInseriti[$row['nomeevento']] = true;
             }
         }
     }else{
         echo "Error:". pg_last_error($db_connection);
     }
     pg_close($db_connection);
-    // Restituisci i dati come JSON
     echo json_encode($eventsBudget);
 }
 ?>

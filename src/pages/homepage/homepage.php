@@ -3,14 +3,16 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <?php require_once "../../components/utils/headMetadata.html"?>
+    <?php require_once "../../components/utils/headMetadata.html" ?>
     <title>Outer Space</title>
     <link rel="stylesheet" href="homepage.css">
-    <base href="../../" />  <!-- Torna in /src -->
+    <base href="../../" /> <!-- Torna in /src -->
 </head>
+
 <body>
-    <?php require_once "../../components/header/header.php"?>
+    <?php require_once "../../components/header/header.php" ?>
     <div class="hero">
         <div id="hero__text">
             <h2>Welcome to the Universe</h2>
@@ -91,7 +93,7 @@ session_start();
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
-                    <p>During the journey, you’ll enjoy unique experiences such as floating in zero gravity, spectacular views of deep space, and even gourmet dining with a view of Earth.</p>
+                    <p>During the journey, you'll enjoy unique experiences such as floating in zero gravity, spectacular views of deep space, and even gourmet dining with a view of Earth.</p>
                 </div>
             </div>
             <div class="faq__item">
@@ -100,7 +102,7 @@ session_start();
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
-                    <p>No, we’ve got you covered! Your ticket includes everything you need, from space suits to onboard amenities. Feel free to bring small personal items or keepsakes for the trip.</p>
+                    <p>No, we've got you covered! Your ticket includes everything you need, from space suits to onboard amenities. Feel free to bring small personal items or keepsakes for the trip.</p>
                 </div>
             </div>
             <div class="faq__item">
@@ -123,7 +125,7 @@ session_start();
             </div>
             <div class="faq__item">
                 <div class="faq__item__question d-flex justify-content-between align-items-center">
-                    <p>What’s the accommodation like in space?</p>
+                    <p>What's the accommodation like in space?</p>
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
@@ -202,8 +204,9 @@ session_start();
             </div>
         </section>
     </div>
-    <?php require_once "../../components/footer/footer.php"?>
+    <?php require_once "../../components/footer/footer.php" ?>
     <script src="pages/homepage/homepage.js"></script>
     <script src="assets/js/slideshow.js"></script>
 </body>
+
 </html>

@@ -8,10 +8,19 @@ let x = setInterval(function () {
   let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("main__left__countdown__days").innerHTML = days;
-  document.getElementById("main__left__countdown__hours").innerHTML = hours;
-  document.getElementById("main__left__countdown__minutes").innerHTML = minutes;
-  document.getElementById("main__left__countdown__seconds").innerHTML = seconds;
+  if (document.getElementById("main__left__countdown__days")) {
+    document.getElementById("main__left__countdown__days").innerHTML = days;
+}
+if (document.getElementById("main__left__countdown__hours")) {
+    document.getElementById("main__left__countdown__hours").innerHTML = hours;
+}
+if (document.getElementById("main__left__countdown__minutes")) {
+    document.getElementById("main__left__countdown__minutes").innerHTML = minutes;
+}
+if (document.getElementById("main__left__countdown__seconds")) {
+    document.getElementById("main__left__countdown__seconds").innerHTML = seconds;
+}
+
 }, 1000); //Repeat every sec
 clearInterval();
 

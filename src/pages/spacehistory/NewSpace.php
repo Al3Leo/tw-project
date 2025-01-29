@@ -221,7 +221,7 @@ session_start();
     <div class="news-container card_area d-grid" id="newsContainer" style="display: none;"></div>
     </section>
 
-    <section class="newletter-sezione">
+    <section class="newletter-sezione" id="newsletter">
         <div class="newsletter-container">
             <img id="newsletter-img"
               src="assets/images/space/news.jpg"

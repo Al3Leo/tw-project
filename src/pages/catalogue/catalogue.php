@@ -40,11 +40,13 @@ session_start();
         </div>
         <div class="parallax"></div>
     </div>
-    <main>
+    <main id="main_catalogue">
         <!-- Planets -->
-        <h2 class="text-uppercase">Planets</h2>
-        <h3>Embark on journeys to the most fascinating planets across the universe, each offering unique landscapes and experiences</h3>
-        <div class="catalogue__separator"></div>
+        <div id="planets_text">
+            <h2 class="text-uppercase">Planets</h2>
+            <h3>Embark on journeys to the most fascinating planets across the universe, each offering unique landscapes and experiences</h3>
+            <div class="catalogue__separator"></div>
+        </div>
         <div id="catalogue__planets" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Mercury">
                 <a href="pages/catalogue/catalogue-items/planets/mercury.php">
@@ -113,9 +115,11 @@ session_start();
         </div>
 
         <!-- Galaxies -->
-        <h2 class="text-uppercase">Galaxies</h2>
-        <h3>For the boldest explorers, venturing beyond the Milky Way is the ultimate adventure. Discover distant galaxies, each holding secrets and wonders that only the most courageous dare to uncover</h3>
-        <div class="catalogue__separator"></div>
+        <div id="galaxie_text">
+            <h2 class="text-uppercase">Galaxies</h2>
+            <h3>For the boldest explorers, venturing beyond the Milky Way is the ultimate adventure. Discover distant galaxies, each holding secrets and wonders that only the most courageous dare to uncover</h3>
+            <div class="catalogue__separator"></div>
+        </div>
         <div id="catalogue__galaxies" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Andromeda">
                 <a href="pages/catalogue/catalogue-items/galaxies/andromeda.php">
@@ -152,9 +156,11 @@ session_start();
         </div>
 
         <!-- Moons -->
-        <h2 class="text-uppercase">Natural Satellites (Moons)</h2>
-        <h3>Explore the unique wonders of our solar system's moons, from Earth's own companion to the distant icy worlds, each offering a distinct cosmic experience</h3>
-        <div class="catalogue__separator"></div>
+        <div id="moons_text">
+            <h2 class="text-uppercase">Natural Satellites (Moons)</h2>
+            <h3>Explore the unique wonders of our solar system's moons, from Earth's own companion to the distant icy worlds, each offering a distinct cosmic experience</h3>
+            <div class="catalogue__separator"></div>
+        </div>
         <div id="catalogue__moons" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Moon">
                 <a href="pages/catalogue/catalogue-items/moons/moon.php">
@@ -191,9 +197,11 @@ session_start();
         </div>
 
         <!-- Nebulae -->
-        <h2 class="text-uppercase">Nebulae</h2>
-        <h3>Immerse yourself in the ethereal beauty of cosmic clouds. These vibrant, star-forming regions of space offer breathtaking views and a chance to witness the birthplace of stars and planets</h3>
-        <div class="catalogue__separator"></div>
+        <div id="nebulae_text">
+            <h2 class="text-uppercase">Nebulae</h2>
+            <h3>Immerse yourself in the ethereal beauty of cosmic clouds. These vibrant, star-forming regions of space offer breathtaking views and a chance to witness the birthplace of stars and planets</h3>
+            <div class="catalogue__separator"></div>
+        </div>
         <div id="catalogue__nebulae" class="d-grid catalogue">
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Tarantula">
                 <a href="pages/catalogue/catalogue-items/nebulae/tarantula.php">
