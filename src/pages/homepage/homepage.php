@@ -19,8 +19,8 @@ session_start();
             <p>Embark on an extraordinary journey beyond the stars. Explore distant planets, witness breathtaking galaxies, and make the impossible your reality. Book your interstellar adventure today and redefine the limits of human exploration!</p>
         </div>
     </div>
-    <main id="main" class="d-flex flex-row flex-nowrap justify-content-between align-items-start">
-        <div id="main__left" class="d-flex align-items-center flex-column text-center">
+    <main id="main" class="d-flex flex-row justify-content-between align-items-start">
+        <div id="main__left" class="launch-offer d-flex align-items-center flex-column text-center">
             <div id="main__left__img">
                 <img class="responsive" src="assets/images/alien_with_money.png" alt="alien with money">
             </div>
@@ -51,9 +51,10 @@ session_start();
             </div>
         </div>
         <?php if (!isset($_SESSION['username'])) { ?>
-            <button type="button" onclick="openLoginPopup()">Get Deal!</button>
+            <button id="getDeal" type="button" onclick="openLoginPopup()">Get Deal!</button>
         <?php } elseif ($mostraCoupon == true) { ?>
-            <button type="button">PWEDHFRL</button>
+            <p><small>A coupon for you!</small></p>
+            <button type="button" id="copyToClipboard">PWEDHFRL</button>
         <?php } ?>
     <?php } elseif ($mostraCoupon == false) { ?>
         <p><b>Stay Updated for More Exciting Offers</b></p>
