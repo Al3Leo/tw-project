@@ -115,7 +115,7 @@
   height: 80%;
 }
 #main__right__slideshow img{
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 #secondary-s{
@@ -270,25 +270,6 @@
   font-weight: 400;
   line-height: 1.6em;
   font-style: italic;
-}
-
-.testimonial__grid__item blockquote:before,
-.testimonial__grid__item blockquote:after {
-  font-family: 'FontAwesome';
-  content: "\201C";
-  position: absolute;
-  font-size: 20px;
-  opacity: 0.3;
-  font-style: normal;
-}
-.testimonial__grid__item blockquote:before {
-  top: 25px;
-  left: 20px;
-}
-.testimonial__grid__item blockquote:after {
-  content: "\201D";
-  right: 20px;
-  bottom: 0;
 }
 
 .testimonial__grid__item__arrow {
