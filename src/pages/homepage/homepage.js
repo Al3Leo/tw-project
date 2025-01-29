@@ -32,14 +32,28 @@ faqItems.forEach(item => {
   question.addEventListener('click', () => {
     const isOpen = answer.classList.contains('open');
 
-    // Close all open answers
+    // Chiudo tutti gli item aperti
     document.querySelectorAll('.faq__item__answer').forEach(a => a.classList.remove('open'));
     document.querySelectorAll('.faq__item__arrow').forEach(a => a.classList.remove('open'));
 
-    // Toggle current item
+    // Effettuo il toggle
     if (!isOpen) {
       answer.classList.add('open');
       arrow.classList.add('open');
     }
   });
 });
+
+/* Copy to clipboard (coupon) 
+ * https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+ */
+  const copyToClipboard = document.getElementById("copyToClipboard");
+  copyToClipboard.onclick = function(event){
+    const textToCopy = copyToClipboard.innerText;
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      copyToClipboard.innerText = "Copied to the clipboard";
+      setTimeout(() => {
+        copyToClipboard.innerText = textToCopy;
+      }, 2000); // resetto il valore originale dopo 2 secondi
+    });
+  };
