@@ -38,14 +38,15 @@
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/">Carina</a> is the closest large galaxy to the Milky Way and one of the most fascinating destinations in the universe. It spans over <b>220,000 light-years</b> and contains about one trillion stars, offering incredible views and scientific opportunities. As the largest galaxy in the Local Group, Andromeda provides a glimpse into the structure and evolution of galaxies.<br>Andromeda is <b>extraordinary</b> for its sheer scale and its potential collision with the Milky Way in the distant future. Its spiral arms and bright core are easily visible with advanced space telescopes, and its numerous star systems, clusters, and nebulae make it a prime location for exploration and discovery. Join us on this journey to one of the universe's most breathtaking destinations.
+                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/">Carina</a> is one of the most breathtaking star-forming regions in the Milky Way. Spanning over <b>230 light-years</b>, it hosts massive stars, young stellar clusters, and dynamic interstellar clouds. The nebula offers unique opportunities to study stellar birth and evolution.<br>
+                Carina is <b>extraordinary</b> for its massive O-type stars, including the famous Eta Carinae, which is expected to explode as a supernova. Its vast and colorful gas clouds, sculpted by intense stellar winds and radiation, make it a top destination for cosmic exploration.
             </p>
         </div>
     </div>
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
             <h2 class="text-center">Travel Info</h2>
-            <p>Welcome to Andromeda, the stunning spiral galaxy that offers unparalleled cosmic views and the adventure of a lifetime! A journey to this massive galaxy provides the chance to explore distant star systems, ancient star clusters, and unique interstellar phenomena. With proper guidance and preparation, Andromeda will unveil its galactic secrets.</p>
+            <p>Welcome to Carina, a celestial masterpiece filled with stellar nurseries, colossal gas clouds, and some of the most extreme stars in our galaxy. Experience the awe-inspiring sights of this nebula, where new stars are born and powerful supernovae shape the universe.</p>
             <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                 <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                     <span class="price">
@@ -80,24 +81,16 @@
                 <div class="main__left__section1__whatSee">
                     <h3 class="text-center">What to See</h3>
                     <ol>
-                        <li>
-                            <p><span>Galactic Core:</span> Witness the brilliant core of Andromeda, teeming with stars and surrounded by a dynamic halo.</p>
-                        </li>
-                        <li>
-                            <p><span>Star Clusters:</span> Explore dense collections of stars, such as the iconic NGC 206 cluster.</p>
-                        </li>
-                        <li>
-                            <p><span>Spiral Arms:</span> Marvel at the majestic spiral structure of Andromeda, showcasing its intricate beauty.</p>
-                        </li>
-                        <li>
-                            <p><span>Intergalactic Nebulae:</span> Discover stunning nebulae scattered throughout the galaxy, each with unique characteristics.</p>
-                        </li>
+                        <li><p><span>Eta Carinae:</span> Observe one of the most massive and unstable stars in the galaxy.</p></li>
+                        <li><p><span>Keyhole Nebula:</span> Explore a dark, dusty region within Carina shaped by stellar winds.</p></li>
+                        <li><p><span>Star Clusters:</span> Visit young clusters where new stars are forming.</p></li>
+                        <li><p><span>Pillars of Creation:</span> Witness towering columns of gas sculpted by intense radiation.</p></li>
                     </ol>
                 </div>
             </div>
             <div class="main__left__tripKnowledge">
                 <h3 class="text-center">Everything you need to know about this trip</h3>
-                <p>Embark on an unforgettable journey to <b>Andromeda!</b> This galaxy offers <b>breathtaking sights</b>, unique cosmic phenomena, and a deep connection to the mysteries of the universe. Equip yourself with specialized space travel gear and follow our expert guides for a safe and enriching experience. Learn about Andromeda's historical significance in astronomy and its role in shaping our understanding of galaxies. The trip lasts 10 days, featuring daily excursions and moments of reflection in our cutting-edge space facilities. Feel free to tailor your journey to your specific interests for the ultimate cosmic adventure!
+                <p>Embark on an unforgettable journey to <b>Carina!</b> This galaxy offers <b>breathtaking sights</b>, unique cosmic phenomena, and a deep connection to the mysteries of the universe. Equip yourself with specialized space travel gear and follow our expert guides for a safe and enriching experience. Learn about Andromeda's historical significance in astronomy and its role in shaping our understanding of galaxies. The trip lasts 10 days, featuring daily excursions and moments of reflection in our cutting-edge space facilities. Feel free to tailor your journey to your specific interests for the ultimate cosmic adventure!
                     Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!
                 </p>
                 <div class="main__left__tripKnowledge__item">

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,14 +38,14 @@
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/">Carina</a> is the closest large galaxy to the Milky Way and one of the most fascinating destinations in the universe. It spans over <b>220,000 light-years</b> and contains about one trillion stars, offering incredible views and scientific opportunities. As the largest galaxy in the Local Group, Andromeda provides a glimpse into the structure and evolution of galaxies.<br>Andromeda is <b>extraordinary</b> for its sheer scale and its potential collision with the Milky Way in the distant future. Its spiral arms and bright core are easily visible with advanced space telescopes, and its numerous star systems, clusters, and nebulae make it a prime location for exploration and discovery. Join us on this journey to one of the universe's most breathtaking destinations.
+                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/">Tarantula</a> is one of the most spectacular nebulae in the universe, located in the Large Magellanic Cloud. Spanning over 1,000 light-years, this star-forming region is home to countless young stars and stunning cosmic phenomena. It is a prime location for scientific exploration and discovery. <br>Tarantula is <b>extraordinary</b> due to its intense star formation and its status as the most active region in the Local Group of galaxies. With the Hubble Space Telescope capturing breathtaking images, the nebula provides unique insights into the birth and evolution of stars. Join us on this journey to explore the wonders of the Tarantula Nebula.
             </p>
         </div>
     </div>
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
             <h2 class="text-center">Travel Info</h2>
-            <p>Welcome to Andromeda, the stunning spiral galaxy that offers unparalleled cosmic views and the adventure of a lifetime! A journey to this massive galaxy provides the chance to explore distant star systems, ancient star clusters, and unique interstellar phenomena. With proper guidance and preparation, Andromeda will unveil its galactic secrets.</p>
+            <p>Welcome to Tarantula, the star-forming nebula located in the Large Magellanic Cloud. A journey to this mesmerizing nebula will take you to the heart of cosmic creation, where stars are born in a spectacular display of gas, dust, and radiation. Experience the awe of watching young stars emerge and learn about the processes that shape the universe.</p>
             <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                 <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                     <span class="price">
@@ -80,23 +81,23 @@
                     <h3 class="text-center">What to See</h3>
                     <ol>
                         <li>
-                            <p><span>Galactic Core:</span> Witness the brilliant core of Andromeda, teeming with stars and surrounded by a dynamic halo.</p>
+                            <p><span>Star Formation Regions:</span> Witness the birth of stars in the dense gas clouds of Tarantula.</p>
                         </li>
                         <li>
-                            <p><span>Star Clusters:</span> Explore dense collections of stars, such as the iconic NGC 206 cluster.</p>
+                            <p><span>Supernova Remnants:</span> Explore the remnants of exploded stars, a key to understanding stellar life cycles.</p>
                         </li>
                         <li>
-                            <p><span>Spiral Arms:</span> Marvel at the majestic spiral structure of Andromeda, showcasing its intricate beauty.</p>
+                            <p><span>Cosmic Dust Clouds:</span> Marvel at the dust clouds that surround and nurture the birth of new stars.</p>
                         </li>
                         <li>
-                            <p><span>Intergalactic Nebulae:</span> Discover stunning nebulae scattered throughout the galaxy, each with unique characteristics.</p>
+                            <p><span>Radiation Fields:</span> Discover the high-energy radiation emanating from young stars and their impact on the surrounding environment.</p>
                         </li>
                     </ol>
                 </div>
             </div>
             <div class="main__left__tripKnowledge">
                 <h3 class="text-center">Everything you need to know about this trip</h3>
-                <p>Embark on an unforgettable journey to <b>Andromeda!</b> This galaxy offers <b>breathtaking sights</b>, unique cosmic phenomena, and a deep connection to the mysteries of the universe. Equip yourself with specialized space travel gear and follow our expert guides for a safe and enriching experience. Learn about Andromeda's historical significance in astronomy and its role in shaping our understanding of galaxies. The trip lasts 10 days, featuring daily excursions and moments of reflection in our cutting-edge space facilities. Feel free to tailor your journey to your specific interests for the ultimate cosmic adventure!
+                <p>Embark on an unforgettable journey to <b>Tarantula!</b> This nebulae offers <b>breathtaking sights</b>, unique cosmic phenomena, and a deep connection to the mysteries of the universe. Equip yourself with specialized space travel gear and follow our expert guides for a safe and enriching experience. Learn about Tarantula's historical significance in astronomy and its role in shaping our understanding of galaxies. The trip lasts 10 days, featuring daily excursions and moments of reflection in our cutting-edge space facilities. Feel free to tailor your journey to your specific interests for the ultimate cosmic adventure!
                     Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!
                 </p>
                 <div class="main__left__tripKnowledge__item">

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,14 +38,14 @@
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/">Carina</a> is the closest large galaxy to the Milky Way and one of the most fascinating destinations in the universe. It spans over <b>220,000 light-years</b> and contains about one trillion stars, offering incredible views and scientific opportunities. As the largest galaxy in the Local Group, Andromeda provides a glimpse into the structure and evolution of galaxies.<br>Andromeda is <b>extraordinary</b> for its sheer scale and its potential collision with the Milky Way in the distant future. Its spiral arms and bright core are easily visible with advanced space telescopes, and its numerous star systems, clusters, and nebulae make it a prime location for exploration and discovery. Join us on this journey to one of the universe's most breathtaking destinations.
+                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/">Helix</a> is one of the closest and most detailed planetary nebulae observed from Earth. Known as the "Eye of God," it reveals the remnants of a dying star, showcasing vibrant colors and intricate gas patterns. Located about 650 light-years away, this celestial wonder provides insights into the final stages of stellar evolution.<br>Helix is <b>extraordinary</b> due to its striking appearance and scientific importance. Its delicate structure, illuminated by the central white dwarf, offers a breathtaking view of cosmic transformation, making it a must-see destination for deep-space exploration.
             </p>
         </div>
     </div>
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
             <h2 class="text-center">Travel Info</h2>
-            <p>Welcome to Andromeda, the stunning spiral galaxy that offers unparalleled cosmic views and the adventure of a lifetime! A journey to this massive galaxy provides the chance to explore distant star systems, ancient star clusters, and unique interstellar phenomena. With proper guidance and preparation, Andromeda will unveil its galactic secrets.</p>
+            <p>Welcome to the Helix Nebula, an awe-inspiring planetary nebula that offers an incredible glimpse into the universe’s life cycle. This journey will allow you to witness a cosmic masterpiece up close, experiencing the stunning interplay of gas and light in one of space’s most iconic locations.</p>
             <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                 <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                     <span class="price">
@@ -79,18 +80,10 @@
                 <div class="main__left__section1__whatSee">
                     <h3 class="text-center">What to See</h3>
                     <ol>
-                        <li>
-                            <p><span>Galactic Core:</span> Witness the brilliant core of Andromeda, teeming with stars and surrounded by a dynamic halo.</p>
-                        </li>
-                        <li>
-                            <p><span>Star Clusters:</span> Explore dense collections of stars, such as the iconic NGC 206 cluster.</p>
-                        </li>
-                        <li>
-                            <p><span>Spiral Arms:</span> Marvel at the majestic spiral structure of Andromeda, showcasing its intricate beauty.</p>
-                        </li>
-                        <li>
-                            <p><span>Intergalactic Nebulae:</span> Discover stunning nebulae scattered throughout the galaxy, each with unique characteristics.</p>
-                        </li>
+                        <li><p><span>Central White Dwarf:</span> Observe the remnant core of the original star illuminating the nebula.</p></li>
+                        <li><p><span>Gas Rings:</span> Explore the beautifully structured rings of ionized gas expanding into space.</p></li>
+                        <li><p><span>Interstellar Shockwaves:</span> Witness the effects of stellar winds shaping the nebula’s form.</p></li>
+                        <li><p><span>Cosmic Dust:</span> Discover the intricate dust formations scattered within the nebula.</p></li>
                     </ol>
                 </div>
             </div>

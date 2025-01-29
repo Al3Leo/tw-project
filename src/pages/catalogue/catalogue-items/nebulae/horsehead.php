@@ -4,6 +4,119 @@
 <head>
     <?php
     session_start();
+    $nomeEvento = 'Horsehead';
+    require_once '../../../../components/utils/headMetadata.html';
+    require_once "../../../../backend/ConnettiDb.php";
+    ?>
+    <title><?php echo $nomeEvento ?></title>
+    <link rel="stylesheet" href="../catalogue-items.css">
+    <base href="../../../../" />
+
+    <style>
+        .parallax {
+            background-image: url(<?php echo "assets/images/nasa/nebulae/" . lcfirst($nomeEvento) ?>);
+            background-position: bottom 100px right 0;
+        }
+    </style>
+</head>
+
+<body>
+    <?php
+    require_once "../../../../components/header/header.php";
+    require_once "../../../../backend/getAllUniqueTrips.php";
+    require_once "../../../../backend/getTripInfo.php";
+    require_once "../../../../components/tripDates/tripdates.php";
+    ?>
+    <div class="hero">
+        <div class="parallax"></div>
+        <div class="hero__text">
+            <h1 class="text-center">Horsehead Nebula</h1>
+            <p id="capitalize">
+                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/famous-nebulae/horsehead-nebula/">Horsehead</a> is one of the most recognizable dark nebulae in the sky, located in the Orion constellation. Its distinctive shape is a result of thick interstellar dust blocking the light from the background emission nebula IC 434. The nebula is approximately <b>1,375 light-years</b> from Earth and offers a breathtaking view of cosmic formation and stellar nurseries.<br>The Horsehead Nebula is <b>extraordinary</b> for its dramatic silhouette against the glowing hydrogen gas. It is a key target for astronomers studying star formation and the interactions between interstellar matter and radiation.
+            </p>
+        </div>
+    </div>
+    <main id="main" class="d-flex flex-row">
+        <div class="main__left">
+            <h2 class="text-center">Travel Info</h2>
+            <p>Experience the beauty of the Horsehead Nebula, a cosmic wonder where stars are born. This journey takes you deep into the Orion constellation, offering a spectacular perspective on interstellar dust clouds, bright emission regions, and dynamic star formation processes.</p>
+            <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
+                <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
+                    <span class="price">
+                        <?php
+                        if (isset($infoArray)) {
+                            $event = $infoArray[$nomeEvento][0];
+                            echo $event['prezzoevento'];
+                        }
+                        ?>
+                        &#8364;
+                    </span>
+                    <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
+                        <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
+                        <span class="days">
+                            <?php
+                            if (isset($infoArray)) {
+                                $event = $infoArray[$nomeEvento][0];
+                                $departure = date_create($event['datapartenza']);
+                                $return = date_create($event['dataritorno']);
+                                $interval = date_diff($return, $departure);
+                                echo $interval->format('%a');
+                            }
+                            ?>
+                            Days
+                        </span>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between align-items-center main__left__section1__date__btn">
+                        <button type="button" class="text-uppercase" onclick="toggleDialog()"> Discover all the dates</button>
+                        <a target="_blank" href="pages/support/Supporto.php">
+                            <button type="button" class="text-uppercase">More info</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="main__left__section1__whatSee">
+                    <h3 class="text-center">What to See</h3>
+                    <ol>
+                        <li><p><span>Dark Silhouette:</span> Observe the stunning shape of the Horsehead Nebula against the luminous IC 434.</p></li>
+                        <li><p><span>Star Formation:</span> Discover new stars emerging from the surrounding molecular clouds.</p></li>
+                        <li><p><span>Orion Belt:</span> Experience a close view of one of the most famous regions in the sky.</p></li>
+                        <li><p><span>Glowing Hydrogen Gas:</span> Witness the vibrant colors of ionized hydrogen lighting up the nebula.</p></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="main__right">
+            <div class="main__right__celestialBodyInfo">
+                <h3 class="text-center">Celestial Body Info</h3>
+            </div>
+        </div>
+    </main>
+    <div class="suggestions">
+        <h4 class="text-center">You might also be interested in</h4>
+        <div id="suggestions__carousel-ct" class="slideshow d-flex flex-row">
+        </div>
+    </div>
+    <?php
+    require_once "../../../../components/footer/footer.php";
+    ?>
+    <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
+    <script type="text/javascript" defer>
+        const celestialBody = "<?php echo $nomeEvento ?>";
+        const eventsArray = <?php echo $jsonUniqueEventsArray; ?>
+        call_lso_api(celestialBody);
+        fillSuggestions(celestialBody, eventsArray);
+    </script>
+</body>
+
+</html><
+
+
+
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <?php
+    session_start();
     /* 
      * La variabile é impostata con il nome del corpo celeste e consente di automatizzare 
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
@@ -37,14 +150,14 @@
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/">Carina</a> is the closest large galaxy to the Milky Way and one of the most fascinating destinations in the universe. It spans over <b>220,000 light-years</b> and contains about one trillion stars, offering incredible views and scientific opportunities. As the largest galaxy in the Local Group, Andromeda provides a glimpse into the structure and evolution of galaxies.<br>Andromeda is <b>extraordinary</b> for its sheer scale and its potential collision with the Milky Way in the distant future. Its spiral arms and bright core are easily visible with advanced space telescopes, and its numerous star systems, clusters, and nebulae make it a prime location for exploration and discovery. Join us on this journey to one of the universe's most breathtaking destinations.
+                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/">Horsehead</a> is one of the most recognizable dark nebulae in the sky, located in the Orion constellation. Its distinctive shape is a result of thick interstellar dust blocking the light from the background emission nebula IC 434. The nebula is approximately <b>1,375 light-years</b> from Earth and offers a breathtaking view of cosmic formation and stellar nurseries.<br>The Horsehead Nebula is <b>extraordinary</b> for its dramatic silhouette against the glowing hydrogen gas. It is a key target for astronomers studying star formation and the interactions between interstellar matter and radiation.
             </p>
         </div>
     </div>
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
             <h2 class="text-center">Travel Info</h2>
-            <p>Welcome to Andromeda, the stunning spiral galaxy that offers unparalleled cosmic views and the adventure of a lifetime! A journey to this massive galaxy provides the chance to explore distant star systems, ancient star clusters, and unique interstellar phenomena. With proper guidance and preparation, Andromeda will unveil its galactic secrets.</p>
+            <p>Experience the beauty of the Horsehead Nebula, a cosmic wonder where stars are born. This journey takes you deep into the Orion constellation, offering a spectacular perspective on interstellar dust clouds, bright emission regions, and dynamic star formation processes.</p>
             <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                 <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                     <span class="price">
@@ -79,24 +192,16 @@
                 <div class="main__left__section1__whatSee">
                     <h3 class="text-center">What to See</h3>
                     <ol>
-                        <li>
-                            <p><span>Galactic Core:</span> Witness the brilliant core of Andromeda, teeming with stars and surrounded by a dynamic halo.</p>
-                        </li>
-                        <li>
-                            <p><span>Star Clusters:</span> Explore dense collections of stars, such as the iconic NGC 206 cluster.</p>
-                        </li>
-                        <li>
-                            <p><span>Spiral Arms:</span> Marvel at the majestic spiral structure of Andromeda, showcasing its intricate beauty.</p>
-                        </li>
-                        <li>
-                            <p><span>Intergalactic Nebulae:</span> Discover stunning nebulae scattered throughout the galaxy, each with unique characteristics.</p>
-                        </li>
+                        <li><p><span>Dark Silhouette:</span> Observe the stunning shape of the Horsehead Nebula against the luminous IC 434.</p></li>
+                        <li><p><span>Star Formation:</span> Discover new stars emerging from the surrounding molecular clouds.</p></li>
+                        <li><p><span>Orion Belt:</span> Experience a close view of one of the most famous regions in the sky.</p></li>
+                        <li><p><span>Glowing Hydrogen Gas:</span> Witness the vibrant colors of ionized hydrogen lighting up the nebula.</p></li>
                     </ol>
                 </div>
             </div>
             <div class="main__left__tripKnowledge">
                 <h3 class="text-center">Everything you need to know about this trip</h3>
-                <p>Embark on an unforgettable journey to <b>Andromeda!</b> This galaxy offers <b>breathtaking sights</b>, unique cosmic phenomena, and a deep connection to the mysteries of the universe. Equip yourself with specialized space travel gear and follow our expert guides for a safe and enriching experience. Learn about Andromeda's historical significance in astronomy and its role in shaping our understanding of galaxies. The trip lasts 10 days, featuring daily excursions and moments of reflection in our cutting-edge space facilities. Feel free to tailor your journey to your specific interests for the ultimate cosmic adventure!
+                <p>Embark on an unforgettable journey to <b>Horsehead!</b> This nebulae offers <b>breathtaking sights</b>, unique cosmic phenomena, and a deep connection to the mysteries of the universe. Equip yourself with specialized space travel gear and follow our expert guides for a safe and enriching experience. Learn about Horsehead's historical significance in astronomy and its role in shaping our understanding of galaxies. The trip lasts 10 days, featuring daily excursions and moments of reflection in our cutting-edge space facilities. Feel free to tailor your journey to your specific interests for the ultimate cosmic adventure!
                     Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!
                 </p>
                 <div class="main__left__tripKnowledge__item">

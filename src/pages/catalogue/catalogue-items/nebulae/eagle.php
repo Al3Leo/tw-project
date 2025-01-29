@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,14 +39,14 @@
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/">Carina</a> is the closest large galaxy to the Milky Way and one of the most fascinating destinations in the universe. It spans over <b>220,000 light-years</b> and contains about one trillion stars, offering incredible views and scientific opportunities. As the largest galaxy in the Local Group, Andromeda provides a glimpse into the structure and evolution of galaxies.<br>Andromeda is <b>extraordinary</b> for its sheer scale and its potential collision with the Milky Way in the distant future. Its spiral arms and bright core are easily visible with advanced space telescopes, and its numerous star systems, clusters, and nebulae make it a prime location for exploration and discovery. Join us on this journey to one of the universe's most breathtaking destinations.
+                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/">Eagle Nebula</a> is a breathtaking cosmic structure, home to the famous "Pillars of Creation." This magnificent star-forming region spans <b>70 light-years</b> and features stunning gaseous columns illuminated by young stars. Eagle Nebula provides astronomers with a deep insight into stellar birth and evolution.<br>The nebula is <b>awe-inspiring</b> for its intricate structures and dynamic stellar nurseries. Its vast clouds of gas and dust are continuously reshaped by radiation and stellar winds, creating one of the most visually striking regions in our galaxy. Join us on a journey to witness the majesty of one of the universe’s most captivating nebulae.
             </p>
         </div>
     </div>
     <main id="main" class="d-flex flex-row">
         <div class="main__left">
             <h2 class="text-center">Travel Info</h2>
-            <p>Welcome to Andromeda, the stunning spiral galaxy that offers unparalleled cosmic views and the adventure of a lifetime! A journey to this massive galaxy provides the chance to explore distant star systems, ancient star clusters, and unique interstellar phenomena. With proper guidance and preparation, Andromeda will unveil its galactic secrets.</p>
+            <p>Welcome to the Eagle Nebula, an astronomical marvel filled with massive interstellar formations and dazzling young stars. This destination offers a unique perspective on the dynamic processes shaping our universe, making it a must-see for space explorers and scientists alike.</p>
             <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
                 <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
                     <span class="price">
@@ -80,18 +81,10 @@
                 <div class="main__left__section1__whatSee">
                     <h3 class="text-center">What to See</h3>
                     <ol>
-                        <li>
-                            <p><span>Galactic Core:</span> Witness the brilliant core of Andromeda, teeming with stars and surrounded by a dynamic halo.</p>
-                        </li>
-                        <li>
-                            <p><span>Star Clusters:</span> Explore dense collections of stars, such as the iconic NGC 206 cluster.</p>
-                        </li>
-                        <li>
-                            <p><span>Spiral Arms:</span> Marvel at the majestic spiral structure of Andromeda, showcasing its intricate beauty.</p>
-                        </li>
-                        <li>
-                            <p><span>Intergalactic Nebulae:</span> Discover stunning nebulae scattered throughout the galaxy, each with unique characteristics.</p>
-                        </li>
+                        <li><p><span>Pillars of Creation:</span> Observe the iconic star-forming structures sculpted by stellar radiation.</p></li>
+                        <li><p><span>Young Star Clusters:</span> Witness newly formed stars emerging from dense gas clouds.</p></li>
+                        <li><p><span>Emission Nebulae:</span> Enjoy vibrant hues produced by ionized gases glowing under ultraviolet radiation.</p></li>
+                        <li><p><span>Interstellar Dust Lanes:</span> Discover the intricate patterns of cosmic dust shaping the nebula's appearance.</p></li>
                     </ol>
                 </div>
             </div>
