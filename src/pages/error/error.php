@@ -30,13 +30,10 @@
         <p>
             Don't worry, we'll fix it! Meanwhile here is a waiting song.
         </p>
-        <audio controls>
+        <audio controls autoplay>
             <source src="tw-project/src/assets/audio/waiting.mp3" type="audio/mpeg">
             Audio not supported
         </audio>
     </div>
 </body>
-<script>
-    window.onload
-</script>
 </html>
