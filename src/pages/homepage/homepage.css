@@ -114,6 +114,9 @@
   width: 80%;
   height: 80%;
 }
+#main__right__slideshow img{
+  border-radius: 10px;
+}
 
 #secondary-s{
   padding: 1rem 3rem;
