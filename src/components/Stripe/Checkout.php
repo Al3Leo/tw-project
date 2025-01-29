@@ -22,7 +22,7 @@ $urlerror = "http://$host$uri/../../pages/error/errorPagamento.php";
  * Impostare la chiave segreta di Stripe.
  */
 $stripe_secret_key = "sk_test_PRIVATE_KEY_DASHBOARD";//chiave da sostituire con la chiave segreta fornita da stripe
-\Stripe\Stripe::setApiKey('sk_test_51QgDccDj8L2aaNpF7AjNHFeW5fvetvmvmfe2q81NOtQW9clWPoSpFhmhcbkgGBgNB9I3uxwJvMTH5lSDzajN4Zkk00nyUhKZjz');
+\Stripe\Stripe::setApiKey('');
 /**
  *Gestione dati del carrello:
  *Se i dati del carrello sono presenti nell'URL ($_GET), vengono decodificati e convertiti in un array associativo. 

@@ -13,3 +13,5 @@ src/.DS_Store
 src/components/Stripe/vendor/
 src/components/Stripe/composer.json
 src/components/Stripe/composer.lock
+
+.env
