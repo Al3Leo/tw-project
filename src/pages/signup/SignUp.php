@@ -46,7 +46,7 @@ if(strlen($nome) > 50 || strlen($username) > 25 || strlen($cognome) > 50 || strl
                     /*$messaggio = "User registered successfully!";
                     echo "<script>alert('$messaggio');</script>";
                     */
-                    header("Location: backend/ConfermaDinamica.php?confirmsignup=$username");
+                    header("Location: ../../backend/ConfermaDinamica.php?confirmsignup=$username");
                     exit();
                 } else {
                     $errore = "Registration error. Try again.";
