@@ -3,6 +3,7 @@
 
 <head>
     <?php
+    session_start();
     /* MODIFICARE SOLO LA VARIABILE $nomeEvento nelle altre pagine!
      *
      * La variabile é impostata con il nome del corpo celeste e consente di automatizzare 

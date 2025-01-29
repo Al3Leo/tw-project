@@ -3,6 +3,7 @@
  * Questo script PHP serve a mostrare una pagina di errore all'utente, dopo che ha completato checkout.
  * Notifica l'utente che il pagamento con Stripe non è andato a buon fine
  */
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
