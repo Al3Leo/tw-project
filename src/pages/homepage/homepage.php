@@ -58,7 +58,7 @@ session_start();
     <?php } elseif ($mostraCoupon == false) { ?>
         <p><b>Stay Updated for More Exciting Offers</b></p>
         <p>We hope you enjoyed your recent adventure! Just because you've claimed our current offer doesn't mean the excitement ends here.<br> Make sure to stay tuned for <b>more stellar deals</b> and exclusive promotions:</p>
-        <button type="button" onclick="window.open('pages/spacehistory/NewSpace.php#newsletter', '_blank')">Stay Tuned!</button>
+        <button type="button" onclick="window.open('pages/spacehistory/NewSpace.php#newsletter', '_self')">Stay Tuned!</button>
     <?php } ?>
 </div>
 

@@ -40,10 +40,18 @@ if (isset($_POST['user_username']) && isset($_POST['user_password'])) {
                 header("Location: " . $_SERVER['HTTP_REFERER']);
             } else {
                 $errore = "Password uncorrect";
-                echo "<script>alert('$errore');</script>";
+                echo '<script>';
+    echo 'document.getElementById("password").value = "Password uncorrect";';
+    echo '</script>';
+                
+                
             }}else{
-                $errore = "User Not Found";
-                echo "<script>alert('$errore');</script>";
+                $errore = "";
+                echo '<script>';
+    echo 'document.getElementById("password").value = "User Not Found";';
+    echo '</script>';
+                
+               
             }
 
 

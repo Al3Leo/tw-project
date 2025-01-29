@@ -4,6 +4,7 @@
 
 <head>
     <?php
+    session_start();
     /* 
      * La variabile é impostata con il nome del corpo celeste e consente di automatizzare 
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere

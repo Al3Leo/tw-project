@@ -8,16 +8,21 @@
         bar.classList.toggle("toggleShow");
         bar.style.borderBottom = "0";
         let cart = document.getElementById("carrello");
-        let btn = document.getElementsByClassName("btn")[1];
-        if (btn.style.display != "none") {
+        let btnSignup = document.getElementById("signup");
+        let btnLogin = document.getElementById("login");
+        let btnLogout = document.getElementById("logout");
+        let userinfo=document.getElementById("userinfo");
+        if (btnSignup.style.display = "none") {//l'utente non è loggato 
             cart.style.display = "none";
-            btn.style.display = "none";
-            btn = document.getElementsByClassName("btn")[2];
-            btn.style.display = "none";
+            btnSignup.style.display = "none";
+            btnLogin.style.display = "none";
+            btnLogout.style.display = "inline";
+            userinfo.style.display = "inline";
         } else {
-            btn.style.display = "inline";
-            btn = document.getElementsByClassName("btn")[2];
-            btn.style.display = "inline";
+            btnSignup.style.display = "inline";
+            btnLogin.style.display = "inline";
+            btnLogout.style.display = "none";
+            userinfo.style.display = "none";
         }
         //a scopo didattico sono stati usati due metodi diversi (toggle e style di js)
     }
@@ -60,12 +65,17 @@
         <!--parte di utente loggato-->
         <a href="backend/LogOut.php"><button class="btn" id="logout">LogOut</button></a>
         <div id="userinfo">
-            <!--valori da completare in php-->
-            <span class="userinfoList"><?php if(isset($_SESSION['username'])) { echo $_SESSION['username']; }?></span>
-             <span class="userinfoList"><?php 
-            if(isset($_SESSION['name'])) echo $_SESSION['name']; 
-            if(isset($_SESSION['username'])) echo $_SESSION['username']; ?></span>
-        </div>
+    <!--valori da completare in php-->
+    <span class="userinfoList" style="text-transform: uppercase;font-family: sans-serif;"><?php if(isset($_SESSION['username'])) { echo $_SESSION['username']; }?></span>
+    <br>
+    <span class="userinfoList" style="font-weight: 500;"><?php if(isset($_SESSION['name'])) { echo $_SESSION['name']; }?></span>
+    <span class="userinfoList" style="font-weight: 500;">
+        <?php 
+        if(isset($_SESSION['surname'])) echo '&nbsp;' . $_SESSION['surname']; 
+        ?>
+    </span>
+</div>
+
         <button class="btn" id="sideMenu" onclick="toggleSideMenu()">&#x2630;</button>
     </div>
     <!-- Sidebar -->
@@ -73,10 +83,12 @@
         <ul>
             <li id="li-speciale"><button id="goBack" onclick="toggleSideMenu()">&times;</button></li>
             <li><a href="pages/homepage/homepage.php">Home</a></li>
+            <li id="vistoStorico"><a href="pages/OrderHistory/ConologiaOrdine.php">Order History</a></li>
             <li><a href="pages/catalogue/catalogue.php">Catalogue</a></li>
             <li><a href="pages/aboutus/aboutus.php">About us</a></li>
             <li><a href="pages/support/Supporto.php">Contact</a></li>
             <li><a href="pages/spacehistory/NewSpace.php">Space History</a></li>
+            
         </ul>
     </div>
 </header>
