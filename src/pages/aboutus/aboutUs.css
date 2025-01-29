@@ -116,7 +116,6 @@ h1::after, h2::after {
     animation: blink 0.8s step-end infinite;
 }
 
-
  .popup-menu, .side-menu {
     z-index: 5;
 }
