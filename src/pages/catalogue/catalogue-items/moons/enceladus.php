@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,22 +72,21 @@
                 </div>
                 <div class="main__left__section1__whatSee">
                     <h3 class="text-center">What to See</h3>
+
                     <ol>
-                        <h3 class="text-center">What to See</h3>
-                        <ol>
-                            <li>
-                                <p><span>South Pole Geysers:</span> Discover Enceladus' famous geysers, where water vapor and ice particles shoot into space, providing breathtaking views.</p>
-                            </li>
-                            <li>
-                                <p><span>Tiger Stripes:</span> Explore the distinctive "tiger stripe" fractures on the moon's surface, regions of intense geological activity.</p>
-                            </li>
-                            <li>
-                                <p><span>Enceladus' Ice Plains:</span> Venture into the expansive ice plains, perfect for scientific exploration and observation.</p>
-                            </li>
-                            <li>
-                                <p><span>Cratered Terrains:</span> Witness these rugged terrains covered with impact craters, showcasing the moon's history and geological features.</p>
-                            </li>
-                        </ol>
+                        <li>
+                            <p><span>South Pole Geysers:</span> Discover Enceladus' famous geysers, where water vapor and ice particles shoot into space, providing breathtaking views.</p>
+                        </li>
+                        <li>
+                            <p><span>Tiger Stripes:</span> Explore the distinctive "tiger stripe" fractures on the moon's surface, regions of intense geological activity.</p>
+                        </li>
+                        <li>
+                            <p><span>Enceladus' Ice Plains:</span> Venture into the expansive ice plains, perfect for scientific exploration and observation.</p>
+                        </li>
+                        <li>
+                            <p><span>Cratered Terrains:</span> Witness these rugged terrains covered with impact craters, showcasing the moon's history and geological features.</p>
+                        </li>
+                    </ol>
                 </div>
             </div>
             <div class="main__left__tripKnowledge">
@@ -175,13 +173,13 @@
     ?>
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
 </body>
-<script type="text/javascript" defer > //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
-    document.addEventListener("DOMContentLoaded", () => {
-        //passo la variabile php contenente il nome del corpo celeste corrente a js
-        const celestialBody = "<?php echo $nomeEvento ?>";
-        const eventsArray = <?php echo $jsonUniqueEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
-        call_lso_api(celestialBody);
-        fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
-    });
+<script type="text/javascript" defer>
+    //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
+    //passo la variabile php contenente il nome del corpo celeste corrente a js
+    const celestialBody = "<?php echo $nomeEvento ?>";
+    const eventsArray = <?php echo $jsonUniqueEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
+    call_lso_api(celestialBody);
+    fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
 </script>
+
 </html>

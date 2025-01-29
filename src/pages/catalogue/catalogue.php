@@ -220,7 +220,7 @@ session_start();
                 </div>
             </div>
             <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Eagle">
-                <a href="pages/catalogue/catalogue-items/nebulae/heagle.php">
+                <a href="pages/catalogue/catalogue-items/nebulae/Eagle.php">
                     <img class="responsive" src="assets/images/nasa/nebulae/eagle.jpg" alt="Eagle Nebula">
                 </a>
                 <div class="catalogue__item__text">
