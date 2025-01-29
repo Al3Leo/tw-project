@@ -113,13 +113,19 @@ Utilizza POST per inviare i dati a backend/RegistraUtente.php.
     <main class="main_signup">
         <div class="contenitore">
             <div class="input d-flex flex-column ">
-                <h3 style="text-align: center;">Sign Up</h3>
+                <h1 style="text-align: center;">Sign Up</h1>
+                <p class="required-label text-center"><small>* is required</small></p>
                 <div id="errore_signup" style="display: none; color: red; font-size:3px"></div>
                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" class="d-grid">
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
-                        <label for="username">Username</label>
+                        <label for="username">Username*</label>
                         <input type="text" id="username" name="user_username" value="<?php echo $username ?>" required>
                     </div>
+                    <div class="oggetto d-flex flex-column" id="oggetto_signup">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="user_email" value="<?php echo $email ?>" required>
+                    </div>
+
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="user_name" value="<?php echo $nome ?>">
@@ -130,16 +136,11 @@ Utilizza POST per inviare i dati a backend/RegistraUtente.php.
                     </div>
 
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="user_email" value="<?php echo $email ?>" required>
-                    </div>
-
-                    <div class="oggetto d-flex flex-column" id="oggetto_signup">
-                        <label for="password">Password</label>
+                        <label for="password">Password*</label>
                         <input type="password" id="password" name="user_password" value="<?php echo $pass ?>" required>
                     </div>
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
-                        <label for="password-confirm">Confirm Password</label>
+                        <label for="password-confirm">Confirm Password*</label>
                         <input type="password" id="password-confirm" name="password_confirm" required>
                     </div>
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
