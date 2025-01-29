@@ -1,9 +1,7 @@
 
 <?php
 /**
- * @file
- * @brief Pagina principale del progetto "Spatial History"
- *
+ * Pagina principale del progetto "Spatial History"
  * Questo file PHP gestisce la struttura della pagina principale del progetto "Spatial History".
  * Include varie sezioni informative riguardanti lo spazio, i pianeti e i pionieri dell'esplorazione spaziale e uun form per le iscrizioni delle newsletter.
  */
@@ -145,7 +143,7 @@ session_start();
     <section class="sezione3">
         <div class="sezione3_text">
             <h2 style="text-transform: uppercase;">Pioneers of Space Exploration</h2>
-            <p>Space exploration has been made possible by the courage and determination of many remarkable astronauts. Here are a few who have left an indelible mark on history</p>
+            <p>Space exploration has been made possible by the <span>courage and determination</span> of many remarkable astronauts. Here are a few who have left an indelible mark on history</p>
         </div>
         <div class="wrapper">
 
@@ -202,7 +200,7 @@ session_start();
                 <div><img class="contenuto4_img" src="assets/images/space/vostok.jpg">             
                </div>
                  <p>
-                    The Vostok 1 mission, launched on April 12, 1961, marked the first time humans ventured into space. The spacecraft completed a full orbit of the Earth in approximately 108 minutes. It demonstrated the Soviet Union's advanced capabilities in space technology, setting a significant milestone in the space race. The success of Vostok 1 was a testament to the potential of human ingenuity and engineering. This mission opened the doors to future space exploration, inspiring generations to look beyond our planet.
+                    The Vostok 1 mission, launched on April 12, 1961, marked the <b>first time humans ventured into space</b>. The spacecraft completed a full orbit of the Earth in approximately 108 minutes. It demonstrated the Soviet Union's advanced capabilities in space technology, setting a significant milestone in the space race. The success of Vostok 1 was a testament to the potential of human ingenuity and engineering. This mission opened the doors to future space exploration, inspiring generations to look beyond our planet.
                 </p>
             </div>
 

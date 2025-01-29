@@ -1,8 +1,5 @@
 <?php
-/**
- * @file
- * @brief Recupero delle notizie di voli spaziali in base alla data
- *
+/** Recupero delle notizie di voli spaziali in base alla data
  * Questo file PHP utilizza un'API per recuperare notizie sui voli spaziali a partire da una data specificata.
  */
 ?>
@@ -13,11 +10,11 @@ if (isset($_GET['dob'])) {
     $url = "https://api.spaceflightnewsapi.net/v4/articles/?limit=4&ordering=published_at&published_at_gte=$date";
 
     // Inizializza una sessione cURL
-    $ch = curl_init();/**< Inizializza una nuova sessione cURL */
-    curl_setopt($ch, CURLOPT_URL, $url);/**< Imposta l'URL per la sessione cURL */
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);/**< Imposta l'opzione per restituire il risultato come stringa */
-    $response = curl_exec($ch);/**< Esegue la richiesta cURL e ottiene la risposta */
-    curl_close($ch);/**< Chiude la sessione cURL */
+    $ch = curl_init();/*Inizializzo una nuova sessione cURL */
+    curl_setopt($ch, CURLOPT_URL, $url);/*Imposto l'URL per la sessione cURL */
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);/*Imposta l'opzione per restituire il risultato come stringa */
+    $response = curl_exec($ch);/*Esegue la richiesta cURL e ottiene la risposta */
+    curl_close($ch);/*chiude la sessione cURL */
 
     if ($response !== false) {
         header('Content-Type: application/json');

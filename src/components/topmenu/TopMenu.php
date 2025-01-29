@@ -12,7 +12,7 @@
         let btnLogin = document.getElementById("login");
         let btnLogout = document.getElementById("logout");
         let userinfo=document.getElementById("userinfo");
-        if (btnSignup.style.display = "none") {//l'utente non è loggato 
+        if (btnSignup.style.display == "none") {//l'utente non è loggato 
             cart.style.display = "none";
             btnSignup.style.display = "none";
             btnLogin.style.display = "none";
