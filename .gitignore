@@ -1,6 +1,15 @@
+# System files
 .DS_Store
 src/.DS_Store
-/.idea
-.idea
-.vscode
-./vscode
+
+# IDE files
+.idea/
+.idea/*
+
+.vscode/
+.vscode/*
+
+# Stripe API (Composer dependencies)
+src/components/Stripe/vendor/
+src/components/Stripe/composer.json
+src/components/Stripe/composer.lock
