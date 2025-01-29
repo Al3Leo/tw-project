@@ -51,7 +51,7 @@ session_start();
             </div>
         </div>
         <?php if (!isset($_SESSION['username'])) { ?>
-            <button type="button" onclick="openLoginPopup()">Get Deal!</button>
+            <button id="getDeal" type="button" onclick="openLoginPopup()">Get Deal!</button>
         <?php } elseif ($mostraCoupon == true) { ?>
             <p><small>A coupon for you!</small></p>
             <button type="button" id="copyToClipboard">PWEDHFRL</button>
