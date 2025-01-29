@@ -5,10 +5,10 @@
 <div id="tripDates-ct" class="d-none position-fixed">
     <div class="dates">
         <i class="fa-solid fa-x" id="tripDates__closeBtn" style="color: #feffff;"></i>
-        <table>
+        <table class="tripDates-info d-flex flex-column align-items-center justify-content-center">
             <thead>
                 <tr>
-                    <th colspan="3"><?php echo "All " . $nomeEvento . " avaible dates" ?></th>
+                    <th class="text-uppercase" id="tripDates-title"><?php echo "All " . $nomeEvento . " avaible dates" ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -16,9 +16,9 @@
                     <th>Departure</th>
                     <th>Return</th>
                     <th>Spaceport</th>
+                    <th>Cart</th>
                 </tr>
                 <?php
-                require_once __DIR__ . '/../../backend/getTripInfo.php';
                 if (isset($infoArray)) {
                     foreach ($infoArray as $events) {    //entro nel sottoarray contenente tutti gli eventi
                         foreach ($events as $event) {     //entro nel sottoarray contenente le informazioni sull'evento selezionato
@@ -28,17 +28,15 @@
                             $location = $event['launchlocation'];
                             $price = $event['prezzoevento'];
 
-
-
                             echo " 
                             <tr> 
                                 <td>" . $departureDate . "</td>
                                 <td>" . $returnDate . "</td>
                                 <td>" . $location . "</td>
-                                <td style='text-align:center;' id='" . $eventId . "-td'>";
+                                <td id=" . $eventId . "-td>";
 
                             $added = false;
-                            if (isset($_COOKIE['cart'])) {//agli elementi presenti nel carrello aggiungo il tag span con testo ADDED altrimenti il 
+                            if (isset($_COOKIE['cart'])) { //agli elementi presenti nel carrello aggiungo il tag span con testo ADDED altrimenti il 
                                 //button per add
                                 $cart = json_decode($_COOKIE['cart'], true);
                                 foreach ($cart as $sottoarray['id']) {
