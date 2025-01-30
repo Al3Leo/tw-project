@@ -10,7 +10,7 @@
   background-color: black;
   --hero-height: calc(100vh - 70px);
   --primaryColor: #e9ecfb;
-  --secondaryColor: #471a8e;
+  --secondaryColor: rgba(71, 26, 142, 0.8);
   --tertiaryColor: #f7e951;
   --accent: #9529d7;
   --text: #e9ecfb;
