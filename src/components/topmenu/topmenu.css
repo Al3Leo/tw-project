@@ -79,6 +79,10 @@
     float: right;
 }
 
+.toggleCart{
+    display: none;
+}
+
 .sideBar {
     display: none;
 }

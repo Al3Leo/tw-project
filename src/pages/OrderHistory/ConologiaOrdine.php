@@ -161,10 +161,12 @@ if (isset($_SESSION['username'])) {
             <?php
             //vai nel db e per ogni acquisto che ha come acquirenteuser X, lo stampi
             require_once '../../backend/ConnettiDb.php';
-            $sql="SELECT * FROM acquisti";
-            $res=pg_query($db_connection,$sql);
+            $usr=($_SESSION['username']); //trim rimuove caratteri nascosti
+            $sql="SELECT * FROM acquisti WHERE acquirenteuser=$1";
+            $r=pg_prepare($db_connection, "a", $sql);
+            $res=pg_execute($db_connection,"a",array($usr));
             $r=pg_fetch_assoc($res);
-            for ($i=0; $i<sizeof($r); $i++) {
+            for ($i=0; $i<=sizeof($r); $i++) {
                 require 'getInfo.php';
                 echo "<div class=\"mini_order\">
                         <div class=\"row\">
