@@ -3,7 +3,7 @@
 @import "../../components/topmenu/topmenu.css";
 @import "../../components/login/login.css";
 body{
-    background-image: url("cosmo.jpg");
+    background-image: url("../../assets/images/cosmo.jpg");
     background-position: center;
     background-repeat: no-repeat;
 }

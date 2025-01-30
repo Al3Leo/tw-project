@@ -14,7 +14,7 @@ if (isset($_SESSION['username'])) {
         body{
             margin: 0;
             padding: 0;
-            background-image: url("starship.JPG");
+            background-image: url("../../assets/images/starship.JPG");
             background-size: cover;
             background-repeat: no-repeat;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -57,7 +57,7 @@ if (isset($_SESSION['username'])) {
             height: 25ex; /*volevo provare ex e mi serviva un unità statica*/
             width: 100%;
             border-radius: 25px;
-            background-image: url("background_order.jpeg");
+            background-image: url("../../assets/images/background_order.jpeg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
