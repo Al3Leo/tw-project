@@ -88,7 +88,9 @@ session_start();
                                 <img class='responsive' src='assets/images/nasa/planets/" . $eventName. ".jpg' alt='" . $eventName . "'>
                             </a>
                             <div class='catalogue__item__text'>
-                                <b>" . $eventName . "</b> 
+                                <p><b>" . $eventName . "</b></p>
+                                <!-- Se priceArray ha un valore imposto il prezzo, altrimenti not found -->
+                                <p class='text-center'><small>" . (isset($priceArray) ? $priceArray[$eventName] : 'Price Not Found') ." &dollar;</small></p>   
                             </div>
                         </div>
                     ";
@@ -118,7 +120,9 @@ session_start();
                                 <img class='responsive' src='assets/images/nasa/galaxies/" . $eventName. ".jpg' alt='" . $eventName . "'>
                             </a>
                             <div class='catalogue__item__text'>
-                                <b>" . $eventName . "</b> 
+                                <p><b>" . $eventName . "</b></p>
+                                <!-- Se priceArray ha un valore imposto il prezzo, altrimenti not found -->
+                                <p class='text-center'><small>" . (isset($priceArray) ? $priceArray[$eventName] : 'Price Not Found') ." &dollar;</small></p>   
                             </div>
                         </div>
                     ";
@@ -148,7 +152,9 @@ session_start();
                                 <img class='responsive' src='assets/images/nasa/moons/" . $eventName. ".jpg' alt='" . $eventName . "'>
                             </a>
                             <div class='catalogue__item__text'>
-                                <b>" . $eventName . "</b> 
+                                <p><b>" . $eventName . "</b></p>
+                                <!-- Se priceArray ha un valore imposto il prezzo, altrimenti not found -->
+                                <p class='text-center'><small>" . (isset($priceArray) ? $priceArray[$eventName] : 'Price Not Found') ." &dollar;</small></p>   
                             </div>
                         </div>
                     ";
@@ -178,7 +184,9 @@ session_start();
                                 <img class='responsive' src='assets/images/nasa/nebulae/" . $eventName. ".jpg' alt='" . $eventName . "'>
                             </a>
                             <div class='catalogue__item__text'>
-                                <b>" . $eventName . "</b> 
+                                <p><b>" . $eventName . "</b></p>
+                                <!-- Se priceArray ha un valore imposto il prezzo, altrimenti not found -->
+                                <p class='text-center'><small>" . (isset($priceArray) ? $priceArray[$eventName] : 'Price Not Found') ." &dollar;</small></p>   
                             </div>
                         </div>
                     ";
