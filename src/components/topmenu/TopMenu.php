@@ -6,13 +6,14 @@
         cross.classList.toggle("toggleCross");
         let bar = document.getElementById("sideBar");
         bar.classList.toggle("toggleShow");
+        cart.classList.toggle("toggleCart");
         bar.style.borderBottom = "0";
-        let cart = document.getElementById("carrello");
         let btnSignup = document.getElementById("signup");
         let btnLogin = document.getElementById("login");
         let btnLogout = document.getElementById("logout");
         let userinfo=document.getElementById("userinfo");
-        if (btnSignup.style.display = "none") {//l'utente non è loggato 
+        let cart = document.getElementById("carrello");
+        if (btnSignup.style.display == "none") {//l'utente non è loggato 
             cart.style.display = "none";
             btnSignup.style.display = "none";
             btnLogin.style.display = "none";
@@ -31,8 +32,9 @@
         let cart = document.getElementById("carrello");
         if (cart.style.display != "none")
             cart.style.display = "none";
-        else
-            cart.style.display = "flex";
+        else{
+            document.getElementById("loginpopup").style.display = "none";
+            cart.style.display = "flex";}
     }
 </script>
 <header id="topbar">

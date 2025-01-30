@@ -3,7 +3,7 @@
 @import "../../components/topmenu/topmenu.css";
 @import "../../components/login/login.css";
 body{
-    background-image: url("cosmo.jpg");
+    background-image: url("../../assets/images/cosmo.jpg");
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -22,15 +22,21 @@ body{
 .form_input, textarea{
     display: block;
     margin-bottom: 1%;
-    height: 2rem;
-    width: 50vw;
+    height: 3rem;
+    width: 40vw;
     border-radius: 7px;
+    background-color: #212121;
+    border: 1px solid white;
+    color: white;
+}
+.form_input:focus, textarea:focus{
+    border: 2px solid blue;
 }
 textarea{
     height: 7rem !important;
 }
 #mailtoemail{
-    color: white;
+    color: #ff0000;
 }
 #mailtoemail:hover{
     color: #1fe100;

@@ -99,7 +99,7 @@
     </style>
 </head>
 <body>
-<video autoplay muted loop src="../pages/OrderHistory/spaceBackgroung.mp4" id="sfondo" >
+<video autoplay muted loop src="../assets/images/spaceBackgroung.mp4" id="sfondo" >
     Video cannot be displayed.
 </video>
 <main id="ordine">

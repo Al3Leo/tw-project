@@ -79,6 +79,10 @@
     float: right;
 }
 
+.toggleCart{
+    display: none;
+}
+
 .sideBar {
     display: none;
 }
@@ -91,7 +95,9 @@
     overflow-block: visible;
     padding-right: 3rem;
     padding-top: 1rem;
-    background-color: var(--secondaryColor);
+    background: linear-gradient(to bottom, rgb(117, 17, 169) 0%, rgba(0, 0, 0, 0.3));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     height: 100vh;
     width: 25vw;
     position: fixed;
