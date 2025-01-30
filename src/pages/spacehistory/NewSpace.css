@@ -201,7 +201,7 @@ section {
 
 .controls .up:hover,
 .controls .down:hover {
-    background-color: #ff5733;
+    background-color: var(--secondaryColor);
 }
 
 /*TERZA SEZIONE*/
@@ -420,7 +420,7 @@ section {
     grid-template-columns: 1fr 1fr;
     place-items: center;
     padding: 3vw;
-    background-color: rgb(10 19 24);
+    background-color: hsl(220deg 20% 2.94%);
     border-radius: 12px;
     border: 1px solid rgb(243 243 250);
 }
@@ -481,14 +481,21 @@ section {
 }
 
 input[type="date"] {
-    background-color: #0080ff;
     padding: 15px;
     color: #ffffff;
     font-size: 1rem;
     border: none;
     outline: none;
     border-radius: 5px;
+    transition: color 100ms, transform 0.3s ease-out;
+    background-color: var(--accent);
+    cursor:pointer;
+
 }
+input[type="date"]:focus, input[type="date"]:hover {
+    background-color: var(--secondaryColor);
+    transform: scale(1.1);
+  }
 
 .news-testo {
     gap: 0.7rem;
