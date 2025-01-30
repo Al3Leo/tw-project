@@ -2,7 +2,7 @@
 require_once "ConnettiDb.php";
 
 if (isset($_GET['destination'])) {
-    $destination = ucfirst($_GET['destination']);
+    $destination = ucfirst(strtolower($_GET['destination'])); /* Rendo maiuscola l'iniziale e minuscolo il resto */
     $query = "SELECT nomeevento, etichetta FROM viaggio WHERE nomeevento = '$destination'"; 
 
     $result= pg_query($db_connection, $query)or die('Item not found! ' . pg_last_error());
