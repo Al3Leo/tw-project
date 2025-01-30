@@ -20,6 +20,7 @@ session_start();
                 <ul>
                     <li><a id="hero__search__choose__whereLink" href="#">Where</a></li>
                     <li><a id="hero__search__choose__budgetLink" href="#">Budget</a></li>
+                    <li><a id="hero__search__choose__typeLink" href="#">Type</a></li>
                     <li><a id="hero__search__choose__showAll" href="#" onclick="restoreCatalogueView(); return false;">Show All</a></li>
                 </ul>
             </div>
@@ -36,214 +37,173 @@ session_start();
                         <li><a onclick="searchBudget('> 4000') ">&#62 4000</a></li>
                     </ul>
                 </div>
+                <div id="hero__search__choosed__type" class=" d-flex flex-row align-items-center justify-content-between hero__search__choosed__item menu">
+                    <span><b>Type</b></span>
+                    <ul>
+                        <li><a>Planets</a></li>
+                        <li><a>Galaxies</a></li>
+                        <li><a>Moons</a></li>
+                        <li><a>Nebulae</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="parallax"></div>
     </div>
     <main id="main_catalogue">
-        <!-- Planets -->
-        <div id="planets_text">
-            <h2 class="text-uppercase">Planets</h2>
-            <h3>Embark on journeys to the most fascinating planets across the universe, each offering unique landscapes and experiences</h3>
-            <div class="catalogue__separator"></div>
-        </div>
-        <div id="catalogue__planets" class="d-grid catalogue">
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Mercury">
-                <a href="pages/catalogue/catalogue-items/planets/mercury.php">
-                    <img class="responsive" src="assets/images/nasa/planets/mercury.jpg" alt="Mercury">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Mercury</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Venus">
-                <a href="pages/catalogue/catalogue-items/planets/venus.php">
-                    <img class="responsive" src="assets/images/nasa/planets/venus.jpg" alt="Venus">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Venus</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Mars">
-                <a href="pages/catalogue/catalogue-items/planets/mars.php">
-                    <img class="responsive" src="assets/images/nasa/planets/mars.jpg" alt="Mars">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Mars</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Jupiter">
-                <a href="pages/catalogue/catalogue-items/planets/jupiter.php">
-                    <img class="responsive" src="assets/images/nasa/planets/jupiter.jpg" alt="Jupiter">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Jupiter</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Saturn">
-                <a href="pages/catalogue/catalogue-items/planets/saturn.php">
-                    <img class="responsive" src="assets/images/nasa/planets/saturn.jpg" alt="Saturn">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Saturn</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Uranus">
-                <a href="pages/catalogue/catalogue-items/planets/uranus.php">
-                    <img class="responsive" src="assets/images/nasa/planets/uranus.jpg" alt="Uranus">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Uranus</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Neptune">
-                <a href="pages/catalogue/catalogue-items/planets/neptune.php">
-                    <img class="responsive" src="assets/images/nasa/planets/neptune.jpg" alt="Neptune">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Neptune</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Pluto">
-                <a href="pages/catalogue/catalogue-items/planets/pluto.php">
-                    <img class="responsive" src="assets/images/nasa/planets/pluto.jpg" alt="Pluto">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Pluto</b>
-                </div>
-            </div>
-        </div>
+        <?php
+        require_once "../../backend/ConnettiDb.php";
+        require_once "../../backend/getAllUniqueTrips.php";
 
-        <!-- Galaxies -->
-        <div id="galaxie_text">
-            <h2 class="text-uppercase">Galaxies</h2>
-            <h3>For the boldest explorers, venturing beyond the Milky Way is the ultimate adventure. Discover distant galaxies, each holding secrets and wonders that only the most courageous dare to uncover</h3>
-            <div class="catalogue__separator"></div>
-        </div>
-        <div id="catalogue__galaxies" class="d-grid catalogue">
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Andromeda">
-                <a href="pages/catalogue/catalogue-items/galaxies/andromeda.php">
-                    <img class="responsive" src="assets/images/nasa/galaxies/andromeda.jpg" alt="Andromeda">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Andromeda (M31)</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Triangulum">
-                <a href="pages/catalogue/catalogue-items/galaxies/triangulum.php">
-                    <img class="responsive" src="assets/images/nasa/galaxies/triangulum.jpg" alt="Triangulum Galaxy">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Triangulum (M33)</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Whirlpool">
-                <a href="pages/catalogue/catalogue-items/galaxies/whirlpool.php">
-                    <img class="responsive" src="assets/images/nasa/galaxies/whirlpool.jpg" alt="Whirlpool Galaxy">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Whirlpool (M51)</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Pinwheel">
-                <a href="pages/catalogue/catalogue-items/galaxies/pinwheel.php">
-                    <img class="responsive" src="assets/images/nasa/galaxies/pinwheel.jpg" alt="Pinwheel Galaxy">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Pinwheel (M101)</b>
-                </div>
-            </div>
-        </div>
+        $planets = array();
+        $moons = array();
+        $galaxies = array();
+        $nebulae = array();
 
-        <!-- Moons -->
-        <div id="moons_text">
-            <h2 class="text-uppercase">Natural Satellites (Moons)</h2>
-            <h3>Explore the unique wonders of our solar system's moons, from Earth's own companion to the distant icy worlds, each offering a distinct cosmic experience</h3>
-            <div class="catalogue__separator"></div>
-        </div>
-        <div id="catalogue__moons" class="d-grid catalogue">
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Moon">
-                <a href="pages/catalogue/catalogue-items/moons/moon.php">
-                    <img class="responsive" src="assets/images/nasa/moons/moon.jpg" alt="Moon">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Moon (Earth)</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Titan">
-                <a href="pages/catalogue/catalogue-items/moons/titan.php">
-                    <img class="responsive" src="assets/images/nasa/moons/titan.jpg" alt="Titan">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Titan (Saturn)</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Europa">
-                <a href="pages/catalogue/catalogue-items/moons/europa.php">
-                    <img class="responsive" src="assets/images/nasa/moons/europa.jpg" alt="Europa">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Europa (Jupiter)</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Enceladus">
-                <a href="pages/catalogue/catalogue-items/moons/enceladus.php">
-                    <img class="responsive" src="assets/images/nasa/moons/enceladus.jpg" alt="Enceladus">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Enceladus (Saturn)</b>
-                </div>
-            </div>
-        </div>
+        /* Divido l'array in sottoarray in base all'etichetta che hanno nel db*/
+        if (isset($eventsArray)) {
+            foreach ($eventsArray as $eventName => $label) {
+                if ($label === "planets") {
+                    $planets[$eventName] = $label;
+                } elseif ($label === "galaxies") {
+                    $galaxies[$eventName] = $label;
+                } elseif ($label === "moons") {
+                    $moons[$eventName] = $label;
+                } elseif ($label === "nebulae") {
+                    $nebulae[$eventName] = $label;
+                } else {
+                    error_log('Label not found!');
+                }
+            }
+        }
 
-        <!-- Nebulae -->
-        <div id="nebulae_text">
-            <h2 class="text-uppercase">Nebulae</h2>
-            <h3>Immerse yourself in the ethereal beauty of cosmic clouds. These vibrant, star-forming regions of space offer breathtaking views and a chance to witness the birthplace of stars and planets</h3>
-            <div class="catalogue__separator"></div>
-        </div>
-        <div id="catalogue__nebulae" class="d-grid catalogue">
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Tarantula">
-                <a href="pages/catalogue/catalogue-items/nebulae/tarantula.php">
-                    <img class="responsive" src="assets/images/nasa/nebulae/tarantula.jpg" alt="Tarantula Nebula">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Tarantula</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Horsehead">
-                <a href="pages/catalogue/catalogue-items/nebulae/horsehead.php">
-                    <img class="responsive" src="assets/images/nasa/nebulae/horsehead.jpg" alt="Horsehead Nebula">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Horsehead</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Eagle">
-                <a href="pages/catalogue/catalogue-items/nebulae/Eagle.php">
-                    <img class="responsive" src="assets/images/nasa/nebulae/eagle.jpg" alt="Eagle Nebula">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Eagle</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Carina">
-                <a href="pages/catalogue/catalogue-items/nebulae/carina.php">
-                    <img class="responsive" src="assets/images/nasa/nebulae/carina.jpg" alt="Carina Nebula">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Carina</b>
-                </div>
-            </div>
-            <div class="catalogue__item d-flex flex-column align-items-center justify-content-center" id="Helix">
-                <a href="pages/catalogue/catalogue-items/nebulae/helix.php">
-                    <img class="responsive" src="assets/images/nasa/nebulae/helix.jpg" alt="Helix Nebula">
-                </a>
-                <div class="catalogue__item__text">
-                    <b>Helix</b>
-                </div>
-            </div>
-        </div>
+        /*
+             *  PLANETS
+             */
+
+        if (sizeof($planets) != 0) {
+            echo "
+                    <!-- Planets -->
+                    <div id='planets_text' class='main__catalogue__section-title'>
+                        <h2 class='text-uppercase'>Planets</h2>
+                        <h3>Embark on journeys to the most fascinating planets across the universe, each offering unique landscapes and experiences</h3>
+                        <div class='catalogue__separator'></div>
+                    </div>
+                    <div id='catalogue__planets' class='d-grid catalogue'>
+                ";
+            foreach ($planets as $eventName => $label) {
+                echo "
+                        <div class='catalogue__item d-flex flex-column align-items-center justify-content-center' id = '" . $eventName . "'> 
+                            <a href='pages/catalogue/catalogue-items/planets/" . $eventName . ".php'>
+                                <img class='responsive' src='assets/images/nasa/planets/" . $eventName . ".jpg' alt='" . $eventName . "'>
+                            </a>
+                            <div class='catalogue__item__text'>
+                                <p><b>" . $eventName . "</b></p>
+                                <!-- Se priceArray ha un valore imposto il prezzo, altrimenti not found -->
+                                <p class='text-center'><small>" . (isset($priceArray) ? $priceArray[$eventName] : 'Price Not Found') . " &dollar;</small></p>   
+                            </div>
+                        </div>
+                    ";
+            }
+            echo "</div>";
+        }
+
+        /*
+             *  GALAXIES
+             */
+
+        if (sizeof($galaxies) != 0) {
+            echo "
+                    <!-- Galaxies -->
+                    <div id='galaxies_text' class='main__catalogue__section-title'>
+                        <h2 class='text-uppercase'>Galaxies</h2>
+                        <h3> For the boldest explorers, venturing beyond the Milky Way is the ultimate adventure. Discover distant galaxies, each holding secrets and wonders that only the most courageous dare to uncover</h3>
+                        <div class='catalogue__separator'></div>
+                    </div>
+                    <div id='catalogue__galaxies' class='d-grid catalogue'>
+
+                ";
+            foreach ($galaxies as $eventName => $label) {
+                echo "
+                        <div class='catalogue__item d-flex flex-column align-items-center justify-content-center' id = '" . $eventName . "'> 
+                            <a href='pages/catalogue/catalogue-items/galaxies/" . $eventName . ".php'>
+                                <img class='responsive' src='assets/images/nasa/galaxies/" . $eventName . ".jpg' alt='" . $eventName . "'>
+                            </a>
+                            <div class='catalogue__item__text'>
+                                <p><b>" . $eventName . "</b></p>
+                                <!-- Se priceArray ha un valore imposto il prezzo, altrimenti not found -->
+                                <p class='text-center'><small>" . (isset($priceArray) ? $priceArray[$eventName] : 'Price Not Found') . " &dollar;</small></p>   
+                            </div>
+                        </div>
+                    ";
+            }
+            echo "</div>";
+        }
+
+        /*
+             *  MOONS
+             */
+
+        if (sizeof($moons) != 0) {
+            echo "
+                    <!-- Moons -->
+                    <div id='moons_text' class='main__catalogue__section-title'>
+                        <h2 class='text-uppercase'>Natural satellites (moons)</h2>
+                        <h3> Explore the unique wonders of our solar system's moons, from Earth's own companion to the distant icy worlds, each offering a distinct cosmic experience </h3>
+                        <div class='catalogue__separator'></div>
+                    </div>
+                    <div id='catalogue__moons' class='d-grid catalogue'>
+
+                ";
+            foreach ($moons as $eventName => $label) {
+                echo "
+                        <div class='catalogue__item d-flex flex-column align-items-center justify-content-center' id = '" . $eventName . "'> 
+                            <a href='pages/catalogue/catalogue-items/moons/" . $eventName . ".php'>
+                                <img class='responsive' src='assets/images/nasa/moons/" . $eventName . ".jpg' alt='" . $eventName . "'>
+                            </a>
+                            <div class='catalogue__item__text'>
+                                <p><b>" . $eventName . "</b></p>
+                                <!-- Se priceArray ha un valore imposto il prezzo, altrimenti not found -->
+                                <p class='text-center'><small>" . (isset($priceArray) ? $priceArray[$eventName] : 'Price Not Found') . " &dollar;</small></p>   
+                            </div>
+                        </div>
+                    ";
+            }
+            echo "</div>";
+        }
+
+        /*
+             *  NEBULAE
+             */
+
+        if (sizeof($nebulae) != 0) {
+            echo "
+                    <!-- Nebulae -->
+                    <div id='nebulae_text' class='main__catalogue__section-title'>
+                        <h2 class='text-uppercase'>Nebulae</h2>
+                        <h3> Immerse yourself in the ethereal beauty of cosmic clouds. These vibrant, star-forming regions of space offer breathtaking views and a chance to witness the birthplace of stars and planets </h3>
+                        <div class='catalogue__separator'></div>
+                    </div>
+                    <div id='catalogue__nebulae' class='d-grid catalogue'>
+
+                ";
+            foreach ($nebulae as $eventName => $label) {
+                echo "
+                        <div class='catalogue__item d-flex flex-column align-items-center justify-content-center' id = '" . $eventName . "'> 
+                            <a href='pages/catalogue/catalogue-items/nebulae/" . $eventName . ".php'>
+                                <img class='responsive' src='assets/images/nasa/nebulae/" . $eventName . ".jpg' alt='" . $eventName . "'>
+                            </a>
+                            <div class='catalogue__item__text'>
+                                <p><b>" . $eventName . "</b></p>
+                                <!-- Se priceArray ha un valore imposto il prezzo, altrimenti not found -->
+                                <p class='text-center'><small>" . (isset($priceArray) ? $priceArray[$eventName] : 'Price Not Found') . " &dollar;</small></p>   
+                            </div>
+                        </div>
+                    ";
+            }
+            echo "</div>";
+        }
+        ?>
     </main>
     <?php require_once "../../components/footer/footer.php" ?>
     <script src="pages/catalogue/catalogue.js" defer></script>
