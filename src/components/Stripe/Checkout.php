@@ -70,9 +70,11 @@ try {
     http_response_code(303);
     header("Location: " . $checkout_session->url);
 } catch (\Stripe\Exception\ApiErrorException $e) {
-    echo 'Errore API di Stripe: ',  $e->getMessage(), "\n";
+    //echo 'Errore API di Stripe: ',  $e->getMessage(), "\n";
+    header("Location: " . $urlerror);
 } catch (Exception $e) {
-    echo 'Eccezione generale: ',  $e->getMessage(), "\n";
+    //echo 'Eccezione generale: ',  $e->getMessage(), "\n";
+    header("Location: " . $urlerror);
 }
 }
 ?>
