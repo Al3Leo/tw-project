@@ -103,7 +103,8 @@ function updateSearch(arraySearch) {
     var planets = 0;
     var moons = 0;
     var nebulae = 0;
-    var galaxie = 0;
+    var galaxies = 0;
+
     //per ciascun div con classe catalogue__item verifico se ha id uguale al nome evento.
     //In particolare se ha quell'id è stato trovato l'elemento a cui impostare display a flex altrimenti a none
     catalogueItems.forEach(function (item) {
@@ -122,8 +123,8 @@ function updateSearch(arraySearch) {
         moons++;
       } else if (evento.etichetta == 'nebulae') {
         nebulae++;
-      } else {
-        galaxie++;
+      } else if (evento.etichetta === 'galaxies') {
+        galaxies++;
       }
     });
     //gestione dei div che contengono testo e le etichette come titolo
@@ -136,9 +137,9 @@ function updateSearch(arraySearch) {
     if (div_moons) {
       div_moons.style.display = (moons == 0) ? 'none' : 'block';
     }
-    var div_galaxie = document.getElementById('galaxie_text');
-    if (div_galaxie) {
-      div_galaxie.style.display = (galaxie == 0) ? 'none' : 'block';
+    var div_galaxies = document.getElementById('galaxies_text');
+    if (div_galaxies) {
+      div_galaxies.style.display = (galaxies == 0) ? 'none' : 'block';
     }
     var div_nebulae = document.getElementById('nebulae_text');
     if (div_nebulae) {
@@ -158,5 +159,9 @@ function updateSearch(arraySearch) {
 function restoreCatalogueView() {
   catalogueItems.forEach(item => {
     item.style.display = "flex";
+  });
+
+  document.querySelectorAll(".main__catalogue__section-title").forEach(item => {
+    item.style.display = "block";
   });
 }

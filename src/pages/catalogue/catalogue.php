@@ -74,7 +74,7 @@ session_start();
             if(sizeof($planets) != 0){
                 echo "
                     <!-- Planets -->
-                    <div id='planets_text'>
+                    <div id='planets_text' class='main__catalogue__section-title'>
                         <h2 class='text-uppercase'>Planets</h2>
                         <h3>Embark on journeys to the most fascinating planets across the universe, each offering unique landscapes and experiences</h3>
                         <div class='catalogue__separator'></div>
@@ -105,9 +105,9 @@ session_start();
             if (sizeof($galaxies) != 0){
                 echo "
                     <!-- Galaxies -->
-                    <div id='galaxies_text'>
+                    <div id='galaxies_text' class='main__catalogue__section-title'>
                         <h2 class='text-uppercase'>Galaxies</h2>
-                        <h3>For the boldest explorers, venturing beyond the Milky Way is the ultimate adventure. Discover distant galaxies, each holding secrets and wonders that only the most courageous dare to uncover</h3>
+                        <h3> For the boldest explorers, venturing beyond the Milky Way is the ultimate adventure. Discover distant galaxies, each holding secrets and wonders that only the most courageous dare to uncover</h3>
                         <div class='catalogue__separator'></div>
                     </div>
                     <div id='catalogue__galaxies' class='d-grid catalogue'>
@@ -137,7 +137,7 @@ session_start();
              if (sizeof($moons) != 0){
                 echo "
                     <!-- Moons -->
-                    <div id='moons_text'>
+                    <div id='moons_text' class='main__catalogue__section-title'>
                         <h2 class='text-uppercase'>Natural satellites (moons)</h2>
                         <h3> Explore the unique wonders of our solar system's moons, from Earth's own companion to the distant icy worlds, each offering a distinct cosmic experience </h3>
                         <div class='catalogue__separator'></div>
@@ -169,7 +169,7 @@ session_start();
              if (sizeof($nebulae) != 0){
                 echo "
                     <!-- Nebulae -->
-                    <div id='nebulae_text'>
+                    <div id='nebulae_text' class='main__catalogue__section-title'>
                         <h2 class='text-uppercase'>Nebulae</h2>
                         <h3> Immerse yourself in the ethereal beauty of cosmic clouds. These vibrant, star-forming regions of space offer breathtaking views and a chance to witness the birthplace of stars and planets </h3>
                         <div class='catalogue__separator'></div>

@@ -18,11 +18,9 @@ if (isset($_GET['destination'])) {
             //segno come inserito anche nel eventInseriti cosi da non ripeterli dopo
             $eventiInseriti[$row['nomeevento']] = true;
         }
-
     }
 
     pg_close($db_connection);
-
     echo json_encode($eventsName); //restituisco i dati in formato json
 }
 ?>
