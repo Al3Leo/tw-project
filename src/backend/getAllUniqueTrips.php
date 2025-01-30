@@ -3,7 +3,7 @@
  * Questo script php consente di prelevare tutti i viaggi univoci (non duplicati) del catalogo dal database, con il relativo tipo.
  *  Puó essere usato per prelevare tutte le generiche destinazioni, le quali vengono salvate in un array associativo.
  */
-$getItems = "SELECT DISTINCT nomeevento,etichetta FROM viaggio";     //ottengo i viaggi presenti nel db
+$getItems = "SELECT DISTINCT nomeevento,etichetta,idevento FROM viaggio ORDER BY idevento";     //ottengo i viaggi presenti nel db
 $catalogueUniqueItems = pg_query($db_connection, $getItems) or die('Item not found! found! ' . pg_last_error());
 $eventsArray = []; //array contente tutti gli item del catalogo
 if ($catalogueUniqueItems) {

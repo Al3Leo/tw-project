@@ -135,7 +135,7 @@ main {
     row-gap: 10px;
   }
 }
-#planets_text h3,#moons_text h3,#galaxie_text h3,#nebulae_text h3 {
+#planets_text h3,#moons_text h3,#galaxies_text h3,#nebulae_text h3 {
   margin-top: -20px;
   font-weight: 400;
 }
