@@ -124,7 +124,6 @@ if (isset($_SESSION['username'])) {
         }
 
     </style>
-    <base href="../"> <!--punta a ~/pages/-->
     <script>
         function today(){
             var today = new Date();
@@ -134,26 +133,28 @@ if (isset($_SESSION['username'])) {
             var usrid = "<?php echo $username; ?>";
             document.getElementById("today").innerHTML = day + month + year+usrid;
         }
+        <?php require_once "../../components/utils/headMetadata.html" ?>
+        <base href="../"> <!--punta a ~/pages/-->
     </script>
 </head>
 <body>
-<? require_once '../../components/header/header.php' ?>
+<?php //require_once '../../components/header/header.php' ?>
 <main id="main_history">
     <aside id="menu_ordini">
         <div class="opzione">
-            <a href="homepage/homepage.php">Home</a>
+            <a href="../homepage/homepage.php">Home</a>
         </div>
         <div class="opzione">
-            <a href="catalogue/catalogue.php">Catalogue</a>
+            <a href="../catalogue/catalogue.php">Catalogue</a>
         </div>
         <div class="opzione">
-            <a href="support/Supporto.php">Support</a>
+            <a href="../support/Supporto.php">Support</a>
         </div>
         <div class="opzione">
-            <a href="spacehistory/NewSpace.php">Space News</a>
+            <a href="../spacehistory/NewSpace.php">Space News</a>
         </div>
         <div class="opzione" style="border: none">
-            <a href="aboutus/aboutus.php">About us</a>
+            <a href="../aboutus/aboutus.php">About us</a>
         </div>
     </aside>
     <section id="ordini">
@@ -191,6 +192,6 @@ if (isset($_SESSION['username'])) {
         </div>
     </section>
 </main>
-<? require_once '../../components/footer/footer.php' ?>
+<?php //require_once '../../components/footer/footer.php' ?>
 </body>
 </html>
