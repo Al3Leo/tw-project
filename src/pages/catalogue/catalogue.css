@@ -79,21 +79,22 @@
   outline: none;
 }
 
-#hero__search__choosed__budget {
+#hero__search__choosed__budget, #hero__search__choosed__type  {
   width: 100%;
   display: none;
 }
 
-#hero__search__choosed__budget a {
+#hero__search__choosed__budget a, #hero__search__choosed__type a {
   border-radius: 10px;
+
+  &:hover{
+    background-color: var(--tertiaryColor);
+    transition: 1s;
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
 
-#hero__search__choosed__budget a:hover {
-  background-color: var(--tertiaryColor);
-  transition: 1s;
-  font-weight: bold;
-  cursor: pointer;
-}
 
 #hero__search__choose__whereLink {
   font-weight: bold;

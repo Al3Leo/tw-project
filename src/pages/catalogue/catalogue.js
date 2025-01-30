@@ -3,13 +3,15 @@
  */
 const choosedSearch = document.getElementById("hero__search__choosed__search");
 const choosedBudget = document.getElementById("hero__search__choosed__budget");
-const choosed = [choosedSearch, choosedBudget];
+const choosedType = document.getElementById("hero__search__choosed__type");
+const choosed = [choosedSearch, choosedBudget, choosedType];
 
 const whereLink = document.getElementById("hero__search__choose__whereLink");
 const budgetLink = document.getElementById("hero__search__choose__budgetLink");
+const typeLink = document.getElementById("hero__search__choose__typeLink");
 const showAllLink = document.getElementById("hero__search__choose__showAll");
 
-const links = [whereLink, budgetLink];
+const links = [whereLink, budgetLink, typeLink];
 
 let catalogueItems = document.querySelectorAll("div.catalogue__item");
 
