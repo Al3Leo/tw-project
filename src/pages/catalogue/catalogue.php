@@ -61,6 +61,8 @@ session_start();
                         $moons[$eventName] = $label;
                     } elseif($label === "nebulae") {
                         $nebulae[$eventName] = $label;
+                    } else {
+                        error_log('Label not found!');
                     }
                 }
             }
