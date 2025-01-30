@@ -20,7 +20,7 @@ include_once 'contaVisite.php';
 
 
 <main>
-    <form method="get" action="ConfermaDinamica.php">
+    <form method="get" action="../backend/ConfermaDinamica.php">
         <input type="hidden" name="confermaDinamica" value="confermato dinamicamente">
         <button type="submit">provami ora!</button>
     </form>

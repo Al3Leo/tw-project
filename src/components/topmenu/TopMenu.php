@@ -26,8 +26,9 @@
         let cart = document.getElementById("carrello");
         if (cart.style.display != "none")
             cart.style.display = "none";
-        else
-            cart.style.display = "flex";
+        else{
+            document.getElementById("loginpopup").style.display = "none";
+            cart.style.display = "flex";}
     }
 </script>
 <header id="topbar">
