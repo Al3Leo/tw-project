@@ -80,9 +80,9 @@ h1, h2 {
     color: var(--accent);
     overflow: hidden;
     white-space: nowrap;
-    width: 0;
-    animation: typing 3s steps(20, end), blink 0.5s step-end infinite;
-    border-right: 2px solid var(--tertiaryColor);
+    width: 100%;
+    animation: typing 3s steps(20, end) forwards, blink 0.5s step-end infinite; /*forwards fa si che il testo resti visibile*/
+
 }
 
 h1::before, h1::after, h2::before, h2::after {
