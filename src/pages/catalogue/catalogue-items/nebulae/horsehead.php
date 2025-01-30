@@ -1,3 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <?php
+    session_start();
+    $nomeEvento = 'Horsehead';
+    require_once '../../../../components/utils/headMetadata.html';
+    require_once "../../../../backend/ConnettiDb.php";
+    ?>
+    <title><?php echo $nomeEvento ?></title>
+    <link rel="stylesheet" href="../catalogue-items.css">
+    <base href="../../../../" />
+
+    <style>
+        .parallax {
+            background-image: url(<?php echo "assets/images/nasa/nebulae/" . lcfirst($nomeEvento) ?>);
+            background-position: bottom 100px right 0;
+        }
+    </style>
+</head>
+
+<body>
+    <?php
+    require_once "../../../../components/header/header.php";
+    require_once "../../../../backend/getAllUniqueTrips.php";
+    require_once "../../../../backend/getTripInfo.php";
+    require_once "../../../../components/tripDates/tripdates.php";
+    ?>
+    <div class="hero">
+        <div class="parallax"></div>
+        <div class="hero__text">
+            <h1 class="text-center">Horsehead Nebula</h1>
+            <p id="capitalize">
+                <a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/famous-nebulae/horsehead-nebula/">Horsehead</a> is one of the most recognizable dark nebulae in the sky, located in the Orion constellation. Its distinctive shape is a result of thick interstellar dust blocking the light from the background emission nebula IC 434. The nebula is approximately <b>1,375 light-years</b> from Earth and offers a breathtaking view of cosmic formation and stellar nurseries.<br>The Horsehead Nebula is <b>extraordinary</b> for its dramatic silhouette against the glowing hydrogen gas. It is a key target for astronomers studying star formation and the interactions between interstellar matter and radiation.
+            </p>
+        </div>
+    </div>
+    <main id="main" class="d-flex flex-row">
+        <div class="main__left">
+            <h2 class="text-center">Travel Info</h2>
+            <p>Experience the beauty of the Horsehead Nebula, a cosmic wonder where stars are born. This journey takes you deep into the Orion constellation, offering a spectacular perspective on interstellar dust clouds, bright emission regions, and dynamic star formation processes.</p>
+            <div class="main__left__section1 d-flex flex-row justify-content-center align-items-center">
+                <div class="main__left__section1__date d-flex flex-column align-items-center justify-content-around">
+                    <span class="price">
+                        <?php
+                        if (isset($infoArray)) {
+                            $event = $infoArray[$nomeEvento][0];
+                            echo $event['prezzoevento'];
+                        }
+                        ?>
+                        &#8364;
+                    </span>
+                    <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
+                        <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
+                        <span class="days">
+                            <?php
+                            if (isset($infoArray)) {
+                                $event = $infoArray[$nomeEvento][0];
+                                $departure = date_create($event['datapartenza']);
+                                $return = date_create($event['dataritorno']);
+                                $interval = date_diff($return, $departure);
+                                echo $interval->format('%a');
+                            }
+                            ?>
+                            Days
+                        </span>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between align-items-center main__left__section1__date__btn">
+                        <button type="button" class="text-uppercase" onclick="toggleDialog()"> Discover all the dates</button>
+                        <a target="_blank" href="pages/support/Supporto.php">
+                            <button type="button" class="text-uppercase">More info</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="main__left__section1__whatSee">
+                    <h3 class="text-center">What to See</h3>
+                    <ol>
+                        <li><p><span>Dark Silhouette:</span> Observe the stunning shape of the Horsehead Nebula against the luminous IC 434.</p></li>
+                        <li><p><span>Star Formation:</span> Discover new stars emerging from the surrounding molecular clouds.</p></li>
+                        <li><p><span>Orion Belt:</span> Experience a close view of one of the most famous regions in the sky.</p></li>
+                        <li><p><span>Glowing Hydrogen Gas:</span> Witness the vibrant colors of ionized hydrogen lighting up the nebula.</p></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="main__right">
+            <div class="main__right__celestialBodyInfo">
+                <h3 class="text-center">Celestial Body Info</h3>
+            </div>
+        </div>
+    </main>
+    <div class="suggestions">
+        <h4 class="text-center">You might also be interested in</h4>
+        <div id="suggestions__carousel-ct" class="slideshow d-flex flex-row">
+        </div>
+    </div>
+    <?php
+    require_once "../../../../components/footer/footer.php";
+    ?>
+    <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
+    <script type="text/javascript" defer>
+        const celestialBody = "<?php echo $nomeEvento ?>";
+        const eventsArray = <?php echo $jsonUniqueEventsArray; ?>
+        call_lso_api(celestialBody);
+        fillSuggestions(celestialBody, eventsArray);
+    </script>
+</body>
+
+</html><
+
+
 
 !DOCTYPE html>
 <html lang="en">

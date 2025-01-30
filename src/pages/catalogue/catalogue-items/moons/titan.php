@@ -49,7 +49,7 @@
                             echo $event['prezzoevento'];    //accedo al campo del prezzo del sottoarray
                         }
                         ?>
-                        &#8364;</span>
+                        &#36;</span>
                     <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
                         <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
                         <span class="days">
