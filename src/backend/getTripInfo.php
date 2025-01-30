@@ -32,5 +32,4 @@ if (isset($nomeEvento)) {
         // Converte l'array in JSON per manipolarlo facilmente con JS
         $jsonTripInfoArray = json_encode($infoArray, JSON_PRETTY_PRINT); // Aggiunto JSON_PRETTY_PRINT per leggibilità
     }
-    pg_close($db_connection);
 }

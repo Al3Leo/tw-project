@@ -145,13 +145,7 @@ function updateSearch(arraySearch) {
     if (div_nebulae) {
       div_nebulae.style.display = (nebulae == 0) ? 'none' : 'block';
     }
-  } /*else { DA DECIDEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-    var h3 = document.createElement('h3');
-    h3.textContent = "Oh no, it looks like you didn't enter the right celestial body";
-    console.error('Elemento genitore ');
-    var main = document.getElementById('main_catalogue');
-    parentElement.insertBefore(h3, parentElement.firstChild);
-  }*/
+  }
 }
 /*
  * Funzione per ripristianare la vista del catalogo e mostrare nuovamente tutti gli items. 

@@ -17,5 +17,4 @@ if ($catalogueUniqueItems) {
     $jsonUniqueEventsArray = json_encode($eventsArray); //converte l'array in json per manipolarlo piú facilmente con js
     $jsonUniquePriceArray = json_encode($priceArray); 
 }
-pg_close($db_connection);
 ?>
