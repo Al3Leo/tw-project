@@ -89,7 +89,7 @@
             </div>
             <div class="main__left__tripKnowledge">
                 <h3 class="text-center">Everything you need to know about this trip</h3>
-                <p>Embark on an unforgettable journey to <b>Andromeda!</b> This galaxy offers <b>breathtaking sights</b>, unique cosmic phenomena, and a deep connection to the mysteries of the universe. Equip yourself with specialized space travel gear and follow our expert guides for a safe and enriching experience. Learn about Andromeda's historical significance in astronomy and its role in shaping our understanding of galaxies. The trip lasts 10 days, featuring daily excursions and moments of reflection in our cutting-edge space facilities. Feel free to tailor your journey to your specific interests for the ultimate cosmic adventure!
+                <p>Embark on an unforgettable journey to <b>Helix!</b> This nebulae offers <b>breathtaking sights</b>, unique cosmic phenomena, and a deep connection to the mysteries of the universe. Equip yourself with specialized space travel gear and follow our expert guides for a safe and enriching experience. Learn about Helix's historical significance in astronomy and its role in shaping our understanding of galaxies. The trip lasts 10 days, featuring daily excursions and moments of reflection in our cutting-edge space facilities. Feel free to tailor your journey to your specific interests for the ultimate cosmic adventure!
                     Feel free to adjust or expand upon these sections as needed for your site. Let me know if there's anything else you'd like to add!
                 </p>
                 <div class="main__left__tripKnowledge__item">
