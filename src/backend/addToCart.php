@@ -26,7 +26,8 @@ if (isset($_COOKIE['cart'])) {
 $info = array(
     "nome" => $prodotto['nomeevento'],
     "prezzo" => $prodotto['prezzoevento'],
-    "id" => $prodotto['idevento']
+    "id" => $prodotto['idevento'],
+    "datapartenza" =>$prodotto['datapartenza']
 );
 
     $duplicato = false;

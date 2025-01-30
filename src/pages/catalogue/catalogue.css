@@ -79,26 +79,20 @@
   outline: none;
 }
 
-#hero__search__choosed__budget,
-#hero__search__choosed__period {
+#hero__search__choosed__budget {
   width: 100%;
   display: none;
 }
 
-#hero__search__choosed__budget a,
-#hero__search__choosed__period a {
+#hero__search__choosed__budget a {
   border-radius: 10px;
 }
 
-#hero__search__choosed__budget a:hover,
-#hero__search__choosed__period a:hover {
+#hero__search__choosed__budget a:hover {
   background-color: var(--tertiaryColor);
   transition: 1s;
   font-weight: bold;
-}
-
-#hero__search__choosed__period button:hover{
-  background-color: var(--tertiaryColor);
+  cursor: pointer;
 }
 
 #hero__search__choose__whereLink {
@@ -141,7 +135,7 @@ main {
     row-gap: 10px;
   }
 }
-main > h3 {
+#planets_text h3,#moons_text h3,#galaxie_text h3,#nebulae_text h3 {
   margin-top: -20px;
   font-weight: 400;
 }

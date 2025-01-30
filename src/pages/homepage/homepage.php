@@ -3,64 +3,86 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <?php require_once "../../components/utils/headMetadata.html"?>
+    <?php require_once "../../components/utils/headMetadata.html" ?>
     <title>Outer Space</title>
     <link rel="stylesheet" href="homepage.css">
-    <base href="../../" />  <!-- Torna in /src -->
+    <base href="../../" /> <!-- Torna in /src -->
 </head>
+
 <body>
-    <?php require_once "../../components/header/header.php"?>
+    <?php require_once "../../components/header/header.php" ?>
     <div class="hero">
         <div id="hero__text">
             <h2>Welcome to the Universe</h2>
             <p>Embark on an extraordinary journey beyond the stars. Explore distant planets, witness breathtaking galaxies, and make the impossible your reality. Book your interstellar adventure today and redefine the limits of human exploration!</p>
         </div>
     </div>
-    <main id="main" class="d-flex flex-row flex-nowrap justify-content-between align-items-start">
-        <div id="main__left" class="d-flex align-items-center flex-column text-center">
+    <main id="main" class="d-flex flex-row justify-content-between align-items-start">
+        <div id="main__left" class="launch-offer d-flex align-items-center flex-column text-center">
             <div id="main__left__img">
                 <img class="responsive" src="assets/images/alien_with_money.png" alt="alien with money">
             </div>
             <div id="main__left__text">
-                <p><b>Exclusive Launch Offer</b>
-                <p>
-                <p>Be among the first to embark on a journey beyond Earth. Book now and save up to <b>30%</b> on your first space adventure!</p>
-                <p><small>Ends in:</small></p>
-                <div id="main__left__countdown" class="d-flex">
-                    <div>
-                        <p id="main__left__countdown__days">00</p>
-                        <span>Days</span>
-                    </div>
-                    <div>
-                        <p id="main__left__countdown__hours">00</p>
-                        <span>Hours</span>
-                    </div>
-                    <div>
-                        <p id="main__left__countdown__minutes">00</p>
-                        <span>Minutes</span>
-                    </div>
-                    <div>
-                        <p id="main__left__countdown__seconds">00</p>
-                        <span>Seconds</span>
-                    </div>
-                </div>
+    <?php 
+    require_once "../../backend/gestioneCoupon.php";
+    if (!isset($_SESSION['username']) || $mostraCoupon == true) { 
+    ?>
+        <p><b>Exclusive Launch Offer</b></p>
+        <p>Be among the first to embark on a journey beyond Earth. Book now and save up to <b>30%</b> on your first space adventure!</p>
+        <p><small>Ends in:</small></p>
+        <div id="main__left__countdown" class="d-flex">
+            <div>
+                <p id="main__left__countdown__days">00</p>
+                <span>Days</span>
             </div>
-            <button type="button">Get Deal!</button>
+            <div>
+                <p id="main__left__countdown__hours">00</p>
+                <span>Hours</span>
+            </div>
+            <div>
+                <p id="main__left__countdown__minutes">00</p>
+                <span>Minutes</span>
+            </div>
+            <div>
+                <p id="main__left__countdown__seconds">00</p>
+                <span>Seconds</span>
+            </div>
+        </div>
+        <?php if (!isset($_SESSION['username'])) { ?>
+            <button id="getDeal" type="button" onclick="openLoginPopup()">Get Deal!</button>
+        <?php } elseif ($mostraCoupon == true) { ?>
+            <p><small>A coupon for you!</small></p>
+            <button type="button" id="copyToClipboard">PWEDHFRL</button>
+        <?php } ?>
+    <?php } elseif ($mostraCoupon == false) { ?>
+        <p><b>Stay Updated for More Exciting Offers</b></p>
+        <p>We hope you enjoyed your recent adventure! Just because you've claimed our current offer doesn't mean the excitement ends here.<br> Make sure to stay tuned for <b>more stellar deals</b> and exclusive promotions:</p>
+        <button type="button" onclick="window.open('pages/spacehistory/NewSpace.php#newsletter', '_self')">Stay Tuned!</button>
+    <?php } ?>
+</div>
+
 
         </div>
-        <div id="main__right" class="text-center d-flex flex-column align-items-center">
+        <div id="main__right"  style="width:50vw" class="text-center d-flex flex-column align-items-center">
             <h3>Your Gateway to the Universe</h3>
             <div id="main__right__slideshow" class="slideshow">
                 <img class="responsive slide" src="assets/images/nasa/moon.jpg" alt="moon">
                 <img class="responsive slide" src="assets/images/nasa/kepler.jpg" alt="kepler">
+                <img class="responsive slide" src="assets/images/nasa/falcon9-3.jpg" alt="falcon-9">
+                <img class="responsive slide" src="assets/images/nasa/galaxies/andromeda.jpg" alt="andromeda">
+                <img class="responsive slide" src="assets/images/nasa/satelite.jpg" alt="satelite">
+                <img class="responsive slide" src="assets/images/nasa/launch.jpg" alt="space rocket">
+                <img class="responsive slide" src="assets/images/nasa/nebulae/carina.jpg" alt="carina nebula">
+
             </div>
             <div id="main__right__text">
                 <h4>Unleash your inner explorer with our tailored interstellar adventures</h4>
                 <p>Whether you're dreaming of walking on the moon, marveling at the rings of Saturn, or witnessing a supernova up close, we make it possible. Our state-of-the-art spacecraft and expert crew ensure a safe and unforgettable journey among the stars</p>
             </div>
             <div id="main__right__buttons">
-                <a href=""><button type="button">About us</button></a>
+                <a href="pages/aboutus/aboutus.php"><button type="button">About us</button></a>
             </div>
         </div>
     </main>
@@ -91,7 +113,7 @@ session_start();
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
-                    <p>During the journey, you’ll enjoy unique experiences such as floating in zero gravity, spectacular views of deep space, and even gourmet dining with a view of Earth.</p>
+                    <p>During the journey, you'll enjoy unique experiences such as floating in zero gravity, spectacular views of deep space, and even gourmet dining with a view of Earth.</p>
                 </div>
             </div>
             <div class="faq__item">
@@ -100,7 +122,7 @@ session_start();
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
-                    <p>No, we’ve got you covered! Your ticket includes everything you need, from space suits to onboard amenities. Feel free to bring small personal items or keepsakes for the trip.</p>
+                    <p>No, we've got you covered! Your ticket includes everything you need, from space suits to onboard amenities. Feel free to bring small personal items or keepsakes for the trip.</p>
                 </div>
             </div>
             <div class="faq__item">
@@ -123,7 +145,7 @@ session_start();
             </div>
             <div class="faq__item">
                 <div class="faq__item__question d-flex justify-content-between align-items-center">
-                    <p>What’s the accommodation like in space?</p>
+                    <p>What's the accommodation like in space?</p>
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
@@ -202,8 +224,9 @@ session_start();
             </div>
         </section>
     </div>
-    <?php require_once "../../components/footer/footer.html"?>
+    <?php require_once "../../components/footer/footer.php" ?>
     <script src="pages/homepage/homepage.js"></script>
     <script src="assets/js/slideshow.js"></script>
 </body>
+
 </html>

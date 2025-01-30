@@ -6,11 +6,13 @@
  * In caso di errore, viene visualizzato un messaggio di errore.
  */
 
+ error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 
 /**
  * Includere il file autoload.php generato da Composer.
  */
-require __DIR__ . "/vendor/autoload.php";
+require_once "../../../dependencies/vendor/autoload.php";
 /**
  * Ottenere l'host e l'URI corrente per costruire l'URL di conferma e di errore.
  */
@@ -18,11 +20,15 @@ $host = $_SERVER['HTTP_HOST'];
 $uri = rtrim(dirname($_SERVER['REQUEST_URI']), '/\\');
 $urlconfirm = "http://$host$uri/../../backend/ConfermaDinamica.php?confirmcheckout=true";
 $urlerror = "http://$host$uri/../../pages/error/errorPagamento.php";
+
+$dotenv = Dotenv\Dotenv::createImmutable('../../../');
+$dotenv->load();
+
 /**
  * Impostare la chiave segreta di Stripe.
  */
-$stripe_secret_key = "sk_test_PRIVATE_KEY_DASHBOARD";//chiave da sostituire con la chiave segreta fornita da stripe
-\Stripe\Stripe::setApiKey('');
+$stripe_secret_key = $_ENV['STRIPE_SECRET_KEY']; //chiave da sostituire con la chiave segreta fornita da stripe
+\Stripe\Stripe::setApiKey($stripe_secret_key);
 /**
  *Gestione dati del carrello:
  *Se i dati del carrello sono presenti nell'URL ($_GET), vengono decodificati e convertiti in un array associativo. 
@@ -45,7 +51,7 @@ if (isset($_GET['cart'])) {
         ];
     }
 
-/**
+/*
  * Creazione della Sessione di Checkout: 
  * Utilizzando l'API di Stripe, viene creata una sessione di checkout con i dettagli del carrello. 
  * 1.In caso di successo, l'utente viene reindirizzato all'URL della sessione di checkout di Stripe. 
@@ -57,7 +63,9 @@ try {
         "mode" => "payment",
         "success_url" => $urlconfirm,
         "cancel_url" => $urlerror,
-        "line_items" => $line_items
+        "line_items" => $line_items,
+        "allow_promotion_codes" => true //per inserire il codice sconto
+    
     ]);
     http_response_code(303);
     header("Location: " . $checkout_session->url);

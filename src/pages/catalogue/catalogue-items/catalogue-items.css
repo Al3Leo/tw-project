@@ -192,3 +192,7 @@ main {
     display: none;
   }
 }
+
+.parallax{
+  height: 50vh;
+}
