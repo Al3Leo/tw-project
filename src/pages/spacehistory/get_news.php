@@ -5,8 +5,8 @@
 ?>
 <?php
 if (isset($_GET['dob'])) {
-    $dob = $_GET['dob'];/**< Ottiene la data di nascita dall'input */
-    $date = date('Y-m-d', strtotime($dob));/**< Converte la data in formato 'Y-m-d' */
+    $dob = $_GET['dob'];
+    $date = date('Y-m-d', strtotime($dob));/*Converto la data in formato 'Y-m-d' */
     $url = "https://api.spaceflightnewsapi.net/v4/articles/?limit=4&ordering=published_at&published_at_gte=$date";
 
     // Inizializza una sessione cURL

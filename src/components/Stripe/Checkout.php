@@ -18,7 +18,7 @@ require_once "../../../dependencies/vendor/autoload.php";
  */
 $host = $_SERVER['HTTP_HOST'];
 $uri = rtrim(dirname($_SERVER['REQUEST_URI']), '/\\');
-$urlconfirm = "http://$host$uri/../../backend/ConfermaDinamica.php?confirmcheckout=true";
+$urlconfirm = "http://$host$uri/../../pages/conferma/Conferma.php?confirmcheckout=true";
 $urlerror = "http://$host$uri/../../pages/error/errorPagamento.php";
 
 $dotenv = Dotenv\Dotenv::createImmutable('../../../');

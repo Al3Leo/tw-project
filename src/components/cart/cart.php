@@ -105,7 +105,6 @@
     }
     /**
      * Rimuove un elemento dal carrello utilizzando una chiamata AJAX.
-     *
      * Questa funzione invia una richiesta HTTP POST al server per rimuovere un elemento specificato dal carrello.
      * Se l'elemento viene rimosso con successo, l'interfaccia utente viene aggiornata per riflettere la modifica.
      *
