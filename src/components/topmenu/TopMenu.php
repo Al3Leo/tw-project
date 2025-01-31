@@ -9,11 +9,13 @@
         cart.classList.toggle("toggleCart");
         bar.style.borderBottom = "0";
         let btnSignup = document.getElementById("signup");
+        let btnSearch = document.getElementById("search");
         let btnLogin = document.getElementById("login");
         let btnLogout = document.getElementById("logout");
         let userinfo=document.getElementById("userinfo");
         let cart = document.getElementById("carrello");
-        if (btnSignup.style.display == "none") {//l'utente non è loggato 
+
+        if (btnSignup.style.display == "none") {//l'utente è loggato 
             cart.style.display = "none";
             btnSignup.style.display = "none";
             btnLogin.style.display = "none";
@@ -60,6 +62,11 @@
         </svg>
     </a>
     <div class="tuttoadestra">
+        <a href="pages/catalogue/catalogue.php#search"> <!-- anchor link -->
+            <button class="btn" id="search">
+                <i class="fas fa-search" style="color: #feffff;"></i>
+            </button>
+        </a>
         <button class="btn" id="cartbtn" onclick="openCart()">
             <i class="fa-solid fa-cart-shopping"></i> <!--Logo font-awesome-->
         </button>
@@ -90,8 +97,8 @@
             <li><a href="pages/catalogue/catalogue.php">Catalogue</a></li>
             <li><a href="pages/aboutus/aboutus.php">About us</a></li>
             <li><a href="pages/support/Supporto.php">Contact</a></li>
+            <li><a href="pages/homepage/homepage.php#faq">FAQ</a></li>
             <li><a href="pages/spacehistory/NewSpace.php">Space History</a></li>
-            
         </ul>
     </div>
 </header>

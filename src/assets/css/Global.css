@@ -8,7 +8,7 @@
 
 :root {
   background-color: black;
-  --hero-height: calc(100vh - 70px);
+  --hero-height: 100vh;
   --primaryColor: #e9ecfb;
   --secondaryColor: rgba(71, 26, 142, 0.8);
   --tertiaryColor: #f7e951;

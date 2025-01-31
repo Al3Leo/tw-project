@@ -18,14 +18,16 @@
 }
 
 #signup,
-#cartbtn {
+#cartbtn,
+#search {
     border: 3px solid #1d0b42;
     border-radius: 25px;
     font-size: small;
 }
 
 #signup:hover,
-#cartbtn:hover {
+#cartbtn:hover,
+#search:hover {
     border-color: rgb(170, 56, 255) !important;
     transition: 500ms;
 }
@@ -56,6 +58,11 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    z-index: 100;
+    padding: 5px;
 }
 
 .showMenu {

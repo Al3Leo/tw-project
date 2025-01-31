@@ -3,6 +3,9 @@
 @import "../../components/topmenu/topmenu.css";
 @import "../../components/login/login.css";
 
+.hero{ 
+  height: 100vh;
+}
 .parallax {
   background-image: url("../../assets/images/nasa/falcon9-2.jpg");
   height: 100%;

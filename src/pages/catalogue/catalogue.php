@@ -16,6 +16,7 @@ session_start();
     <div class="hero">
         <div id="hero__search-ct" class="position-absolute d-flex align-items-center flex-column">
             <h1 class="text-center">Choose Your Interstellar Experience</h1>
+            <a name="search"></a> <!-- anchor link -->
             <div id="hero__search__choose" class="menu">
                 <ul>
                     <li><a id="hero__search__choose__whereLink" href="#">Where</a></li>

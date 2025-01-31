@@ -87,7 +87,7 @@ session_start();
     </main>
     <div id="secondary-s" class="d-flex flex-row justify-content-between align-item-center justify-content-center">
         <section class="faq">
-            <h3>FAQ - Frequently Asked Question:</h3>
+            <h3><a name="faq">FAQ </a>- Frequently Asked Question:</h3>
             <div class="faq__item">
                 <div class="faq__item__question d-flex justify-content-between align-items-center justify-content-center">
                     <p>Who can travel to space?</p>
