@@ -6,15 +6,17 @@
         cross.classList.toggle("toggleCross");
         let bar = document.getElementById("sideBar");
         bar.classList.toggle("toggleShow");
-        cart.classList.toggle("toggleCart");
         bar.style.borderBottom = "0";
+
+        let search = document.getElementById("sideBar");
+        search.classList.toggle("toggleSearch");
+
         let btnSignup = document.getElementById("signup");
         let btnSearch = document.getElementById("search");
         let btnLogin = document.getElementById("login");
         let btnLogout = document.getElementById("logout");
         let userinfo=document.getElementById("userinfo");
         let cart = document.getElementById("carrello");
-
         if (btnSignup.style.display == "none") {//l'utente è loggato 
             cart.style.display = "none";
             btnSignup.style.display = "none";
@@ -22,6 +24,8 @@
             btnSearch.style.display = "none";
             btnLogout.style.display = "inline";
             userinfo.style.display = "inline";
+            search.classList.toggle("toggleSearch");
+
         } else {
             btnSignup.style.display = "inline";
             btnLogin.style.display = "inline";
