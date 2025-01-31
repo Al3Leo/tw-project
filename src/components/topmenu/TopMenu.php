@@ -19,6 +19,7 @@
             cart.style.display = "none";
             btnSignup.style.display = "none";
             btnLogin.style.display = "none";
+            btnSearch.style.display = "none";
             btnLogout.style.display = "inline";
             userinfo.style.display = "inline";
         } else {
@@ -26,6 +27,7 @@
             btnLogin.style.display = "inline";
             btnLogout.style.display = "none";
             userinfo.style.display = "none";
+            btnSearch.style.display = "none";
         }
         //a scopo didattico sono stati usati due metodi diversi (toggle e style di js)
     }
