@@ -35,7 +35,8 @@ if (isset($_GET['range'])) {
     }else{
         echo "Error:". pg_last_error($db_connection);
     }
-    pg_close($db_connection);
     echo json_encode($eventsBudget);
 }
+pg_close($db_connection);
+
 ?>

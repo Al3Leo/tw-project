@@ -13,8 +13,9 @@ if (isset($_GET['destination'])) {
             'etichetta' => $row['etichetta']
         ]; 
     }
-
-    pg_close($db_connection);
+}
+pg_close($db_connection);
+if(isset($eventsName)){
     echo json_encode($eventsName); //restituisco i dati in formato json
 }
 ?>
