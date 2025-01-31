@@ -36,7 +36,7 @@ function verificaLogin() {
         if (xhr.status === 200) {
             var response = xhr.response;
             if (response.success) {
-                window.location.href = document.referrer;
+                window.location.reload();
             } else {
                 alert(response.error); 
                 document.getElementById("error-message-login").innerText = response.error;

@@ -55,8 +55,8 @@ document.getElementById('newsForm').addEventListener('input', function (event) {
             switch (xhr.status) {
                 case 200:
                     var articles = xhr.response;
-                    console.log(articles);/**< Stampa gli articoli nella console per il debug */
-                    createNewsBlocks(articles);/**< Chiama la funzione per creare e visualizzare i blocchi delle notizie */
+                    console.log(articles);
+                    createNewsBlocks(articles);/*la funzione per creare e visualizzare i blocchi delle notizie */
                     break;
                 case 404:
                     alert("La pagina indicata non esiste!");
@@ -75,12 +75,24 @@ document.getElementById('newsForm').addEventListener('input', function (event) {
         var newsContainer = document.getElementById('newsContainer');
         newsContainer.style.display = 'grid';
         newsContainer.innerHTML = '';
-        articles.forEach(function (article) {
-            var newsBlock = '<div class="card"><img class="contenuto4_img" src="' + article.image_url + '" alt="News Image">' +
-                '<div class="overlay"><h6>' + article.title + '</h6>' +
-                '<p>' + article.summary + '</p></div></div>';
-            newsContainer.insertAdjacentHTML('beforeend', newsBlock);
-        });
+        
+        if (articles.length === 0) {
+            newsContainer.style.display = 'flex';
+            var warningMessage = document.createElement('div');
+            warningMessage.style.color = '#f7e951';
+            warningMessage.style.fontWeight='bold';
+            warningMessage.style.textAlign='center';
+            warningMessage.textContent = 'The selected date is incorrect.';
+            newsContainer.appendChild(warningMessage);
+        } else {
+            articles.forEach(function (article) {
+                var newsBlock = '<div class="card"><img class="contenuto4_img" src="' + article.image_url + '" alt="News Image">' +
+                    '<div class="overlay"><h6>' + article.title + '</h6>' +
+                    '<p>' + article.summary + '</p></div></div>';
+                newsContainer.insertAdjacentHTML('beforeend', newsBlock);
+            });
+        }
     }
+    
 
 });

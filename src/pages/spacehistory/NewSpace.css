@@ -2,7 +2,9 @@
 @import "../../components/footer/footer.css";
 @import "../../components/topmenu/topmenu.css";
 @import "../../components/login/login.css";
-
+span{
+    color: var(--tertiaryColor);
+}
 .news-sezione,
 .slider {
     padding: 3rem;
