@@ -8,7 +8,7 @@ if (isset($_SESSION['username'])) {
 }
 ?>
 <head>
-    <title></title>
+    <title>History Orders</title>
     <meta charset="UTF-8">
     <style>
         body{
@@ -125,7 +125,10 @@ if (isset($_SESSION['username'])) {
         }
 
     </style>
-    <script>
+    <?php require_once "../../components/utils/headMetadata.html" ?>
+    <base href="../../"><!--punta a ~/pages/-->
+</head>
+<script>
         function today(){
             var today = new Date();
             var day = String(today.getDate());
@@ -134,63 +137,65 @@ if (isset($_SESSION['username'])) {
             var usrid = "<?php echo $username; ?>";
             document.getElementById("today").innerHTML = day + month + year+usrid;
         }
-        <?php require_once "../../components/utils/headMetadata.html" ?>
-        <base href="../"> <!--punta a ~/pages/-->
+        
     </script>
-</head>
 <body>
 <!-- per staccare dalle altre pagine ho aggiunto un side menu e tolto header e footer-->
 <main id="main_history">
     <aside id="menu_ordini">
         <div class="opzione">
-            <a href="../homepage/homepage.php">Home</a>
+            <a href="pages/homepage/homepage.php">Home</a>
         </div>
         <div class="opzione">
-            <a href="../catalogue/catalogue.php">Catalogue</a>
+            <a href="pages/catalogue/catalogue.php">Catalogue</a>
         </div>
         <div class="opzione">
-            <a href="../support/Supporto.php">Support</a>
+            <a href="pages/support/Supporto.php">Support</a>
         </div>
         <div class="opzione">
-            <a href="../spacehistory/NewSpace.php">Space News</a>
+            <a href="pages/spacehistory/NewSpace.php">Space News</a>
         </div>
         <div class="opzione" style="border: none">
-            <a href="../aboutus/aboutus.php">About us</a>
+            <a href="pages/aboutus/aboutus.php">About us</a>
         </div>
     </aside>
     <section id="ordini">
-        <div id="list_ord">
-            <?php
-            //vai nel db e per ogni acquisto che ha come acquirenteuser X, lo stampi
-            require_once '../../backend/ConnettiDb.php';
-            $usr=($_SESSION['username']); //trim rimuove caratteri nascosti
-            $sql="SELECT * FROM acquisti WHERE acquirenteuser=$1";
-            $r=pg_prepare($db_connection, "a", $sql);
-            $res=pg_execute($db_connection,"a",array($usr));
-            $r=pg_fetch_assoc($res);
-            for ($i=0; $i<=sizeof($r); $i++) {
-                require 'getInfo.php';
-                echo "<div class=\"mini_order\">
-                        <div class=\"row\">
-                            <section class=\"dettagli_ordine\">";
-                echo "<strong>Order Number: #</strong><span id=\"today\">".$r['idacquisto']."</span><br>
-                        <strong>Trip name:</strong> <span id=\"name\">".$name."</span><br>
-                        <strong>Launch Location:</strong> <span id=\"launch_loc\">".$location."</span><br>
-                        <strong>Launch Date:</strong> <span id=\"launch_date\">".$partenza."</span><br>
-                        <strong>Return Date:</strong> <span id=\"return_date\">".$ritorno."</span><br>
-                        <div style=\"margin-top: 12%;\"><strong>Total Price:</strong> <span id=\"total_price\">$".$price."</span></div><br>
-                    </section>";
-                echo "<aside class=\"ticket_link\">
-                        <!--%20 spazio con url encoding, è anche un rfc-->
-                        <a href=\"OrderHistory/ticket.php?titolo=".$name."&rampa=".$location."&partenza=".$partenza."&num_ordine=".$r['idacquisto']."\">Click Here</a>
-                    </aside>
-                </div>
-            </div>";
-                $r=pg_fetch_assoc($res);
-            }
-            echo "</div>";
-            ?>
-        </div>
+    <div id="list_ord">
+    <?php
+    // Connetti al database e recupera gli acquisti per l'utente loggato
+    require_once '../../backend/ConnettiDb.php';
+    $usr = trim($_SESSION['username']); 
+    $sql = "SELECT * FROM acquisti WHERE acquirenteuser = $1";
+    $res = pg_prepare($db_connection, "a", $sql);
+    $res = pg_execute($db_connection, "a", array($usr));
+    if ($res) {
+        while ($r = pg_fetch_assoc($res)) {
+            require 'GetInfo.php'; //GetInfo.php popola $name, $location, $partenza, $ritorno, $price
+            echo "<div class=\"mini_order\">
+                    <div class=\"row\">
+                        <section class=\"dettagli_ordine\">
+                            <strong>Order Number: #</strong><span id=\"today\">" . $r['idacquisto'] . "</span><br>
+                            <strong>Trip name:</strong> <span id=\"name\">" . $name . "</span><br>
+                            <strong>Launch Location:</strong> <span id=\"launch_loc\">" . $location . "</span><br>
+                            <strong>Launch Date:</strong> <span id=\"launch_date\">" . $partenza . "</span><br>
+                            <strong>Return Date:</strong> <span id=\"return_date\">" . $ritorno . "</span><br>
+                            <div style=\"margin-top: 12%;\"><strong>Total Price:</strong> <span id=\"total_price\">$" . $price . "</span></div><br>
+                        </section>
+                        <aside class=\"ticket_link\">
+                            <!--%20 spazio con url encoding, è anche un rfc-->
+                            <a href=\"pages/OrderHistory/ticket.php?titolo=" . $name . "&rampa=" . $location . "&partenza=" . $partenza . "&num_ordine=" . $r['idacquisto'] . "\">Click Here</a>
+                            </aside>
+                    </div>
+                </div>";
+        }
+    } else {
+        echo "Error: " . pg_last_error($db_connection);
+    }
+
+    pg_close($db_connection);
+    ?>
+</div>
+
     </section>
 </main>
 </body>

@@ -5,16 +5,16 @@
 ?>
 <?php
 if (isset($_GET['dob'])) {
-    $dob = $_GET['dob'];/**< Ottiene la data di nascita dall'input */
-    $date = date('Y-m-d', strtotime($dob));/**< Converte la data in formato 'Y-m-d' */
+    $dob = $_GET['dob'];
+    $date = date('Y-m-d', strtotime($dob));/*Converto la data in formato 'Y-m-d' */
     $url = "https://api.spaceflightnewsapi.net/v4/articles/?limit=4&ordering=published_at&published_at_gte=$date";
 
     // Inizializza una sessione cURL
     $ch = curl_init();/*Inizializzo una nuova sessione cURL */
     curl_setopt($ch, CURLOPT_URL, $url);/*Imposto l'URL per la sessione cURL */
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);/*Imposta l'opzione per restituire il risultato come stringa */
-    $response = curl_exec($ch);/*Esegue la richiesta cURL e ottiene la risposta */
-    curl_close($ch);/*chiude la sessione cURL */
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);/*opzione per restituire il risultato come stringa */
+    $response = curl_exec($ch);/*richiesta cURL e ottiene la risposta */
+    curl_close($ch);/*chiudo la sessione cURL */
 
     if ($response !== false) {
         header('Content-Type: application/json');
@@ -25,7 +25,7 @@ if (isset($_GET['dob'])) {
                 'title' => $article['title'],
                 'published_at' => $article['published_at'],
                 'summary' => $article['summary'],
-                'image_url' => isset($article['image_url']) ? $article['image_url'] : '../../assets/images/space/terra.png',//DEVO METTERE IMMAGINE DEFAULT ANCORA
+                'image_url' => isset($article['image_url']) ? $article['image_url'] : '../../assets/images/starship.JPG',
                 'url' => $article['url']
             ];
         }

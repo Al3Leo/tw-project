@@ -18,12 +18,11 @@ function ajax_add_cart(id, destinazione, costo, partenza) {
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            console.log('Elemento aggiunto al carrello con successo');///PER VEDERE ERRORI RICORDA DI TOGLIERLIIIIII
             // Aggiorna il conteggio totale del carrello o mostra una notifica
             updateCartAdd(id, destinazione, costo, partenza);
-            
-            verifica=document.getElementById(id + '-span');//faccio questo per i click consegutivo 
-                if(!verifica){
+
+            verifica = document.getElementById(id + '-span');//faccio questo per i click consegutivo 
+            if (!verifica) {
                 var btn = document.getElementById(id + '-btn');
                 var td = document.getElementById(id + '-td');
                 btn.style.display = 'none';
@@ -34,7 +33,7 @@ function ajax_add_cart(id, destinazione, costo, partenza) {
                 span.style.color = '#f7e951';
                 span.textContent = 'ADDED';
                 td.appendChild(span);
-                }
+            }
         }
     };
     xhr.send('id=' + id);
@@ -48,6 +47,10 @@ function ajax_add_cart(id, destinazione, costo, partenza) {
  *
  */
 function updateCartAdd(id, destinazione, costo, partenza) {
+    let tfoot = document.getElementById('tfoot');
+    if (tfoot) { //quando inseisco per la prima volta l'elemento td per il totale non c'è per cui deve essere creato
+       createTotalCart(tfoot);
+    }
     tbody = document.getElementById('carrello_tbl').getElementsByTagName('tbody')[0];
     thead = document.getElementById('carrello_tbl').getElementsByTagName('thead')[0];
     if (tbody) {
@@ -64,15 +67,32 @@ function updateCartAdd(id, destinazione, costo, partenza) {
             updateCartTotal(); //Funzione definita nel file cart.php
         } else {
             //se verifica è true cioe l'elemnto gia è contenuto nel carrello allora non fa nulla;
-            if(!verifica){
-            tbody.appendChild(riga) // Inserisci la nuova riga all'inizio del tbody
-            tbody = document.getElementById('carrello_tbl').getElementsByTagName('tfoot')['0'].style.display = '';
-            riga.style.display = '';
-            updateCartTotal();
+            if (!verifica) {
+                tbody.appendChild(riga) // Inserisci la nuova riga all'inizio del tbody
+                tbody = document.getElementById('carrello_tbl').getElementsByTagName('tfoot')['0'].style.display = '';
+                riga.style.display = '';
+                updateCartTotal();
             }
         }
     }
 }
+// Funzione per ottenere o creare l'elemento <td> con id 'total-cart'
+function createTotalCart(tfoot) {
+    let totalCart = document.getElementById('total-cart');
+    if (!totalCart) {
+        //se non esiste creo il td del totale
+        totalCart = document.createElement('td');
+        totalCart.id = 'total-cart';
+        totalCart.colSpan = 5;
+        // lo aggiungo come primo figlio di <tfoot>
+        if (tfoot.firstChild) {
+            tfoot.insertBefore(totalCart, tfoot.firstChild);
+        } else {
+            tfoot.appendChild(totalCart);
+        }
+    }
+}
+
 /**
 * Crea una nuova riga per il carrello con le stesse caratteristiche di quelle 
 * presenti nel carrello

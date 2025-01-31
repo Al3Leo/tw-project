@@ -20,52 +20,52 @@ session_start();
         </div>
     </div>
     <main id="main" class="d-flex flex-row justify-content-between align-items-start">
-        <div id="main__left" class="launch-offer d-flex align-items-center flex-column text-center">
+        <div id="main__left" class="launch-offer d-flex align-items-center justify-content-center flex-column text-center justify-content-center">
             <div id="main__left__img">
                 <img class="responsive" src="assets/images/alien_with_money.png" alt="alien with money">
             </div>
             <div id="main__left__text">
-    <?php 
-    require_once "../../backend/gestioneCoupon.php";
-    if (!isset($_SESSION['username']) || $mostraCoupon == true) { 
-    ?>
-        <p><b>Exclusive Launch Offer</b></p>
-        <p>Be among the first to embark on a journey beyond Earth. Book now and save up to <b>30%</b> on your first space adventure!</p>
-        <p><small>Ends in:</small></p>
-        <div id="main__left__countdown" class="d-flex">
-            <div>
-                <p id="main__left__countdown__days">00</p>
-                <span>Days</span>
+                <?php
+                require_once "../../backend/gestioneCoupon.php";
+                if (!isset($_SESSION['username']) || $mostraCoupon == true) {
+                ?>
+                    <p><b>Exclusive Launch Offer</b></p>
+                    <p>Be among the first to embark on a journey beyond Earth. Book now and save up to <b>30%</b> on your first space adventure!</p>
+                    <p><small>Ends in:</small></p>
+                    <div id="main__left__countdown" class="d-flex">
+                        <div>
+                            <p id="main__left__countdown__days">00</p>
+                            <span>Days</span>
+                        </div>
+                        <div>
+                            <p id="main__left__countdown__hours">00</p>
+                            <span>Hours</span>
+                        </div>
+                        <div>
+                            <p id="main__left__countdown__minutes">00</p>
+                            <span>Minutes</span>
+                        </div>
+                        <div>
+                            <p id="main__left__countdown__seconds">00</p>
+                            <span>Seconds</span>
+                        </div>
+                    </div>
+                    <?php if (!isset($_SESSION['username'])) { ?>
+                        <button id="getDeal" type="button" onclick="openLoginPopup()">Get Deal!</button>
+                    <?php } elseif ($mostraCoupon == true) { ?>
+                        <p><small>A coupon for you!</small></p>
+                        <button type="button" id="copyToClipboard">PWEDHFRL</button>
+                    <?php } ?>
+                <?php } elseif ($mostraCoupon == false) { ?>
+                    <p><b>Stay Updated for More Exciting Offers</b></p>
+                    <p>We hope you enjoyed your recent adventure! Just because you've claimed our current offer doesn't mean the excitement ends here.<br> Make sure to stay tuned for <b>more stellar deals</b> and exclusive promotions:</p>
+                    <button type="button" onclick="window.open('pages/spacehistory/NewSpace.php#newsletter', '_self')">Stay Tuned!</button>
+                <?php } ?>
             </div>
-            <div>
-                <p id="main__left__countdown__hours">00</p>
-                <span>Hours</span>
-            </div>
-            <div>
-                <p id="main__left__countdown__minutes">00</p>
-                <span>Minutes</span>
-            </div>
-            <div>
-                <p id="main__left__countdown__seconds">00</p>
-                <span>Seconds</span>
-            </div>
-        </div>
-        <?php if (!isset($_SESSION['username'])) { ?>
-            <button id="getDeal" type="button" onclick="openLoginPopup()">Get Deal!</button>
-        <?php } elseif ($mostraCoupon == true) { ?>
-            <p><small>A coupon for you!</small></p>
-            <button type="button" id="copyToClipboard">PWEDHFRL</button>
-        <?php } ?>
-    <?php } elseif ($mostraCoupon == false) { ?>
-        <p><b>Stay Updated for More Exciting Offers</b></p>
-        <p>We hope you enjoyed your recent adventure! Just because you've claimed our current offer doesn't mean the excitement ends here.<br> Make sure to stay tuned for <b>more stellar deals</b> and exclusive promotions:</p>
-        <button type="button" onclick="window.open('pages/spacehistory/NewSpace.php#newsletter', '_self')">Stay Tuned!</button>
-    <?php } ?>
-</div>
 
 
         </div>
-        <div id="main__right"  style="width:50vw" class="text-center d-flex flex-column align-items-center">
+        <div id="main__right" style="width:50vw" class="text-center justify-content-center d-flex flex-column align-items-center justify-content-center">
             <h3>Your Gateway to the Universe</h3>
             <div id="main__right__slideshow" class="slideshow">
                 <img class="responsive slide" src="assets/images/nasa/moon.jpg" alt="moon">
@@ -75,7 +75,6 @@ session_start();
                 <img class="responsive slide" src="assets/images/nasa/satelite.jpg" alt="satelite">
                 <img class="responsive slide" src="assets/images/nasa/launch.jpg" alt="space rocket">
                 <img class="responsive slide" src="assets/images/nasa/nebulae/carina.jpg" alt="carina nebula">
-
             </div>
             <div id="main__right__text">
                 <h4>Unleash your inner explorer with our tailored interstellar adventures</h4>
@@ -86,11 +85,11 @@ session_start();
             </div>
         </div>
     </main>
-    <div id="secondary-s" class="d-flex flex-row justify-content-between align-item-center">
+    <div id="secondary-s" class="d-flex flex-row justify-content-between align-item-center justify-content-center">
         <section class="faq">
-            <h3>FAQ - Frequently Asked Question:</h3>
+            <h3><a name="faq">FAQ </a>- Frequently Asked Question:</h3>
             <div class="faq__item">
-                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                <div class="faq__item__question d-flex justify-content-between align-items-center justify-content-center">
                     <p>Who can travel to space?</p>
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
@@ -99,16 +98,16 @@ session_start();
                 </div>
             </div>
             <div class="faq__item">
-                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                <div class="faq__item__question d-flex justify-content-between align-items-center justify-content-center">
                     <p>How much does a space trip cost?</p>
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
                 <div class="faq__item__answer">
-                    <p>Thanks to cutting-edge technology, space travel is now affordable for everyone! Prices start at $500 for a suborbital flight and increase depending on the destination and trip duration.</p>
+                    <p>Thanks to cutting-edge technology, space travel is now affordable for everyone! Prices start at $2000 for a suborbital flight and increase depending on the destination and trip duration.</p>
                 </div>
             </div>
             <div class="faq__item">
-                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                <div class="faq__item__question d-flex justify-content-between align-items-center justify-content-center">
                     <p>What happens during a space trip?</p>
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
@@ -117,7 +116,7 @@ session_start();
                 </div>
             </div>
             <div class="faq__item">
-                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                <div class="faq__item__question d-flex justify-content-between align-items-center justify-content-center">
                     <p>Do I need to bring anything?</p>
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
@@ -126,7 +125,7 @@ session_start();
                 </div>
             </div>
             <div class="faq__item">
-                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                <div class="faq__item__question d-flex justify-content-between align-items-center justify-content-center">
                     <p>Are there baggage limits?</p>
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
@@ -135,7 +134,7 @@ session_start();
                 </div>
             </div>
             <div class="faq__item">
-                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                <div class="faq__item__question d-flex justify-content-between align-items-center justify-content-center">
                     <p>Are meals included on board?</p>
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
@@ -144,7 +143,7 @@ session_start();
                 </div>
             </div>
             <div class="faq__item">
-                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                <div class="faq__item__question d-flex justify-content-between align-items-center justify-content-center">
                     <p>What's the accommodation like in space?</p>
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
@@ -153,7 +152,7 @@ session_start();
                 </div>
             </div>
             <div class="faq__item">
-                <div class="faq__item__question d-flex justify-content-between align-items-center">
+                <div class="faq__item__question d-flex justify-content-between align-items-center justify-content-center">
                     <p>Can I travel with my family or a group?</p>
                     <span class="faq__item__arrow">&#x25BC</span>
                 </div>
@@ -167,39 +166,36 @@ session_start();
             <div id="testimonial__grid" class="d-grid">
                 <div class="testimonial__grid__item">
                     <figure>
-                        <blockquote>From start to finish, the journey was seamless. No special training required, just a passion for discovery. The view of the Milky Way was awe-inspiring. I felt like a true astronaut!</blockquote>
-                        <div class="testimonial__grid__item__arrow"></div>
+                        <blockquote>"From start to finish, the journey was seamless. No special training required, just a passion for discovery. The view of the Milky Way was awe-inspiring. I felt like a true astronaut!"</blockquote>
                         </blockquote>
-                        <div class="testimonial__grid__item__author d-flex align-items-center">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
+                        <div class="testimonial__grid__item__author d-flex align-items-center justify-content-center">
+                            <img src="assets/images/testimonial/micheal-jackson.jpg" alt="Micheal Jackson" />
                             <div class="testimonial__grid__item__author__text">
-                                <p><b>Alex Morgan</b></p>
-                                <p>Teacher</p>
+                                <p><b>Micheal Jackson</b></p>
+                                <p>Singer</p>
                             </div>
                         </div>
                     </figure>
                 </div>
                 <div class="testimonial__grid__item">
                     <figure>
-                        <blockquote>Exploring the cosmos was beyond my wildest expectations. The spaceship was comfortable, and the views were breathtaking. It's incredible how accessible space travel has become. I recommend it to everyone!</blockquote>
-                        <div class="testimonial__grid__item__arrow"></div>
+                        <blockquote>"Exploring the cosmos was beyond my wildest expectations. The spaceship was comfortable, and the views were breathtaking. It's incredible how accessible space travel has become. I recommend it to everyone!"</blockquote>
                         </blockquote>
-                        <div class="testimonial__grid__item__author d-flex align-items-center">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
+                        <div class="testimonial__grid__item__author d-flex align-items-center justify-content-center">
+                            <img src="assets/images/testimonial/emma-stone.jpg" alt="Emma Stone" />
                             <div class="testimonial__grid__item__author__text">
-                                <p><b>Taylor Jordan</b></p>
-                                <p>Space Voyager</p>
+                                <p><b>Emma Stone</b></p>
+                                <p>Actress</p>
                             </div>
                         </div>
                     </figure>
                 </div>
                 <div class="testimonial__grid__item">
                     <figure>
-                        <blockquote>Seeing the vastness of space and the beauty of our planet from orbit changed how I see the world. The crew made the trip enjoyable and safe. This is a must-do for anyone with a spirit of adventure!</blockquote>
-                        <div class="testimonial__grid__item__arrow"></div>
+                        <blockquote>"Seeing the vastness of space and the beauty of our planet from orbit changed how I see the world. The crew made the trip enjoyable and safe. This is a must-do for anyone with a spirit of adventure!"</blockquote>
                         </blockquote>
-                        <div class="testimonial__grid__item__author d-flex align-items-center">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
+                        <div class="testimonial__grid__item__author d-flex align-items-center justify-content-center">
+                            <img src="assets/images/testimonial/male-placeholder.svg" alt="male-placeholder" />
                             <div class="testimonial__grid__item__author__text">
                                 <p><b>Casey Harper</b></p>
                                 <p>Galactic Enthusiast</p>
@@ -209,14 +205,38 @@ session_start();
                 </div>
                 <div class="testimonial__grid__item">
                     <figure>
-                        <blockquote>We took my grandparents on a space trip, and they were over the moon (literally!). The whole experience was comfortable and exciting for all ages. If they can do it, anyone can. It’s a must-try for everyone!</blockquote>
-                        <div class="testimonial__grid__item__arrow"></div>
+                        <blockquote>"We took my grandparents on a space trip, and they were over the moon (literally!). The whole experience was comfortable and exciting for all ages. If they can do it, anyone can. It's a must-try for everyone!"</blockquote>
                         </blockquote>
-                        <div class="testimonial__grid__item__author d-flex align-items-center">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample3.jpg" alt="sq-sample3" />
+                        <div class="testimonial__grid__item__author d-flex align-items-center justify-content-center">
+                            <img src="assets/images/testimonial/female-placeholder.svg" alt="Giulia Moretti" />
                             <div class="testimonial__grid__item__author__text">
-                                <p><b>Alex Morgan</b></p>
+                                <p><b>Giulia Moretti</b></p>
                                 <p>Teacher</p>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                <div class="testimonial__grid__item">
+                    <figure>
+                        <blockquote>"An unforgettable experience! <strong>Outer Space</strong> made my intergalactic trip seamless and exciting. Every detail was taken care of, and the adventures were out of this world. Highly recommend!""</blockquote>
+                        <div class="testimonial__grid__item__author d-flex align-items-center justify-content-center">
+                            <img src="assets/images/testimonial/female-placeholder.svg" alt="Olivia Carter" />
+                            <div class="testimonial__grid__item__author__text">
+                                <p><b>Olivia Carter</b></p>
+                                <p>Policewoman</p>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+                <div class="testimonial__grid__item">
+                    <figure>
+                        <blockquote>"Space travel? A chaotic dance among the stars! Weightless, free, and beautifully insane. The void laughs, and so did I. A trip like this? A joke worth telling. Why so serious? Go beyond!"</blockquote>
+                        </blockquote>
+                        <div class="testimonial__grid__item__author d-flex align-items-center justify-content-center">
+                            <img src="assets/images/testimonial/heath-ledger.avif" alt="Heat Ledger" />
+                            <div class="testimonial__grid__item__author__text">
+                                <p><b>Heath Ledger</b></p>
+                                <p>Actor</p>
                             </div>
                         </div>
                     </figure>

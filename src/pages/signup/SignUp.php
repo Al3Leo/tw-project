@@ -1,8 +1,7 @@
 <?php
 
 /**
- * @file SignUp.php
- * @brief Contiene il form sticky pe la registrazione dell'utente. A seconda degli errori che sono commessi vengono visualizzati
+ *  Contiene il form sticky pe la registrazione dell'utente. A seconda degli errori che sono commessi vengono visualizzati
  * messaggi tramite alert
  */
 session_start();
@@ -43,10 +42,7 @@ if (strlen($nome) > 50 || strlen($username) > 25 || strlen($cognome) > 50 || str
                 echo "<script>alert('$errore');</script>";
             } else {
                 if (insert_utente($nome, $cognome, $sesso, $username, $pass, $indirizzo, $nascita)) {
-                    /*$messaggio = "User registered successfully!";
-                    echo "<script>alert('$messaggio');</script>";
-                    */
-                    header("Location: ../../backend/ConfermaDinamica.php?confirmsignup=$username");
+                    header("Location: ../../pages/conferma/Conferma.php?confirmsignup=$username");
                     exit();
                 } else {
                     $errore = "Registration error. Try again.";

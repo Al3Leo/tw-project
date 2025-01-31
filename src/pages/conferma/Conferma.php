@@ -1,30 +1,23 @@
 <?php
 /**
- * @file ConfermaDinamica.php
- * @brief Funzioni per conferma di registrazione di un utente o avvenuto pagamento.
+ * Funzioni per conferma di registrazione di un utente o avvenuto pagamento.
  * Questo script PHP serve a mostrare una pagina di conferma all'utente, dopo che ha completato la registrazione o un checkout.
  * Controlla se ci sono parametri specifici nell'URL (confirmsignupname o confirmcheckout). 
  * Se presenti, visualizza un messaggio di conferma personalizzato in base al tipo di operazione completata (registrazione o checkout).
  */
-require_once "gestioneAcquisti.php";
+require_once "../../backend/gestioneAcquisti.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php require_once "../components/utils/headMetadata.html" ?>
-    <title>Conferm</title>
-    <base href="../">
+    <?php require_once "../../components/utils/headMetadata.html" ?>
+    <title>Confirm</title>
+    <base href="../../">
     <style>
         @import "assets/css/Global.css";
         @import "components/topmenu/topmenu.css";
         @import "components/login/login.css";
         @import "components/footer/footer.css";
-
-        * {
-            box-sizing: border-box;
-        }
 
         .mainconfirm .confirm_div {
             gap: 0.5em;
@@ -60,7 +53,7 @@ require_once "gestioneAcquisti.php";
 </head>
 
 <body>
-    <?php include __DIR__ . '../../components/header/header.php' ?>
+<?php require_once "../../components/header/header.php" ?>
     <main class=" mainconfirm d-flex  flex-column align-items-center justify-content-center">
 
         <div class="confirm_div d-flex justify-content-evenly flex-column " style="border: 2px solid #000;
@@ -81,7 +74,7 @@ require_once "gestioneAcquisti.php";
             </div>
         </div>
     </main>
-    <?php include __DIR__ . "../../components/footer/footer.php" ?>
+    <?php require_once "../../components/footer/footer.php" ?>
 </body>
 
 <script>

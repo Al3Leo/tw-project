@@ -9,14 +9,17 @@
         cart.classList.toggle("toggleCart");
         bar.style.borderBottom = "0";
         let btnSignup = document.getElementById("signup");
+        let btnSearch = document.getElementById("search");
         let btnLogin = document.getElementById("login");
         let btnLogout = document.getElementById("logout");
         let userinfo=document.getElementById("userinfo");
         let cart = document.getElementById("carrello");
-        if (btnSignup.style.display == "none") {//l'utente non è loggato 
+
+        if (btnSignup.style.display == "none") {//l'utente è loggato 
             cart.style.display = "none";
             btnSignup.style.display = "none";
             btnLogin.style.display = "none";
+            btnSearch.style.display = "none";
             btnLogout.style.display = "inline";
             userinfo.style.display = "inline";
         } else {
@@ -24,6 +27,7 @@
             btnLogin.style.display = "inline";
             btnLogout.style.display = "none";
             userinfo.style.display = "none";
+            btnSearch.style.display = "none";
         }
         //a scopo didattico sono stati usati due metodi diversi (toggle e style di js)
     }
@@ -39,8 +43,9 @@
 </script>
 <header id="topbar">
     <!--logo login e signup-->
-    <a href="pages/homepage/homepage.php"> <!--svg per il logo-->
-        <svg width="158" height="62" viewBox="0 0 158 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a href="pages/homepage/homepage.php">
+        <!--svg per il logo-->
+        <svg id="menuLogo" width="158" height="62" viewBox="0 0 158 62" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="158" height="62" />
             <rect width="165" height="102" transform="translate(-7 -13)" />
             <defs>
@@ -59,6 +64,11 @@
         </svg>
     </a>
     <div class="tuttoadestra">
+        <a href="pages/catalogue/catalogue.php#search"> <!-- anchor link -->
+            <button class="btn" id="search">
+                <i class="fas fa-search" style="color: #feffff;"></i>
+            </button>
+        </a>
         <button class="btn" id="cartbtn" onclick="openCart()">
             <i class="fa-solid fa-cart-shopping"></i> <!--Logo font-awesome-->
         </button>
@@ -89,8 +99,8 @@
             <li><a href="pages/catalogue/catalogue.php">Catalogue</a></li>
             <li><a href="pages/aboutus/aboutus.php">About us</a></li>
             <li><a href="pages/support/Supporto.php">Contact</a></li>
+            <li><a href="pages/homepage/homepage.php#faq">FAQ</a></li>
             <li><a href="pages/spacehistory/NewSpace.php">Space History</a></li>
-            
         </ul>
     </div>
 </header>

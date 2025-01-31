@@ -48,7 +48,7 @@
                 echo "style='display:none;'";
             } else {
                 echo "style='display:'';'";
-            }   ?>>
+            }   ?>> <!--Chiudo tag tfoot --> 
             <td id='total-cart' colspan='5'>
                 <?php
                 if (isset($cart)) {
@@ -78,7 +78,7 @@
         <?php } ?>
     };
 
-    /**DEVO METTERLA NELLA PAGINA PER CONFERMA
+    /**
      * Eseguito al caricamento della finestra.
      * Questa funzione viene eseguita quando la finestra del browser è completamente caricata.
      * Verifica la presenza del parametro confirmcheckout nell'URL.
@@ -105,7 +105,6 @@
     }
     /**
      * Rimuove un elemento dal carrello utilizzando una chiamata AJAX.
-     *
      * Questa funzione invia una richiesta HTTP POST al server per rimuovere un elemento specificato dal carrello.
      * Se l'elemento viene rimosso con successo, l'interfaccia utente viene aggiornata per riflettere la modifica.
      *

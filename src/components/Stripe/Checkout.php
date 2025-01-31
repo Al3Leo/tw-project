@@ -18,7 +18,7 @@ require_once "../../../dependencies/vendor/autoload.php";
  */
 $host = $_SERVER['HTTP_HOST'];
 $uri = rtrim(dirname($_SERVER['REQUEST_URI']), '/\\');
-$urlconfirm = "http://$host$uri/../../backend/ConfermaDinamica.php?confirmcheckout=true";
+$urlconfirm = "http://$host$uri/../../pages/conferma/Conferma.php?confirmcheckout=true";
 $urlerror = "http://$host$uri/../../pages/error/errorPagamento.php";
 
 $dotenv = Dotenv\Dotenv::createImmutable('../../../');
@@ -70,9 +70,11 @@ try {
     http_response_code(303);
     header("Location: " . $checkout_session->url);
 } catch (\Stripe\Exception\ApiErrorException $e) {
-    echo 'Errore API di Stripe: ',  $e->getMessage(), "\n";
+    //echo 'Errore API di Stripe: ',  $e->getMessage(), "\n";
+    header("Location: " . $urlerror);
 } catch (Exception $e) {
-    echo 'Eccezione generale: ',  $e->getMessage(), "\n";
+    //echo 'Eccezione generale: ',  $e->getMessage(), "\n";
+    header("Location: " . $urlerror);
 }
 }
 ?>

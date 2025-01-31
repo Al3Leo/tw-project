@@ -1,9 +1,7 @@
 
 <?php
 /**
- * @file
- * @brief Gestione dell'iscrizione alla newsletter persente nel file NewSpace.php
- *
+ *  Gestione dell'iscrizione alla newsletter persente nel file NewSpace.php
  * Questo file PHP gestisce l'inserimento delle email nel database per l'iscrizione alla newsletter.
  */
 require_once"../../backend/ConnettiDb.php";

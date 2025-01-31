@@ -4,21 +4,48 @@
         <span id="closePopup" onclick="closeLoginPopup()">x</span>
     </header>
     <main id="popupMain">
-        <form method="post" action="backend/login.php"> <!--usare sempre il tag <base href="../"/> in ogni pagina html-->
+        <form id="loginForm" method="post" onsubmit="verificaLogin()">
             <label>Username</label><br>
-            <input type="text" class="loginfieldloginbtn" name="user_username" placeholder="Username" required>
+            <input type="text" class="loginfieldloginbtn" name="user_username"
+                placeholder="Username" required>
             <br>
             <label>Password</label><br>
-            <input type="password" class="loginfield" name="user_password" placeholder="Password" required>
+            <input type="password" class="loginfield" name="user_password"
+                placeholder="Password" required>
             <br><br>
-            <small><a href="pages/signup/SignUp.php">Don't have an account?</a> </small>
+            <small><a href="pages/signup/SignUp.php">Don't have an account?</a>
+            </small>
             <br>
-            <input type="submit" value="Login" id="logbtn" style="margin-left: 37%; margin-top: 10%; margin-bottom: 7%; border: 1px solid black; border-radius: 5px; background-color: #adadad; color: white">
+            <input type="submit" value="Login" id="logbtn"
+                style="margin-left: 37%; margin-top: 10%; margin-bottom: 7%; border: 1px solid black; border-radius: 5px; background-color: #adadad; color: white">
         </form>
+        <div style="text-align: center;" id="error-message-login"
+            style="color: red;"></div>
     </main>
 </div>
 
 <script>
+function verificaLogin() {
+    event.preventDefault(); 
+    var formData = new FormData(document.getElementById('loginForm'));
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "backend/login.php", true);
+    xhr.responseType = 'json';
+    xhr.send(formData);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            var response = xhr.response;
+            if (response.success) {
+                window.location.reload();
+            } else {
+                alert(response.error); 
+                document.getElementById("error-message-login").innerText = response.error;
+            }
+        } else {
+            console.error("Errore durante la richiesta: " + xhr.status);
+        }
+    };
+}
     function openLoginPopup(){
         let cart=document.getElementById("carrello");
         cart.style.display="none";
@@ -56,4 +83,5 @@
             alert('Country restricted error');
         }
     }
+    
 </script>
