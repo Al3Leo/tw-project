@@ -41,10 +41,10 @@ session_start();
                 <div id="hero__search__choosed__type" class=" d-flex flex-row align-items-center justify-content-between hero__search__choosed__item menu">
                     <span><b>Type</b></span>
                     <ul>
-                        <li><a onclick="searchType('Planet')">Planets</a></li>
-                        <li><a onclick="searchType('Galaxies')">Galaxies</a></li>
-                        <li><a onclick="searchType('Moons')">Moons</a></li>
-                        <li><a onclick="searchType('Nebulae')">Nebulae</a></li>
+                        <li><a onclick="searchType('planets')">Planets</a></li>
+                        <li><a onclick="searchType('galaxies')">Galaxies</a></li>
+                        <li><a onclick="searchType('moons')">Moons</a></li>
+                        <li><a onclick="searchType('nebulae')">Nebulae</a></li>
                     </ul>
                 </div>
             </div>
@@ -78,7 +78,7 @@ session_start();
             }
         }
 
-        /*
+            /*
              *  PLANETS
              */
 
@@ -109,7 +109,7 @@ session_start();
             echo "</div>";
         }
 
-        /*
+            /*
              *  GALAXIES
              */
 
@@ -141,7 +141,7 @@ session_start();
             echo "</div>";
         }
 
-        /*
+            /*
              *  MOONS
              */
 
@@ -173,7 +173,7 @@ session_start();
             echo "</div>";
         }
 
-        /*
+            /*
              *  NEBULAE
              */
 
