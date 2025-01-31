@@ -14,7 +14,7 @@ if (isset($_SESSION['username'])) {
         body{
             margin: 0;
             padding: 0;
-            background-image: url("../../assets/images/starship.JPG");
+            background-image: url("../../assets/images/universe.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -110,9 +110,10 @@ if (isset($_SESSION['username'])) {
             text-decoration: none;
         }
         .opzione *:hover{
-            color: #ff00f2;
-            font-size: 150%;
-            transition: 0.3s;
+            color: #0066ff;
+            font-size: 250%;
+            transition: 0.333s;
+            font-weight: bold;
         }
 
         .dettagli_ordine{
@@ -139,7 +140,7 @@ if (isset($_SESSION['username'])) {
         
     </script>
 <body>
-<?php //require_once '../../components/header/header.php' ?>
+<!-- per staccare dalle altre pagine ho aggiunto un side menu e tolto header e footer-->
 <main id="main_history">
     <aside id="menu_ordini">
         <div class="opzione">
@@ -197,6 +198,5 @@ if (isset($_SESSION['username'])) {
 
     </section>
 </main>
-<?php //require_once '../../components/footer/footer.php' ?>
 </body>
 </html>
