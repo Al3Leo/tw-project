@@ -10,20 +10,14 @@ require_once "../../backend/gestioneAcquisti.php";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once "../../components/utils/headMetadata.html" ?>
-    <title>Conferm</title>
+    <title>Confirm</title>
     <base href="../../">
     <style>
         @import "assets/css/Global.css";
         @import "components/topmenu/topmenu.css";
         @import "components/login/login.css";
         @import "components/footer/footer.css";
-
-        * {
-            box-sizing: border-box;
-        }
 
         .mainconfirm .confirm_div {
             gap: 0.5em;
