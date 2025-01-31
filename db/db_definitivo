@@ -26,10 +26,10 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE public.acquisti (
-    acquirente character varying NOT NULL,
-    acquirenteuser character varying NOT NULL,
-    idvolo character varying NOT NULL,
-    idacquisto character varying
+    acquirente character varying,
+    idvolo character varying,
+    idacquisto character varying NOT NULL,
+    acquirenteuser character varying
 );
 
 
@@ -77,7 +77,7 @@ CREATE TABLE public.utente (
     cognome character varying(50),
     sesso character(1),
     username character varying(25) NOT NULL,
-    passworduser character varying(25) NOT NULL,
+    passworduser character varying(128) NOT NULL,
     indirizzo character varying(50) NOT NULL,
     datanascita date
 );
@@ -113,8 +113,12 @@ ALTER TABLE ONLY public.newsletter ALTER COLUMN id SET DEFAULT nextval('public.n
 -- Data for Name: acquisti; Type: TABLE DATA; Schema: public; Owner: www
 --
 
-COPY public.acquisti (acquirente, acquirenteuser, idvolo, idacquisto) FROM stdin;
-alessio	a	qualcosa	2312025
+COPY public.acquisti (acquirente, idvolo, idacquisto, acquirenteuser) FROM stdin;
+alessio	10001	2312025	ale
+alessio	30010	2612025	ale
+alessio	30001	2412025	ale
+alessio	20015	2712025	ale
+alessio	10021	2512025	ale
 \.
 
 
@@ -132,6 +136,7 @@ COPY public.newsletter (email, id) FROM stdin;
 
 COPY public.utente (nome, cognome, sesso, username, passworduser, indirizzo, datanascita) FROM stdin;
 \N	\N	\N	prova	pass	prova@gmail.com	\N
+Alessio	Leo	M	ale	$2y$10$rxW3OXsSaUhOaQwG9BWxO.eRh/rS62L/UlCEOJftP7mqh2XAZTv4m	Italy	2003-12-19
 \.
 
 
@@ -140,6 +145,9 @@ COPY public.utente (nome, cognome, sesso, username, passworduser, indirizzo, dat
 --
 
 COPY public.viaggio (idevento, prezzoevento, nomeevento, etichetta, datapartenza, dataritorno, launchlocation) FROM stdin;
+10021	1500	Mars	planets	2025-04-14	2025-04-29	Tanegashima Space Center, Giappone\n
+30001	1000	Moon	moons	2027-01-26	2027-02-03	Cape Canaveral Space Force Station, Florida, USA
+30010	1500	Titan	moons	2025-01-20	2025-01-31	Centro Spaziale Luigi Broglio, Malindi, Kenya
 10001	2500	Mercury	planets	2025-02-25	2025-03-08	Kennedy Space Center, Florida, USA
 10002	2500	Mercury	planets	2025-09-25	2025-10-06	Kennedy Space Center, Florida, USA
 10003	2500	Mercury	planets	2026-09-04	2026-09-15	Kennedy Space Center, Florida, USA
@@ -154,7 +162,6 @@ COPY public.viaggio (idevento, prezzoevento, nomeevento, etichetta, datapartenza
 10012	2000	Venus	planets	2027-11-02	2027-11-16	Kennedy Space Center, Florida, USA
 10019	1500	Mars	planets	2027-03-16	2027-03-31	Kennedy Space Center, Florida, USA
 10020	1500	Mars	planets	2026-08-20	2026-09-04	Kennedy Space Center, Florida, USA
-10021	1500	Mars	planets	2025-04-14	2025-04-29	Kennedy Space Center, Florida, USA
 10022	1500	Mars	planets	2027-07-11	2027-07-26	Cape Canaveral Space Force Station, Florida, USA
 10023	1500	Mars	planets	2026-09-03	2026-09-18	Cape Canaveral Space Force Station, Florida, USA
 10024	1500	Mars	planets	2026-02-16	2026-03-03	Cape Canaveral Space Force Station, Florida, USA
@@ -206,7 +213,6 @@ COPY public.viaggio (idevento, prezzoevento, nomeevento, etichetta, datapartenza
 20022	5000	Pinwheel	galaxies	2027-01-31	2027-02-06	Sea Launch Platform, Pacific Ocean
 20023	5000	Pinwheel	galaxies	2026-01-16	2026-01-22	Sea Launch Platform, Pacific Ocean
 20024	5000	Pinwheel	galaxies	2026-10-14	2026-10-20	Sea Launch Platform, Pacific Ocean
-30001	1000	Moon	moons	2027-01-26	2027-02-03	Satish Dhawan Space Centre, India
 30002	1000	Moon	moons	2025-06-02	2025-06-10	Satish Dhawan Space Centre, India
 30003	1000	Moon	moons	2027-11-05	2027-11-13	Satish Dhawan Space Centre, India
 30004	1000	Moon	moons	2027-10-24	2027-11-01	Satish Dhawan Space Centre, India
@@ -215,7 +221,6 @@ COPY public.viaggio (idevento, prezzoevento, nomeevento, etichetta, datapartenza
 30007	1500	Titan	moons	2026-03-18	2026-03-29	Satish Dhawan Space Centre, India
 30008	1500	Titan	moons	2026-02-19	2026-03-02	Satish Dhawan Space Centre, India
 30009	1500	Titan	moons	2026-02-02	2026-02-13	Satish Dhawan Space Centre, India
-30010	1500	Titan	moons	2025-01-20	2025-01-31	Satish Dhawan Space Centre, India
 30011	1500	Titan	moons	2026-01-19	2026-01-30	Satish Dhawan Space Centre, India
 30012	1500	Titan	moons	2027-04-17	2027-04-28	Tanegashima Space Center, Giappone\n
 30013	2000	Europa	moons	2026-05-03	2026-05-14	Tanegashima Space Center, Giappone\n
@@ -260,6 +265,9 @@ COPY public.viaggio (idevento, prezzoevento, nomeevento, etichetta, datapartenza
 40028	6000	Helix	nebulae	2025-02-20	2025-02-26	Centro Spaziale Luigi Broglio, Malindi, Kenya
 40029	6000	Helix	nebulae	2026-09-19	2026-09-25	Centro Spaziale Luigi Broglio, Malindi, Kenya
 40030	6000	Helix	nebulae	2026-04-16	2026-04-22	Centro Spaziale Luigi Broglio, Malindi, Kenya
+50001	7800	Pluto	planets	2025-05-05	2029-07-07	Centro Spaziale Luigi Broglio, Malindi, Kenya
+50002	7800	Pluto	planets	2025-06-25	2025-07-07	Baikonur Cosmodrome, Kazakistan\n
+50003	7800	Pluto	planets	2025-08-08	2025-10-17	Vostochny Cosmodrome, Russia\n
 \.
 
 
@@ -275,7 +283,7 @@ SELECT pg_catalog.setval('public.newsletter_id_seq', 3, true);
 --
 
 ALTER TABLE ONLY public.acquisti
-    ADD CONSTRAINT acquisti_pkey PRIMARY KEY (acquirenteuser);
+    ADD CONSTRAINT acquisti_pkey PRIMARY KEY (idacquisto);
 
 
 --
