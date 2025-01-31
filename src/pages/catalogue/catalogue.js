@@ -74,11 +74,10 @@ function searchType(type) {
   searchTypeXHR.responseType = "json"; //imposto il tipo di ritorno
 
   searchTypeXHR.onreadystatechange = function () {
-    if (searchTypeXHR.readyState == 4 && xhr.status == 200) {
-      console.log(searchTypeXHR.responseText); 
-
-      console.log(resultSearch);
-      updateSearch(resultSearch); 
+    if (searchTypeXHR.readyState == 4 && searchTypeXHR.status == 200) {
+      let typeResults = searchTypeXHR.response;
+      console.log(typeResults);
+      updateSearch(typeResults); 
     }
   };
   searchTypeXHR.send();
