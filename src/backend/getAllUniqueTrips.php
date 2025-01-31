@@ -9,6 +9,8 @@
 $getItems = "SELECT DISTINCT nomeevento,etichetta,prezzoevento FROM viaggio ORDER BY etichetta, nomeevento";     //ottengo i viaggi presenti nel db
 $catalogueUniqueItems = pg_query($db_connection, $getItems) or die('Item not found! found! ' . pg_last_error());
 $eventsArray = []; //array contente tutti gli item del catalogo
+$priceArray = [];
+
 if ($catalogueUniqueItems) {
     while ($row = pg_fetch_assoc($catalogueUniqueItems)) {  // itero su tutte le righe ottenute dalla query
         $eventsArray[$row['nomeevento']] = $row['etichetta']; // key: nome corpo celeste, value: tipologia
