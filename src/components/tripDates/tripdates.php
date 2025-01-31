@@ -42,6 +42,7 @@
                                 foreach ($cart as $sottoarray['id']) {
                                     if (in_array($eventId, $sottoarray['id'])) {
                                         echo "<span id='" . $eventId . "-span' style='font-weight: 800; color: #f7e951'>ADDED</span>";
+                                        echo "<button style='display:none;' id='" . $eventId . "-btn' onclick='ajax_add_cart(" . $eventId . ", \"" . $nomeEvento . "\", " . $price . ",  \"" . $departureDate . "\")'>Add to cart</button>";
                                         $added = true;
                                         break;  //esco dal ciclo se trovo l'evento
                                     }

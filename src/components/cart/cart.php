@@ -48,7 +48,7 @@
                 echo "style='display:none;'";
             } else {
                 echo "style='display:'';'";
-            }   ?>>
+            }   ?>> <!--Chiudo tag tfoot --> 
             <td id='total-cart' colspan='5'>
                 <?php
                 if (isset($cart)) {
@@ -78,7 +78,7 @@
         <?php } ?>
     };
 
-    /**DEVO METTERLA NELLA PAGINA PER CONFERMA
+    /**
      * Eseguito al caricamento della finestra.
      * Questa funzione viene eseguita quando la finestra del browser è completamente caricata.
      * Verifica la presenza del parametro confirmcheckout nell'URL.
