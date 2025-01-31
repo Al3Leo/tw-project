@@ -41,10 +41,10 @@ session_start();
                 <div id="hero__search__choosed__type" class=" d-flex flex-row align-items-center justify-content-between hero__search__choosed__item menu">
                     <span><b>Type</b></span>
                     <ul>
-                        <li><a>Planets</a></li>
-                        <li><a>Galaxies</a></li>
-                        <li><a>Moons</a></li>
-                        <li><a>Nebulae</a></li>
+                        <li><a onclick="searchType('Planet')">Planets</a></li>
+                        <li><a onclick="searchType('Galaxies')">Galaxies</a></li>
+                        <li><a onclick="searchType('Moons')">Moons</a></li>
+                        <li><a onclick="searchType('Nebulae')">Nebulae</a></li>
                     </ul>
                 </div>
             </div>

@@ -65,6 +65,26 @@ function searchBudget(range) {
 }
 
 /*
+ * Implementazione della ricerca per tipologia
+ */
+
+function searchType(type) {
+  let searchTypeXHR = new XMLHttpRequest();
+  searchTypeXHR.open("GET", "backend/searchType.php?type=" + type , true);
+  searchTypeXHR.responseType = "json"; //imposto il tipo di ritorno
+
+  searchTypeXHR.onreadystatechange = function () {
+    if (searchTypeXHR.readyState == 4 && xhr.status == 200) {
+      console.log(searchTypeXHR.responseText); 
+
+      console.log(resultSearch);
+      updateSearch(resultSearch); 
+    }
+  };
+  searchTypeXHR.send();
+}
+
+/*
  * Implementazione della ricerca tramite nome
  */
 
@@ -93,6 +113,7 @@ searchByName.addEventListener("keydown", (event) => {
     searchNameXHR.send();
   }
 });
+
 
 /* 
  *  Funzione per l'aggiornamento della vista del catalogo
