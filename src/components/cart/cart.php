@@ -150,4 +150,5 @@
         });
         document.getElementById('total-cart').textContent = 'Total Price:  ' + total + ' $';
     }
+
 </script>

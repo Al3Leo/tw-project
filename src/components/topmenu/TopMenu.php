@@ -6,7 +6,7 @@
         cross.classList.toggle("toggleCross");
         let search = document.getElementById("sideBar");
         search.classList.toggle("toggleSearch");
-        
+
         let bar = document.getElementById("sideBar");
         bar.classList.toggle("toggleShow");
         bar.style.borderBottom = "0";
@@ -74,7 +74,7 @@
             </button>
         </a>
         <button class="btn" id="cartbtn" onclick="openCart()">
-            <i class="fa-solid fa-cart-shopping"></i> <!--Logo font-awesome-->
+            <i class="fa-solid fa-cart-shopping fa-beat"></i> <!--Logo font-awesome-->
         </button>
         <a href="pages/signup/SignUp.php"><button class="btn" id="signup">SignUp</button></a>
         <button class="btn" id="login" onclick="openLoginPopup()">LogIn</button>
@@ -91,8 +91,7 @@
         ?>
     </span>
 </div>
-
-        <button class="btn" id="sideMenu" onclick="toggleSideMenu()">&#x2630;</button>
+    <button class="btn" id="sideMenu" onclick="toggleSideMenu()">&#x2630;</button>
     </div>
     <!-- Sidebar -->
     <div class="sideBar" id="sideBar">
