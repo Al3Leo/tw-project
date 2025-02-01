@@ -47,7 +47,7 @@
             if (empty($cart)) {
                 echo "style='display:none;'";
             } else {
-                echo "style='display: table-footer-group;'";
+                echo 'style="display: table-footer-group;"';
             }   ?>> <!--Chiudo tag tfoot --> 
             <td id='total-cart' colspan='5'>
                 <?php
@@ -63,20 +63,7 @@
     </table>
 </div>
 <script>
-    /*
-     *Gestisce il processo di acquisto.
-     * Questa funzione controlla se l'utente è loggato. Se l'utente è loggato, codifica i dati del carrello in JSON e redireziona alla pagina di pagamento.
-     * Se l'utente non è loggato, apre il popup di login.
-     */
-    function buyCart() {
-        <?php if (isset($_SESSION['username'])) { ?>
-            const cart = <?php echo json_encode($cart); ?>; // passo all'URL il carrello codificato in JSON
-            const encodedCart = encodeURIComponent(JSON.stringify(cart));
-            window.location.href = '../src/components/Stripe/Checkout.php?cart=' + encodedCart;
-        <?php } else { ?>
-            openLoginPopup();
-        <?php } ?>
-    };
+
 
     /**
      * Eseguito al caricamento della finestra.
@@ -150,5 +137,19 @@
         });
         document.getElementById('total-cart').textContent = 'Total Price:  ' + total + ' $';
     }
+        /*
+     *Gestisce il processo di acquisto.
+     * Questa funzione controlla se l'utente è loggato. Se l'utente è loggato, codifica i dati del carrello in JSON e redireziona alla pagina di pagamento.
+     * Se l'utente non è loggato, apre il popup di login.
+     */
+    function buyCart() {
+        <?php if (isset($_SESSION['username'])) { ?>
+            const cart = <?php echo json_encode($cart); ?>; // passo all'URL il carrello codificato in JSON
+            const encodedCart = encodeURIComponent(JSON.stringify(cart));
+            window.location.href = '../src/components/Stripe/Checkout.php?cart=' + encodedCart;
+        <?php } else { ?>
+            openLoginPopup();
+        <?php } ?>
+    };
 
 </script>

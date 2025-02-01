@@ -20,7 +20,6 @@ function ajax_add_cart(id, destinazione, costo, partenza) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             // Aggiorna il conteggio totale del carrello o mostra una notifica
             updateCartAdd(id, destinazione, costo, partenza);
-
             verifica = document.getElementById(id + '-span');//faccio questo per i click consegutivo 
             if (!verifica) {
                 var btn = document.getElementById(id + '-btn');
@@ -50,7 +49,6 @@ function updateCartAdd(id, destinazione, costo, partenza) {
     //Se l'utente preme per la prima volta il button per l'aggiunta deve esser mostrato il footer della table
     let tfoot = document.getElementById('tfoot');
     tfoot.style.display='table-footer-group';
-
     tbody = document.getElementById('carrello_tbl').getElementsByTagName('tbody')[0];
     thead = document.getElementById('carrello_tbl').getElementsByTagName('thead')[0];
     if (tbody) {
@@ -64,33 +62,27 @@ function updateCartAdd(id, destinazione, costo, partenza) {
             tbody.appendChild(riga);
             tbody = document.getElementById('carrello_tbl').getElementsByTagName('tfoot')['0'].style.display = '';
             riga.style.display = '';
-            updateCartTotal(); //Funzione definita nel file cart.php
+            //Funzione definita nel file cart.php
         } else {
             //se verifica è true cioe l'elemnto gia è contenuto nel carrello allora non fa nulla;
             if (!verifica) {
                 tbody.appendChild(riga) // Inserisci la nuova riga all'inizio del tbody
                 tbody = document.getElementById('carrello_tbl').getElementsByTagName('tfoot')['0'].style.display = '';
                 riga.style.display = '';
-                updateCartTotal();
+                
             }
         }
-    }
+       
+    } 
+    updateCartTotal(); 
 }
-// Funzione per ottenere o creare l'elemento <td> con id 'total-cart'
-function createTotalCart(tfoot) {
-    let totalCart = document.getElementById('total-cart');
-    if (!totalCart) {
-        //se non esiste creo il td del totale
-        totalCart = document.createElement('td');
-        totalCart.id = 'total-cart';
-        totalCart.colSpan = 5;
-        // lo aggiungo come primo figlio di <tfoot>
-        if (tfoot.firstChild) {
-            tfoot.insertBefore(totalCart, tfoot.firstChild);
-        } else {
-            tfoot.appendChild(totalCart);
-        }
-    }
+function updateCartTotal() {
+    const righeCart = document.querySelectorAll('tr[data-prezzo]');
+    let total = 0;
+    righeCart.forEach(function(row) {
+        total += parseFloat(row.getAttribute('data-prezzo'));
+    });
+    document.getElementById('total-cart').textContent = 'Total Price:  ' + total + ' $';
 }
 
 /**
