@@ -240,6 +240,8 @@ session_start();
                                 echo "<button type=\"submit\">Subscribe</button>";
                                 } elseif ($_GET['status'] == 'invalid') { 
                                     echo "<p>Invalid email. Please enter a valid email.</p>"; 
+                                    echo "<input type=\"email\" placeholder=\"Email address\" required id=\"email\" name=\"email_news\">"; 
+                                    echo "<button type=\"submit\">Subscribe</button>";
                                     } ?> 
                     </div> 
                 <?php else: ?> 
