@@ -3,7 +3,7 @@
 @import "../../components/login/login.css";
 @import "../../components/topmenu/topmenu.css";
 body {
-    background-image: url("a.png");
+    background-image: url("../../assets/images/aboutus/bg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

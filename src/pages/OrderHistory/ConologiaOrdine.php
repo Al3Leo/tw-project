@@ -17,7 +17,6 @@ if (isset($_SESSION['username'])) {
             background-image: url("../../assets/images/universe.jpg");
             background-size: cover;
             background-repeat: no-repeat;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
         #main_history{
             margin: auto;
@@ -76,7 +75,7 @@ if (isset($_SESSION['username'])) {
             width: 50%;
             font-weight: bold;
             font-size: 2em;
-            background-image: url("ticket.png");
+            background-image: url("../../assets/images/ticket.png");
             background-repeat: no-repeat;
             background-position: center;
             display: flex;
