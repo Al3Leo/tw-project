@@ -46,6 +46,6 @@ $info = array(
 
     setcookie('cart', json_encode($cart), time() + 3600, "/");
 
-    header("Location: " . $_SERVER['HTTP_REFERER']);
+    //header("Location: " . $_SERVER['HTTP_REFERER']);
     exit();
 ?>

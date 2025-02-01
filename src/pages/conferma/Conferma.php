@@ -20,6 +20,7 @@ require_once "../../backend/gestioneAcquisti.php";
         @import "components/footer/footer.css";
 
         .mainconfirm .confirm_div {
+            
             gap: 0.5em;
             background-color: aliceblue;
             width: 50vh;
@@ -43,6 +44,7 @@ require_once "../../backend/gestioneAcquisti.php";
 
         .mainconfirm {
             height: 65vh;
+            margin-top: 74px;
         }
 
         .confirm_div .div_down p {
