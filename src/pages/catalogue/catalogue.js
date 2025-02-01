@@ -54,14 +54,16 @@ function searchBudget(range) {
   );
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      console.log(xhr.responseText); // Aggiungi questa linea per vedere la risposta
-
       var resultSearch = JSON.parse(xhr.responseText); //array con i corpi celeste che devono essere mostrati
-      console.log(resultSearch);
       updateSearch(resultSearch); //passo l'array alla funzione che deve gestire l'aggiornamento
+      viewResults();
     }
   };
   xhr.send();
+}
+function viewResults() {
+  var main_catalogue = document.getElementById("main_catalogue");
+  main_catalogue.scrollIntoView({ behavior: "smooth" });
 }
 
 /*
@@ -70,14 +72,15 @@ function searchBudget(range) {
 
 function searchType(type) {
   let searchTypeXHR = new XMLHttpRequest();
-  searchTypeXHR.open("GET", "backend/searchType.php?type=" + type , true);
+  searchTypeXHR.open("GET", "backend/searchType.php?type=" + type, true);
   searchTypeXHR.responseType = "json"; //imposto il tipo di ritorno
 
   searchTypeXHR.onreadystatechange = function () {
     if (searchTypeXHR.readyState == 4 && searchTypeXHR.status == 200) {
       let typeResults = searchTypeXHR.response;
       console.log(typeResults);
-      updateSearch(typeResults); 
+      updateSearch(typeResults);
+      viewResults();
     }
   };
   searchTypeXHR.send();
@@ -107,6 +110,7 @@ searchByName.addEventListener("keydown", (event) => {
         let nameResults = searchNameXHR.response;
         console.log(nameResults);
         updateSearch(nameResults);
+        viewResults();
       }
     };
     searchNameXHR.send();
@@ -118,9 +122,8 @@ searchByName.addEventListener("keydown", (event) => {
  *  Funzione per l'aggiornamento della vista del catalogo
  */
 function updateSearch(arraySearch) {
-  if (arraySearch!=null) {
+  if (arraySearch != null) {
     //arraySearch è un array costituito da sottoarray che contengono nomeevento(contenuto una sola volta) cercato e la sua etichetta 
-    var catalogueItems = document.querySelectorAll("div.catalogue__item");
     var planets_num = 0;
     var moons_num = 0;
     var nebulae_num = 0;
@@ -150,31 +153,42 @@ function updateSearch(arraySearch) {
     });
     //gestione dei div che contengono testo e le etichette come titolo
     //se nell'arraySearch non ci sono determinate etichette, per i relativi div contenente il testo va messa la proprieta display a none
-const quantita = {
-  planets: planets_num,
-  moons: moons_num,
-  galaxies: galaxies_num,
-  nebulae: nebulae_num
-};
-  const celestialBodies = ['planets', 'moons', 'galaxies', 'nebulae'];
-  celestialBodies.forEach(item => { 
-    var divItem = document.getElementById(item + '_text');
-    var divCatalogueItem = document.getElementById('catalogue__' + item);
-    
-    if (divItem) {
+    const quantita = {
+      planets: planets_num,
+      moons: moons_num,
+      galaxies: galaxies_num,
+      nebulae: nebulae_num
+    };
+    const celestialBodies = ['planets', 'moons', 'galaxies', 'nebulae'];
+    celestialBodies.forEach(item => {
+      var divItem = document.getElementById(item + '_text');
+      var divCatalogueItem = document.getElementById('catalogue__' + item);
+
+      if (divItem) {
         divItem.style.display = (quantita[item] == 0) ? 'none' : 'block';
         divCatalogueItem.style.display = (quantita[item] == 0) ? 'none' : 'grid';
-    }
-});
+      }
+    });
 
-}
+  }
 }
 /*
  * Funzione per ripristianare la vista del catalogo e mostrare nuovamente tutti gli items. 
  */
 function restoreCatalogueView() {
+
   catalogueItems.forEach(item => {
     item.style.display = "flex";
+  });
+
+  const celestialBodies = [
+    "planets",
+    "moons",
+    "galaxies",
+    "nebulae"
+  ];
+  celestialBodies.forEach(celestial => {
+    document.getElementById('catalogue__' + celestial).style.display = "grid";
   });
 
   document.querySelectorAll(".main__catalogue__section-title").forEach(item => {
