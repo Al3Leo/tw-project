@@ -118,14 +118,13 @@ searchByName.addEventListener("keydown", (event) => {
  *  Funzione per l'aggiornamento della vista del catalogo
  */
 function updateSearch(arraySearch) {
-  //if (arraySearch && arraySearch.length > 0) DA DECIDEREEEEEEEEEEEEEEE
   if (arraySearch!=null) {
     //arraySearch è un array costituito da sottoarray che contengono nomeevento(contenuto una sola volta) cercato e la sua etichetta 
     var catalogueItems = document.querySelectorAll("div.catalogue__item");
-    var planets = 0;
-    var moons = 0;
-    var nebulae = 0;
-    var galaxies = 0;
+    var planets_num = 0;
+    var moons_num = 0;
+    var nebulae_num = 0;
+    var galaxies_num = 0;
 
     //per ciascun div con classe catalogue__item verifico se ha id uguale al nome evento.
     //In particolare se ha quell'id è stato trovato l'elemento a cui impostare display a flex altrimenti a none
@@ -140,34 +139,35 @@ function updateSearch(arraySearch) {
     });
     arraySearch.forEach(function (evento) {
       if (evento.etichetta == 'planets') {
-        planets++;
+        planets_num++;
       } else if (evento.etichetta == 'moons') {
-        moons++;
+        moons_num++;
       } else if (evento.etichetta == 'nebulae') {
-        nebulae++;
+        nebulae_num++;
       } else if (evento.etichetta === 'galaxies') {
-        galaxies++;
+        galaxies_num++;
       }
     });
     //gestione dei div che contengono testo e le etichette come titolo
     //se nell'arraySearch non ci sono determinate etichette, per i relativi div contenente il testo va messa la proprieta display a none
-    var div_planets = document.getElementById('planets_text');
-    if (div_planets) {
-      div_planets.style.display = (planets == 0) ? 'none' : 'block';
+const quantita = {
+  planets: planets_num,
+  moons: moons_num,
+  galaxies: galaxies_num,
+  nebulae: nebulae_num
+};
+  const celestialBodies = ['planets', 'moons', 'galaxies', 'nebulae'];
+  celestialBodies.forEach(item => { 
+    var divItem = document.getElementById(item + '_text');
+    var divCatalogueItem = document.getElementById('catalogue__' + item);
+    
+    if (divItem) {
+        divItem.style.display = (quantita[item] == 0) ? 'none' : 'block';
+        divCatalogueItem.style.display = (quantita[item] == 0) ? 'none' : 'grid';
     }
-    var div_moons = document.getElementById('moons_text');
-    if (div_moons) {
-      div_moons.style.display = (moons == 0) ? 'none' : 'block';
-    }
-    var div_galaxies = document.getElementById('galaxies_text');
-    if (div_galaxies) {
-      div_galaxies.style.display = (galaxies == 0) ? 'none' : 'block';
-    }
-    var div_nebulae = document.getElementById('nebulae_text');
-    if (div_nebulae) {
-      div_nebulae.style.display = (nebulae == 0) ? 'none' : 'block';
-    }
-  }
+});
+
+}
 }
 /*
  * Funzione per ripristianare la vista del catalogo e mostrare nuovamente tutti gli items. 
