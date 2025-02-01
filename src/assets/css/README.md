@@ -1,1 +1,0 @@
-Questa cartella contiene alcuni file css "generici", condivisi da piú entitá.

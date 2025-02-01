@@ -1,18 +1,10 @@
 
 <?php
 /**
- * @file
- * @brief Gestione dell'iscrizione alla newsletter persente nel file NewSpace.php
- *
+ *  Gestione dell'iscrizione alla newsletter persente nel file NewSpace.php
  * Questo file PHP gestisce l'inserimento delle email nel database per l'iscrizione alla newsletter.
  */
-    $host = "localhost";
-    $port = "5432";
-    $db_name = "GRUPPO05";
-    $user = "www";
-    $password = "tw2024";
-    $connection_string = "host=$host dbname=$db_name user=$user password=$password";
-    $db_connection = pg_connect($connection_string) or die('Impossibile connettersi al database: ' . pg_last_error());
+require_once"../../backend/ConnettiDb.php";
     if (isset($_POST['email_news'])) {        
         $email=$_POST['email_news'];
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -24,19 +16,19 @@
                 $insert_ret=pg_query($db_connection, $query);
                 if($insert_ret){
                     //iscrizione avvenuta con successo
-                    header("Location: NewSpace.php?status=success");
+                    header("Location: NewSpace.php?status=success#newsletter");
                 }else{
                     //inserimento non avvenuto
-                    header("Location: NewSpace.php?status=error");
+                    header("Location: NewSpace.php?status=error#newsletter");
                 }
             }else{
                 //email gia esiste
-                header("Location: NewSpace.php?status=esiste");
+                header("Location: NewSpace.php?status=esiste#newsletter");
             }
 
         }else{
             //email inserita non  è corretta
-            header("Location: NewSpace.php?status=invalid");
+            header("Location: NewSpace.php?status=invalid#newsletter");
         }
     }
     // Chiudi la connessione

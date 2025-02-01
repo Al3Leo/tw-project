@@ -2,13 +2,13 @@
 @import "../../components/footer/footer.css";
 @import "../../components/topmenu/topmenu.css";
 @import "../../components/login/login.css";
-body{
-    background-image: url("cosmo.jpg");
+.container__support{
+    background-image: url("../../assets/images/cosmo.jpg");
     background-position: center;
     background-repeat: no-repeat;
+    padding: 5%;
 }
 #text_container{
-    display: block;
     width: 40vw;
 }
 .text_support{
@@ -18,29 +18,27 @@ body{
     width: auto;
     text-align: center;
     padding-bottom: 3%;
+    
 }
-.form_input, textarea{
-    display: block;
+.form_input{
     margin-bottom: 1%;
-    height: 2rem;
-    width: 50vw;
+    height: 3rem;
+    width: 40vw;
     border-radius: 7px;
-}
-textarea{
-    height: 7rem !important;
-}
-#mailtoemail{
+    background-color: #212121;
+    border: 1px solid white;
     color: white;
+}
+.form_input:focus{
+    border: 2px solid blue;
+    background-color: white;
+    color:black
+}
+
+#mailtoemail{
+    color: #ff0000;
 }
 #mailtoemail:hover{
     color: #1fe100;
 }
-main{
-    min-height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    height: 80%;
-}
+

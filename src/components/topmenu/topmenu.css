@@ -18,14 +18,18 @@
 }
 
 #signup,
-#cartbtn {
+#cartbtn,
+#search {
     border: 3px solid #1d0b42;
     border-radius: 25px;
     font-size: small;
 }
-
+toggleSearch{
+    display: none;
+}
 #signup:hover,
-#cartbtn:hover {
+#cartbtn:hover,
+#search:hover {
     border-color: rgb(170, 56, 255) !important;
     transition: 500ms;
 }
@@ -56,6 +60,13 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(33px);
+    backdrop-filter: blur(33px);
+    z-index: 100;
+    padding: 5px;
 }
 
 .showMenu {
@@ -79,6 +90,10 @@
     float: right;
 }
 
+.toggleCart{
+    display: none;
+}
+
 .sideBar {
     display: none;
 }
@@ -91,7 +106,9 @@
     overflow-block: visible;
     padding-right: 3rem;
     padding-top: 1rem;
-    background-color: var(--secondaryColor);
+    background: linear-gradient(to bottom, rgb(117, 17, 169) 0%, rgba(0, 0, 0, 0.3));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     height: 100vh;
     width: 25vw;
     position: fixed;
@@ -201,4 +218,8 @@
     background-size: cover;
     padding: 1%;
     text-align: center;
+}
+
+#menuLogo{
+    padding: 5px;
 }

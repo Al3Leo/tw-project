@@ -114,6 +114,9 @@
   width: 80%;
   height: 80%;
 }
+#main__right__slideshow img{
+  border-radius: 15px;
+}
 
 #secondary-s{
   padding: 1rem 3rem;
@@ -200,7 +203,6 @@
 #testimonial{
   width: 60%;
   height: 100%;
-  overflow: hidden;
 }
 
 #testimonial__grid{
@@ -213,7 +215,7 @@
 }
 
 /*Testimonial Responsive*/
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #testimonial{
     padding: 3rem;
     width: 100%;
@@ -248,12 +250,12 @@
 }
 
 .testimonial__grid__item img {
-  max-width: 100%;
-  vertical-align: middle;
   margin-right: 15px;
   height: 90px;
   width: 90px;
   border-radius: 50%;
+  object-position: center;  /* Centro l'immagine nel contenitore */
+  object-fit: cover; /* Forzo l'immagine ad occupare tutta la dimensione del contenitore*/
 }
 
 .testimonial__grid__item blockquote {
@@ -262,42 +264,13 @@
   position: relative;
   background-color: #fafafa;
   opacity: 0.8;
-  padding: 25px 50px 30px 50px;
+  padding: 25px 50px;
   font-size: 0.8em;
   font-weight: 400;
   line-height: 1.6em;
   font-style: italic;
 }
 
-.testimonial__grid__item blockquote:before,
-.testimonial__grid__item blockquote:after {
-  font-family: 'FontAwesome';
-  content: "\201C";
-  position: absolute;
-  font-size: 20px;
-  opacity: 0.3;
-  font-style: normal;
-}
-.testimonial__grid__item blockquote:before {
-  top: 25px;
-  left: 20px;
-}
-.testimonial__grid__item blockquote:after {
-  content: "\201D";
-  right: 20px;
-  bottom: 0;
-}
-
-.testimonial__grid__item__arrow {
-  width: 0;
-  height: 0;
-  border-left: 0 solid transparent;
-  border-right: 25px solid transparent;
-  border-top: 25px solid #fafafa;
-  position: relative;
-  left: 35px;
-  opacity: 0.8;
-}
 .testimonial__grid__item__author {
   color: white;
   margin-top: .75rem;
@@ -313,3 +286,7 @@
   padding-left: 5px;
 }
 
+#getDeal{
+  margin-top: 20px;
+  width: 100%;
+}

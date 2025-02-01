@@ -1,6 +1,6 @@
 <?php
 if(!isset($_COOKIE['biscotto'])){
-    setcookie("biscotto", "oreo", time()+(3));
+    setcookie("biscotto", "oreo", time()+(600));
     // Connessione
     require_once "ConnettiDb.php";
     //query

@@ -2,12 +2,14 @@
 @import "../../../components/footer/footer.css";
 @import "../../../components/login/login.css";
 @import "../../../components/topmenu/topmenu.css";
+@import "../../../components/tripDates/tripDates.css";
 .hero {
   height: auto;
 }
 .hero iframe {
   height: 50vh;
   border: none;
+  margin-top: 5%;
 }
 
 .hero > img {
@@ -190,4 +192,9 @@ main {
   .suggestions{
     display: none;
   }
+}
+
+.parallax{
+  height: 50vh;
+  margin-top: 5%;
 }

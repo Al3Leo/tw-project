@@ -5,8 +5,10 @@
 */
 if (isset($nomeEvento)) {
     // Prelevo le informazioni relative al viaggio
-    $getItems = "SELECT * FROM viaggio WHERE nomeevento = '$nomeEvento'";
-    $query = pg_query($db_connection, $getItems) or die('Item not found! ' . pg_last_error());
+    $queryName = "get_trip_info";
+    $getItems = "SELECT * FROM viaggio WHERE nomeevento = $1";
+    pg_prepare($db_connection, $queryName, $getItems);
+    $query = pg_execute($db_connection, $queryName, [$nomeEvento]) or die('Item not found! ' . pg_last_error());
 
     $infoArray = []; // Array contenente tutti gli eventi associati
 
@@ -24,7 +26,8 @@ if (isset($nomeEvento)) {
                 "etichetta" => $row['etichetta'],
                 "datapartenza" => $row['datapartenza'],
                 "dataritorno" => $row['dataritorno'],
-                "launchlocation" => $row['launchlocation']
+                "launchlocation" => $row['launchlocation'],
+                "destination"=> $nomeEvento
             ];
         }
 

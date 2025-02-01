@@ -1,6 +1,15 @@
+# System files
 .DS_Store
 src/.DS_Store
-/.idea
-.idea
-.vscode
-./vscode
+
+# IDE files
+.idea/
+.idea/*
+
+.vscode/
+.vscode/*
+
+# Dipendenze e file sensibili
+.env
+/vendor/
+/dependencies/vendor

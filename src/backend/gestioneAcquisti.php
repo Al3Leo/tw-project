@@ -27,7 +27,8 @@ if (isset($_GET['confirmcheckout'])) {
                 $year=$today->format('Y');
                 $random_number=rand(1, 777);
                 $numordine=$day.$month.$year.$_SESSION['username'].$random_number;
-                $query = "INSERT INTO acquisti (acquirente, acquirenteuser, idacquisto) VALUES ('$email_utente', '$username', '$numordine')";
+                $idvolo=$oggetto['id'];
+                $query = "INSERT INTO acquisti (acquirente, idvolo, idacquisto, acquirenteuser) VALUES ('$email_utente','$idvolo','$numordine', '$username')";
                 $result = pg_query($db_connection, $query); 
                 if (!$result) { 
                     echo "Errore durante l'inserimento dell'acquistom nel db: " . pg_last_error($db_connection) . "<br>"; 

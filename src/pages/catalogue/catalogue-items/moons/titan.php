@@ -3,6 +3,7 @@
 
 <head>
     <?php
+    session_start();
     /*
      * La variabile é impostata con il nome del corpo celeste e consente di automatizzare 
      * le query sql e il codice js per il fetch delle rest api. Non dovrebbe essere
@@ -48,7 +49,7 @@
                             echo $event['prezzoevento'];    //accedo al campo del prezzo del sottoarray
                         }
                         ?>
-                        &#8364;</span>
+                        &#36;</span>
                     <div class="main__left__section1__date__days d-flex flex-row align-items-center justify-content-between">
                         <i class="fa-solid fa-calendar-days fa-beat fa-xl" style="color: #ffffff;"></i>
                         <span class="days">
@@ -169,18 +170,17 @@
         </div>
     </div>
     <?php
-    require_once "../../../../components/footer/footer.html";
+    require_once "../../../../components/footer/footer.php";
     ?>
     <script src="pages/catalogue/catalogue-items/catalogue-items.js"></script>
+    <script type="text/javascript" defer>
+    //abilito il download in parallelo e l'esecuzione dello script solo dopo che il DOM é stato completamente caricato
+    //passo la variabile php contenente il nome del corpo celeste corrente a js
+    const celestialBody = "<?php echo $nomeEvento ?>";
+    const eventsArray = <?php echo $jsonUniqueEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
+    call_lso_api(celestialBody);
+    fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
+</script>
 </body>
 
 </html>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        //passo la variabile php contenente il nome del corpo celeste corrente a js
-        const celestialBody = "<?php echo $nomeEvento ?>";
-        const eventsArray = <?php echo $jsonUniqueEventsArray; ?> //prelevo l'array contenente i nomi di tutti i viaggi
-        call_lso_api(celestialBody);
-        fillSuggestions(celestialBody, eventsArray); //crea i suggerimenti nella parte bassa della pagina
-    });
-</script>

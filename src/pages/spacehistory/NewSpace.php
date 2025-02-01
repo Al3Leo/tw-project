@@ -1,9 +1,7 @@
 
 <?php
 /**
- * @file
- * @brief Pagina principale del progetto "Spatial History"
- *
+ * Pagina principale del progetto "Spatial History"
  * Questo file PHP gestisce la struttura della pagina principale del progetto "Spatial History".
  * Include varie sezioni informative riguardanti lo spazio, i pianeti e i pionieri dell'esplorazione spaziale e uun form per le iscrizioni delle newsletter.
  */
@@ -29,7 +27,7 @@ session_start();
         </video>
         <div class="content1" id="content1">
             <h1>True wounderers look up at the space</h1>
-            <p>How much do you know about space.<br>
+            <p>How much do you know about space?<br>
                 Learn more about this interesting miracle.<br>
                 Stay captivated by the wonders of space, with facts that no one has ever told you before...</p>
         </div>
@@ -145,7 +143,7 @@ session_start();
     <section class="sezione3">
         <div class="sezione3_text">
             <h2 style="text-transform: uppercase;">Pioneers of Space Exploration</h2>
-            <p>Space exploration has been made possible by the courage and determination of many remarkable astronauts. Here are a few who have left an indelible mark on history</p>
+            <p>Space exploration has been made possible by the <b>courage and determination</b> of many remarkable astronauts. Here are a few who have left an indelible mark on history</p>
         </div>
         <div class="wrapper">
 
@@ -157,7 +155,7 @@ session_start();
                     <h5>
                         Neil Armstrong
                     </h5>
-                    <p>Neil Armstrong is best known for being the first person to walk on the Moon on July 20, 1969. As the commander of Apollo 11, his famous words, "That's one small step for [a] man, one giant leap for mankind," still resonate as a monumental moment in human history.</p>
+                    <p>Neil Armstrong is best known for being the <span>first person to walk on the Moon</span> on July 20, 1969. As the commander of Apollo 11, his famous words, "That's one small step for [a] man, one giant leap for mankind," still resonate as a monumental moment in human history.</p>
                 </div>
             </div>
 
@@ -168,7 +166,7 @@ session_start();
                         Valentina Tereshkova
                     </h5>
                     <p>
-                        Valentina Tereshkova, a Soviet cosmonaut, became the first woman to fly in space on June 16, 1963. Her mission aboard Vostok 6 made her an inspiration and a trailblazer for women in space exploration.
+                        Valentina Tereshkova, a Soviet cosmonaut, became the first woman to fly in space on June 16, 1963. Her <span>mission aboard Vostok 6</span> made her an inspiration and a trailblazer for women in space exploration.
                     </p>
             </div></div>
 
@@ -178,7 +176,7 @@ session_start();
                     <h5>
                     Sally Ride
                     </h5>
-                <p>Sally Ride was an American astronaut and the first American woman to fly in space. On June 18, 1983, she flew aboard the Space Shuttle Challenger on mission STS-7. Her historic flight paved the way for future generations of women in space exploration.</p>
+                <p>Sally Ride was an American astronaut and the <span>first American woman to fly in space</span>. On June 18, 1983, she flew aboard the Space Shuttle Challenger on mission STS-7. Her historic flight paved the way for future generations of women in space exploration.</p>
             </div></div>
             
             <div class="card">
@@ -188,7 +186,7 @@ session_start();
                         Yuri Gagarin
                     </h5>
                     <p>
-                        Yuri Gagarin, a Soviet cosmonaut, became the first human to journey into outer space on April 12, 1961. His spacecraft, Vostok 1, completed an orbit of Earth, making Gagarin an international hero and a symbol of Soviet space achievement.
+                        Yuri Gagarin, a Soviet cosmonaut, became the <span>first human to journey into outer space</span> on April 12, 1961. His spacecraft, Vostok 1, completed an orbit of Earth, making Gagarin an international hero and a symbol of Soviet space achievement.
                     </p>
                 </div>
             </div></div> 
@@ -199,10 +197,10 @@ session_start();
         <div class="wrapper4 flex-column d-flex">
         <h2>Vostok 1: The Dawn of Human Space Exploration</h2>
             <div class="contenuto4">
-                <div><img class="contenuto4_img" src="assets/images/space/vostok.jpg">             
-               </div>
+                <div><img class="contenuto4_img" src="assets/images/space/vostok.jpg"></div>
                  <p>
-                    The Vostok 1 mission, launched on April 12, 1961, marked the first time humans ventured into space. The spacecraft completed a full orbit of the Earth in approximately 108 minutes. It demonstrated the Soviet Union's advanced capabilities in space technology, setting a significant milestone in the space race. The success of Vostok 1 was a testament to the potential of human ingenuity and engineering. This mission opened the doors to future space exploration, inspiring generations to look beyond our planet.
+                    <b style="color:white; font-size:large;">Historic Journey into Space</b>
+                    <br>The Vostok 1 mission, launched on April 12, 1961, marked the <b>first time humans ventured into space</b>. The spacecraft completed a full orbit of the Earth in approximately 108 minutes. It demonstrated the Soviet Union's advanced capabilities in space technology, setting a significant milestone in the space race. The success of Vostok 1 was a testament to the potential of human ingenuity and engineering. This mission opened the doors to future space exploration, inspiring generations to look beyond our planet.
                 </p>
             </div>
 
@@ -221,7 +219,7 @@ session_start();
     <div class="news-container card_area d-grid" id="newsContainer" style="display: none;"></div>
     </section>
 
-    <section class="newletter-sezione">
+    <section class="newletter-sezione" id="newsletter">
         <div class="newsletter-container">
             <img id="newsletter-img"
               src="assets/images/space/news.jpg"
@@ -242,6 +240,8 @@ session_start();
                                 echo "<button type=\"submit\">Subscribe</button>";
                                 } elseif ($_GET['status'] == 'invalid') { 
                                     echo "<p>Invalid email. Please enter a valid email.</p>"; 
+                                    echo "<input type=\"email\" placeholder=\"Email address\" required id=\"email\" name=\"email_news\">"; 
+                                    echo "<button type=\"submit\">Subscribe</button>";
                                     } ?> 
                     </div> 
                 <?php else: ?> 
@@ -253,7 +253,7 @@ session_start();
         </div>
     </section>
 </main>
-    <?php include_once "../../components/footer/footer.html"?>
+    <?php include_once "../../components/footer/footer.php"?>
     <script src="pages/spacehistory/NewSpace.js"></script>   
 </body>
 </html> 

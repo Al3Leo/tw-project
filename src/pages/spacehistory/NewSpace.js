@@ -1,7 +1,5 @@
 /**
- * @file
- * @brief Gestione delle effetto slide e articoli ottenuti tramite l'api per la pagina "Spatial History"
- *
+ * Gestione delle effetto slide e articoli ottenuti tramite l'api per la pagina "Spatial History"
  * Questo file JavaScript gestisce la navigazione delle slide verticali e il recupero delle notizie in base alla data inserita.
  */
 const upBtn = document.querySelector(".up");
@@ -11,7 +9,7 @@ const rightSlides = document.querySelectorAll(".right > div");
 const totalSlides = leftSlides.length;
 let currentSlide = 0;
 /**
- * @brief Aggiorna la posizione delle slide in base alla slide corrente
+ * Aggiorna la posizione delle slide in base alla slide corrente
  */
 function updateSlide() {
     const offset = currentSlide * 100;
@@ -23,7 +21,7 @@ function updateSlide() {
     });
 }
 /**
- * @brief Gestisce il click del bottone verso il basso
+ *Gestisce il click del bottone verso il basso
  */
 downBtn.addEventListener("click", () => {
     currentSlide--;
@@ -33,7 +31,7 @@ downBtn.addEventListener("click", () => {
     updateSlide();
 });
 /**
- * @brief Gestisce il click del bottone verso l'alto
+ * Gestisce il click del bottone verso l'alto
  */
 upBtn.addEventListener("click", () => {
     currentSlide++;
@@ -43,7 +41,7 @@ upBtn.addEventListener("click", () => {
     updateSlide();
 });
 /**
-* @brief Gestisce tramite ajax input di tipo data della pagina Spacial History 
+* Gestisce tramite ajax input di tipo data della pagina Spacial History 
 */
 document.getElementById('newsForm').addEventListener('input', function (event) {
     event.preventDefault();
@@ -57,8 +55,8 @@ document.getElementById('newsForm').addEventListener('input', function (event) {
             switch (xhr.status) {
                 case 200:
                     var articles = xhr.response;
-                    console.log(articles);/**< Stampa gli articoli nella console per il debug */
-                    createNewsBlocks(articles);/**< Chiama la funzione per creare e visualizzare i blocchi delle notizie */
+                    console.log(articles);
+                    createNewsBlocks(articles);/*la funzione per creare e visualizzare i blocchi delle notizie */
                     break;
                 case 404:
                     alert("La pagina indicata non esiste!");
@@ -71,19 +69,30 @@ document.getElementById('newsForm').addEventListener('input', function (event) {
         }
     };
     /**
-     * @brief Crea i blocchi delle notizie e li inserisce nel contenitore
-     * @param[in] articles Array di oggetti contenenti le informazioni delle notizie
+     * Crea i blocchi delle notizie e li inserisce nel contenitore
      */
     function createNewsBlocks(articles) {
         var newsContainer = document.getElementById('newsContainer');
         newsContainer.style.display = 'grid';
         newsContainer.innerHTML = '';
-        articles.forEach(function (article) {
-            var newsBlock = '<div class="card"><img class="contenuto4_img" src="' + article.image_url + '" alt="News Image">' +
-                '<div class="overlay"><h6>' + article.title + '</h6>' +
-                '<p>' + article.summary + '</p></div></div>';
-            newsContainer.insertAdjacentHTML('beforeend', newsBlock);
-        });
+        
+        if (articles.length === 0) {
+            newsContainer.style.display = 'flex';
+            var warningMessage = document.createElement('div');
+            warningMessage.style.color = '#f7e951';
+            warningMessage.style.fontWeight='bold';
+            warningMessage.style.textAlign='center';
+            warningMessage.textContent = 'The selected date is incorrect.';
+            newsContainer.appendChild(warningMessage);
+        } else {
+            articles.forEach(function (article) {
+                var newsBlock = '<div class="card"><img class="contenuto4_img" src="' + article.image_url + '" alt="News Image">' +
+                    '<div class="overlay"><h6>' + article.title + '</h6>' +
+                    '<p>' + article.summary + '</p></div></div>';
+                newsContainer.insertAdjacentHTML('beforeend', newsBlock);
+            });
+        }
     }
+    
 
 });

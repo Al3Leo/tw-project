@@ -8,16 +8,15 @@ if (isset($_SESSION['username'])) {
 }
 ?>
 <head>
-    <title></title>
+    <title>History Orders</title>
     <meta charset="UTF-8">
     <style>
         body{
             margin: 0;
             padding: 0;
-            background-image: url("starship.JPG");
+            background-image: url("../../assets/images/cosmo.jpg");
             background-size: cover;
             background-repeat: no-repeat;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
         #main_history{
             margin: auto;
@@ -33,7 +32,7 @@ if (isset($_SESSION['username'])) {
             margin: auto;
             display: flex;
             flex-direction: column;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(45, 45, 45, 0.5);
             border-radius: 20px;
         }
         #ordini{
@@ -48,7 +47,7 @@ if (isset($_SESSION['username'])) {
             display: block;
             overflow-x: hidden;
             overflow-y: auto;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(45, 45, 45, 0.5);
             padding: 1em;
             border-radius: 20px;
         }
@@ -57,7 +56,7 @@ if (isset($_SESSION['username'])) {
             height: 25ex; /*volevo provare ex e mi serviva un unità statica*/
             width: 100%;
             border-radius: 25px;
-            background-image: url("background_order.jpeg");
+            background-image: url("../../assets/images/background_order.jpeg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -76,7 +75,7 @@ if (isset($_SESSION['username'])) {
             width: 50%;
             font-weight: bold;
             font-size: 2em;
-            background-image: url("ticket.png");
+            background-image: url("../../assets/images/ticket.png");
             background-repeat: no-repeat;
             background-position: center;
             display: flex;
@@ -110,9 +109,10 @@ if (isset($_SESSION['username'])) {
             text-decoration: none;
         }
         .opzione *:hover{
-            color: #ff00f2;
-            font-size: 150%;
-            transition: 0.3s;
+            color: #0066ff;
+            font-size: 250%;
+            transition: 0.5s;
+            font-weight: bold;
         }
 
         .dettagli_ordine{
@@ -121,11 +121,14 @@ if (isset($_SESSION['username'])) {
             display:inline-block;
             height: 100%;
             width: 50%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
     </style>
-    <base href="../"> <!--punta a ~/pages/-->
-    <script>
+    <?php require_once "../../components/utils/headMetadata.html" ?>
+    <base href="../../"><!--punta a ~/pages/-->
+</head>
+<script>
         function today(){
             var today = new Date();
             var day = String(today.getDate());
@@ -134,61 +137,66 @@ if (isset($_SESSION['username'])) {
             var usrid = "<?php echo $username; ?>";
             document.getElementById("today").innerHTML = day + month + year+usrid;
         }
+        
     </script>
-</head>
 <body>
-<? require_once '../../components/header/header.php' ?>
+<!-- per staccare dalle altre pagine ho aggiunto un side menu e tolto header e footer-->
 <main id="main_history">
     <aside id="menu_ordini">
         <div class="opzione">
-            <a href="homepage/homepage.php">Home</a>
+            <a href="pages/homepage/homepage.php">Home</a>
         </div>
         <div class="opzione">
-            <a href="catalogue/catalogue.php">Catalogue</a>
+            <a href="pages/catalogue/catalogue.php">Catalogue</a>
         </div>
         <div class="opzione">
-            <a href="support/Supporto.php">Support</a>
+            <a href="pages/support/Supporto.php">Support</a>
         </div>
         <div class="opzione">
-            <a href="spacehistory/NewSpace.php">Space News</a>
+            <a href="pages/spacehistory/NewSpace.php">Space News</a>
         </div>
         <div class="opzione" style="border: none">
-            <a href="aboutus/aboutus.php">About us</a>
+            <a href="pages/aboutus/aboutus.php">About us</a>
         </div>
     </aside>
     <section id="ordini">
-        <div id="list_ord">
-            <?php
-            //vai nel db e per ogni acquisto che ha come acquirenteuser X, lo stampi
-            require_once '../../backend/ConnettiDb.php';
-            $sql="SELECT * FROM acquisti";
-            $res=pg_query($db_connection,$sql);
-            $r=pg_fetch_assoc($res);
-            for ($i=0; $i<sizeof($r); $i++) {
-                require 'getInfo.php';
-                echo "<div class=\"mini_order\">
-                        <div class=\"row\">
-                            <section class=\"dettagli_ordine\">";
-                echo "<strong>Order Number: #</strong><span id=\"today\">".$r['idacquisto']."</span><br>
-                        <strong>Trip name:</strong> <span id=\"name\">".$name."</span><br>
-                        <strong>Launch Location:</strong> <span id=\"launch_loc\">".$location."</span><br>
-                        <strong>Launch Date:</strong> <span id=\"launch_date\">".$partenza."</span><br>
-                        <strong>Return Date:</strong> <span id=\"return_date\">".$ritorno."</span><br>
-                        <div style=\"margin-top: 12%;\"><strong>Total Price:</strong> <span id=\"total_price\">$".$price."</span></div><br>
-                    </section>";
-                echo "<aside class=\"ticket_link\">
-                        <!--%20 spazio con url encoding, è anche un rfc-->
-                        <a href=\"OrderHistory/ticket.php?titolo=".$name."&rampa=".$location."&partenza=".$partenza."&num_ordine=".$r['idacquisto']."\">Click Here</a>
-                    </aside>
-                </div>
-            </div>";
-                $r=pg_fetch_assoc($res);
-            }
-            echo "</div>";
-            ?>
-        </div>
+    <div id="list_ord">
+    <?php
+    // Connetti al database e recupera gli acquisti per l'utente loggato
+    require_once '../../backend/ConnettiDb.php';
+    $usr = trim($_SESSION['username']); 
+    $sql = "SELECT * FROM acquisti WHERE acquirenteuser = $1";
+    $res = pg_prepare($db_connection, "a", $sql);
+    $res = pg_execute($db_connection, "a", array($usr));
+    if ($res) {
+        while ($r = pg_fetch_assoc($res)) {
+            require 'GetInfo.php'; //GetInfo.php popola $name, $location, $partenza, $ritorno, $price
+            echo "<div class=\"mini_order\">
+                    <div class=\"row\">
+                        <section class=\"dettagli_ordine\">
+                            <strong>Order Number: #</strong><span id=\"today\">" . $r['idacquisto'] . "</span><br>
+                            <strong>Trip name:</strong> <span id=\"name\">" . $name . "</span><br>
+                            <strong>Launch Location:</strong> <span id=\"launch_loc\">" . $location . "</span><br>
+                            <strong>Launch Date:</strong> <span id=\"launch_date\">" . $partenza . "</span><br>
+                            <strong>Return Date:</strong> <span id=\"return_date\">" . $ritorno . "</span>
+                            <div style=\"margin-top: 7%;\"><strong>Total Price:</strong> <span id=\"total_price\">$" . $price . "</span></div><br>
+                        </section>
+                        <aside class=\"ticket_link\">
+                            <!--%20 spazio con url encoding, è anche un rfc-->
+                            <a href=\"pages/OrderHistory/ticket.php?titolo=" . $name . "&rampa=" . $location . "&partenza=" . $partenza . "&num_ordine=" . $r['idacquisto'] . "\">Click Here</a>
+                            </aside>
+                    </div>
+                </div>";
+        }
+    } else {
+        echo "Error: " . pg_last_error($db_connection);
+    }
+
+    pg_close($db_connection);
+    ?>
+</div>
+
     </section>
 </main>
-<? require_once '../../components/footer/footer.html' ?>
 </body>
 </html>

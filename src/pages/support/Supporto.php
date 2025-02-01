@@ -8,6 +8,6 @@
 </head>
 <?php include_once '../../components/header/header.php'; ?>
 <?php include_once 'Supporto.html' ?>
-<?php include_once '../../components/footer/footer.html' ?>
+<?php include_once '../../components/footer/footer.php' ?>
 </body>
 </html>

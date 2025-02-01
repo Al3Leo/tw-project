@@ -2,25 +2,28 @@
 @import "../../components/footer/footer.css";
 @import "../../components/login/login.css";
 @import "../../components/topmenu/topmenu.css";
-.main_signup{
-    height: 80vh;
-    background-image: url('../../assets/images/a.png');
+
+.main_signup {
+    min-height: 80vh;
+    height: auto;
+    background-image: url('../../assets/images/signup/bg.png') !important;
     background-position: center;
     background-size: cover;
     width: 100%;
-    
+    padding-top:10px;
 }
-.main_signup>div{
-    height: 100%;
+
+.main_signup>div {
+    height: 100vh;
     width: 100%;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 74px;
 
 }
-.input{
-    position: absolute;
-    top: calc(50% - 20px); /* Sposta l'elemento verso l'alto di 20 pixel rispetto al centro */
-    left: 50%; 
-    transform: translate(-50%, -50%);
+
+.input {
     width: 50%;
     color: white;
     background: rgba(255, 255, 255, 0.27);
@@ -30,18 +33,23 @@
     border: 1px solid rgba(255, 255, 255, 0.125);
 
 }
+
 label {
     margin-top: 0.2em;
     font-size: 0.7em;
     font-weight: 600;
     display: block;
 }
-.main_signup .contenitore .input form{
-    grid-template-columns: 1fr 1fr;
+
+.main_signup .contenitore .input form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
     column-gap: 2em;
     row-gap: 1em;
 }
-.main_signup .contenitore .input form input, #country{ 
+
+.main_signup .contenitore .input form input,
+#country {
     font-size: 0.9em;
     padding: 0.2em;
     border: solid grey;
@@ -49,29 +57,44 @@ label {
     outline-color: rgb(84 105 212 / 0.5);
     background-color: rgb(255, 255, 255);
 }
-.main_signup .contenitore .input form{
-    padding:2em;
+
+.main_signup .contenitore .input form {
+    padding: 2em;
 }
-.main_signup .contenitore .input h3{
+
+.main_signup .contenitore .input h3 {
     text-align: center;
 }
-#oggetto{
+
+#oggetto {
     grid-column: 1;
- 
+
 }
+
+#gender span {
+    font-size: 11.2px;
+}
+
+.required-label small{
+    color: white !important;
+}
+
 @media (max-width: 933px) {
     .main_signup .contenitore .input form {
-      grid-template-columns: 1fr;
-      row-gap: 5px;
-      padding-top: 0.5em;
-      font-size: x-small;
+        grid-template-columns: 1fr;
+        row-gap: 5px;
+        padding-top: 0.5em;
+        font-size: 8px;
     }
-    main{
+
+    main {
         padding: 2em;
         overflow: hidden;
     }
 
+    #gender span {
+        font-size: small;
+    }
 
 
-  }
-
+}
