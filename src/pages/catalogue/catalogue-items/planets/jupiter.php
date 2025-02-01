@@ -32,7 +32,7 @@
         <div class="hero__text">
             <h1 class="text-center"><?php echo $nomeEvento ?></h1>
             <p id="capitalize">
-                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Jupiter</a>Jupiter is the fifth planet from the Sun and the largest in our solar system. Jupiter is the <b>fourth brightest object in the sky</b> after the Sun, Moon, and Venus. Jupiter spins the fastest of all the solar system's planets.<br>
+                <a href=<?php echo "https://science.nasa.gov/" . $nomeEvento ?> target="_blank">Jupiter</a> is the fifth planet from the Sun and the largest in our solar system. Jupiter is the <b>fourth brightest object in the sky</b> after the Sun, Moon, and Venus. Jupiter spins the fastest of all the solar system's planets.<br>
                 Jupiter is <b>much larger</b> in size compared to <b>Earth</b>, and is sometimes called a <b>gas giant</b>. Its thick atmosphere consists mainly of hydrogen and helium, making it the <b>largest planet</b> in our solar system with powerful storms, including the famous Great Red Spot. Below the swirling clouds, the surface has no solid ground, just dense clouds and vast, turbulent weather systems.
             </p>
         </div>
