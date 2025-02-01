@@ -4,12 +4,12 @@
         menu.classList.toggle("toggleMenu");
         let cross = document.getElementById("goBack");
         cross.classList.toggle("toggleCross");
+        let search = document.getElementById("sideBar");
+        search.classList.toggle("toggleSearch");
+        
         let bar = document.getElementById("sideBar");
         bar.classList.toggle("toggleShow");
         bar.style.borderBottom = "0";
-
-        let search = document.getElementById("sideBar");
-        search.classList.toggle("toggleSearch");
 
         let btnSignup = document.getElementById("signup");
         let btnSearch = document.getElementById("search");
