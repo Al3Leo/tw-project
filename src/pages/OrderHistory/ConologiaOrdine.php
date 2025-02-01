@@ -14,7 +14,7 @@ if (isset($_SESSION['username'])) {
         body{
             margin: 0;
             padding: 0;
-            background-image: url("../../assets/images/universe.jpg");
+            background-image: url("../../assets/images/falcon9.jpg");
             background-size: cover;
             background-repeat: no-repeat;
         }
