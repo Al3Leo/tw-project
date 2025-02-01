@@ -110,7 +110,7 @@ Utilizza POST per inviare i dati a backend/RegistraUtente.php.
         <div class="contenitore">
             <div class="input d-flex flex-column ">
                 <h1 style="text-align: center;">Sign Up</h1>
-                <p class="required-label text-center"><small>* is required</small></p>
+                <!--<p class="required-label text-center"><small>* is required</small></p>-->
                 <div id="errore_signup" style="display: none; color: red; font-size:3px"></div>
                 <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" class="d-grid">
                     <div class="oggetto d-flex flex-column" id="oggetto_signup">
@@ -400,6 +400,8 @@ Utilizza POST per inviare i dati a backend/RegistraUtente.php.
                             <label for="sessoF"><input id="sessoF" type="radio" name="user_gender" value="F">
                                 F</label>
                         </div>
+
+                        
                     </div>
                     <button type="submit">Sign Up</button>
                 </form>

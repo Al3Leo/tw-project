@@ -4,27 +4,26 @@
 @import "../../components/topmenu/topmenu.css";
 
 .main_signup {
-    height: 80vh;
+    min-height: 80vh;
+    height: auto;
     background-image: url('../../assets/images/signup/bg.png') !important;
     background-position: center;
     background-size: cover;
     width: 100%;
-
+    padding-top:10px;
 }
 
 .main_signup>div {
-    height: 100%;
+    height: 100vh;
     width: 100%;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 74px;
 
 }
 
 .input {
-    position: absolute;
-    top: calc(50% - 20px);
-    /* Sposta l'elemento verso l'alto di 20 pixel rispetto al centro */
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 50%;
     color: white;
     background: rgba(255, 255, 255, 0.27);
@@ -43,7 +42,8 @@ label {
 }
 
 .main_signup .contenitore .input form {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
     column-gap: 2em;
     row-gap: 1em;
 }
