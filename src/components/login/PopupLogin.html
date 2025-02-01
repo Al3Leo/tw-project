@@ -67,7 +67,7 @@ function verificaLogin() {
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
         var flag;
-        //limito l'accesso al europa circa (tagliamo un po ucraina e filandia per approssimare a un rettangolo)
+        //limito l'accesso al europa circa (tagliamo un po ucraina e finlandia per approssimare a un rettangolo)
         if (lat >= 35 && lat <= 70 && lng >= -10 && lng <= 30) {
             flag = true;
         }else
