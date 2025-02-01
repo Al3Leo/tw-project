@@ -3,12 +3,14 @@ let endDate = new Date("Feb 28, 2021 00:00:00"); //data di scadenza, fine sessio
 let countdown = endDate.getTime();  
 if (document.getElementById("main__left__countdown__days")) {
   let x = setInterval(() => {
-    let now = new Date().getTime(); // prelevo l'ora attuale
-    let distance = countdown - now; // calcolo la distanza con la data prefissata in ms
+    let today = new Date(); // prelevo la data attuale
+    let distance = countdown - today.getTime(); // calcolo la distanza con la data prefissata in ms
 
-    if (distance < 0) {  // se il tempo é esaurito, genero una nuova data a partire dal giorno corrente
-      clearInterval(x);
-      countdown = endDate.setDate(now + 20).getTime();
+    if(distance < 0){
+      let newEnd = new Date();
+      newEnd.setDate(today.getDate() + 20); // genero una nuova data a partire dal giorno corrente
+      countdown = newEnd.getTime();
+      return;
     }
 
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));  // converto ms in giorni
