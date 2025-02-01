@@ -21,13 +21,19 @@ $uri = rtrim(dirname($_SERVER['REQUEST_URI']), '/\\');
 $urlconfirm = "http://$host$uri/../../pages/conferma/Conferma.php?confirmcheckout=true";
 $urlerror = "http://$host$uri/../../pages/error/errorPagamento.php";
 
-$dotenv = Dotenv\Dotenv::createImmutable('../../../');
-$dotenv->load();
 
 /**
  * Impostare la chiave segreta di Stripe.
  */
-$stripe_secret_key = $_ENV['STRIPE_SECRET_KEY']; //chiave da sostituire con la chiave segreta fornita da stripe
+
+// Commentare se non si usa PHPdotenv
+$dotenv = Dotenv\Dotenv::createImmutable('../../../');
+$dotenv->load();
+$stripe_secret_key = $_ENV['STRIPE_SECRET_KEY']; 
+
+// Decommentare ed inserire key se non si usa PHPdotenv
+// $stripe_secret_key = '';//
+
 \Stripe\Stripe::setApiKey($stripe_secret_key);
 /**
  *Gestione dati del carrello:
