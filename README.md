@@ -21,7 +21,7 @@
 
 - **Backend**: PHP
 - **Database**: PostgreSQL per la gestione dei dati degli utenti, delle destinazioni e delle prenotazioni.
-- **Api**: [Solar System OpenData](https://api.le-systeme-solaire.net/en/), [Space Flight News](https://api.spaceflightnewsapi.net/v4/docs/), [Stripe](https://docs.stripe.com/api)
+- **Api**: [Solar System OpenData](https://api.le-systeme-solaire.net/en/), [Space Flight News](https://api.spaceflightnewsapi.net/v4/docs/), [Stripe](https://docs.stripe.com/api), [QR Server](https://goqr.me/api/)
 
 
 ## **🧑‍🤝‍🧑Membri - Gruppo05**
