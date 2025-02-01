@@ -48,6 +48,7 @@ session_start();
 
         .mainconfirm {
             height: 65vh;
+            margin-top: 74px;
         }
 
         .confirm_div .div_down p {

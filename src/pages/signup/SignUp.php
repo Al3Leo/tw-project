@@ -80,7 +80,7 @@ function insert_utente($nome, $cognome, $sesso, $username, $pass, $indirizzo, $n
     $hash = password_hash($pass, PASSWORD_DEFAULT);
     $sql = "INSERT INTO utente(nome, cognome, sesso, username, passworduser, indirizzo, datanascita, email_utente ) VALUES($1, $2, $3, $4, $5, $6, $7, $8)";
     $prep = pg_prepare($db_connection, "insertUser", $sql);
-    $ret = pg_execute($db_connection, "insertUser", array($nome, $cognome, $sesso, $username, $hash, $indirizzo, !empty($nascita) ? $nascita : NULL), $email );
+    $ret = pg_execute($db_connection, "insertUser", array($nome, $cognome, $sesso, $username, $hash, $indirizzo, !empty($nascita) ? $nascita : NULL, $email) );
     if (!$ret) {
         echo "ERRORE QUERY: " . pg_last_error($db_connection);
         return false;
