@@ -1,5 +1,5 @@
 /* Countdown manager*/
-let endDate = new Date("Feb 28, 2021 00:00:00"); //data di scadenza, fine sessione!
+let endDate = new Date("Feb 28, 2025 00:00:00"); //data di scadenza, fine sessione !
 let countdown = endDate.getTime();  
 if (document.getElementById("main__left__countdown__days")) {
   let x = setInterval(() => {
