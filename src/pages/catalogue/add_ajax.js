@@ -47,10 +47,10 @@ function ajax_add_cart(id, destinazione, costo, partenza) {
  *
  */
 function updateCartAdd(id, destinazione, costo, partenza) {
+    //Se l'utente preme per la prima volta il button per l'aggiunta deve esser mostrato il footer della table
     let tfoot = document.getElementById('tfoot');
-    if (tfoot) { //quando inseisco per la prima volta l'elemento td per il totale non c'è per cui deve essere creato
-       createTotalCart(tfoot);
-    }
+    tfoot.style.display='table-footer-group';
+
     tbody = document.getElementById('carrello_tbl').getElementsByTagName('tbody')[0];
     thead = document.getElementById('carrello_tbl').getElementsByTagName('thead')[0];
     if (tbody) {

@@ -47,7 +47,7 @@
             if (empty($cart)) {
                 echo "style='display:none;'";
             } else {
-                echo "style='display:'';'";
+                echo "style='display: table-footer-group;'";
             }   ?>> <!--Chiudo tag tfoot --> 
             <td id='total-cart' colspan='5'>
                 <?php
