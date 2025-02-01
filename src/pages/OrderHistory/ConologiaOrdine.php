@@ -14,7 +14,7 @@ if (isset($_SESSION['username'])) {
         body{
             margin: 0;
             padding: 0;
-            background-image: url("../../assets/images/nasa/falcon9-4.jpg");
+            background-image: url("../../assets/images/cosmo.jpg");
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -32,7 +32,7 @@ if (isset($_SESSION['username'])) {
             margin: auto;
             display: flex;
             flex-direction: column;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(45, 45, 45, 0.5);
             border-radius: 20px;
         }
         #ordini{
@@ -47,7 +47,7 @@ if (isset($_SESSION['username'])) {
             display: block;
             overflow-x: hidden;
             overflow-y: auto;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(45, 45, 45, 0.5);
             padding: 1em;
             border-radius: 20px;
         }
@@ -111,7 +111,7 @@ if (isset($_SESSION['username'])) {
         .opzione *:hover{
             color: #0066ff;
             font-size: 250%;
-            transition: 0.333s;
+            transition: 0.5s;
             font-weight: bold;
         }
 
@@ -121,6 +121,7 @@ if (isset($_SESSION['username'])) {
             display:inline-block;
             height: 100%;
             width: 50%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
     </style>
@@ -177,8 +178,8 @@ if (isset($_SESSION['username'])) {
                             <strong>Trip name:</strong> <span id=\"name\">" . $name . "</span><br>
                             <strong>Launch Location:</strong> <span id=\"launch_loc\">" . $location . "</span><br>
                             <strong>Launch Date:</strong> <span id=\"launch_date\">" . $partenza . "</span><br>
-                            <strong>Return Date:</strong> <span id=\"return_date\">" . $ritorno . "</span><br>
-                            <div style=\"margin-top: 12%;\"><strong>Total Price:</strong> <span id=\"total_price\">$" . $price . "</span></div><br>
+                            <strong>Return Date:</strong> <span id=\"return_date\">" . $ritorno . "</span>
+                            <div style=\"margin-top: 7%;\"><strong>Total Price:</strong> <span id=\"total_price\">$" . $price . "</span></div><br>
                         </section>
                         <aside class=\"ticket_link\">
                             <!--%20 spazio con url encoding, è anche un rfc-->
