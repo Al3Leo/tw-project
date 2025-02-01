@@ -2,14 +2,16 @@
     function toggleSideMenu() {
         let menu = document.getElementById("sideMenu");
         menu.classList.toggle("toggleMenu");
+
         let cross = document.getElementById("goBack");
         cross.classList.toggle("toggleCross");
-        let search = document.getElementById("sideBar");
-        search.classList.toggle("toggleSearch");
+
+        let search = document.getElementById("search");
+        search.classList.toggle("toggleMenu");
 
         let bar = document.getElementById("sideBar");
         bar.classList.toggle("toggleShow");
-        bar.style.borderBottom = "0";
+
 
         let btnSignup = document.getElementById("signup");
         let btnSearch = document.getElementById("search");
@@ -17,22 +19,19 @@
         let btnLogout = document.getElementById("logout");
         let userinfo=document.getElementById("userinfo");
         let cart = document.getElementById("carrello");
+
         if (btnSignup.style.display == "none") {//l'utente è loggato 
             cart.style.display = "none";
             btnSignup.style.display = "none";
             btnLogin.style.display = "none";
-            btnSearch.style.display = "inline";
             btnLogout.style.display = "inline";
             userinfo.style.display = "inline";
             search.classList.toggle("toggleSearch");
-
         } else {
             btnSignup.style.display = "inline";
             btnLogin.style.display = "inline";
             btnLogout.style.display = "none";
             userinfo.style.display = "none";
-            btnSearch.style.display = "inline";
-            
         }
         //a scopo didattico sono stati usati due metodi diversi (toggle e style di js)
     }
