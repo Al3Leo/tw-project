@@ -60,7 +60,7 @@ function verificaLogin() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(checkPosition);
         } else {
-            alert("Geolocation is not supported by this browser.");
+            alert("Geolocation is not supported by this browser or is off");
         }
     }
     function checkPosition(position) {
