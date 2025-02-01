@@ -9,7 +9,7 @@
 .hero iframe {
   height: 50vh;
   border: none;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .hero > img {
@@ -196,4 +196,5 @@ main {
 
 .parallax{
   height: 50vh;
+  margin-top: 5%;
 }
