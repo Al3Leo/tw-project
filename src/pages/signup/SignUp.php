@@ -41,7 +41,7 @@ if (strlen($nome) > 50 || strlen($username) > 25 || strlen($cognome) > 50 || str
                 $errore = "Username $username already exists. Try again.";
                 echo "<script>alert('$errore');</script>";
             } else {
-                if (insert_utente($nome, $cognome, $sesso, $username, $pass, $indirizzo, $nascita)) {
+                if (insert_utente($nome, $cognome, $sesso, $username, $pass, $indirizzo, $nascita, $email)) {
                     header("Location: ../../pages/conferma/Conferma.php?confirmsignup=$username");
                     exit();
                 } else {
@@ -74,13 +74,13 @@ function username_exist($username)
 /**
  * Funzione che inserisce un nuovo utente nel database. Hash della password per sicurezza. 
  */
-function insert_utente($nome, $cognome, $sesso, $username, $pass, $indirizzo, $nascita)
+function insert_utente($nome, $cognome, $sesso, $username, $pass, $indirizzo, $nascita, $email)
 {
     global $db_connection;
     $hash = password_hash($pass, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO utente(nome, cognome, sesso, username, passworduser, indirizzo, datanascita) VALUES($1, $2, $3, $4, $5, $6, $7)";
+    $sql = "INSERT INTO utente(nome, cognome, sesso, username, passworduser, indirizzo, datanascita, email_utente ) VALUES($1, $2, $3, $4, $5, $6, $7, $8)";
     $prep = pg_prepare($db_connection, "insertUser", $sql);
-    $ret = pg_execute($db_connection, "insertUser", array($nome, $cognome, $sesso, $username, $hash, $indirizzo, !empty($nascita) ? $nascita : NULL));
+    $ret = pg_execute($db_connection, "insertUser", array($nome, $cognome, $sesso, $username, $hash, $indirizzo, !empty($nascita) ? $nascita : NULL), $email );
     if (!$ret) {
         echo "ERRORE QUERY: " . pg_last_error($db_connection);
         return false;
