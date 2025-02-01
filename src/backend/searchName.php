@@ -3,9 +3,11 @@ require_once "ConnettiDb.php";
 
 if (isset($_GET['destination'])) {
     $destination = ucfirst(strtolower($_GET['destination'])); /* Rendo maiuscola l'iniziale e minuscolo il resto */
-    $query = "SELECT DISTINCT nomeevento, etichetta FROM viaggio WHERE nomeevento = '$destination'"; 
-
-    $result= pg_query($db_connection, $query)or die('Item not found! ' . pg_last_error());
+    $query = "SELECT DISTINCT nomeevento, etichetta FROM viaggio WHERE nomeevento = $1"; 
+    
+    /* Prepared Statements */
+    pg_prepare($db_connection, "search_name", $query);
+    $result = pg_execute($db_connection, "search_name", [$destination]) or die('Item not found! ' . pg_last_error());
     
     $eventsName = []; //Puó essere sfruttato in futuro per implementare una ricerca progressiva
     while ($row = pg_fetch_assoc($result)) {  // itero su tutte le righe ottenute dalla query (in questo caso restituisce 1 solo elemento)
