@@ -1,5 +1,6 @@
 /* Countdown manager*/
-let countdown = new Date("Feb 28, 2021 00:00:00").getTime();  //data di scadenza, fine sessione!
+let endDate = new Date("Feb 28, 2021 00:00:00"); //data di scadenza, fine sessione!
+let countdown = endDate.getTime();  
 if (document.getElementById("main__left__countdown__days")) {
   let x = setInterval(() => {
     let now = new Date().getTime(); // prelevo l'ora attuale
@@ -7,7 +8,7 @@ if (document.getElementById("main__left__countdown__days")) {
 
     if (distance < 0) {  // se il tempo é esaurito, genero una nuova data a partire dal giorno corrente
       clearInterval(x);
-      countdown.setDate(now + 20);
+      countdown = endDate.setDate(now + 20).getTime();
     }
 
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));  // converto ms in giorni
