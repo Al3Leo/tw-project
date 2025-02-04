@@ -252,14 +252,14 @@ button {
 button:hover,
 button:focus {
   background-color: var(--secondaryColor);
-  transform: scale(1.1);
+  transform: scale(1.1); //*effetto di ingrandimento quando si passa sopra*/
 }
 
 /* ==========================
    Components - Slideshowx
    ========================== */
 
-.slideshow {
+.slideshow { /*slideshow a schermo intero*/
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -269,7 +269,7 @@ button:focus {
    Components - Hero Section
    ========================== */
 
-.hero {
+.hero { /*banner di apertura*/
   height: var(--hero-height);
   background-size: cover !important;
   overflow: hidden;
@@ -371,7 +371,7 @@ th {
 /* ==========================
    Animations
    ========================== */
-@keyframes fadeIn {
+@keyframes fadeIn { /*ingrandisce e rende maiuscola la prima lettera del testo*/
   0% {
     opacity: 0;
   }
