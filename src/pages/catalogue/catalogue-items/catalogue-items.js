@@ -1,4 +1,4 @@
-// Dropdown travelInfo
+// Dropdown travelInfo, seleziona la domanda la risposta e la freccia corrispondente 
 const items = document.querySelectorAll(".main__left__tripKnowledge__item");
 items.forEach((item) => {
   const question = item.querySelector(
@@ -198,5 +198,5 @@ function fillSuggestions(celestialBody, eventsArray) {
       ".php";
     carouselContainer.appendChild(newItem);
   });
-  suggItem.remove(); //rimuovo il sample
+  suggItem.remove(); //rimuovo l'elemento di esempio originale
 }

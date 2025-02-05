@@ -9,14 +9,14 @@ body {
     background-repeat: no-repeat;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*layout a colonna*/
 }
 
 header {
-    position:relative;
+    position:relative; /*fisso in alto*/
     width: 100%;
     height: 80px;
-    z-index: 100;
+    z-index: 100; /*per restare sopra gli elementi*/
     background-color: rgba(0, 0, 0, 1);
 }
 
@@ -24,9 +24,9 @@ header {
     max-width: 1200px;
     margin: 80px auto; /* margine superiore per evitare sovrapposizioni con l'header */
     padding: 20px;
-    flex: 1;
+    flex: 1; /*occupa lo spazio disponibile*/
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*layout verticale*/
     gap: 40px; /* Spaziatura tra le sezioni */
     margin-top: 100px;
     z-index: 1;
@@ -34,9 +34,9 @@ header {
 }
 
 .text, .finalGoal {
-    display: flex;
+    display: flex; /*elementi in linea*/
     flex-direction: row; /* layout orizzontale */
-    justify-content: space-between;
+    justify-content: space-between; /*separo il testo dall'immagine*/
     align-items: center;
     gap: 20px; /* Distanza tra testo e immagine */
     padding: 20px;
@@ -58,7 +58,6 @@ header {
 
 .image img {
     flex: 1;
-    object-fit: cover;
     text-align: center;
     margin-left: 20px;
     max-width: 400px;
@@ -79,14 +78,14 @@ h1, h2 {
     position: relative;
     color: var(--accent);
     overflow: hidden;
-    white-space: nowrap;
+    white-space: nowrap; /*non ritorno a capo*/
     width: 100%;
-    animation: typing 3s steps(20, end) forwards, blink 0.5s step-end infinite; /*forwards fa si che il testo resti visibile*/
+    animation: typing 3s steps(20, end) forwards, blink 0.5s step-end infinite; /*effetto macchina da scrivere (typing) e lampeggio (blink)*/
 
 }
 
 h1::before, h1::after, h2::before, h2::after {
-    content: attr(data-text);
+    content: attr(data-text); /*ombra colorata dietro al titolo*/
     position: absolute;
     top: 0;
     left: 0;
@@ -94,17 +93,17 @@ h1::before, h1::after, h2::before, h2::after {
     height: 100%;
     color: var(--secondaryColor);
     z-index: -1;
-    clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%);
+    clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%); /*effetto glitch tagliando parti del testo*/
     animation: glitch 3s infinite linear alternate-reverse;
 }
 
-@keyframes typing {
+@keyframes typing { /*fa comparire il testo progressivamente*/
     from { width: 0; }
     to { width: 100%; }
 }
 
 @keyframes blink {
-    50% { border-color: transparent; }
+    50% { border-color: transparent; } /*cursore lampeggiante trasparente*/
 }
 
 h1::after, h2::after {
