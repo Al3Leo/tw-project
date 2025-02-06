@@ -51,9 +51,9 @@
             }   ?>> <!--Chiudo tag tfoot --> 
             <td id='total-cart' colspan='5'>
                 <?php
-                if (isset($cart)) {
+               
                     echo "Total price: " . $tot . '$';
-                } ?>
+                ?>
             </td>
             <td><button type='button' onclick='buyCart()' id='acquistaButton' <?php if (!isset($_SESSION['username'])) {
                                                                                     echo "style='display:none;'"; //se l'utente non è loggato vede solo la lista degli elementi
@@ -144,7 +144,7 @@
      */
     function buyCart() {
         <?php if (isset($_SESSION['username'])) { ?>
-            const cart = <?php echo json_encode($cart); ?>; // passo all'URL il carrello codificato in JSON
+            const cart = <?php echo $_COOKIE['cart']; ?>; // passo all'URL il carrello codificato in JSON
             const encodedCart = encodeURIComponent(JSON.stringify(cart));
             window.location.href = '../src/components/Stripe/Checkout.php?cart=' + encodedCart;
         <?php } else { ?>

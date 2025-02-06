@@ -14,10 +14,10 @@ let currentSlide = 0;
 function updateSlide() {
     const offset = currentSlide * 100;
     leftSlides.forEach(slide => {
-        slide.style.transform = `translateY(-${offset}vh)`;
+        slide.style.transform = `translateY(${-offset}vh)`;
     });
     rightSlides.forEach(slide => {
-        slide.style.transform = `translateY(-${offset}vh)`;
+        slide.style.transform = `translateY(${-offset}vh)`;
     });
 }
 /**
@@ -42,6 +42,21 @@ upBtn.addEventListener("click", () => {
 });
 /**
 * Gestisce tramite ajax input di tipo data della pagina Spacial History 
+Il codice aggiunge un listener per l'evento 'input' al modulo con l'ID newsForm
+La funzione recupera il valore della data di nascita (dob) dall'elemento 
+del modulo con l'ID dob.
+tilizzando XMLHttpRequest, il codice invia una richiesta GET al s
+erver con la data di nascita 
+inclusa come parametro nella URL. La richiesta è asincrona (true).
+Quando la risposta del server è pronta (xhr.readyState == 4), il codice esegue diverse azioni in base al codice di stato HTTP della risposta (xhr.status):
+
+200: Se lo stato è 200 (OK), il codice recupera gli articoli dalla risposta JSON e li passa alla funzione createNewsBlocks.
+
+404: Se lo stato è 404 (Not Found), viene visualizzato un messaggio di errore.
+
+500: Se lo stato è 500 (Internal Server Error), viene visualizzato un messaggio di errore.
+
+Default: Per qualsiasi altro stato, viene visualizzato un messaggio di errore con il testo dello stato.
 */
 document.getElementById('newsForm').addEventListener('input', function (event) {
     event.preventDefault();
@@ -70,6 +85,16 @@ document.getElementById('newsForm').addEventListener('input', function (event) {
     };
     /**
      * Crea i blocchi delle notizie e li inserisce nel contenitore
+     * 
+     * La funzione createNewsBlocks riceve un array di articoli e li visualizza nel contenitore con l'ID newsContainer:
+
+Se non ci sono articoli (articles.length === 0), il contenitore 
+viene impostato come display 'flex' e viene visualizzato un 
+messaggio di avviso.
+
+Se ci sono articoli, per ciascun articolo viene creato 
+un blocco HTML con un'immagine, un titolo e un sommario,
+ che viene quindi aggiunto al contenitore delle notizie.
      */
     function createNewsBlocks(articles) {
         var newsContainer = document.getElementById('newsContainer');

@@ -4,7 +4,9 @@
  *  Gestione dell'iscrizione alla newsletter persente nel file NewSpace.php
  * Questo file PHP gestisce l'inserimento delle email nel database per l'iscrizione alla newsletter.
  */
-require_once"../../backend/ConnettiDb.php";
+
+require_once "../../backend/ConnettiDb.php";
+
     if (isset($_POST['email_news'])) {        
         $email=$_POST['email_news'];
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {

@@ -8,10 +8,11 @@ if (isset($_GET['dob'])) {
     $dob = $_GET['dob'];
     $date = date('Y-m-d', strtotime($dob));/*Converto la data in formato 'Y-m-d' */
     $url = "https://api.spaceflightnewsapi.net/v4/articles/?limit=4&ordering=published_at&published_at_gte=$date";
+    /*Crea l'URL per richiedere le notizie all'API, filtrando per data pubblicata maggiore o uguale alla data specificata.*/ 
 
     // Inizializza una sessione cURL
     $ch = curl_init();/*Inizializzo una nuova sessione cURL */
-    curl_setopt($ch, CURLOPT_URL, $url);/*Imposto l'URL per la sessione cURL */
+    curl_setopt($ch, CURLOPT_URL, $url);/*Imposto l'URL per la sessione cURL, specifico l'URL da cui fare la richiesta */
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);/*opzione per restituire il risultato come stringa */
     $response = curl_exec($ch);/*richiesta cURL e ottiene la risposta */
     curl_close($ch);/*chiudo la sessione cURL */

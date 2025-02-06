@@ -4,10 +4,10 @@
  * informaazioni che sono a loro volta array
  * in fine il carrello è salvato in stringa con encoder json nei cookie
  */
-session_start();
+
 
 // Connessione al database
-require_once __DIR__ . "/ConnettiDb.php";
+require_once "ConnettiDb.php";
 
 $id = $_POST['id'];
 $query = "SELECT * FROM viaggio WHERE idevento='$id'";

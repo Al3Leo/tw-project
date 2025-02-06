@@ -60,14 +60,12 @@ function updateCartAdd(id, destinazione, costo, partenza) {
             //cui si elimina la riga che invita a scegliere nuove destinazioni aggiungendo il nuovo elemnto
             rowChoose.remove();
             tbody.appendChild(riga);
-            tbody = document.getElementById('carrello_tbl').getElementsByTagName('tfoot')['0'].style.display = '';
             riga.style.display = '';
             //Funzione definita nel file cart.php
         } else {
             //se verifica è true cioe l'elemnto gia è contenuto nel carrello allora non fa nulla;
             if (!verifica) {
                 tbody.appendChild(riga) // Inserisci la nuova riga all'inizio del tbody
-                tbody = document.getElementById('carrello_tbl').getElementsByTagName('tfoot')['0'].style.display = '';
                 riga.style.display = '';
                 
             }
